@@ -254,8 +254,8 @@ while True:
         while permiso == "s":
             for i in lst_prec_ord:
                 for a in list_productos:
-                   
-                        if a["precio"] == i:
+                   #while seguir == "s" or seguir == "S":
+                        if (seguir == "s" or seguir == "S") and a["precio"] == i:
                             print ("*" * 50)
                             print (f"Nombre del producto: {a['nombre']}")
                             print (f"ID del producto: {a['id']}")
