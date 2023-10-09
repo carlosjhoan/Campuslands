@@ -122,7 +122,7 @@ while True:
         num_N = valid_int("\nIngrese el valor inicial del rango N: ")
         num_M = n_menor_m(num_N, "\nIngrese el valor final del rango M (M > N): ")
         lista_primos = primos_n_m (num_N, num_M)[0]
-        sec_primos = primos_n_m (num_N, num_M)[0]
+        sec_primos = primos_n_m (num_N, num_M)[1]
         print ("\n", "=*" * 35)
         print (f"Valor incicial: {num_N}")
         print (f"Valor incicial: {num_M}")
