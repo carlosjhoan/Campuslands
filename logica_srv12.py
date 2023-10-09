@@ -77,7 +77,7 @@ while True:
         num_adivinar = random.randint(1, 100)
         nombre = valid_nombre("\nNombre del jugador: ")
         data_jugador.append(nombre)
-        num_jugador = valid_int("\n¿Cuál cree que es el número secreto? ")
+        #num_jugador = valid_int("\n¿Cuál cree que es el número secreto? ")
         for i in range(1, intentos_max + 1):
             if jugar == "s" or jugar == "S":
                 num_jugador = valid_int("\n¿Cuál cree que es el número secreto? ")
