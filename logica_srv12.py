@@ -120,7 +120,7 @@ while True:
                         intentos = 0
               
                     else:
-
+                        jugar = "n"
                         perm_jugar = "n"
                         print ("\nQué bueno que lo hayas intentado. Esperamso que te hayas divertido")
                         input("\nPresione cualquier tecla para volver al menú... ")
@@ -132,6 +132,10 @@ while True:
                     else:
                         print ("\nFALLASTE!!!\nEl número a adivinar es MENOR")
             else:
+                data_jugador.append(intentos)
+                lista_jugadores.append(data_jugador)
+                lista_ord = list_ganadores(lista_jugadores)
+                data_jugador = []
                 print ("\tTABLA DE POSICIONES")
                 print ( "-" * 35)
                 print ("  Jugador\t|\tN° Intentos")
