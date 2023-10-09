@@ -71,17 +71,21 @@ while True:
     
     if opc == 1:
         jugar = "s"
+        perm_jugar = "s"
         data_jugador = []
         intentos_max = 10
+        n = 0
         intentos = 0
         num_adivinar = random.randint(1, 100)
         nombre = valid_nombre("\nNombre del jugador: ")
         data_jugador.append(nombre)
         #num_jugador = valid_int("\n¿Cuál cree que es el número secreto? ")
-        for i in range(1, intentos_max + 1):
-            if jugar == "s" or jugar == "S":
-                num_jugador = valid_int("\n¿Cuál cree que es el número secreto? ")
+        #for i in range(1, intentos_max + 1):
+        while perm_jugar == "s" or perm_jugar == "S":
+            if (jugar == "s" or jugar == "S") and intentos < 10:
                 intentos += 1
+                num_jugador = valid_int(f"\nIntento {intentos}/10\n¿Cuál cree que es el número secreto? ")
+                
                 if num_jugador == num_adivinar:
                     data_jugador.append(intentos)
                     lista_jugadores.append(data_jugador)
@@ -95,6 +99,7 @@ while True:
                     print ( "-" * 35)
                     print ("  Jugador\t|\tN° Intentos")
                     print ("=" * 35)
+                    jugar = "n"
 
                     for a in lista_ord:
                         if a[0] == nombre:
@@ -105,12 +110,37 @@ while True:
                         else:
                             print(f" {a[0]}\t|\t{a[1]}")
                             print ("=" * 35)
-
                 else:
                     if num_jugador < num_adivinar:
                         print ("\nFALLASTE!!!\nEl número a adivinar es MAYOR")
                     else:
                         print ("\nFALLASTE!!!\nEl número a adivinar es MENOR")
+            else:
+                print ("\tTABLA DE POSICIONES")
+                print ( "-" * 35)
+                print ("  Jugador\t|\tN° Intentos")
+                print ("=" * 35)
+                for a in lista_ord:
+
+                    print(f" {a[0]}\t|\t{a[1]}")
+                    print ("=" * 35)
+
+                seguir_jugando = input("""\n¿Desea seguir jugando?
+                                            s -- Sí, quiero intentarlo de nuevo
+                                            n -- No, ya me aburrí
+                                            
+                                            >>> ¿Qué desea? """)
+                if seguir_jugando == "s" or seguir_jugando == "S":
+                    intentos = 0
+              
+                else:
+
+                    perm_jugar = "n"
+                    print ("\nQué bueno que lo hayas intentado. Esperamso que te hayas divertido")
+                    input("\nPresione cualquier tecla para volver al menú... ")
+                
+
+            #seguir_jugando =
 
 
 
@@ -129,4 +159,5 @@ while True:
             break
         else:
             input ("\nPresione cualquier tecla para volver al menú... ")
+            pass ("\nPresione cualquier tecla para volver al menú... ")
             pass
