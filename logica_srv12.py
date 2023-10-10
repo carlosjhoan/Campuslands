@@ -59,8 +59,10 @@ def list_ganadores(lst):
 
     return lst_ord_jugadores
 
+lista_jugadores = []
+
 while True:
-    lista_jugadores = []
+    
     print ("\t\t*****************")
     opc = menu("""   \t\tADIVINA EL NÚMERO
                 *****************
@@ -110,6 +112,7 @@ while True:
                         else:
                             print(f" {a[0]}\t|\t{a[1]}")
                             print ("=" * 35)
+                            
                     seguir_jugando = input("""\n¿Desea seguir jugando?
                                             s -- Sí, quiero intentarlo de nuevo
                                             n -- No, ya me aburrí
