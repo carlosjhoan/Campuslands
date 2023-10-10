@@ -50,7 +50,7 @@ def llenar_matriz_1 (mat):
 def llenar_matriz_2 (mat):
     n = 0
     for c in range(len(mat)):
-        for f in range(len(mat[f])):
+        for f in range(len(mat[c])):
             n += 1 
             mat [f][c] = n 
     return mat
@@ -91,7 +91,14 @@ while True:
         input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 2:
-        pass
+        print ("\n", "-" * 60)
+        print ("1. Números consecutivos en dirección de las columnas")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_1 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_2_llena = llenar_matriz_2 (matriz_1)
+        print_matrices (matriz_2_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 3:
         pass
