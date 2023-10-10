@@ -28,6 +28,20 @@ def valid_int(msj):
         except ValueError:
             print ("\nERROR!!! Debe ingresar un número entero.")
 
+#Función que llena con 1 una lista
+def lista_1(n):
+    lista_1s = []
+    for i in range(n):
+        lista_1s.append(1)
+    return lista_1s
+
+#Función que llena con 1 una lista
+def lista_0(n):
+    lista_0s = []
+    for i in range(n):
+        lista_0s.append(0)
+    return lista_0s
+
 #Función que crea matrices de ceros
 def crear_matrices_ceros (fil, col):
     m = []
@@ -74,7 +88,7 @@ def llenar_matriz_3 (mat):
                 mat [f][c] = fila_impar[c]
 
     return mat
-
+#Función que crea la matriz diagonal y su recíproca
 def llenar_matriz_45 (mat):
     
     for f in range(len(mat)):
@@ -83,7 +97,29 @@ def llenar_matriz_45 (mat):
                 mat [f][c] = 1 
     return mat, list(reversed(mat))
 
-        #print (" ")
+
+def llenar_matriz_6 (mat):
+    n = 0
+    for f in mat:
+        n += 1
+        f[:n] = lista_1(n)
+        f[n:] = lista_0(len(f) - n)
+         
+    
+    return mat 
+
+def llenar_matriz_7 (mat):
+    n = 0
+    for f in mat:
+        
+        f[:n] = lista_0(n)
+        f[n:] = lista_1(len(f) - (n))
+        n += 1
+         
+    
+    return mat
+
+        
 #Función que imrpime matrices
 def print_matrices (mat):
     for f in range(len(mat)):
@@ -159,10 +195,24 @@ while True:
         input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 6:
-        pass
+        print ("\n", "-" * 60)
+        print ("6. Mitad inferior de la matriz con 1, la otra con 0..")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_6 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_6_llena = llenar_matriz_6 (matriz_6)
+        print_matrices (matriz_6_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 7:
-        pass
+        print ("\n", "-" * 60)
+        print ("7. Mitad superior de la matriz con 1, la otra con 0..")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_7 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_7_llena = llenar_matriz_7 (matriz_7)
+        print_matrices (matriz_7_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 8:
         pass
