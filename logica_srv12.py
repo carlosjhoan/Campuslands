@@ -56,7 +56,6 @@ def list_ganadores(lst):
             if k[1] == j:
                 lst_ord_jugadores.append(k)
 
-
     return lst_ord_jugadores
 
 lista_jugadores = []
@@ -85,7 +84,7 @@ while True:
         #for i in range(1, intentos_max + 1):
         while perm_jugar == "s" or perm_jugar == "S":
 
-            if (jugar == "s" or jugar == "S") and intentos < 10:
+            if (jugar == "s" or jugar == "S") and intentos < intentos_max:
                 
                 intentos += 1
                 num_jugador = valid_int(f"\nIntento {intentos}/10\n¿Cuál cree que es el número secreto? ")
