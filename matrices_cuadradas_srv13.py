@@ -35,12 +35,30 @@ def lista_1(n):
         lista_1s.append(1)
     return lista_1s
 
-#Función que llena con 1 una lista
+#Función que llena con 0 una lista
 def lista_0(n):
     lista_0s = []
     for i in range(n):
         lista_0s.append(0)
     return lista_0s
+
+#Función que llena con A y B una lista
+def lista_AB(n):
+    lista_abs = []
+    for i in range(1,n + 1):
+        if i % 2 == 0: 
+            lista_abs.append("B")
+        else:
+            lista_abs.append("A")
+
+    return lista_abs
+
+#Función que llena con " " una lista
+def lista_blank(n):
+    lista_s = []
+    for i in range(n):
+        lista_s.append("")
+    return lista_s
 
 #Función que crea matrices de ceros
 def crear_matrices_ceros (fil, col):
@@ -112,13 +130,22 @@ def llenar_matriz_7 (mat):
     n = 0
     for f in mat:
         
-        f[:n] = lista_0(n)
+        f[:n] = lista_AB(n)
         f[n:] = lista_1(len(f) - (n))
         n += 1
          
     
     return mat
 
+def llenar_matriz_8 (mat):
+    n = 0
+    for f in mat:
+        n += 1
+        f[:n] = lista_AB(n)
+        f[n:] = lista_blank(len(f) - n)
+         
+    
+    return mat
         
 #Función que imrpime matrices
 def print_matrices (mat):
@@ -215,7 +242,14 @@ while True:
         input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 8:
-        pass
+        print ("\n", "-" * 60)
+        print ("8. Llenar con A y con B de manera alternada, media matriz..")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_8 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_8_llena = llenar_matriz_8 (matriz_8)
+        print_matrices (matriz_8_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     else:
         si_no = input("""\n¿Está seguro que desea salir? 
