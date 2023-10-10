@@ -55,6 +55,26 @@ def llenar_matriz_2 (mat):
             mat [f][c] = n 
     return mat
 
+def llenar_matriz_3 (mat):
+    n_f = 0
+    
+    fila_impar = list(range(1, len(mat) + 1))
+    fila_par = list(reversed(fila_impar))
+    print ("fila_par", fila_par)
+    print ("fila_impar", fila_impar)
+
+    for f in range(len(mat)):
+        n_f += 1
+        n_c = 0
+        for c in range(len(mat[f])):
+            #n_c += 1
+            if n_f % 2 == 0:
+                mat [f][c] = fila_par[c]
+            else:
+                mat [f][c] = fila_impar[c]
+
+    return mat
+
         #print (" ")
 #Función que imrpime matrices
 def print_matrices (mat):
@@ -92,16 +112,23 @@ while True:
 
     elif opc == 2:
         print ("\n", "-" * 60)
-        print ("1. Números consecutivos en dirección de las columnas")
+        print ("2. Números consecutivos en dirección de las columnas")
         print ("-" * 60)
         num_filas = valid_int("\nNúmero de filas de la matriz: ")
-        matriz_1 = crear_matrices_ceros (num_filas, num_filas)
-        matriz_2_llena = llenar_matriz_2 (matriz_1)
+        matriz_2 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_2_llena = llenar_matriz_2 (matriz_2)
         print_matrices (matriz_2_llena)
         input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 3:
-        pass
+        print ("\n", "-" * 60)
+        print ("3. Números consecutivos por fila y se devuelve")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_3 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_3_llena = llenar_matriz_3 (matriz_3)
+        print_matrices (matriz_3_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 4:
         pass
