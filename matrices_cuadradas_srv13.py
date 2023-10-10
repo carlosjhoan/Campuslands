@@ -60,8 +60,8 @@ def llenar_matriz_3 (mat):
     
     fila_impar = list(range(1, len(mat) + 1))
     fila_par = list(reversed(fila_impar))
-    print ("fila_par", fila_par)
-    print ("fila_impar", fila_impar)
+    #print ("fila_par", fila_par)
+    #print ("fila_impar", fila_impar)
 
     for f in range(len(mat)):
         n_f += 1
@@ -74,6 +74,14 @@ def llenar_matriz_3 (mat):
                 mat [f][c] = fila_impar[c]
 
     return mat
+
+def llenar_matriz_45 (mat):
+    
+    for f in range(len(mat)):
+        for c in range(len(mat[f])):
+            if c == f: 
+                mat [f][c] = 1 
+    return mat, list(reversed(mat))
 
         #print (" ")
 #Función que imrpime matrices
@@ -131,10 +139,24 @@ while True:
         input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 4:
-        pass
+        print ("\n", "-" * 60)
+        print ("4. Matriz diagonal.")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_4 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_4_llena = llenar_matriz_45 (matriz_4)[0]
+        print_matrices (matriz_4_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 5:
-        pass
+        print ("\n", "-" * 60)
+        print ("5. Matriz diagonal recíproca.")
+        print ("-" * 60)
+        num_filas = valid_int("\nNúmero de filas de la matriz: ")
+        matriz_5 = crear_matrices_ceros (num_filas, num_filas)
+        matriz_5_llena = llenar_matriz_45 (matriz_5)[1]
+        print_matrices (matriz_5_llena)
+        input ("\nPresione una tecla para volver al menú... ")
 
     elif opc == 6:
         pass
