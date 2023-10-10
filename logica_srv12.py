@@ -142,7 +142,7 @@ while True:
                 lista_jugadores.append(data_jugador)
                 lista_ord = list_ganadores(lista_jugadores)
                 data_jugador = []
-                data_jugador.append(nombre)
+                
                 print ("\tTABLA DE POSICIONES")
                 print ( "-" * 35)
                 print ("  Jugador\t|\tN° Intentos")
