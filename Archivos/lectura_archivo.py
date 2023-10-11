@@ -1,3 +1,5 @@
+import shutil
+
 archivo = open("Archivos/nombres.txt", "r")
 
 
@@ -10,5 +12,6 @@ print ("\ntexto_2:\n",texto_2)
 
 texto_3 = archivo.readlines()
 print ("\ntexto3:\n",texto_3)
+archivo_nuevo = shutil.copyfile("Archivos/nombres.txt", "Archivos/nombres_nuevo.txt" )
 
 archivo.close()
