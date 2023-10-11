@@ -66,8 +66,8 @@ while True:
     opc = menu("""   \t\tRED DE FERROCARRILES
                 ********************
                1. Llenar ciudades. 
-               3. Verificar ruta directa entre 2 ciudades
-               4. SALIR
+               2. Verificar ruta directa entre 2 ciudades
+               3. SALIR
                
                >>> ¿Opción [1 - 2]? """)
 
@@ -98,13 +98,6 @@ while True:
             mat_ciudades.append(ciudad_list)
         print (mat_ciudades)
         
-        
-
-        
-
-
-
-
 
 
     elif opc == 2:
