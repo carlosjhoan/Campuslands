@@ -12,9 +12,6 @@ def cal_prod_max_ing_semana(mat_vtas, mat_prc):
     return prdo_max_vtas
 
 
-
-
-
 def ventas_dia(mat, mt_prc):
     ventas_dias = []
     vta_dia = []
@@ -34,9 +31,6 @@ def dia_mayor_venta (vtas_dias, dias_sem):
         if vtas_dias[i] == max(vtas_dias):
             
             return dias_sem[i], max(vtas_dias)
-
-        
-
 
 
 
