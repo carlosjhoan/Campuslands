@@ -29,6 +29,20 @@ def valid_nombre(msj):
         except Exception as e:
             print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
 
+#Validar ciudades de la lista ingresada
+def valid_ciudad(lst_cd, msj): #Lista de ciudades, mensaje
+    while True:
+        try:
+            nombre = input(msj)
+            if not nombre in lst_cd:
+                print ("\nEsta ciudad no se encuentra registrada. Ingrese el nombre de una ciudad que sí esté registrada")
+                continue
+
+            return nombre
+        
+        except Exception as e:
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
+
 
 #Función para crear matrices
 def crear_matrices_ceros (fil, col):
@@ -45,6 +59,13 @@ def llenar_matriz (mat):
             mat [f][c] = "------------"
         print (" ")
 
+#función que imrpime matrices
+def print_matrices (mat):
+    for f in range(len(mat)):
+        for c in range(len(mat[f])):
+            print (mat[f][c], end = "\t")
+        print (" ")
+
 #Validación de la cantidad de ciudades > 0
 def valid_int(msj):
     while True:
@@ -59,13 +80,14 @@ def valid_int(msj):
             print ("\nERROR!!! Debe ingresar un número entero.")
 
 mat_ciudades = []
+lista_ciudades = []
 
 while True:
 
     print ("\t\t********************")
     opc = menu("""   \t\tRED DE FERROCARRILES
                 ********************
-               1. Llenar ciudades. 
+               1. Registrar ciudades. 
                2. Verificar ruta directa entre 2 ciudades
                3. SALIR
                
@@ -76,32 +98,64 @@ while True:
         ciudad_dicc = {}
         enlaces = {}
         print ("\n", "-" * 60)
-        print ("1. Llenar ciudades")
+        print ("1. Registrar ciudades")
         print ("-" * 60)
-        num_ciudades = valid_int("\nCantidade de ciudades: ")
-        
+        num_ciudades = valid_int("\nCantidad de ciudades: ")
+        for j in range(num_ciudades):
+            nombre_ciudad = valid_nombre(f"\nNombre de la ciudad {j + 1}: ")
+            lista_ciudades.append(nombre_ciudad)
+
         for i in range(num_ciudades):
             ciudad_list = []
             ciudad_dicc = {}
             enlaces_list = []
             enlaces = {}
-            nombre_ciudad = valid_nombre(f"\nNombre de la ciudad {i + 1}: ")
-            ciudad_dicc["nombre"] = nombre_ciudad
+            #nombre_ciudad = valid_nombre(f"\nNombre de la ciudad {i + 1}: ")
+            ciudad_dicc["nombre"] = lista_ciudades[i]
             ciudad_list.append(ciudad_dicc)
 
             num_enlaces = valid_int(f"\n¿Con cuántas ciudades está enlazada {ciudad_dicc['nombre']}? ")
             for a in range(num_enlaces):
-                nombre_enlace = valid_nombre(f"\nEnlace N° {a + 1}: ")
+                nombre_enlace = valid_ciudad(lista_ciudades,f"\nEnlace N° {a + 1}: ")
                 enlaces_list.append(nombre_enlace)
             enlaces["enlaces"] = enlaces_list
             ciudad_list.append(enlaces)
             mat_ciudades.append(ciudad_list)
-        print (mat_ciudades)
+        print (print_matrices (mat_ciudades))
         
 
 
     elif opc == 2:
-        pass
+        print ("\n", "-" * 60)
+        print ("2. Verificar ruta directa entre 2 ciudades")
+        print ("-" * 60)
+        ciudad_origen = valid_ciudad(lista_ciudades, "\nCiudad de origen: ")
+        ciudad_destino = valid_ciudad(lista_ciudades,f"\nCiudad de destino: ")
+        indice_origen = lista_ciudades.index(ciudad_origen)
+        print (indice_origen)
+        print (mat_ciudades[indice_origen][1]["enlaces"])
+        for i in mat_ciudades[indice_origen][1]["enlaces"]:
+            #for j in i[1]["enlaces"]:
+            if i == ciudad_destino:
+                conf = 1
+                
+                
+            else:
+                conf = 2
+                
+            
+        if conf == 1:
+            print ("\n", "=" * 50)
+            print (f"Sí hay conección directa entre {ciudad_origen} y {ciudad_destino}")
+            print ( "=" * 50)
+            
+        else:
+            print ("\n", "*" * 50)
+            print (f"LO SENTIMOS!! No hay conección directa entre {ciudad_origen} y {ciudad_destino}")
+            print ( "*" * 50)
+
+        input("Presione cualquier tecla para volver al menú... ")
+
 
    
 
