@@ -1,31 +1,40 @@
 #Programa que imprime los correos en consola
 
+#Programa que muestra los correos con origen distinto
 
 
 
-archivo = open("Archivos/mbox-short.txt", "r")
+
+fd = open("Archivos/mbox-short.txt", "r")
 archivo_msj = open("Archivos/mensajes.txt", "w")
 cl = 0
-#set_email =
-for linea in archivo:
-    if linea.startswith("Subject:"):
+set_email =set()
+for linea in fd:
+    if linea.startswith("From:"):
         #cl += 1
         #email = linea.split()[1]
         #print (email)
-        archivo_msj.write(linea.split(":")[2])
+        set_email.add(linea.split()[1])
+        archivo_msj.write(f"{linea.split()[1]} enviado [ok]\n")
 
 
 
-archivo.close()
-archivo_msj.close()
-#cl = len(set_email)
+fd.close()
+
+cl = len(set_email)
 lista_alf = []
 
 print(f"Cantidad de correos de origen distinto: {cl}")
-#for email in set_email:
-    #lista_alf.append(email)
+for email in set_email:
+    lista_alf.append(email)
     #lista_alf.sorted()
     #print (email)
+for i in sorted(lista_alf, reverse = False, key = lambda x:len(x)): #imprime los correos de menor cantidad a mayor
+    print (f"{i} enviado [ok]")
+    #archivo_msj.write(f"{i} enviado [ok]\n")
 
 #for i in sorted(lista_alf, reverse = False, key = lambda x:len(x)): #imprime los correos de menor cantidad a mayor
     #print (f"{i} enviado [ok]")
+    #archivo_msj.write(f"{i} enviado [ok]\n")
+
+archivo_msj.close()

@@ -34,7 +34,7 @@ Received: (from apache@localhost)
 	for source@collab.sakaiproject.org; Sat, 5 Jan 2008 09:12:18 -0500
 Date: Sat, 5 Jan 2008 09:12:18 -0500
 X-Authentication-Warning: nakamura.uits.iupui.edu: apache set sender to stephen.marquard@uct.ac.za using -f
-To: source@collab.sakaiproject.org
+To: carlosjhoanaguilar@gmail.com
 From: stephen.marquard@uct.ac.za
 Subject: [sakai] svn commit: r39772 - content/branches/sakai_2-5-x/content-impl/impl/src/java/org/sakaiproject/content/impl
 X-Content-Type-Outer-Envelope: text/plain; charset=UTF-8

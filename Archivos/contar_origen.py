@@ -3,10 +3,11 @@
 
 
 
-fd = open("Archivos/mbox-short.txt", "r")
+archivo = open("Archivos/mbox-short.txt", "r")
+
 cl = 0
 set_email =set()
-for linea in fd:
+for linea in archivo:
     if linea.startswith("From:"):
         #cl += 1
         #email = linea.split()[1]
@@ -14,7 +15,8 @@ for linea in fd:
         set_email.add(linea.split()[1])
 
 
-fd.close()
+archivo.close()
+#archivo_msj.close()
 cl = len(set_email)
 lista_alf = []
 
