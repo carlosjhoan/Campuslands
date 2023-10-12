@@ -14,6 +14,7 @@ for linea in fd:
         set_email.add(linea.split()[1])
 
 
+
 fd.close()
 cl = len(set_email)
 lista_alf = []

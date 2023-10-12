@@ -1,0 +1,11 @@
+ r39772 - content/branches/sakai_2-5-x/content-impl/impl/src/java/org/sakaiproject/content/impl
+ r39771 - in bspace/site-manage/sakai_2-4-x/site-manage-tool/tool/src r39770 - site-manage/branches/sakai_2-5-x/site-manage-tool/tool/src/webapp/vm/sitesetup
+ r39769 - in gradebook/trunk/app/ui/src r39766 - site-manage/branches/sakai_2-4-x/site-manage-tool/tool/src/java/org/sakaiproject/site/tool
+ r39765 - in gradebook/trunk/app r39764 - in msgcntr/trunk/messageforums-app/src/java/org/sakaiproject/tool/messageforums r39763 - in msgcntr/trunk r39762 - web/trunk/web-tool/tool/src/bundle
+ r39761 - site/trunk/site-tool/tool/src/bundle
+ r39760 - in site-manage/trunk/site-manage-tool/tool/src r39759 - mailarchive/trunk/mailarchive-tool/tool/src/bundle
+ r39758 - in gradebook/trunk r39757 - in assignment/trunk r39756 - in component/branches/SAK-12166/component-api/component/src/java/org/sakaiproject/component r39755 - in sam/branches/SAK-12065 r39754 - in polls/branches/sakai_2-5-x r39753 - in polls/trunk r39752 - in podcasts/branches/sakai_2-5-x/podcasts-app/src/webapp r39751 - in podcasts/branches/sakai_2-5-x/podcasts-app/src/webapp r39750 - event/branches/SAK-6216/event-util/util/src/java/org/sakaiproject/util
+ r39749 - in bspace/site-manage/sakai_2-4-x/site-manage-tool/tool/src r39746 - in bspace/site-manage/sakai_2-4-x/site-manage-tool/tool/src r39745 - providers/trunk/cm/cm-authz-provider/src/java/org/sakaiproject/coursemanagement/impl/provider
+ r39744 - oncourse/branches/oncourse_OPC_122007
+ r39743 - gradebook/branches/oncourse_2-4-2/app/ui/src/java/org/sakaiproject/tool/gradebook/ui
+ r39742 - gradebook/branches/oncourse_2-4-2/app/ui/src/java/org/sakaiproject/tool/gradebook/ui
