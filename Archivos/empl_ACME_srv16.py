@@ -43,41 +43,105 @@ def valid_int(msj):
         except ValueError:
             print ("\nERROR!!! Debe ingresar un número entero.")
 
+#Validación del teléfono
+def valid_telefono(msj):
+    while True:
+        try:
+            tel = input(msj)
+            if not tel.isdigit():
+                print ("\nEl teléfono solo puede contener números.")
+                #input("Presiona una tecla para continuar... ")
+                continue
+            return tel
+
+        except Exception as e:
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.")
+
 #Validación de ID existente
 def verif_id (lst_empleados, msj):
     while True:
         a = 0
+        n = 0
         try:
-            id  = input(msj)
-            if not id.isdigit():
+            id_empl  = input(msj)
+            if not id_empl.isdigit():
                 print ("\nEl ID deber estar compuesto solo de números.\n\n***VUELVA A INGRESAR EL ID, ESTA VEZ DE MANERA CORRECTA***")
                 continue
 
-            for i in list_productos:
-                if i["id"] == id:
+            for i in lst_empleados:
+                if list(i.keys())[n] == id_empl:
+                    n += 1
                     a = 1
+
                 else:
                     pass
             if a == 1:
-                print ("\nEste ID ya está asignado a otro producto.\n\nIntente con un ID diferente.")
+                print ("\nEste ID ya está asignado a otro empleado.\n\nIntente con un ID diferente.")
                 continue
-            return id
+            return id_empl
+        
         except Exception as e:
             print ("ERROR!!! Se ha producido un error. Vuelva a intentarlo!!!", e)
 
-#Función que me permite abrir o crear un archivo
-def cregistrar_empleado (lst_empleados, ruta):
+#Validación del nombre
+def valid_sexo(msj):
+    while True:
+        try:
+            sex = input(msj)
+            if not (sex == "m" or sex == "M" or sex == "F" or sex == "f"):
+                print ("\nSolo se vale ingresar las letras M o F para indicar el sexo.")
+                #input("Presiona una tecla para continuar... ")
+                continue
+            return sex
+
+        except Exception as e:
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.")
+
+#Función que me permite verificar si el archivo existe
+def verificar_archivo (ruta):
     try:
         archivo = open(ruta, "r")
-        return archivo
+        archivo.close
+        return True
 
     except:
+        
         archivo = open(ruta, "w")
-        return archivo
+        archivo.close()
+        return False
+
+#Esta función registra el empleado  
+def registrar_empleado (dicc_empl, ruta):
+    if verificar_archivo (ruta) == True:
+        archivo = open(ruta, "r")
+        if json.load(archivo) == "":
+            lista_empleados = []
+            lista_empleados.append (dicc_empl)           
+            #archivo.close()
+
+        else:
+            lista_empleados = json.load(archivo)
+            lista_empleados.append(dicc_empl)
+            #archivo.close()
+
+        archivo = open(ruta, "w")
+        json.dump(lista_empleados, archivo)
+        print ("\n", "-*" * 40)
+        print ("El empleado se ha registrado correctamente")
+        print ( "-*" * 40)
+            
+        return lista_empleados
+
+    else:
+        lista_empleados = []
+        lista_empleados.append(dicc_empleado)
+
+    
+
     
 
 
-ruta = "Archivos/empl_ACME_srv16.py"
+ruta = "Archivos/empl_ACME_srv16.json"
 lista_empleados = []
 #Aquí se encuentra el desarrollo del programa
 while True:
@@ -99,11 +163,15 @@ while True:
         dicc_empleado = {}
         print ("\n      1. AGREGAR EMPLEADO")
         print ("=" * 30)
-        id = verif_id("\nID: ")
+        id_empl = verif_id(lista_empleados, "\nID: ")
         nombre = valid_nombre("NOMBRE: ")
         edad = valid_int("EDAD: ")
         sexo = valid_sexo("SEXO: ")
-        telefono = valid_telef("TELÉFONO: ")
+        telefono = valid_telefono("TELÉFONO: ")
+        dicc_empleado[id_empl] = {"nombre" : nombre, "edad" : edad, "sexo" : sexo, "telefono" : telefono}
+        verificar_archivo (ruta) #Verificación o creación del archivo
+
+
     
 
 
