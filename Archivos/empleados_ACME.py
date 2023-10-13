@@ -135,7 +135,7 @@ while True:
     elif opc == 2:
         pass
 
-    elif opc == 2:
+    elif opc == 3:
         #pass
         borrar_personal(lista_personal, rut_file)
 
