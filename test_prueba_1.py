@@ -66,7 +66,7 @@ def buscar_id(lst, msj):
             print ("ERROR!!! Se ha producido un error. Vuelva a intentarlo!!!", e) 
 
 #Validación de ID existente
-def verif_id (list_productos, msj):
+def verif_id (lst_empleados, msj):
     while True:
         a = 0
         try:
@@ -86,6 +86,8 @@ def verif_id (list_productos, msj):
             return id
         except Exception as e:
             print ("ERROR!!! Se ha producido un error. Vuelva a intentarlo!!!", e)
+
+
 
 #validación nombre del producto
 def valid_nombre(msj):
