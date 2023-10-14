@@ -69,7 +69,7 @@ def verif_id (lst_empleados, msj):
                 continue
 
             for i in lst_empleados:
-                if list(i.keys())[n] == id_empl:
+                if list(i.keys())[0] == id_empl:
                     n += 1
                     a = 1
 
@@ -101,28 +101,26 @@ def valid_sexo(msj):
 def verificar_archivo (ruta):
     try:
         archivo = open(ruta, "r")
+        lista_empleados = json.load(archivo)
         archivo.close
-        return True
+        return lista_empleados
 
     except:
         
         archivo = open(ruta, "w")
+        json.dump([], archivo)
         archivo.close()
-        return False
+        archivo = open(ruta, "r")
+        lista_empleados = json.load(archivo)
+        archivo.close
+        return lista_empleados
 
 #Esta función registra el empleado  
 def registrar_empleado (dicc_empl, ruta):
-    if verificar_archivo (ruta) == True:
         archivo = open(ruta, "r")
-        if json.load(archivo) == "":
-            lista_empleados = []
-            lista_empleados.append (dicc_empl)           
-            #archivo.close()
-
-        else:
-            lista_empleados = json.load(archivo)
-            lista_empleados.append(dicc_empl)
-            #archivo.close()
+        lista_empleados = json.load(archivo)
+        archivo.close()
+        lista_empleados.append(dicc_empl)
 
         archivo = open(ruta, "w")
         json.dump(lista_empleados, archivo)
@@ -130,11 +128,8 @@ def registrar_empleado (dicc_empl, ruta):
         print ("El empleado se ha registrado correctamente")
         print ( "-*" * 40)
             
-        return lista_empleados
+        #return lista_empleados
 
-    else:
-        lista_empleados = []
-        lista_empleados.append(dicc_empleado)
 
     
 
@@ -142,7 +137,7 @@ def registrar_empleado (dicc_empl, ruta):
 
 
 ruta = "Archivos/empl_ACME_srv16.json"
-lista_empleados = []
+#lista_empleados = []
 #Aquí se encuentra el desarrollo del programa
 while True:
     print ("\n", "=" * 30)
@@ -159,7 +154,10 @@ while True:
                 """)
 
     if opc == 1:
-        lst_empleado = []
+        
+        verificar_archivo(ruta) #Verificación o creación del archivo
+        lista_empleados = verificar_archivo(ruta)
+        #print (lista_empleados)
         dicc_empleado = {}
         print ("\n      1. AGREGAR EMPLEADO")
         print ("=" * 30)
@@ -169,7 +167,8 @@ while True:
         sexo = valid_sexo("SEXO: ")
         telefono = valid_telefono("TELÉFONO: ")
         dicc_empleado[id_empl] = {"nombre" : nombre, "edad" : edad, "sexo" : sexo, "telefono" : telefono}
-        verificar_archivo (ruta) #Verificación o creación del archivo
+        
+        registrar_empleado (dicc_empleado, ruta)
 
 
     
