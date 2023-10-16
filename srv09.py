@@ -90,8 +90,6 @@ def ingresar_id(msj):
                 print ("\nEl ID solo puede contener números.")
                 #input("Presiona una tecla para continuar... ")
                 continue
-            
-           
 
             
             return id

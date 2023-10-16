@@ -83,6 +83,23 @@ def verif_id (lst_empleados, msj):
         except Exception as e:
             print ("ERROR!!! Se ha producido un error. Vuelva a intentarlo!!!", e)
 
+#Función permite ingresar ID
+def ingresar_id(msj):
+    while True:
+        try:
+            
+            id = input(msj)
+            if not id.isdigit():
+                print ("\nEl ID solo puede contener números.")
+                #input("Presiona una tecla para continuar... ")
+                continue
+            
+            return id
+
+        except Exception as e:
+            print ("Ha ocurrido un ERROR!!!")
+            input ("Presion una tecla pra continuar... ")
+
 
 #Función que muestra el nombre de los empleados
 def nomb_empleados(lst_empleados): 
@@ -199,6 +216,8 @@ while True:
             n += 1
             print (f"\t{n}    |   {i[0]}              \t|\t{i[1]}")
             print ("   ", "-" * 50)
+        
+        id_buscar = ingresar_id("Ingrese el id del empleado que desea buscar: ")
 
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
