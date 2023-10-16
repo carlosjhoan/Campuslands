@@ -192,11 +192,13 @@ while True:
         print ("=" * 30)
         n = 0
         list_nomb_id = nomb_empleados(lista_empleados)
-        print ("\n", "-" * 30)
-        print ("\tIND\t|\tNOMBRE\t|\tID")
+        print ("\n    ", "-" * 50)
+        print ("       IND   |      NOMBRE\t\t|\tID")
+        print ("   ", "=" * 50)
         for i in list_nomb_id:  
             n += 1
-            print (f"\t{n}\t|  {i[0]}\t|\t{i[1]}")
+            print (f"\t{n}    |   {i[0]}              \t|\t{i[1]}")
+            print ("   ", "-" * 50)
 
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
