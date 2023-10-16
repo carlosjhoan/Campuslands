@@ -170,12 +170,6 @@ while True:
         
         registrar_empleado (dicc_empleado, ruta)
 
-
-    
-
-
-
-
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
                       s -- Sí, deseo salir!!
