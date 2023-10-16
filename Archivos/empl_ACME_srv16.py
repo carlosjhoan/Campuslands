@@ -28,7 +28,7 @@ def valid_nombre(msj):
             return nombre
 
         except Exception as e:
-            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.")
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
 
 #Validación de un número entero
 def valid_int(msj):
@@ -124,9 +124,10 @@ def registrar_empleado (dicc_empl, ruta):
 
         archivo = open(ruta, "w")
         json.dump(lista_empleados, archivo)
-        print ("\n", "-*" * 40)
-        print ("El empleado se ha registrado correctamente")
-        print ( "-*" * 40)
+        print ("\n", "-*" * 25)
+        print ("| El empleado se ha registrado correctamente |")
+        print ( "-*" * 25)
+        input ("\nPresione cualquier tecla para volver al menú principal... ")
             
         #return lista_empleados
 
@@ -134,23 +135,22 @@ def registrar_empleado (dicc_empl, ruta):
     
 
     
-
+#DESARROLLO DEL PROGRAMA
 
 ruta = "Archivos/empl_ACME_srv16.json"
 #lista_empleados = []
-#Aquí se encuentra el desarrollo del programa
 while True:
-    print ("\n", "=" * 30)
-    opc = menu("""NÓMINA ACME
-                    MENÚ
-               ===================
+    print ("\n\t      ", "=" * 20)
+    opc = menu("""\t\t    NÓMINA ACME
+                        MENÚ
+               ====================
 
                 1 -- Agregar empleado.
                 2 -- Modificar empleado.
                 3 -- Eliminar empleado.
                 4 -- Buscar empleado.
                 5 -- SALIR.
-                            >>>Elegir una opción [1 - 8]: 
+                            >>>Elegir una opción [1 - 5]: 
                 """)
 
     if opc == 1:
@@ -164,7 +164,7 @@ while True:
         id_empl = verif_id(lista_empleados, "\nID: ")
         nombre = valid_nombre("NOMBRE: ")
         edad = valid_int("EDAD: ")
-        sexo = valid_sexo("SEXO: ")
+        sexo = valid_sexo("SEXO [M/F]: ")
         telefono = valid_telefono("TELÉFONO: ")
         dicc_empleado[id_empl] = {"nombre" : nombre, "edad" : edad, "sexo" : sexo, "telefono" : telefono}
         
