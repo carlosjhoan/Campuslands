@@ -83,7 +83,23 @@ def verif_id (lst_empleados, msj):
         except Exception as e:
             print ("ERROR!!! Se ha producido un error. Vuelva a intentarlo!!!", e)
 
-#Validación del nombre
+
+#Función que muestra el nombre de los empleados
+def nomb_empleados(lst_empleados): 
+    n = 0
+    lst_vac = []
+    nom_id = []
+    for i in lst_empleados:
+        id_lista = list(i.keys())[0]
+        n += 1
+        nom_id.append(i[f"{id_lista}"]["nombre"])
+        nom_id.append(id_lista)
+        lst_vac.append(nom_id)
+        nom_id = []
+        #print (f"{n} -- {i[0]}")
+    return lst_vac
+
+#Validación del sexo
 def valid_sexo(msj):
     while True:
         try:
@@ -169,6 +185,15 @@ while True:
         dicc_empleado[id_empl] = {"nombre" : nombre, "edad" : edad, "sexo" : sexo, "telefono" : telefono}
         
         registrar_empleado (dicc_empleado, ruta)
+
+    elif opc == 2:
+        print ("\n      2. MODIFICAR EMPLEADO")
+        print ("=" * 30)
+        n = 0
+        lista_empleados = nomb_empleados(lista_empleados)
+        for i in lista_empleados:  
+            n += 1
+            print (f"{n} -- {i[0]} id: {i[1]}")
 
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
