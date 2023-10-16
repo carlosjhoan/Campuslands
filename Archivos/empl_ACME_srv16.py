@@ -187,13 +187,16 @@ while True:
         registrar_empleado (dicc_empleado, ruta)
 
     elif opc == 2:
+        lista_empleados = verificar_archivo(ruta)
         print ("\n      2. MODIFICAR EMPLEADO")
         print ("=" * 30)
         n = 0
-        lista_empleados = nomb_empleados(lista_empleados)
-        for i in lista_empleados:  
+        list_nomb_id = nomb_empleados(lista_empleados)
+        print ("\n", "-" * 30)
+        print ("\tIND\t|\tNOMBRE\t|\tID")
+        for i in list_nomb_id:  
             n += 1
-            print (f"{n} -- {i[0]} id: {i[1]}")
+            print (f"\t{n}\t|  {i[0]}\t|\t{i[1]}")
 
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
