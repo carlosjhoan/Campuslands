@@ -16,6 +16,20 @@ def menu(msj):
         except ValueError:
             print ("ERROR !!! Debe ingresar un número entero.")
 
+#Validación del menú de modificación de la información del empleado
+def menu_modif(msj):
+    while True:
+        try:
+            opc = int(input(msj))
+            if opc < 1 or opc > 5:
+                print ("Debe ser un numero de 1 a 5.")
+                
+                continue
+            return opc
+        
+        except ValueError:
+            print ("ERROR !!! Debe ingresar un número entero.")
+
 #Validación del nombre
 def valid_nombre(msj):
     while True:
@@ -88,13 +102,13 @@ def ingresar_id(msj):
     while True:
         try:
             
-            id = input(msj)
+            id_buscar = input(msj)
             if not id.isdigit():
                 print ("\nEl ID solo puede contener números.")
                 #input("Presiona una tecla para continuar... ")
                 continue
             
-            return id
+            return id_buscar
 
         except Exception as e:
             print ("Ha ocurrido un ERROR!!!")
@@ -217,7 +231,42 @@ while True:
             print (f"\t{n}    |   {i[0]}              \t|\t{i[1]}")
             print ("   ", "-" * 50)
         
-        id_buscar = ingresar_id("Ingrese el id del empleado que desea buscar: ")
+        id_modif = ingresar_id("Ingrese el id del empleado que desea buscar: ")
+
+        opc_modif = menu_modif("""Qué desea modificar?
+                                1 -- Nombre
+                                2 -- Edad
+                                3 -- Sexo [M/F]
+                                4 -- Teléfono
+                                5 -- Dejar todo igual
+                               
+                               >>> ¿Opción [1 - 5]? """)
+        cont = 0
+        for j in lista_empleados:
+            if list(j.keys())[0] == id_modif:
+                cont += 1 
+                 
+            
+
+        if opc_modif == 1:
+            lista_empleados[cont - 1][f"{id_modif}"]["nombre"] =  valid_nombre("NUEVO NOMBRE: ")
+
+        elif opc_modif == 2:
+            lista_empleados[cont - 1][f"{id_modif}"]["edad"] =  valid_int("NUEVA EDAD: ")
+        
+        elif opc_modif == 3:
+            lista_empleados[cont - 1][f"{id_modif}"]["sexo"] = valid_sexo("NUEVO SEXO: ")
+
+        elif opc_modif == 4:
+            lista_empleados[cont - 1][f"{id_modif}"]["sexo"] = valid_telefono("NUEVO TELÉFONO: ")
+
+
+        else:
+            print ("\nTodo quedará igual.")
+            pass
+        input ("\nPresione cualquier tecla para volver al menú... ")
+
+        
 
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
