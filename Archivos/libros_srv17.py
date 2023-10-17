@@ -77,9 +77,9 @@ def ingresar_id(msj):
         try:
             
             id_buscar = input(msj)
-            if not id.isdigit():
+            if not id_buscar.isdigit():
                 print ("\nEl ID solo puede contener números.")
-                #input("Presiona una tecla para continuar... ")
+                
                 continue
             
             return id_buscar
@@ -88,6 +88,25 @@ def ingresar_id(msj):
             print ("Ha ocurrido un ERROR!!!")
             input ("Presion una tecla para continuar... ")
 
+def consultar_libro(id_libro, lst_libros):
+    a = 0
+    for i in lst_libros:
+        if id_libro == list(i.keys())[0]:
+            print("\n", "=" * 30)
+            print ("\tINFORMACIÓN DEL LIBRO")
+            print ("=" * 30)
+            print (f"Título: {i[f'{id_libro}']['titulo']}")
+            print (f"Autor: {i[f'{id_libro}']['autor']}")
+            print (f"Precio: ${i[f'{id_libro}']['precio']:,}")
+            print ("-" * 30)
+            a = 1
+        
+    if a == 0:
+        print("\n", "*" * 50)
+        print ("AVISO: Este libro no se encuentra registrado.")
+        print("*" * 50)
+        
+        
 
 
 #Función que muestra el nombre y ID de los libros. Utilizar en CONSULTAR Libro
@@ -95,15 +114,24 @@ def nomb_libros(lst_libros):
     n = 0
     lst_vac = []
     nom_id = []
+    lst_id = []
+    list_cons = []
     for i in lst_libros:
         id_lista = list(i.keys())[0]
-        n += 1
+        lst_id.append(int(id_lista))
+        lst_id = sorted(lst_id)
+        #n += 1
         nom_id.append(i[f"{id_lista}"]["titulo"])
         nom_id.append(id_lista)
         lst_vac.append(nom_id)
         nom_id = []
         #print (f"{n} -- {i[0]}")
-    return lst_vac
+    for j in lst_id:
+        for k in lst_vac:
+            if j == k[1]:
+                list_cons.append(k[0])
+                list_cons.append(j)
+    return lst_cons
 
 
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -186,7 +214,9 @@ while True:
             print (f"\t{n}    |   {i[0]}            \t|\t{i[1]}")
             print ("   ", "-" * 65)
         
-        #id_modif = ingresar_id("Ingrese el id del empleado que desea buscar: ")
+        id_cons = ingresar_id("Ingrese el id del empleado que desea buscar: ")
+        consultar_libro(id_cons, lista_libros)
+        input ("\nPresione cualquier tyecla para  volver al menú principal... ")
 
 
     
