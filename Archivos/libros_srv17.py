@@ -138,6 +138,8 @@ def registrar_libro (dicc_libro, ruta):
         print ( "-*" * 25)
         input ("\nPresione cualquier tecla para volver al menú principal... ")
 
+
+
 #DESARROLLO DEL PROGRAMA
 
 ruta = "Archivos/libros_srv17.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
