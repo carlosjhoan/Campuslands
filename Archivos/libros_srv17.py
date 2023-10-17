@@ -167,6 +167,8 @@ while True:
         
         registrar_libro(dicc_libro, ruta)
 
+    elif opc == 2:
+        
 
 
     
