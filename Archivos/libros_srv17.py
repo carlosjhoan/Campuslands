@@ -88,20 +88,23 @@ def ingresar_id(msj):
             print ("Ha ocurrido un ERROR!!!")
             input ("Presion una tecla para continuar... ")
 
+
+
 #Función que muestra el nombre y ID de los libros. Utilizar en CONSULTAR Libro
-def nomb_empleados(lst_libros): 
+def nomb_libros(lst_libros): 
     n = 0
     lst_vac = []
     nom_id = []
     for i in lst_libros:
         id_lista = list(i.keys())[0]
         n += 1
-        nom_id.append(i[f"{id_lista}"]["nombre"])
+        nom_id.append(i[f"{id_lista}"]["titulo"])
         nom_id.append(id_lista)
         lst_vac.append(nom_id)
         nom_id = []
         #print (f"{n} -- {i[0]}")
     return lst_vac
+
 
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
 def verificar_archivo (ruta):
@@ -168,7 +171,20 @@ while True:
         registrar_libro(dicc_libro, ruta)
 
     elif opc == 2:
+        lista_libros = verificar_archivo(ruta)
+        print ("\n      2. CONSULTAR LIBRO")
+        print ("=" * 30)
+        n = 0
+        list_nomb_id = nomb_libros(lista_libros)
+        print ("\n    ", "-" * 65)
+        print ("       IND   |      NOMBRE\t\t\t\t|\tID")
+        print ("   ", "=" * 65)
+        for i in list_nomb_id:  
+            n += 1
+            print (f"\t{n}    |   {i[0]}            \t|\t{i[1]}")
+            print ("   ", "-" * 65)
         
+        #id_modif = ingresar_id("Ingrese el id del empleado que desea buscar: ")
 
 
     
