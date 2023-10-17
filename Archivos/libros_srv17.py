@@ -52,10 +52,7 @@ def valid_nombre(msj):
     while True:
         try:
             nombre = input(msj)
-            if not nombre.isalnum():
-                print ("\nEl nombre solo puede contener números y letras.")
-                #input("Presiona una tecla para continuar... ")
-                continue
+
             return nombre
 
         except Exception as e:
@@ -91,6 +88,20 @@ def ingresar_id(msj):
             print ("Ha ocurrido un ERROR!!!")
             input ("Presion una tecla para continuar... ")
 
+#Función que muestra el nombre y ID de los libros. Utilizar en CONSULTAR Libro
+def nomb_empleados(lst_libros): 
+    n = 0
+    lst_vac = []
+    nom_id = []
+    for i in lst_libros:
+        id_lista = list(i.keys())[0]
+        n += 1
+        nom_id.append(i[f"{id_lista}"]["nombre"])
+        nom_id.append(id_lista)
+        lst_vac.append(nom_id)
+        nom_id = []
+        #print (f"{n} -- {i[0]}")
+    return lst_vac
 
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
 def verificar_archivo (ruta):
@@ -109,3 +120,64 @@ def verificar_archivo (ruta):
         lista_libros = json.load(archivo)
         archivo.close
         return lista_libros
+    
+#Esta función registra el empleado  
+def registrar_libro (dicc_libro, ruta):
+        archivo = open(ruta, "r")
+        lista_libros = json.load(archivo)
+        archivo.close()
+        lista_libros.append(dicc_libro)
+
+        archivo = open(ruta, "w")
+        json.dump(lista_libros, archivo)
+        print ("\n", "-*" * 25)
+        print ("| El libro se ha registrado correctamente |")
+        print ( "-*" * 25)
+        input ("\nPresione cualquier tecla para volver al menú principal... ")
+
+#DESARROLLO DEL PROGRAMA
+
+ruta = "Archivos/libros_srv17.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
+#lista_empleados = []
+while True:
+    print ("\n\t      ", "=" * 20)
+    opc = menu("""\t\t    LIBRERÍA
+                        MENÚ
+               ====================
+
+                1 -- Insertar libro.
+                2 -- Consultar libro.
+                3 -- SALIR.
+                            >>>Elegir una opción [1 - 3]: 
+                """)
+
+    if opc == 1:
+        
+        verificar_archivo(ruta) #Verificación o creación del archivo
+        lista_libros = verificar_archivo(ruta)
+        #print (lista_empleados)
+        dicc_libro = {}
+        print ("\n      1. INSERTAR LIBRO")
+        print ("=" * 30)
+        id_libro = verif_id(lista_libros, "\nID: ")
+        titulo = valid_nombre("TÍTULO DEL LIBRO: ")
+        autor = valid_nombre("NOMBRE DEL AUTOR: ")
+        precio = valid_precio("PRECIO ($): ")
+        dicc_libro[id_libro] = {"titulo" : titulo, "autor" : autor, "precio" : precio}
+        
+        registrar_libro(dicc_libro, ruta)
+
+
+
+    
+    else: 
+        si_no = input("""\n¿Está seguro que desea salir? 
+                      s -- Sí, deseo salir!!
+                      n -- No, deseo continuar!!!""")
+        if si_no == "s" or si_no == "S":
+            print ("\nEsperamos haberle sido de utilidad.")
+            input ("\nPresione cualquier tecla para SALIR... ")
+            break
+        else:
+            input ("\nPresione cualquier tecla para volver al menú... ")
+            pass
