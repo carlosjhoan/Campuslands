@@ -47,16 +47,27 @@ def verif_id (lst_libros, msj):
         except Exception as e:
             print ("ERROR!!! Se ha producido un error. Vuelva a intentarlo!!!", e)
 
-#Validación del Título del autor y el nombre del Libros
-def valid_nombre(msj):
+#Validación del titulo
+def valid_titulo(msj):
+    while True:
+        try:
+            titulo = input(msj)
+
+            return titulo
+
+        except Exception as e:
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
+
+#Validación del autor
+def valid_autor(msj):
     while True:
         try:
             nombre = input(msj)
-
             return nombre
 
         except Exception as e:
             print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
+
 
 #Validación de un número entero
 def valid_precio(msj):
@@ -93,7 +104,7 @@ def consultar_libro(id_libro, lst_libros):
     for i in lst_libros:
         if id_libro == list(i.keys())[0]:
             print("\n", "=" * 30)
-            print ("\tINFORMACIÓN DEL LIBRO")
+            print ("    INFORMACIÓN DEL LIBRO")
             print ("=" * 30)
             print (f"Título: {i[f'{id_libro}']['titulo']}")
             print (f"Autor: {i[f'{id_libro}']['autor']}")
@@ -120,18 +131,24 @@ def nomb_libros(lst_libros):
         id_lista = list(i.keys())[0]
         lst_id.append(int(id_lista))
         lst_id = sorted(lst_id)
-        #n += 1
-        nom_id.append(i[f"{id_lista}"]["titulo"])
+        tit = i[f"{id_lista}"]["titulo"]
+        if len(tit) < 7:
+            tit = tit + "              "
+        nom_id.append(tit)
         nom_id.append(id_lista)
         lst_vac.append(nom_id)
         nom_id = []
         #print (f"{n} -- {i[0]}")
     for j in lst_id:
         for k in lst_vac:
-            if j == k[1]:
-                list_cons.append(k[0])
-                list_cons.append(j)
-    return lst_cons
+            if str(j) == k[1]:
+                
+                nom_id.append(k[0])
+                nom_id.append(k[1])
+                list_cons.append(nom_id)
+                nom_id = []
+
+    return list_cons
 
 
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -174,7 +191,7 @@ ruta = "Archivos/libros_srv17.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
 #lista_empleados = []
 while True:
     print ("\n\t      ", "=" * 20)
-    opc = menu("""\t\t    LIBRERÍA
+    opc = menu("""\t\t      LIBRERÍA
                         MENÚ
                ====================
 
@@ -193,8 +210,8 @@ while True:
         print ("\n      1. INSERTAR LIBRO")
         print ("=" * 30)
         id_libro = verif_id(lista_libros, "\nID: ")
-        titulo = valid_nombre("TÍTULO DEL LIBRO: ")
-        autor = valid_nombre("NOMBRE DEL AUTOR: ")
+        titulo = valid_titulo("TÍTULO DEL LIBRO: ")
+        autor = valid_autor("NOMBRE DEL AUTOR: ")
         precio = valid_precio("PRECIO ($): ")
         dicc_libro[id_libro] = {"titulo" : titulo, "autor" : autor, "precio" : precio}
         
@@ -211,7 +228,7 @@ while True:
         print ("   ", "=" * 65)
         for i in list_nomb_id:  
             n += 1
-            print (f"\t{n}    |   {i[0]}            \t|\t{i[1]}")
+            print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
             print ("   ", "-" * 65)
         
         id_cons = ingresar_id("Ingrese el id del empleado que desea buscar: ")
