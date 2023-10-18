@@ -1,0 +1,5 @@
+Funciones que vamos utilizando
+1. Menú: 
+"""1 -- jugar
+   2 -- Consultar la tabla
+   3 -- terminar juego
