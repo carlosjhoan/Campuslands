@@ -7,19 +7,35 @@
 import json
 
 
-#Función del menú
+#Función del menú principal
 def menu(msj):
     while True:
         try:
             opc = int(input(msj))
-            if opc < 1 or opc > 3:
-                print ("Debe ser un numero de 1 a 3.")
+            if opc < 1 or opc > 6:
+                print ("Debe ser un numero de 1 a 6.")
                 
                 continue
             return opc
         
         except ValueError:
             print ("ERROR !!! Debe ingresar un número entero.")
+
+#Función del menú para editar información del libro
+def menu_modif(msj):
+    while True:
+        try:
+            opc = int(input(msj))
+            if opc < 1 or opc > 4:
+                print ("Debe ser un numero de 1 a 4.")
+                
+                continue
+            return opc
+        
+        except ValueError:
+            print ("ERROR !!! Debe ingresar un número entero.")
+
+
 
 #Validación de ID existente
 def verif_id (lst_libros, msj):
@@ -132,8 +148,12 @@ def nomb_libros(lst_libros):
         lst_id.append(int(id_lista))
         lst_id = sorted(lst_id)
         tit = i[f"{id_lista}"]["titulo"]
-        if len(tit) < 7:
+        if len(tit) <= 10:
             tit = tit + "              "
+        
+        elif len(tit) > 10 and len(tit) < 20:
+            tit = tit + "        "
+
         nom_id.append(tit)
         nom_id.append(id_lista)
         lst_vac.append(nom_id)
@@ -169,20 +189,42 @@ def verificar_archivo (ruta):
         archivo.close
         return lista_libros
     
-#Esta función registra el empleado  
+#Esta función registra el libro  
 def registrar_libro (dicc_libro, ruta):
+        list_id = []
+        list_libros_ord = []
         archivo = open(ruta, "r")
         lista_libros = json.load(archivo)
         archivo.close()
         lista_libros.append(dicc_libro)
+        for i in lista_libros:
+            id_i = list(i.keys())[0]
+            list_id.append(int(id_i))
+        list_id = sorted(list_id)
+
+        for j in list_id:
+            for k in lista_libros:
+                if str(j) == list(k.keys())[0]:
+                    list_libros_ord.append(k)
+
+
 
         archivo = open(ruta, "w")
-        json.dump(lista_libros, archivo)
+        json.dump(list_libros_ord, archivo)
+        archivo.close()
         print ("\n", "-*" * 25)
         print ("| El libro se ha registrado correctamente |")
         print ( "-*" * 25)
         input ("\nPresione cualquier tecla para volver al menú principal... ")
 
+#Esta función registra el libro  
+def cargar_libro (lsta_libros, ruta):
+
+
+        archivo = open(ruta, "w")
+        json.dump(lsta_libros, archivo)
+        archivo.close()
+        
 
 
 #DESARROLLO DEL PROGRAMA
@@ -197,8 +239,11 @@ while True:
 
                 1 -- Insertar libro.
                 2 -- Consultar libro.
-                3 -- SALIR.
-                            >>>Elegir una opción [1 - 3]: 
+                3 -- Editar libro.
+                4 -- Borrar libro.
+                5 -- Listar libros 
+                6 -- SALIR.
+                            >>>Elegir una opción [1 - 6]: 
                 """)
 
     if opc == 1:
@@ -231,9 +276,76 @@ while True:
             print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
             print ("   ", "-" * 65)
         
-        id_cons = ingresar_id("Ingrese el id del empleado que desea buscar: ")
+        id_cons = ingresar_id("Ingrese el id del libro que desea buscar: ")
         consultar_libro(id_cons, lista_libros)
         input ("\nPresione cualquier tyecla para  volver al menú principal... ")
+
+    elif opc == 3:
+        lista_libros = verificar_archivo(ruta)
+        print (lista_libros[0]["13"]["precio"])
+        print ("\n      3. EDITAR LIBRO")
+        print ("=" * 30)
+        
+        list_nomb_id = nomb_libros(lista_libros)
+        print ("\n    ", "-" * 65)
+        print ("       IND   |      NOMBRE\t\t\t\t|\tID")
+        print ("   ", "=" * 65)
+        n = 0
+        for i in list_nomb_id:  
+            n += 1
+            print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
+            print ("   ", "-" * 65)
+        
+        id_edit = ingresar_id("Ingrese el ID del libro que desea editar: ")
+
+        opc_modif = menu_modif("""Qué desea editarar?
+                                1 -- Titulo
+                                2 -- Autor
+                                3 -- Precio
+                                4 -- Dejar todo igual
+                               
+                               >>> ¿Opción [1 - 4]? """)
+
+        cont = 0
+        for j in lista_libros:
+            a = 0
+            cont += 1
+            if list(j.keys())[0] == id_edit:
+                cont_id = cont 
+                #print(cont)       
+            
+
+        if opc_modif == 1:
+            lista_libros[cont_id-1][id_edit]["titulo"] =  valid_titulo("NUEVO TÍTULO: ")
+            cargar_libro (lista_libros, ruta)
+            print ("\n", "-*" * 15)
+            print (f"se ha editado el título del libro con ID {id_edit}!!")
+            print ( "-*" * 15)
+            input ("\nPresione cualquier tecla para volver al menú principal... ")
+
+        elif opc_modif == 2:
+            lista_libros[cont_id-1][id_edit]["autor"] =  valid_autor("NUEVA AUTOR: ")
+            cargar_libro (lista_libros, ruta)
+            print ("\n", "-*" * 25)
+            print (f"se ha editado el nombre del autor del libro con ID {id_edit}!!")
+            print ( "-*" * 25)
+            input ("\nPresione cualquier tecla para volver al menú principal... ")
+        
+        elif opc_modif == 3:
+            lista_libros[cont_id-1][id_edit]["precio"] = valid_precio("NUEVO PRECIO: ")
+            cargar_libro (lista_libros, ruta)
+            print ("\n", "-*" * 15)
+            print (f"se ha editado el precio del libro con ID {id_edit}!!")
+            print ( "-*" * 15)
+            input ("\nPresione cualquier tecla para volver al menú principal... ")
+        
+        else:
+            print ("\n", "-/" * 20)
+            print ("\nLa información de este libro no se editará.")
+            print ("-/" * 20)
+            input ("\nPresione cualquier tecla para volver al menú principal... ")
+
+
 
 
     
