@@ -207,8 +207,6 @@ def registrar_libro (dicc_libro, ruta):
                 if str(j) == list(k.keys())[0]:
                     list_libros_ord.append(k)
 
-
-
         archivo = open(ruta, "w")
         json.dump(list_libros_ord, archivo)
         archivo.close()
@@ -226,6 +224,12 @@ def cargar_libro (lsta_libros, ruta):
         archivo.close()
         
 
+#Función que permite eliminar un libro de la lista
+def eliminar_libro(id_libro, lsta_libros):
+    for i in lsta_libros:
+        if id_libro == list(i.keys())[0]:
+            lsta_libros.remove(i)
+    return lsta_libros
 
 #DESARROLLO DEL PROGRAMA
 
@@ -282,7 +286,6 @@ while True:
 
     elif opc == 3:
         lista_libros = verificar_archivo(ruta)
-        print (lista_libros[0]["13"]["precio"])
         print ("\n      3. EDITAR LIBRO")
         print ("=" * 30)
         
@@ -340,12 +343,34 @@ while True:
             input ("\nPresione cualquier tecla para volver al menú principal... ")
         
         else:
-            print ("\n", "-/" * 20)
+            print ("\n", "-+" * 20)
             print ("\nLa información de este libro no se editará.")
-            print ("-/" * 20)
+            print ("-+" * 20)
             input ("\nPresione cualquier tecla para volver al menú principal... ")
 
+    elif opc == 4:
+        lista_libros = verificar_archivo(ruta)
+        print ("\n      3. BORRAR LIBRO")
+        print ("=" * 30)
 
+        list_nomb_id = nomb_libros(lista_libros)
+        print ("\n    ", "-" * 65)
+        print ("       IND   |      NOMBRE\t\t\t\t|\tID")
+        print ("   ", "=" * 65)
+        n = 0
+        for i in list_nomb_id:  
+            n += 1
+            print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
+            print ("   ", "-" * 65)
+
+        id_borrar = ingresar_id("Ingrese el ID del libro que desea eliminar: ")
+        lista_libros = eliminar_libro(id_borrar, lista_libros)
+        cargar_libro (lista_libros, ruta)
+        print ("\n", "-*" * 15)
+        print (f"se ha borrado el libro con ID {id_borrar}!!")
+        print ( "-*" * 15)
+        input ("\nPresione cualquier tecla para volver al menú principal... ")
+        
 
 
     
