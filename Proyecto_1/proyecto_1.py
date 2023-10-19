@@ -270,7 +270,6 @@ while True:
                 mov_player_1 = valid_turno (lista_casillas, f"""\t   ¿{player_1}, en qué casilla marcas? \n\t   -*-*-*-*-*-*-*-*-*-*-*-*-*-*-* """)
                 lista_casillas[mov_player_1-1] = 0
                 matriz_llena = marcar_pos (matriz_llena, mov_player_1, fich_player_1)
-                #mostrar_tablero (matriz_llena)
                 if autorizar_juego(lista_casillas) == False:
                     p2_on_off = "on"
                     p1_on_off = "off"
