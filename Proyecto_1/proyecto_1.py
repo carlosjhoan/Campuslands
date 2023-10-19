@@ -1,6 +1,7 @@
 #Este programa permite jugar TIC TAC TOE entre dos personas
 
 import json
+import time
 
 #*** FUNCIONES OPERATIVAS: MENÚ NOMBRES, PUNTAJES ***
 #Función del menú principal
@@ -380,6 +381,11 @@ while True:
         juego_on = "s"
         p1_on_off = "on"
         a = 0
+        time_1 = 0
+        time_2 = 0
+        movimientos_1 = 0
+        movimientos_2 = 0
+
         lista_casillas = list(range(1, 10))
         lista_winners = verificar_archivo(ruta)
         matriz_ceros = crear_matrices_ceros (num_fil_col, num_fil_col)
@@ -443,7 +449,11 @@ while True:
             mostrar_tablero (matriz_llena)
             if p1_on_off == "on":
                 print ("\n\t   ", "-*" * 15)
+                tiempo_inic = time.time()
                 mov_player_1 = valid_turno (lista_casillas, f"""\t   ¿{player_1}, en qué casilla marcas? \n\t    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n\t    >>> """)
+                tiempo_final = time.time()
+                time_1 += (tiempo_final-tiempo_inic)
+                movimientos_1 += 1
                 lista_casillas[mov_player_1-1] = 0
                 matriz_llena = marcar_pos (matriz_llena, mov_player_1, fich_player_1)
                 win = func_ganar (matriz_llena, fich_player_1) #Es la variable que guarda si ganó
@@ -456,14 +466,14 @@ while True:
                     p2_on_off = "off"
                     p1_on_off = "off"
                     juego_on = "n"
-                    print (True)
+                    #print (True)
                     a = 3 #JUEGO EMPATADO
                 
                 elif autorizar_juego(lista_casillas) == False and win[0] == True:
                     p2_on_off = "off"
                     p1_on_off = "off"
                     juego_on = "n"
-                    print ("GANÖ 1")
+                    #print ("GANÖ 1")
                     a = 1 #PLAYER 1 GANÓ
                 
 
@@ -476,7 +486,11 @@ while True:
             
             else:
                 print ("\n\t   ", "-*" * 15)
+                tiempo_inic = time.time()
                 mov_player_2 = valid_turno (lista_casillas, f"""\t   ¿{player_2}, en qué casilla marcas? \n\t   -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n\t    >>> """)
+                tiempo_final = time.time()
+                time_2 += (tiempo_final-tiempo_inic)
+                movimientos_2 += 1
                 lista_casillas[mov_player_2-1] = 0
                 matriz_llena = marcar_pos (matriz_llena, mov_player_2, fich_player_2)
                 win = func_ganar (matriz_llena, fich_player_2) #Es la variable que guarda si ganó
@@ -489,7 +503,7 @@ while True:
                     p2_on_off = "off"
                     p1_on_off = "off"
                     juego_on = "n"
-                    print ("GANÓ 2")
+                    #print ("GANÓ 2")
                     a = 2 #PLAYER 2 GANÓ
 
         if a == 1:
@@ -499,6 +513,8 @@ while True:
             print (" \t  ||                                  ||")
             print ("\t ", "=" * 37)
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
+            print (f"\nTiempo registrado: {time_1:.2f} segundos")
+            print (f"Movimientos realizados: {movimientos_1}")
         
         elif a == 2:
             print ("\n\t ", "=" * 37)
@@ -507,6 +523,8 @@ while True:
             print (" \t  ||                                  ||")
             print ("\t ", "=" * 37)
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
+            print (f"\nTiempo registrado: {time_2:.2f} segundos")
+            print (f"Movimientos realizados: {movimientos_2}")
         
         elif a == 3:
             print ("\n\t ", "=" * 37)
