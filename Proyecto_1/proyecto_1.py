@@ -17,16 +17,45 @@ def menu(msj):
         except ValueError:
             print ("ERROR !!! Debe ingresar un número entero.")
 
-
+#menú para validar la ficha con la que desea jugar el player 1
+def menu_fich(msj):
+    while True:
+        try:
+            opc = int(input(msj))
+            if opc < 1 or opc > 2:
+                print ("Solo puedes marca 1 o 2.")
+                
+                continue
+            return opc
+        
+        except ValueError:
+            print ("ERROR !!! Debe ingresar un número entero.")
 
 
 #Validación del username
 def valid_user(msj):
     while True:
         try:
-            titulo = input(msj)
+            user = input(msj)
 
-            return titulo
+            return user
+
+        except Exception as e:
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
+
+def valid_fich(msj):
+    while True:
+        try:
+            fich = input(msj)
+
+            if fich.upper!='X' or fich.upper != 'O' :
+                print (fich)
+                print ("\n\t    ", "+" * 31)
+                print ("\t     Solo puede ingresar 'X' u 'O'")
+                print ("\t    ", "+" * 31)
+                continue
+
+            return fich
 
         except Exception as e:
             print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
@@ -47,6 +76,21 @@ def llenar_matriz_1 (mat):
             n += 1 
             mat [f][c] = n 
     return mat
+
+def mostrar_tablero (mat):
+        print ("\n\t           -------------------")
+        print ("\t           |     |     |     |")
+        print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+        print ("\t           |     |     |     |")
+        print ("\t           -------------------")
+        print ("\t           |     |     |     |")
+        print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+        print ("\t           |     |     |     |")
+        print ("\t           -------------------")
+        print ("\t           |     |     |     |")
+        print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+        print ("\t           |     |     |     |")
+        print ("\t           -------------------")
 
 #***FUNCIONES DE ARCHIVO
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -116,11 +160,15 @@ while True:
                  1 -- Jugar.
                  2 -- Historial de mejores puntajes. 
                  3 -- SALIR.
-                            >>>Elegir una opción [1 - 6]: """)
+                            >>>Elegir una opción [1 - 3]: """)
     
     if opc == 1:
         verificar_archivo(ruta) #Verificación o creación del archivo
         dicc_winner = {}
+        fich_x = "X"
+        fich_o = "O"
+        juego_on = "s"
+        p1_on_off = "on"
         lista_winners = verificar_archivo(ruta)
         matriz_ceros = crear_matrices_ceros (num_fil_col, num_fil_col)
         matriz_llena = llenar_matriz_1 (matriz_ceros)
@@ -149,6 +197,33 @@ while True:
         print ("\n\t    ", "=-" * 20)
         print (f"\t     {player_2}, BIENVENIDO AL JUEGO.")
         print ("\t    ", "=-" * 20)
+        fich_player_1 =menu_fich(f"""\n\t     ¿{player_1}, juegas con 'X' o con 'O'?
+                                  \t     1 -- X
+                                  \t     2 -- O
+                                                >>> ¿Con cuál? [1-2] """)
+        if fich_player_1 == 1:
+            fich_player_1 = fich_x
+            fich_player_2 = fich_o
+            print ("\n\t    ", "-" * 25)
+            print (f"\t     {player_1} jugará con {fich_player_1}")
+            print (f"\t     {player_2} jugará con {fich_player_2}")
+            print ("\t    ", "-" * 25)
+
+        
+        else:
+            fich_player_2 = fich_x
+            fich_player_1 = fich_o
+            print ("\n\t    ", "-" * 25)
+            print (f"\t     {player_1} jugará con {fich_player_1}")
+            print (f"\t     {player_2} jugará con {fich_player_2}")
+            print ("\t    ", "-" * 25)
+
+        while juego_on == "s":
+            mostrar_tablero (matriz_llena)
+            if p1_on_off == "on":
+
+
+
         input ()
 
     elif opc == 2:
