@@ -324,20 +324,21 @@ def verificar_archivo (ruta):
     
 #Esta función registra el libro  
 def registrar_player (dicc_winner, ruta):
-        list_id = []
+        list_mov = []
         list_winners_ord = []
         archivo = open(ruta, "r")
         lista_winners = json.load(archivo)
         archivo.close()
         lista_winners.append(dicc_winner)
         for i in lista_winners:
-            id_i = list(i.keys())[0]
-            list_id.append(int(id_i))
-        list_id = sorted(list_id)
+            user_i = list(i.keys())[0]
+            list_mov.append(i[user_i]["movimientos"])
+        list_mov = sorted(list_mov)
 
-        for j in list_id:
+        for j in list_mov:
             for k in lista_winners:
-                if str(j) == list(k.keys())[0]:
+                user_i = list(k.keys())[0]
+                if j == k[user_i]["movimientos"]:
                     list_winners_ord.append(k)
 
         archivo = open(ruta, "w")
@@ -349,9 +350,8 @@ def registrar_player (dicc_winner, ruta):
         input ("\nPresione cualquier tecla para volver al menú principal... ")
 
 #Esta función registra el libro  
-def cargar_libro (lsta_winners, ruta):
-
-
+def cargar_data_player (lsta_winners, ruta):
+        
         archivo = open(ruta, "w")
         json.dump(lsta_winners, archivo)
         archivo.close()
@@ -387,7 +387,7 @@ while True:
         movimientos_2 = 0
 
         lista_casillas = list(range(1, 10))
-        lista_winners = verificar_archivo(ruta)
+        lista_winners = verificar_archivo(ruta) #Lista extraida del .json
         matriz_ceros = crear_matrices_ceros (num_fil_col, num_fil_col)
         matriz_llena = llenar_matriz_1 (matriz_ceros)
         #print (matriz_llena)
@@ -515,6 +515,10 @@ while True:
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
             print (f"\nTiempo registrado: {time_1:.2f} segundos")
             print (f"Movimientos realizados: {movimientos_1}")
+            #Registro de datos del ganador en el soporte json
+            dicc_winner[player_1] = {"movimientos" : movimientos_1, "tiempo" : time_1}
+            lista_winners.append(dicc_winner)
+            cargar_data_player (lista_winners, ruta)
         
         elif a == 2:
             print ("\n\t ", "=" * 37)
@@ -525,6 +529,10 @@ while True:
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
             print (f"\nTiempo registrado: {time_2:.2f} segundos")
             print (f"Movimientos realizados: {movimientos_2}")
+            dicc_winner[player_2] = {"movimientos" : movimientos_2, "tiempo" : time_2}
+            lista_winners.append(dicc_winner)
+            cargar_data_player (lista_winners, ruta)
+
         
         elif a == 3:
             print ("\n\t ", "=" * 37)
