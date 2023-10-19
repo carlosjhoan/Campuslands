@@ -66,8 +66,8 @@ def valid_turno (lst, msj):
             casilla = int(input(msj))
             if not casilla in lst:
                 print ("\n\t    ", "+" * 40)
-                print ("\t     Casilla ocupada. Intenta en otra.")
-                print ("\t    ", "+" * 40)
+                print ("\t        Casilla ocupada. Intenta en otra.")
+                print ("\t    ", "+" * 40, "\n")
                 continue
             return casilla
         
@@ -107,6 +107,8 @@ def mostrar_tablero (mat):
         print ("\t           |     |     |     |")
         print ("\t           -------------------")
 
+
+
 #Va llenado la matriz con las marcas de los jugadores
 def marcar_pos (mat, cas, fich):
 
@@ -126,6 +128,179 @@ def autorizar_juego(lst):
     
     else:
         return False
+    
+def func_ganar (mat, fich):
+    
+    diag = len(mat) - 1
+    #horizontal
+    for i in range(len(mat)):
+        n = 0
+        for k in range(len(mat[0])):
+            if fich == mat[i][k]:
+                n += 1
+                fila = i
+                if n == 3:
+                    return True, "H", fila
+    
+    #Vertical
+    for k in range(len(mat[0])):
+        n = 0
+        for i in range(len(mat)):
+            if fich == mat[i][k]:
+                n += 1
+                columna = k
+                if n == 3:
+                    return True, "V", columna
+    
+    
+    #diagonal 1
+    n = 0
+    for i in range(len(mat)):
+        
+        if fich == mat[i][i]:
+            n += 1
+            if n == 3:
+                return True, "D", 1
+
+    #diagonal 2
+    n = 0
+    for i in range(len(mat)):
+        
+        if fich == mat[i][diag]:
+            n += 1
+            if n == 3:
+                return True, "D", 2
+        diag -= 1
+    
+    return False, "", ""
+
+#Mostrar tablero ganador
+def mostrar_tablero_gan (mat, direc, num):
+    if direc == "H":
+        if num == 0:
+            print ("\n\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |--{mat[0][0]}--|--{mat[0][1]}--|--{mat[0][2]}--|")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+
+        elif num == 1:
+            print ("\n\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |--{mat[1][0]}--|--{mat[1][1]}--|--{mat[1][2]}--|")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")   
+            
+        else: 
+            print ("\n\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |     |")
+            print (f"\t           |--{mat[2][0]}--|--{mat[2][1]}--|--{mat[2][2]}--|")
+            print ("\t           |     |     |     |")
+            print ("\t           -------------------")
+    
+    elif direc == "V":
+        if num == 0:
+            print ("\n\t           -------------------")
+            print ("\t           |  |  |     |     |")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |  |  |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |  |  |     |     |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |  |  |     |     |")
+            print ("\t           -------------------")
+            print ("\t           |  |  |     |     |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |  |  |     |     |")
+            print ("\t           -------------------")
+
+
+        elif num == 1:
+            print ("\n\t           -------------------")
+            print ("\t           |     |  |  |     |")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |     |  |  |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |  |  |     |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |     |  |  |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |  |  |     |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |     |  |  |     |")
+            print ("\t           -------------------")
+
+        
+        else:
+            print ("\n\t           -------------------")
+            print ("\t           |     |     |  |  |")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |     |     |  |  |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |  |  |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |     |     |  |  |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |  |  |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |     |     |  |  |")
+            print ("\t           -------------------")
+
+    elif direc == "D":
+        if num == 1:
+            print ("\n\t           -------------------")
+            print ("\t           |\    |     |     |")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |    \|     |     |")
+            print ("\t           -------------------")
+            print ("\t           |     |\    |     |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |     |    \|     |")
+            print ("\t           -------------------")
+            print ("\t           |     |     |\    |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |     |     |    \|")
+            print ("\t           -------------------")
+
+        else:
+            print ("\n\t           -------------------")
+            print ("\t           |     |     |    /|")
+            print (f"\t           |  {mat[0][0]}  |  {mat[0][1]}  |  {mat[0][2]}  |")
+            print ("\t           |     |     |/    |")
+            print ("\t           -------------------")
+            print ("\t           |     |    /|     |")
+            print (f"\t           |  {mat[1][0]}  |  {mat[1][1]}  |  {mat[1][2]}  |")
+            print ("\t           |     |/    |     |")
+            print ("\t           -------------------")
+            print ("\t           |    /|     |     |")
+            print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
+            print ("\t           |/    |     |     |")
+            print ("\t           -------------------")
+
 
 #***FUNCIONES DE ARCHIVO
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -204,6 +379,7 @@ while True:
         fich_o = "O"
         juego_on = "s"
         p1_on_off = "on"
+        a = 0
         lista_casillas = list(range(1, 10))
         lista_winners = verificar_archivo(ruta)
         matriz_ceros = crear_matrices_ceros (num_fil_col, num_fil_col)
@@ -254,8 +430,8 @@ while True:
             print (f"\t     {player_2} jugará con {fich_player_2}")
             print ("\t    ", "-" * 25)
 
-        print ("\n\t   ", "+-" * 20)
-        input (f"\t   {player_1}, presiona cualquier tecla para empezar el juego ")
+        print ("\n\t   ", "+-" * 30)
+        input (f"\t     {player_1}, presiona cualquier tecla para empezar el juego ")
         print ("\n\t ", "*" * 37)
         print (" \t  *                                   *")
         print (" \t  *             EMPIEZA!!!            *")
@@ -267,31 +443,78 @@ while True:
             mostrar_tablero (matriz_llena)
             if p1_on_off == "on":
                 print ("\n\t   ", "-*" * 15)
-                mov_player_1 = valid_turno (lista_casillas, f"""\t   ¿{player_1}, en qué casilla marcas? \n\t   -*-*-*-*-*-*-*-*-*-*-*-*-*-*-* """)
+                mov_player_1 = valid_turno (lista_casillas, f"""\t   ¿{player_1}, en qué casilla marcas? \n\t    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n\t    >>> """)
                 lista_casillas[mov_player_1-1] = 0
                 matriz_llena = marcar_pos (matriz_llena, mov_player_1, fich_player_1)
-                if autorizar_juego(lista_casillas) == False:
+                win = func_ganar (matriz_llena, fich_player_1) #Es la variable que guarda si ganó
+                if autorizar_juego(lista_casillas) == False and win[0] != True:
                     p2_on_off = "on"
                     p1_on_off = "off"
+                    #sigue el juego. Cambia de turno
+
+                elif autorizar_juego(lista_casillas) == True and win[0] != True:
+                    p2_on_off = "off"
+                    p1_on_off = "off"
+                    juego_on = "n"
+                    print (True)
+                    a = 3 #JUEGO EMPATADO
+                
+                elif autorizar_juego(lista_casillas) == False and win[0] == True:
+                    p2_on_off = "off"
+                    p1_on_off = "off"
+                    juego_on = "n"
+                    print ("GANÖ 1")
+                    a = 1 #PLAYER 1 GANÓ
+                
+
                 else:
                     p2_on_off = "off"
                     p1_on_off = "off"
                     juego_on = "n"
+                    a = 1 #PLAYER 1 GANÓ
 
             
             else:
-                print ("\n\t   ", "-*" * 10)
-                mov_player_2 = valid_turno (lista_casillas, f"""\t   ¿{player_2}, en qué casilla marcas? \n\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* """)
+                print ("\n\t   ", "-*" * 15)
+                mov_player_2 = valid_turno (lista_casillas, f"""\t   ¿{player_2}, en qué casilla marcas? \n\t   -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n\t    >>> """)
                 lista_casillas[mov_player_2-1] = 0
                 matriz_llena = marcar_pos (matriz_llena, mov_player_2, fich_player_2)
-                #mostrar_tablero (matriz_llena)
-                if autorizar_juego(lista_casillas) == False:
+                win = func_ganar (matriz_llena, fich_player_2) #Es la variable que guarda si ganó
+                if autorizar_juego(lista_casillas) == False and win[0] != True:
                     p2_on_off = "off"
                     p1_on_off = "on"
+
+
                 else:
                     p2_on_off = "off"
                     p1_on_off = "off"
                     juego_on = "n"
+                    print ("GANÓ 2")
+                    a = 2 #PLAYER 2 GANÓ
+
+        if a == 1:
+            print ("\n\t ", "=" * 37)
+            print (" \t  ||                                  ||")
+            print (f" \t  ||          {player_1}, GANÓ!!!        ||")
+            print (" \t  ||                                  ||")
+            print ("\t ", "=" * 37)
+            mostrar_tablero_gan (matriz_llena, win[1], win[2])
+        
+        elif a == 2:
+            print ("\n\t ", "=" * 37)
+            print (" \t  ||                                  ||")
+            print (f" \t  ||          {player_2}, GANÓ!!!        ||")
+            print (" \t  ||                                  ||")
+            print ("\t ", "=" * 37)
+            mostrar_tablero_gan (matriz_llena, win[1], win[2])
+        
+        elif a == 3:
+            print ("\n\t ", "=" * 37)
+            print (" \t  ||                                  ||")
+            print (f" \t  ||          JUEGO EMPATADO        ||")
+            print (" \t  ||                                  ||")
+            print ("\t ", "=" * 37)
+            mostrar_tablero (matriz_llena)
 
 
         input ()
