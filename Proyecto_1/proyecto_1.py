@@ -18,6 +18,19 @@ def menu(msj):
             print ("ERROR !!! Debe ingresar un número entero.")
 
 
+
+
+#Validación del username
+def valid_user(msj):
+    while True:
+        try:
+            titulo = input(msj)
+
+            return titulo
+
+        except Exception as e:
+            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
+
 #Función que crea matrices de ceros
 def crear_matrices_ceros (fil, col):
     m = []
@@ -117,6 +130,25 @@ while True:
         print (" \t  *          VAMOS A JUGAR!!!         *")
         print (" \t  *                                   *")
         print ("\t ", "*" * 37)
+        print ("\n\n\t          EL TABLERO ESTÁ LISTO...")
+        print ("\n\t           -------------------")
+        print ("\t           |     |     |     |")
+        print ("\t           |     |     |     |")
+        print ("\t           -------------------")
+        print ("\t           |     |     |     |")
+        print ("\t           |     |     |     |")
+        print ("\t           -------------------")
+        print ("\t           |     |     |     |")
+        print ("\t           |     |     |     |")
+        print ("\t           -------------------")
+        player_1 = valid_user("\n\n\t   ¿Tu nombre de usuario, Player 1? ")
+        print ("\n\t    ", "=-" * 20)
+        print (f"\t     {player_1}, BIENVENIDO AL JUEGO.")
+        print ("\t    ", "=-" * 20)
+        player_2 = valid_user("\n\n\t   ¿Tu nombre de usuario, Player 2? ")
+        print ("\n\t    ", "=-" * 20)
+        print (f"\t     {player_2}, BIENVENIDO AL JUEGO.")
+        print ("\t    ", "=-" * 20)
         input ()
 
     elif opc == 2:
