@@ -60,6 +60,21 @@ def valid_fich(msj):
         except Exception as e:
             print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
 
+def valid_turno (lst, msj):
+    while True:
+        try:
+            casilla = int(input(msj))
+            if not casilla in lst:
+                print ("\n\t    ", "+" * 40)
+                print ("\t     Casilla ocupada. Intenta en otra.")
+                print ("\t    ", "+" * 40)
+                continue
+            return casilla
+        
+        except ValueError:
+            print ("\nSOLO SE PERMITE EL INGRESO DE NÚMEROS")
+
+
 #Función que crea matrices de ceros
 def crear_matrices_ceros (fil, col):
     m = []
@@ -91,6 +106,26 @@ def mostrar_tablero (mat):
         print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
         print ("\t           |     |     |     |")
         print ("\t           -------------------")
+
+#Va llenado la matriz con las marcas de los jugadores
+def marcar_pos (mat, cas, fich):
+
+    for i in range(len(mat)):
+        for k in range(len(mat[0])):
+            if cas == mat[i][k]:
+                mat[i][k] = fich
+    return mat
+
+def autorizar_juego(lst):
+    cont = 0
+    for i in lst:
+        if i == 0:
+            cont += 1
+    if cont == 9:
+        return True
+    
+    else:
+        return False
 
 #***FUNCIONES DE ARCHIVO
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -169,6 +204,7 @@ while True:
         fich_o = "O"
         juego_on = "s"
         p1_on_off = "on"
+        lista_casillas = list(range(1, 10))
         lista_winners = verificar_archivo(ruta)
         matriz_ceros = crear_matrices_ceros (num_fil_col, num_fil_col)
         matriz_llena = llenar_matriz_1 (matriz_ceros)
@@ -218,10 +254,45 @@ while True:
             print (f"\t     {player_2} jugará con {fich_player_2}")
             print ("\t    ", "-" * 25)
 
+        print ("\n\t   ", "+-" * 20)
+        input (f"\t   {player_1}, presiona cualquier tecla para empezar el juego ")
+        print ("\n\t ", "*" * 37)
+        print (" \t  *                                   *")
+        print (" \t  *             EMPIEZA!!!            *")
+        print (" \t  *                                   *")
+        print ("\t ", "*" * 37)
+
+
         while juego_on == "s":
             mostrar_tablero (matriz_llena)
             if p1_on_off == "on":
+                print ("\n\t   ", "-*" * 15)
+                mov_player_1 = valid_turno (lista_casillas, f"""\t   ¿{player_1}, en qué casilla marcas? \n\t   -*-*-*-*-*-*-*-*-*-*-*-*-*-*-* """)
+                lista_casillas[mov_player_1-1] = 0
+                matriz_llena = marcar_pos (matriz_llena, mov_player_1, fich_player_1)
+                #mostrar_tablero (matriz_llena)
+                if autorizar_juego(lista_casillas) == False:
+                    p2_on_off = "on"
+                    p1_on_off = "off"
+                else:
+                    p2_on_off = "off"
+                    p1_on_off = "off"
+                    juego_on = "n"
 
+            
+            else:
+                print ("\n\t   ", "-*" * 10)
+                mov_player_2 = valid_turno (lista_casillas, f"""\t   ¿{player_2}, en qué casilla marcas? \n\t-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* """)
+                lista_casillas[mov_player_2-1] = 0
+                matriz_llena = marcar_pos (matriz_llena, mov_player_2, fich_player_2)
+                #mostrar_tablero (matriz_llena)
+                if autorizar_juego(lista_casillas) == False:
+                    p2_on_off = "off"
+                    p1_on_off = "on"
+                else:
+                    p2_on_off = "off"
+                    p1_on_off = "off"
+                    juego_on = "n"
 
 
         input ()
