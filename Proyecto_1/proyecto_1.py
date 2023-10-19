@@ -18,14 +18,31 @@ def menu(msj):
             print ("ERROR !!! Debe ingresar un número entero.")
 
 
+#Función que crea matrices de ceros
+def crear_matrices_ceros (fil, col):
+    m = []
+    for i in range(fil):
+        fila = [0] * col
+        m.append(fila)
+    return m
+
+#Función que llena matrices consecutivos por fila
+def llenar_matriz_1 (mat):
+    n = 0
+    for f in range(len(mat)):
+        for c in range(len(mat[f])):
+            n += 1 
+            mat [f][c] = n 
+    return mat
+
 #***FUNCIONES DE ARCHIVO
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
 def verificar_archivo (ruta):
     try:
         archivo = open(ruta, "r")
-        lista_players = json.load(archivo)
+        lista_winners = json.load(archivo)
         archivo.close
-        return lista_players
+        return lista_winners
 
     except:
         
@@ -33,30 +50,30 @@ def verificar_archivo (ruta):
         json.dump([], archivo)
         archivo.close()
         archivo = open(ruta, "r")
-        lista_players = json.load(archivo)
+        lista_winners = json.load(archivo)
         archivo.close
-        return lista_players
+        return lista_winners
     
 #Esta función registra el libro  
-def registrar_player (dicc_player, ruta):
+def registrar_player (dicc_winner, ruta):
         list_id = []
-        list_players_ord = []
+        list_winners_ord = []
         archivo = open(ruta, "r")
-        lista_players = json.load(archivo)
+        lista_winners = json.load(archivo)
         archivo.close()
-        lista_players.append(dicc_player)
-        for i in lista_players:
+        lista_winners.append(dicc_winner)
+        for i in lista_winners:
             id_i = list(i.keys())[0]
             list_id.append(int(id_i))
         list_id = sorted(list_id)
 
         for j in list_id:
-            for k in lista_players:
+            for k in lista_winners:
                 if str(j) == list(k.keys())[0]:
-                    list_players_ord.append(k)
+                    list_winners_ord.append(k)
 
         archivo = open(ruta, "w")
-        json.dump(list_players_ord, archivo)
+        json.dump(list_winners_ord, archivo)
         archivo.close()
         print ("\n", "-*" * 25)
         print ("| El libro se ha registrado correctamente |")
@@ -64,15 +81,16 @@ def registrar_player (dicc_player, ruta):
         input ("\nPresione cualquier tecla para volver al menú principal... ")
 
 #Esta función registra el libro  
-def cargar_libro (lsta_libros, ruta):
+def cargar_libro (lsta_winners, ruta):
 
 
         archivo = open(ruta, "w")
-        json.dump(lsta_libros, archivo)
+        json.dump(lsta_winners, archivo)
         archivo.close()
 
 
-ruta = "Archivos/tic_winners.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
+ruta = "Proyecto_1/tic_prueba_1.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
+num_fil_col = 3
 
 while True:
     print ("\n\t  ","=" * 30)
@@ -88,7 +106,18 @@ while True:
                             >>>Elegir una opción [1 - 6]: """)
     
     if opc == 1:
-        pass
+        verificar_archivo(ruta) #Verificación o creación del archivo
+        dicc_winner = {}
+        lista_winners = verificar_archivo(ruta)
+        matriz_ceros = crear_matrices_ceros (num_fil_col, num_fil_col)
+        matriz_llena = llenar_matriz_1 (matriz_ceros)
+        #print (matriz_llena)
+        print ("\n\t ", "*" * 37)
+        print (" \t  *                                   *")
+        print (" \t  *          VAMOS A JUGAR!!!         *")
+        print (" \t  *                                   *")
+        print ("\t ", "*" * 37)
+        input ()
 
     elif opc == 2:
         pass
@@ -103,4 +132,4 @@ while True:
             break
         else:
             input ("\nPresione cualquier tecla para volver al menú... ")
-            pass
+            
