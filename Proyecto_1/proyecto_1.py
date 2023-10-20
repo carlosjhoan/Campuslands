@@ -38,7 +38,12 @@ def valid_user(msj):
     while True:
         try:
             user = input(msj)
-
+            if len(user) > 7:
+                print ("\n\t    ", "+" * 40)
+                print ("\t          Se permiten máximo 7 caracteres.")
+                print ("\t        I N T E N T A  N U E V A M E N T E!")
+                print ("\t    ", "+" * 40, "\n")
+                continue
             return user
 
         except Exception as e:
@@ -287,23 +292,27 @@ def mostrar_tablero_gan (mat, direc, num):
             print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
             print ("\t           |/    |     |     |")
             print ("\t           -------------------")
+            
 #dMe extrae los username, mov, tiempo y me los muestra en pantalla
 def historial(lst_winners):
     if len(lst_winners) > 0:
-        print("\n\t    ", "*" * 30)
-        print ("\t     |  USER\t|\tMOVIMIENTOS\t|\tTIEMPO  |")
-        print("\t    ", "*" * 30)
+        print("\n\t    ", "*" * 47)
+        print ("\t     |   USER\t|  MOVIMIENTOS\t|     TIEMPO [s]   |")
+        print("\t    ", "*" * 47)
         for i in lst_winners:
             user_i = list(i.keys())[0]
             tiempo = i[user_i]["tiempo"]
             mov = i[user_i]["movimientos"]
-            print (f"\t    | {user_i}\t|\t{mov}\t{tiempo:.2f}|")
-            print ("\t    ", "." * 30)
+            if len(user_i) < 4:
+                user_i = user_i + "    "
+            
+            print (f"\t     | {user_i}\t|\t{mov}\t|      {tiempo:.2f}\t   |")
+            print ("\t    ", "." * 47)
         
     else:
-        print ("\n\t     ", "." * 30)
+        print ("\n\t     ", "." * 50)
         print ("NO HAY JUGADORES REGISTRADOS")
-        print ("\t     ", "." * 30)
+        print ("\t     ", "." * 50)
 
     #return list_cons
 
@@ -439,11 +448,11 @@ while True:
         print ("\t           |     |     |     |")
         print ("\t           |     |     |     |")
         print ("\t           -------------------")
-        player_1 = valid_user("\n\n\t   ¿Tu nombre de usuario, Player 1? ")
+        player_1 = valid_user("\n\n\t   ¿Tu nombre de usuario, Player 1?\n\t   >>> ")
         print ("\n\t    ", "=-" * 20)
         print (f"\t     {player_1}, BIENVENIDO AL JUEGO.")
         print ("\t    ", "=-" * 20)
-        player_2 = valid_user("\n\n\t   ¿Tu nombre de usuario, Player 2? ")
+        player_2 = valid_user("\n\n\t   ¿Tu nombre de usuario, Player 2?\n\t   >>> ")
         print ("\n\t    ", "=-" * 20)
         print (f"\t     {player_2}, BIENVENIDO AL JUEGO.")
         print ("\t    ", "=-" * 20)
@@ -541,7 +550,7 @@ while True:
         if a == 1:
             print ("\n\t ", "=" * 37)
             print (" \t  ||                                  ||")
-            print (f" \t  ||          {player_1}, GANÓ!!!        ||")
+            print (f" \t  ||          {player_1}, GANÓ!!!          ||")
             print (" \t  ||                                  ||")
             print ("\t ", "=" * 37)
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
@@ -560,7 +569,7 @@ while True:
         elif a == 2:
             print ("\n\t ", "=" * 37)
             print (" \t  ||                                  ||")
-            print (f" \t  ||          {player_2}, GANÓ!!!        ||")
+            print (f" \t  ||          {player_2}, GANÓ!!!          ||")
             print (" \t  ||                                  ||")
             print ("\t ", "=" * 37)
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
