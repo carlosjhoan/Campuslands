@@ -10,13 +10,13 @@ def menu(msj):
         try:
             opc = int(input(msj))
             if opc < 1 or opc > 3:
-                print ("Debe ser un numero de 1 a 6.")
+                print ("Debe ser un numero de 1 a 3.")
                 
                 continue
             return opc
         
         except ValueError:
-            print ("ERROR !!! Debe ingresar un número entero.")
+            print ("\nERROR !!! Debe ingresar un número entero.")
 
 #menú para validar la ficha con la que desea jugar el player 1
 def menu_fich(msj):
@@ -30,7 +30,7 @@ def menu_fich(msj):
             return opc
         
         except ValueError:
-            print ("ERROR !!! Debe ingresar un número entero.")
+            print ("\nERROR !!! Debe ingresar un número entero.")
 
 
 #Validación del username
@@ -44,6 +44,14 @@ def valid_user(msj):
                 print ("\t        I N T E N T A  N U E V A M E N T E!")
                 print ("\t    ", "+" * 40, "\n")
                 continue
+
+            elif user ==  "":
+                print ("\n\t    ", "+" * 40)
+                print ("\t          Debe tener al menos un caracter.")
+                print ("\t        I N T E N T A  N U E V A M E N T E!")
+                print ("\t    ", "+" * 40, "\n")
+                continue
+
             return user
 
         except Exception as e:
@@ -406,7 +414,7 @@ while True:
     print (" \t  |        TIC - TAC - TOE       |")
     print ("\t  ","=" * 30)
     print ("\n\t       ", "-" * 20)
-    opc = menu("""\t\t        MENÚ
+    opc = menu("""\n\t\t        MENÚ
                 --------------------
 
                  1 -- Jugar.
