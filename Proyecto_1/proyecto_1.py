@@ -602,11 +602,17 @@ while True:
         input ("\nPresione cualquier tecla para volver al menú principal... ")
 
     else:
-        si_no = input("""\n¿Está seguro que desea salir? 
-                      s -- Sí, deseo salir!!
-                      n -- No, deseo continuar!!!""")
+        si_no = input("""\n\t  ¿Están seguros de abandonar el juego? 
+                      
+                      s -- Sí, ya no queremos jugar!!
+                      n -- No, jugaremos la revancha!!!
+                      >>> """)
         if si_no == "s" or si_no == "S":
-            print ("\nEL TABLERO ESTARÁ ESPERANDO POR UDS!!!")
+            print ("\n\t ", "*" * 60)
+            print (" \t  *                                                          *")
+            print (" \t  *             EL TABLERO LOS ESTARÁ ESPERANDO!!            *")
+            print (" \t  *                                                          *")
+            print ("\t ", "*" * 60)
             input ("\nPresione cualquier tecla para SALIR... ")
             break
         else:
