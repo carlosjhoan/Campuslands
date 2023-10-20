@@ -292,7 +292,7 @@ def mostrar_tablero_gan (mat, direc, num):
             print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
             print ("\t           |/    |     |     |")
             print ("\t           -------------------")
-            
+
 #dMe extrae los username, mov, tiempo y me los muestra en pantalla
 def historial(lst_winners):
     if len(lst_winners) > 0:
@@ -311,7 +311,7 @@ def historial(lst_winners):
         
     else:
         print ("\n\t     ", "." * 50)
-        print ("NO HAY JUGADORES REGISTRADOS")
+        print ("\t\t\tNO HAY JUGADORES REGISTRADOS")
         print ("\t     ", "." * 50)
 
     #return list_cons
@@ -398,7 +398,7 @@ def cargar_data_player (lsta_winners, ruta):
         archivo.close()
 
 
-ruta = "Proyecto_1/tic_prueba_1.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
+ruta = "Proyecto_1/tic_prueba_3.json" #ESTA CORRESPONDE A LA RUTA RELATIVA
 num_fil_col = 3
 
 while True:
