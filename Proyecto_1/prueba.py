@@ -1,6 +1,7 @@
 import time
+tiempo_inic = time.time()
+input ("letra")
+tiempo_final = time.time()
 
-tiempo_incial =time.time()
-letra = input("ingrese letra")
-
-print (f"Tiempor transcurrido: {(time.time()):.2f}")
+tiempo_transc = tiempo_final- tiempo_inic
+print (tiempo_transc)

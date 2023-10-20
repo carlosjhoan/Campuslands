@@ -1,6 +1,6 @@
 def ord_burbuja (lst):
     N = len(lst)
-    for i in range (0, N - 1):
+    for i in range ( N - 1):
         for j in range (i + 1, N):
             if lst[i][1]["precio"] > lst[j][1]["precio"]: #si fuera de mayor a menor se reemplaza por <
                 t = lst[i]

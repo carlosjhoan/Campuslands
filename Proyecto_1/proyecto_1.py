@@ -44,22 +44,6 @@ def valid_user(msj):
         except Exception as e:
             print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
 
-def valid_fich(msj):
-    while True:
-        try:
-            fich = input(msj)
-
-            if fich.upper!='X' or fich.upper != 'O' :
-                print (fich)
-                print ("\n\t    ", "+" * 31)
-                print ("\t     Solo puede ingresar 'X' u 'O'")
-                print ("\t    ", "+" * 31)
-                continue
-
-            return fich
-
-        except Exception as e:
-            print ("\nERROR!!! Se ha producido un error. Inténtelo de nuevo.", e)
 
 def valid_turno (lst, msj):
     while True:
@@ -74,6 +58,7 @@ def valid_turno (lst, msj):
         
         except ValueError:
             print ("\nSOLO SE PERMITE EL INGRESO DE NÚMEROS")
+
 
 
 #Función que crea matrices de ceros
@@ -129,7 +114,8 @@ def autorizar_juego(lst):
     
     else:
         return False
-    
+
+#Función que verifica si un jugador ganó   
 def func_ganar (mat, fich):
     
     diag = len(mat) - 1
@@ -301,7 +287,25 @@ def mostrar_tablero_gan (mat, direc, num):
             print (f"\t           |  {mat[2][0]}  |  {mat[2][1]}  |  {mat[2][2]}  |")
             print ("\t           |/    |     |     |")
             print ("\t           -------------------")
+#dMe extrae los username, mov, tiempo y me los muestra en pantalla
+def historial(lst_winners):
+    if len(lst_winners) > 0:
+        print("\n\t    ", "*" * 30)
+        print ("\t     |  USER\t|\tMOVIMIENTOS\t|\tTIEMPO  |")
+        print("\t    ", "*" * 30)
+        for i in lst_winners:
+            user_i = list(i.keys())[0]
+            tiempo = i[user_i]["tiempo"]
+            mov = i[user_i]["movimientos"]
+            print (f"\t    | {user_i}\t|\t{mov}\t{tiempo:.2f}|")
+            print ("\t    ", "." * 30)
+        
+    else:
+        print ("\n\t     ", "." * 30)
+        print ("NO HAY JUGADORES REGISTRADOS")
+        print ("\t     ", "." * 30)
 
+    #return list_cons
 
 #***FUNCIONES DE ARCHIVO
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -325,7 +329,9 @@ def verificar_archivo (ruta):
 #Esta función registra el libro  
 def registrar_player (dicc_winner, ruta):
         list_mov = []
-        list_winners_ord = []
+        list_tiempo = []
+        list_winners_ord_m = []
+     
         archivo = open(ruta, "r")
         lista_winners = json.load(archivo)
         archivo.close()
@@ -333,20 +339,46 @@ def registrar_player (dicc_winner, ruta):
         for i in lista_winners:
             user_i = list(i.keys())[0]
             list_mov.append(i[user_i]["movimientos"])
+            #list_tiempo.append(i[user_i]["tiempo"])
         list_mov = sorted(list_mov)
+        set_mov = set(list_mov)
+        list_mov = list(set_mov)
+        list_mov = sorted(list_mov)
+        
+
 
         for j in list_mov:
             for k in lista_winners:
                 user_i = list(k.keys())[0]
                 if j == k[user_i]["movimientos"]:
-                    list_winners_ord.append(k)
+                    list_winners_ord_m.append(k)
+        
+        for p in range(len(list_winners_ord_m)-1):
+            user_p = list(list_winners_ord_m[p].keys())[0]
+            tiempo_p = list_winners_ord_m[p][user_p]["tiempo"]
+            mov_p =  list_winners_ord_m[p][user_p]["movimientos"]
+            for q in range (p + 1, len(list_winners_ord_m)):
+                user_q = list(list_winners_ord_m[q].keys())[0]
+                tiempo_q = list_winners_ord_m[q][user_q]["tiempo"]
+                mov_q =  list_winners_ord_m[q][user_q]["movimientos"]
+
+                if (mov_p == mov_q) and (tiempo_p > tiempo_q):
+                    t = list_winners_ord_m[p]
+                    list_winners_ord_m[p] = list_winners_ord_m[q]
+                    list_winners_ord_m[q] = t
+        
+        
+
+
+
+
 
         archivo = open(ruta, "w")
-        json.dump(list_winners_ord, archivo)
+        json.dump(list_winners_ord_m, archivo)
         archivo.close()
-        print ("\n", "-*" * 25)
-        print ("| El libro se ha registrado correctamente |")
-        print ( "-*" * 25)
+        #print ("\n", "-*" * 25)
+        #print ("| El libro se ha registrado correctamente |")
+        #print ( "-*" * 25)
         input ("\nPresione cualquier tecla para volver al menú principal... ")
 
 #Esta función registra el libro  
@@ -513,12 +545,17 @@ while True:
             print (" \t  ||                                  ||")
             print ("\t ", "=" * 37)
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
-            print (f"\nTiempo registrado: {time_1:.2f} segundos")
-            print (f"Movimientos realizados: {movimientos_1}")
+            print ("\n\t  ", "*" * 32)
+            print (f"\t\t      {player_1}")
+            print ("\t  ", "=" * 32)
+            print (f"\t   Tiempo registrado: {time_1:.2f} segundos")
+            print (f"\t   Movimientos realizados: {movimientos_1}")
+            print ("\t  ", "=" * 32)
+            print ("\t  ", "*" * 32)
             #Registro de datos del ganador en el soporte json
             dicc_winner[player_1] = {"movimientos" : movimientos_1, "tiempo" : time_1}
             lista_winners.append(dicc_winner)
-            cargar_data_player (lista_winners, ruta)
+            registrar_player (dicc_winner, ruta)
         
         elif a == 2:
             print ("\n\t ", "=" * 37)
@@ -527,11 +564,16 @@ while True:
             print (" \t  ||                                  ||")
             print ("\t ", "=" * 37)
             mostrar_tablero_gan (matriz_llena, win[1], win[2])
-            print (f"\nTiempo registrado: {time_2:.2f} segundos")
-            print (f"Movimientos realizados: {movimientos_2}")
+            print ("\n\t  ", "*" * 32)
+            print (f"\t\t      {player_2}")
+            print ("\t  ", "=" * 32)
+            print (f"\t   Tiempo registrado: {time_2:.2f} segundos")
+            print (f"\t   Movimientos realizados: {movimientos_2}")
+            print ("\t  ", "=" * 32)
+            print ("\t  ", "*" * 32)
             dicc_winner[player_2] = {"movimientos" : movimientos_2, "tiempo" : time_2}
             lista_winners.append(dicc_winner)
-            cargar_data_player (lista_winners, ruta)
+            registrar_player (dicc_winner, ruta)
 
         
         elif a == 3:
@@ -543,10 +585,12 @@ while True:
             mostrar_tablero (matriz_llena)
 
 
-        input ()
+
 
     elif opc == 2:
-        pass
+        lista_winners = verificar_archivo(ruta)
+        historial(lista_winners)
+        input ("\nPresione cualquier tecla para volver al menú principal... ")
 
     else:
         si_no = input("""\n¿Está seguro que desea salir? 
