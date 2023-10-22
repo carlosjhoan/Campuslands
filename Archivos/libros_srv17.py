@@ -151,7 +151,7 @@ def nomb_libros(lst_libros):
         if len(tit) <= 10:
             tit = tit + "              "
         
-        elif len(tit) > 10 and len(tit) < 20:
+        elif len(tit) > 10 and len(tit) <= 20:
             tit = tit + "        "
 
         nom_id.append(tit)
@@ -272,13 +272,19 @@ while True:
         print ("=" * 30)
         n = 0
         list_nomb_id = nomb_libros(lista_libros)
-        print ("\n    ", "-" * 65)
-        print ("       IND   |      NOMBRE\t\t\t\t|\tID")
-        print ("   ", "=" * 65)
+        print ("\n    ", "-" * 83)
+        print ("       IND   |                       NOMBRE\t\t\t\t|\tID")
+        print ("   ", "=" * 84)
         for i in list_nomb_id:  
             n += 1
-            print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
-            print ("   ", "-" * 65)
+            if len(i[0]) <= 30: 
+                i[0] = i[0] + "     "
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 84)
+            else:
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 84)
+
         
         id_cons = ingresar_id("Ingrese el id del libro que desea buscar: ")
         consultar_libro(id_cons, lista_libros)
