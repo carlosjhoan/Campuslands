@@ -34,6 +34,19 @@ def menu_modif(msj):
         
         except ValueError:
             print ("ERROR !!! Debe ingresar un número entero.")
+#Validación del menú para listar libros
+def menu_listar(msj):
+    while True:
+        try:
+            opc = int(input(msj))
+            if opc < 1 or opc > 3:
+                print ("Debe ser un numero de 1 a 3.")
+                
+                continue
+            return opc
+        
+        except ValueError:
+            print ("ERROR !!! Debe ingresar un número entero.")
 
 
 
@@ -112,7 +125,7 @@ def ingresar_id(msj):
             return id_buscar
 
         except Exception as e:
-            print ("Ha ocurrido un ERROR!!!")
+            print ("Ha ocurrido un ERROR!!!", e)
             input ("Presion una tecla para continuar... ")
 
 def consultar_libro(id_libro, lst_libros):
@@ -169,6 +182,99 @@ def nomb_libros(lst_libros):
                 nom_id = []
 
     return list_cons
+
+
+#Esta función permite listar los libros por: Nombre, autor, precio
+def listar_libros (opc, lst_libros):
+    n = 0
+    lst_vac = []
+    list_cons = []
+    if opc == 1:
+        n = 0
+        #listar por título
+        for i in lst_libros:
+            id_lista = list(i.keys())[0]
+            lst_vac.append(i[f"{id_lista}"]["titulo"])
+        lst_vac = sorted(lst_vac)
+
+        for j in lst_vac:
+            for k in lst_libros:
+                id_lista = list(k.keys())[0]
+                if j == k[f"{id_lista}"]["titulo"]:
+                    list_cons.append(k)
+
+        print ("\n", "." * 50)
+        for m in list_cons:
+            n += 1
+            id_lista = list(m.keys())[0]
+            print (f">>  {m[f'{id_lista}']['titulo']}")
+            print (f"\tAUTOR: {m[f'{id_lista}']['autor']}")
+            print (f"\tPRECIO: {m[f'{id_lista}']['precio']}")
+            print ( "." * 50)
+            if n == 3:
+                input("\n\t\tSeguir --> ")
+                n = 0
+
+        #return list_cons
+    
+            
+
+    elif opc == 2:
+        #listar por autor
+        for i in lst_libros:
+            id_lista = list(i.keys())[0]
+            lst_vac.append(i[f"{id_lista}"]["autor"])
+        lst_vac = list(set(sorted(lst_vac)))
+         
+
+        for j in lst_vac:
+            for k in lst_libros:
+                id_lista = list(k.keys())[0]
+                if j == k[f"{id_lista}"]["autor"]:
+                    list_cons.append(k)
+
+        print ("\n", "." * 50)
+        for m in list_cons:
+            n += 1
+            id_lista = list(m.keys())[0]
+            print (f">>  {m[f'{id_lista}']['autor']}")
+            print (f"\tTÍTULO: {m[f'{id_lista}']['titulo']}")
+            print (f"\tPRECIO: {m[f'{id_lista}']['precio']}")
+            print ( "." * 50)
+            if n == 3:
+                input("\n\t\tSeguir --> ")
+                n = 0
+
+        #return list_cons
+        
+
+    else:
+        #listar por precio
+        for i in lst_libros:
+            id_lista = list(i.keys())[0]
+            lst_vac.append(i[f"{id_lista}"]["precio"])
+        lst_vac = list(set(sorted(lst_vac)))
+         
+
+        for j in lst_vac:
+            for k in lst_libros:
+                id_lista = list(k.keys())[0]
+                if j == k[f"{id_lista}"]["precio"]:
+                    list_cons.append(k)
+
+        print ("\n", "." * 50)
+        for m in list_cons:
+            n += 1
+            id_lista = list(m.keys())[0]
+            print (f">>  ${m[f'{id_lista}']['precio']:,}")
+            print (f"\tTÍTULO: {m[f'{id_lista}']['titulo']}")
+            print (f"\tAUTOR: {m[f'{id_lista}']['autor']}")
+            print ( "." * 50)
+            if n == 3:
+                input("\n\t\tSeguir --> ")
+                n = 0
+        #return list_cons
+        
 
 
 #Función que me permite verificar si el archivo existe. SI no existe lo crea
@@ -247,8 +353,7 @@ while True:
                 4 -- Borrar libro.
                 5 -- Listar libros 
                 6 -- SALIR.
-                            >>>Elegir una opción [1 - 6]: 
-                """)
+                            >>>Elegir una opción [1 - 6]: """)
 
     if opc == 1:
         
@@ -272,18 +377,24 @@ while True:
         print ("=" * 30)
         n = 0
         list_nomb_id = nomb_libros(lista_libros)
-        print ("\n    ", "-" * 83)
-        print ("       IND   |                       NOMBRE\t\t\t\t|\tID")
-        print ("   ", "=" * 84)
+        print ("\n    ", "-" * 88)
+        print ("       IND   |                       NOMBRE\t\t\t\t\t|\tID")
+        print ("   ", "=" * 89)
         for i in list_nomb_id:  
             n += 1
             if len(i[0]) <= 30: 
-                i[0] = i[0] + "     "
+                i[0] = i[0] + "          "
                 print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
-                print ("   ", "-" * 84)
+                print ("   ", "-" * 89)
+
+            elif len(i[0]) > 30 and len(i[0]) < 34: 
+                i[0] = i[0] + "   "
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
+
             else:
                 print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
-                print ("   ", "-" * 84)
+                print ("   ", "-" * 89)
 
         
         id_cons = ingresar_id("Ingrese el id del libro que desea buscar: ")
@@ -295,15 +406,26 @@ while True:
         print ("\n      3. EDITAR LIBRO")
         print ("=" * 30)
         
-        list_nomb_id = nomb_libros(lista_libros)
-        print ("\n    ", "-" * 65)
-        print ("       IND   |      NOMBRE\t\t\t\t|\tID")
-        print ("   ", "=" * 65)
         n = 0
+        list_nomb_id = nomb_libros(lista_libros)
+        print ("\n    ", "-" * 88)
+        print ("       IND   |                       NOMBRE\t\t\t\t\t|\tID")
+        print ("   ", "=" * 89)
         for i in list_nomb_id:  
             n += 1
-            print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
-            print ("   ", "-" * 65)
+            if len(i[0]) <= 30: 
+                i[0] = i[0] + "          "
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
+
+            elif len(i[0]) > 30 and len(i[0]) < 34: 
+                i[0] = i[0] + "   "
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
+
+            else:
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
         
         id_edit = ingresar_id("Ingrese el ID del libro que desea editar: ")
 
@@ -356,18 +478,29 @@ while True:
 
     elif opc == 4:
         lista_libros = verificar_archivo(ruta)
-        print ("\n      3. BORRAR LIBRO")
+        print ("\n      4. BORRAR LIBRO")
         print ("=" * 30)
 
-        list_nomb_id = nomb_libros(lista_libros)
-        print ("\n    ", "-" * 65)
-        print ("       IND   |      NOMBRE\t\t\t\t|\tID")
-        print ("   ", "=" * 65)
         n = 0
+        list_nomb_id = nomb_libros(lista_libros)
+        print ("\n    ", "-" * 88)
+        print ("       IND   |                       NOMBRE\t\t\t\t\t|\tID")
+        print ("   ", "=" * 89)
         for i in list_nomb_id:  
             n += 1
-            print (f"\t{n}    |   {i[0]}     \t\t|\t{i[1]}")
-            print ("   ", "-" * 65)
+            if len(i[0]) <= 30: 
+                i[0] = i[0] + "          "
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
+
+            elif len(i[0]) > 30 and len(i[0]) < 34: 
+                i[0] = i[0] + "   "
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
+
+            else:
+                print (f"\t{n}    |   {i[0]}     \t\t\t|\t{i[1]}")
+                print ("   ", "-" * 89)
 
         id_borrar = ingresar_id("Ingrese el ID del libro que desea eliminar: ")
         lista_libros = eliminar_libro(id_borrar, lista_libros)
@@ -377,7 +510,19 @@ while True:
         print ( "-*" * 15)
         input ("\nPresione cualquier tecla para volver al menú principal... ")
         
+    elif opc == 5:
+        lista_libros = verificar_archivo(ruta)
+        print ("\n      5. LISTAR LIBROS")
+        print ("=" * 30)
 
+        opc_listar = menu_listar("""¿Deseas listar por?
+                                1 -- Titulo
+                                2 -- Autor
+                                3 -- Precio 
+                               >>> ¿Opción [1 - 4]? """)
+
+
+        listar_libros (opc_listar, lista_libros)
 
     
     else: 
