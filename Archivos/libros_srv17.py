@@ -224,7 +224,9 @@ def listar_libros (opc, lst_libros):
         for i in lst_libros:
             id_lista = list(i.keys())[0]
             lst_vac.append(i[f"{id_lista}"]["autor"])
-        lst_vac = list(set(sorted(lst_vac)))
+        
+        set_vac = set(lst_vac)
+        lst_vac = sorted(list(set_vac))
          
 
         for j in lst_vac:
@@ -253,14 +255,16 @@ def listar_libros (opc, lst_libros):
         for i in lst_libros:
             id_lista = list(i.keys())[0]
             lst_vac.append(i[f"{id_lista}"]["precio"])
-        lst_vac = list(set(sorted(lst_vac)))
-         
+        
+        set_vac = set(lst_vac)
+        lst_vac = sorted(list(set_vac))
 
         for j in lst_vac:
             for k in lst_libros:
                 id_lista = list(k.keys())[0]
                 if j == k[f"{id_lista}"]["precio"]:
                     list_cons.append(k)
+                    #print (k)
 
         print ("\n", "." * 50)
         for m in list_cons:
