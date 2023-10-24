@@ -32,7 +32,6 @@ def nombre_csv(reg):
             dia = "0" + dia
         else:
             pass
-        dia = int(dia)
         mes = list_nomb[1].strip()
         if len(mes) < 2 and int(mes) > 0:
             mes = "0" + mes
@@ -40,11 +39,11 @@ def nombre_csv(reg):
             pass
         year = list_nomb[2].strip()
         list_year = year.split(".")
-        year = int(list_year[0])
+        year = list_year[0]
         return True, dia, mes, year
 
     except Exception as e:
-        print ("""\nEl nombre de este archivo no es el correcto.
+        print ("""\nEl nombre de este archivo no es el correcto. Debe corresponder a la fecha del registro.
                Recuerda que el formato es'dd-mm-aaaa.csv'""")
         return False, "", "", ""
 
@@ -53,14 +52,31 @@ def nombre_csv(reg):
 #INFORMACIÓN IMPORTANTE: El nombre del archivo debe tener el siguiente formato "dia-mes-año.csv"
 def verificar_archivo_csv (ruta, reg):
     try:
-        lista_reg_dia = []
+        lista_sin_format = []
+        lista_con_format = []
+        dicc_reg = {}
         observacion = open(ruta, "r")
+        for i in observacion:
+            lista_sin_format.append(i.split(";"))
         
+
+        for j in lista_sin_format[1:]:
+            cod = j[0].strip()
+            nombre_obs = j[1].strip()
+            t_max = float(j[2].strip())
+            t_min = float(j[3].strip())
+            dicc_reg[cod] = {"nombre": nombre_obs,"fecha": {"dia": nombre_csv(reg)[1], "mes" : nombre_csv(reg)[2], "año": nombre_csv(reg)[3]},"temp_max" : t_max,"temp_min" : t_min}
+            lista_con_format.append(dicc_reg)
+            dicc_reg = {}
+            
+
         observacion.close
-        return lista_reg_dia
+        return lista_con_format
 
     except Exception as e:
         print (f"\nEl archivo {reg} no corresponde al registro de los observatorios.")
+        input ("Presione cualquier tecla para salir")
+        
 
         
     
@@ -69,10 +85,11 @@ def verificar_archivo_csv (ruta, reg):
 
 
 #DESARROLLO DEL PROGRAMA
-registro = "02-02-23.csv" #archivo .csv con los registros de temperatura. Su nombre es la fecha del registro [dia-mes-año]
+registro = "02-02-2023.csv" #archivo .csv con los registros de temperatura. Su nombre es la fecha del registro [dia-mes-año]
 carpeta = "filtro_1"
 ruta = f"{carpeta}/{registro}"
 while True:
+    print (verificar_archivo_csv (ruta, registro))
     opc = menu("""MENÚ
                1. Listado de observatorios (por código)
                2. Listado de observatorios (por nombre)
