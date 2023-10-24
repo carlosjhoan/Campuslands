@@ -48,7 +48,9 @@ def nombre_csv(reg):
         return False, "", "", ""
 
 
-#FUNCIONES DE LISTAR
+#FUNCIONES DE LISTAR 
+
+#Esta función lista los observatorios por código
 def listar_cod_1 (lst_registros):
     list_cod = []
     list_cod_nomb = []
@@ -74,6 +76,32 @@ def listar_cod_1 (lst_registros):
     
     return list_cod_1
 
+#Esta función lista los observatorios por código
+def listar_cod_2 (lst_registros):
+    list_nomb = []
+    list_nomb_cod = []
+    list_cod_2 = []
+       
+    for i in lst_registros:
+        cod_i = list(i.keys())[0]
+        list_nomb.append(i[cod_i]["nombre"])
+            
+    set_nomb = set(list_nomb)
+    list_nomb = sorted(list(set_nomb))
+     
+    for j in list_nomb:
+        list_nomb_cod.append(j)
+        for k in lst_registros:
+            cod_k = list(k.keys())[0]
+            if j == k[cod_k]["nombre"]:
+                cod_list = cod_k
+        list_nomb_cod.append(cod_list)
+        list_cod_2.append(list_nomb_cod)
+        list_nomb_cod = []
+    
+    return list_cod_2
+
+##Esta función lista las observaciones a nivel por código y con paginación de 10
 
 
 #Función que me permite verificar si el archivo .json existe. SI no existe lo crea
@@ -188,21 +216,49 @@ while True:
                >> Indicar opción [1 - 7]: """)
     
     if opc == 1:
-        print (listar_cod_1 (lista_registro_obs))
+        #print (listar_cod_1 (lista_registro_obs))
+        print ("\n      1. LISTADO DE OBSERVACIONES POR CÓDIGO")
+        print ("\t", "-" * 40)
+        print ("\n\n", "=" * 24)
+        print("|CÓDIGO\t|   NOMBRE\t|")
+        print ( "=" * 25)
+
+        for i in listar_cod_1 (lista_registro_obs):
+            if len(i[1]) <= 5:
+                i[1] = i[1] + " "
+            print (f"| {i[0]}\t| {i[1]}\t|")
+            print ("." * 25)
+
+        input("Presiona cualquier tecla para volver al menú... ")
+                  
+                  
 
     elif opc == 2:
+        #print (listar_cod_2 (lista_registro_obs))
+        print ("\n      2. LISTADO DE OBSERVACIONES POR NOMBRE")
+        print ("\t", "-" * 40)
+        print ("\n\n", "=" * 24)
+        print("| NOMBRE\t|CODIGO |")
+        print ( "=" * 25)
+
+        for i in listar_cod_2 (lista_registro_obs):
+            if len(i[0]) <= 5:
+                i[0] = i[0] + " "
+            print (f"| {i[0]}\t| {i[1]}\t|")
+            print ("." * 25)
+
+        input("Presiona cualquier tecla para volver al menú... ")
+
+    elif opc == 3:
         pass
 
-    elif opc == 2:
+    elif opc == 4:
         pass
 
-    elif opc == 2:
+    elif opc == 5:
         pass
 
-    elif opc == 2:
-        pass
-
-    elif opc == 2:
+    elif opc == 6:
         pass
 
     else: 
