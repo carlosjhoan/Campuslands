@@ -1,0 +1,10 @@
+Es clave contar con un sistema que reciba la info de las obervaciones de todo el país
+1. Las obervaciones se reciben en un archivo .csv (";"): Temp_máx y Temp_mín diarias en cada lugar, fecha (dia/mes/año)
+
+Menú:
+1. Listado de observatorios (por código)
+2. Listado de obervatorios (por nombre)
+3. Listado de observatorio en particular: esta se debe consultar POr código (ordenado por año/días/mes)
+4. Listado cantidades obervaciones: obervación Temp_máx, Temp_mín y Temp_prom
+
+
