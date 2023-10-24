@@ -48,9 +48,56 @@ def nombre_csv(reg):
         return False, "", "", ""
 
 
+#FUNCIONES DE LISTAR
+def listar_cod_1 (lst_registros):
+    list_cod = []
+    list_cod_nomb = []
+    list_cod_1 = []
+       
+    for i in lst_registros:
+        cod_i = list(i.keys())[0]
+        list_cod.append(int(cod_i))
+            
+    set_cod = set(list_cod)
+    list_cod = sorted(list(set_cod))
+    
+        
+    for j in list_cod:
+        list_cod_nomb.append(str(j))
+        for k in lst_registros:
+            cod_k = list(k.keys())[0]
+            if str(j) == cod_k:
+                nom_obs = k[str(j)]["nombre"]
+        list_cod_nomb.append(nom_obs)
+        list_cod_1.append(list_cod_nomb)
+        list_cod_nomb = []
+    
+    return list_cod_1
+
+
+
+#Función que me permite verificar si el archivo .json existe. SI no existe lo crea
+def verificar_archivo (ruta):
+    try:
+        archivo = open(ruta, "r")
+        lista_libros = json.load(archivo)
+        archivo.close
+        return lista_libros
+
+    except:
+        
+        archivo = open(ruta, "w")
+        json.dump([], archivo)
+        archivo.close()
+        archivo = open(ruta, "r")
+        lista_libros = json.load(archivo)
+        archivo.close
+        return lista_libros
+
+
 #validación del archivo .csv con los registros:
 #INFORMACIÓN IMPORTANTE: El nombre del archivo debe tener el siguiente formato "dia-mes-año.csv"
-def verificar_archivo_csv (ruta, reg):
+def verificar_registro_csv (ruta, reg):
     try:
         lista_sin_format = []
         lista_con_format = []
@@ -78,18 +125,57 @@ def verificar_archivo_csv (ruta, reg):
         input ("Presione cualquier tecla para salir")
         
 
+#Función que me permite verificar si el archivo .json existe. SI no existe lo crea
+def verificar_archivo_json (ruta_json):
+    try:
+        archivo = open(ruta_json, "r")
+        lista_registros_obs = json.load(archivo)
+        archivo.close
+        return lista_registros_obs
+
+    except:
         
+        archivo = open(ruta_json, "w")
+        json.dump([], archivo)
+        archivo.close()
+        archivo = open(ruta_json, "r")
+        lista_registros_obs = json.load(archivo)
+        archivo.close
+        return lista_registros_obs
+
+#Esta función registra la información actualizada al json 
+def cargar_libro (lsta_registros, ruta_json):
+
+
+        archivo = open(ruta_json, "w")
+        json.dump(lsta_registros, archivo)
+        archivo.close()
+    
+#Esta función me permite añadir los datos del registro csv al json. Me devulve la lista de información completa.
+def csv_json (lst_csv, lst_json):
+    for i in lst_csv:
+        lst_json.append(i)
+
+    return lst_json
+   
     
         
 
 
 
 #DESARROLLO DEL PROGRAMA
-registro = "02-02-2023.csv" #archivo .csv con los registros de temperatura. Su nombre es la fecha del registro [dia-mes-año]
+registro_csv = "03-02-2023.csv" #archivo .csv con los registros diarios de temperatura. Su nombre es la fecha del registro [dia-mes-año]
+archivo_json = "obervatorios.json" #Este es el nombre del archivo .json que contiene la información de todos los observatorios. Recogida diariamente
 carpeta = "filtro_1"
-ruta = f"{carpeta}/{registro}"
+ruta_csv = f"{carpeta}/{registro_csv}" #Ruta del registro diaro de datos (formato csv)
+ruta_json = f"{carpeta}/{archivo_json}" #Ruta del archivo que contiene el historial de los registros(formato json)
 while True:
-    print (verificar_archivo_csv (ruta, registro))
+    #print (verificar_archivo_csv (ruta_csv, registro_csv))
+    lista_csv = verificar_registro_csv (ruta_csv, registro_csv)
+    lista_json = verificar_archivo_json (ruta_json)
+    lista_registro_obs = csv_json (lista_csv, lista_json) #Lista con la información actualizada. En caso de ser necesario
+    cargar_libro (lista_registro_obs, ruta_json)
+
     opc = menu("""MENÚ
                1. Listado de observatorios (por código)
                2. Listado de observatorios (por nombre)
@@ -102,7 +188,7 @@ while True:
                >> Indicar opción [1 - 7]: """)
     
     if opc == 1:
-        pass
+        print (listar_cod_1 (lista_registro_obs))
 
     elif opc == 2:
         pass
