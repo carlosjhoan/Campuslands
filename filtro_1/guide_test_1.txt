@@ -6,5 +6,8 @@ Menú:
 2. Listado de obervatorios (por nombre)
 3. Listado de observatorio en particular: esta se debe consultar POr código (ordenado por año/días/mes)
 4. Listado cantidades obervaciones: obervación Temp_máx, Temp_mín y Temp_prom
+5. 
+6
+7. SALIR
 
 

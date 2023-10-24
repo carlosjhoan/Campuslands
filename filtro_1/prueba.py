@@ -1,5 +1,5 @@
 #Para ir probando pedazos de código
-archivo = open("filtro_1/obervaciones.csv", "r")
+archivo = open("filtro_1/03-02-23.csv", "r")
 lista_vac = []
 contenido = archivo
 for i in contenido:
