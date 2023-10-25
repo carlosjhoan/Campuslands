@@ -23,29 +23,6 @@ def menu(msj):
 
 #ARCHIVOS
 #validación del nombre del archivo de registro
-def nombre_csv(reg):
-    try:
-        nomb_reg = reg
-        list_nomb = nomb_reg.split("-")
-        dia = list_nomb[0].strip()
-        if len(dia) < 2 and int(dia) > 0:
-            dia = "0" + dia
-        else:
-            pass
-        mes = list_nomb[1].strip()
-        if len(mes) < 2 and int(mes) > 0:
-            mes = "0" + mes
-        else:
-            pass
-        year = list_nomb[2].strip()
-        list_year = year.split(".")
-        year = list_year[0]
-        return True, dia, mes, year
-
-    except Exception as e:
-        print ("""\nEl nombre de este archivo no es el correcto. Debe corresponder a la fecha del registro.
-               Recuerda que el formato es'dd-mm-aaaa.csv'""")
-        return False, "", "", ""
 
 
 #FUNCIONES DE LISTAR 
@@ -102,7 +79,27 @@ def listar_cod_2 (lst_registros):
     return list_cod_2
 
 ##Esta función lista las observaciones a nivel por código y con paginación de 10
-
+def listar_cod_5 (lst_registros):
+    list_cod = []
+    
+    list_cod_5 = []
+       
+    for i in lst_registros:
+        cod_i = list(i.keys())[0]
+        list_cod.append(int(cod_i))
+            
+    set_cod = set(list_cod)
+    list_cod = sorted(list(set_cod))
+    
+        
+    for j in list_cod:
+        
+        for k in lst_registros:
+            cod_k = list(k.keys())[0]
+            if str(j) == cod_k:
+                list_cod_5.append(k)
+        
+    return list_cod_5
 
 #Función que me permite verificar si el archivo .json existe. SI no existe lo crea
 def verificar_archivo (ruta):
@@ -124,15 +121,16 @@ def verificar_archivo (ruta):
 
 
 #validación del archivo .csv con los registros:
-#INFORMACIÓN IMPORTANTE: El nombre del archivo debe tener el siguiente formato "dia-mes-año.csv"
-def verificar_registro_csv (ruta, reg):
+#INFORMACIÓN IMPORTANTE:La fecha en el archivo .csv está en formato "dd-mm-aaa"
+def verificar_registro_csv (ruta_csv):
     try:
         lista_sin_format = []
         lista_con_format = []
         dicc_reg = {}
-        observacion = open(ruta, "r")
+        observacion = open(ruta_csv, "r")
         for i in observacion:
             lista_sin_format.append(i.split(";"))
+        print ("lista sin format", lista_sin_format)
         
 
         for j in lista_sin_format[1:]:
@@ -140,16 +138,23 @@ def verificar_registro_csv (ruta, reg):
             nombre_obs = j[1].strip()
             t_max = float(j[2].strip())
             t_min = float(j[3].strip())
-            dicc_reg[cod] = {"nombre": nombre_obs,"fecha": {"dia": nombre_csv(reg)[1], "mes" : nombre_csv(reg)[2], "año": nombre_csv(reg)[3]},"temp_max" : t_max,"temp_min" : t_min}
+            fecha = j[4].strip()
+            fecha = fecha.split("/")
+            dia = fecha[0]
+            mes = fecha[1]
+            year = fecha[2]
+
+
+            dicc_reg[cod] = {"nombre": nombre_obs,"fecha": {"dia": dia, "mes" : mes, "año": year},"temp_max" : t_max,"temp_min" : t_min}
             lista_con_format.append(dicc_reg)
             dicc_reg = {}
-            
 
+        print (lista_con_format)    
         observacion.close
         return lista_con_format
 
     except Exception as e:
-        print (f"\nEl archivo {reg} no corresponde al registro de los observatorios.")
+        print (f"\nEl archivo no corresponde al registro de los observatorios.")
         input ("Presione cualquier tecla para salir")
         
 
@@ -192,17 +197,23 @@ def csv_json (lst_csv, lst_json):
 
 
 #DESARROLLO DEL PROGRAMA
-registro_csv = "03-02-2023.csv" #archivo .csv con los registros diarios de temperatura. Su nombre es la fecha del registro [dia-mes-año]
+ #archivo .csv con los registros diarios de temperatura. Su nombre es la fecha del registro [dia-mes-año]
 archivo_json = "obervatorios.json" #Este es el nombre del archivo .json que contiene la información de todos los observatorios. Recogida diariamente
 carpeta = "filtro_1"
-ruta_csv = f"{carpeta}/{registro_csv}" #Ruta del registro diaro de datos (formato csv)
+
+#RUTAS: json y csv
+ruta_csv = "filtro_1/datos.csv" #Ruta del registro diaro de datos (formato csv)
 ruta_json = f"{carpeta}/{archivo_json}" #Ruta del archivo que contiene el historial de los registros(formato json)
+
+#LEER LISTAS y CARGARLAS AL JSON
+lista_csv = verificar_registro_csv (ruta_csv)
+lista_json = verificar_archivo_json (ruta_json) #Inicializar archivo json
+lista_registro_obs = lista_csv #Lista con la información actualizada
+cargar_libro (lista_csv, ruta_json)
 while True:
-    #print (verificar_archivo_csv (ruta_csv, registro_csv))
-    lista_csv = verificar_registro_csv (ruta_csv, registro_csv)
-    lista_json = verificar_archivo_json (ruta_json)
-    lista_registro_obs = csv_json (lista_csv, lista_json) #Lista con la información actualizada. En caso de ser necesario
-    cargar_libro (lista_registro_obs, ruta_json)
+    
+    
+    
 
     opc = menu("""MENÚ
                1. Listado de observatorios (por código)
@@ -256,7 +267,30 @@ while True:
         pass
 
     elif opc == 5:
-        pass
+        #print (listar_cod_2 (lista_registro_obs))
+        n = 0
+        print ("\n      5. LISTADO DE OBSERVACIONES NACIONALES")
+        print ("\t", "-" * 40)
+        print ("\n\n", "=" * 72)
+        print("|CÓDIGO\t|   NOMBRE\t| Temp max [°C]\t| Temp min [°C]\t| Temp prom [°C]|")
+        print ( "=" * 73)
+        
+        for i in listar_cod_5 (lista_registro_obs):
+            cod_i = list(i.keys())[0]
+            nombre = i[cod_i]["nombre"]
+            if len(nombre) <= 5:
+                nombre = nombre + "  "
+            t_max = i[cod_i]["temp_max"]
+            t_min = i[cod_i]["temp_min"]
+            t_prom = (t_max + t_min)/2
+            print (f"| {cod_i}\t| {nombre}\t|  \t{t_max}\t|  \t{t_min}\t|  \t{t_prom:.2f}\t|")
+            print ("." * 73)
+            n += 1
+            if n == 10:
+                n = 0
+                input (">>> Seguir [ENTER] --> \n")
+
+
 
     elif opc == 6:
         pass
