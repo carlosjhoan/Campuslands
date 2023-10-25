@@ -219,6 +219,51 @@ def listar_cod_5 (lst_registros):
         
     return list_cod_5
 
+
+def lista_cod (lsta_registros):
+    lista_cod = []
+    for i in lsta_registros:
+        cod_i = list(i.keys())[0]
+        lista_cod.append(cod_i)
+    set_cod = set(lista_cod)
+    lista_cod = list(set_cod) 
+
+    return lista_cod
+
+def lista_prom (lista_cod, lst_registros):
+    lista_ind = []
+    lista_prom_ind = []
+    lista_ord_prom = []
+    lista_final = []
+    for i in range(len(lista_cod)):
+        info = inf_obs (lst_registros, lista_cod[i])
+        cod_i = lista_cod[i]
+        for j in lst_registros:
+            cod_j = list(j.keys())[0]
+            if cod_i == cod_j:
+                nombre = j[cod_j]["nombre"]
+        prom = info[2]
+        lista_ind = [cod_i, nombre, prom]
+        lista_ord_prom.append(lista_ind)
+        lista_ind = []
+
+    for i in lista_ord_prom:
+        lista_prom_ind.append(i[2])
+    lista_prom_ind = sorted(lista_prom_ind)
+
+    for i in lista_prom_ind:
+        for j in lista_ord_prom:
+            if i == j[2]:
+                lista_final.append(j)
+    
+    return lista_final
+
+    
+
+
+
+    
+    
 #Función que me permite verificar si el archivo .json existe. SI no existe lo crea
 def verificar_archivo (ruta):
     try:
@@ -237,6 +282,9 @@ def verificar_archivo (ruta):
         archivo.close
         return lista_libros
 
+
+        
+    
 
 #validación del archivo .csv con los registros:
 #INFORMACIÓN IMPORTANTE:La fecha en el archivo .csv está en formato "dd-mm-aaa"
@@ -329,8 +377,9 @@ while True:
     
     
     
-
-    opc = menu("""MENÚ
+    print ("\n\t\t         ", "="*14)
+    opc = menu("""\t\t\t       MENÚ
+                          ==============
                1. Listado de observatorios (por código)
                2. Listado de observatorios (por nombre)
                3. Listado de observaciones de un observatorio
@@ -394,7 +443,8 @@ while True:
 
         for i in lista_registro_obs:
             cod_i = list(i.keys())[0]
-            nombre = i[cod_i]["nombre"]
+            if cod_i == cod_obs:
+                nombre = i[cod_i]["nombre"]
         
         print ("\n\n", ":" * 30)
         print (f"OBSERVATORIO: {nombre}")
@@ -438,7 +488,8 @@ while True:
         lista_info_obs = inf_obs (lista_registro_obs, cod_obs)
         for i in lista_registro_obs:
             cod_i = list(i.keys())[0]
-            nombre = i[cod_i]["nombre"]
+            if cod_i == cod_obs:
+                nombre = i[cod_i]["nombre"]
         
         print ("\n\n", ":" * 35)
         print (f"OBSERVATORIO: {nombre}")
@@ -448,6 +499,8 @@ while True:
         print (f"   Temperatura mínima: {lista_info_obs[1]} [°C]")
         print (f"   Temperatura promedio: {lista_info_obs[2]:.2f} [°C]")
         print ("_" * 35)
+
+        input("\nPresiona cualquier tecla para volver al menú... ")
 
         
 
@@ -480,7 +533,18 @@ while True:
 
 
     elif opc == 6:
-        pass
+        print ("\n      6. LISTADO DE OBSERVACIONES NACIONALES (PROMEDIO TEMPERATURA)")
+        print ("\t", "-" * 40)
+        print ("\n\n", "=" * 72)
+        lista_cod = lista_cod (lista_registro_obs)
+        for i in lista_prom (lista_cod, lista_registro_obs ):
+            print (f"\nCÓDIGO:{i[0]}")
+            print (f"NOMBRE: {i[1]}")
+            print (f"TEMPERATURA PROMEDIO: {i[2]:.2f} [°C]")
+            print ("-" * 35)
+        input("\nPresiona cualquier tecla para volver al menú... ")
+
+        
 
     else: 
         si_no = input("""\n¿Está seguro que desea salir? 
