@@ -21,6 +21,124 @@ def menu(msj):
         except ValueError:
             print ("ERROR !!! Debe ingresar un número entero.")
 
+
+
+#Esta función valida el código y verifica que el código del observatorio exista
+def verif_id (lst_registros, msj):
+    while True:
+        a = 0
+        n = 0
+        try:
+            cod_obs  = input(msj)
+            if not cod_obs.isdigit():
+                print ("\n", "=." * 25)
+                print ("El código de un observatorio se compone solo de números.\nVuélvalo a ingresar***")
+                print ("=." * 25)
+                continue
+
+            for i in lst_registros:
+                if list(i.keys())[0] == cod_obs:
+                    n += 1
+                    a = 1
+
+                else:
+                    pass
+            if a == 0:
+                print ("\n", "=." * 25)
+                print ("El código no se encuentra registrado.\nIngrese uno existente***")
+                print ("=." * 25)
+                continue
+            return cod_obs
+        
+        except Exception as e:
+            print ("\n", "*-" * 25)
+            print (f"\nHa ocurrido el siguiente error: {e}")
+            print ("*-" * 25)
+
+
+#Organiza en una lista las observaciones de un observatorio en particular. Para el punto 3
+def reg_observatorio (lst_registros, cod_obs):
+    lista_1_observatorio = []
+    lista_1_years = []
+    lsta_1_mes = []
+    lsta_years = []
+    for i in lst_registros:
+        cod_i = list(i.keys())[0]
+        if cod_i == cod_obs:
+            lista_1_observatorio.append(i)
+    
+    
+    #ordenar por año
+    for j in lista_1_observatorio:
+        cod_j = list(j.keys())[0]
+        lsta_years.append((j[cod_j]["fecha"]["año"]))
+           
+    set_years = set(lsta_years)
+    lsta_years = sorted(list(set_years))
+   
+    for j in lsta_years:
+        for k in lista_1_observatorio:
+            cod_k = list(k.keys())[0]
+            if k[cod_k]["fecha"]["año"] == j:
+                lista_1_years.append(k)
+    
+    #print (lista_1_years)
+    
+    #organizar por mes
+    for p in range(len(lista_1_years)-1):
+            year_p = lista_1_years[p][cod_obs]["fecha"]["año"]
+            mes_p =  lista_1_years[p][cod_obs]["fecha"]["mes"]
+            for q in range (p + 1, len(lista_1_years)):
+                year_q = lista_1_years[q][cod_obs]["fecha"]["año"]
+                mes_q =  lista_1_years[q][cod_obs]["fecha"]["mes"]
+
+                if (year_p == year_q) and (int(mes_p) > int(mes_q)):
+                    t = lista_1_years[p]
+                    lista_1_years[p] = lista_1_years[q]
+                    lista_1_years[q] = t
+
+
+    #organizar por día
+    for p in range(len(lista_1_years)-1):
+            year_p = lista_1_years[p][cod_obs]["fecha"]["año"]
+            dia_p = lista_1_years[p][cod_obs]["fecha"]["dia"]
+            mes_p =  lista_1_years[p][cod_obs]["fecha"]["mes"]
+            for q in range (p + 1, len(lista_1_years)):
+                year_q = lista_1_years[q][cod_obs]["fecha"]["año"]
+                dia_q = lista_1_years[q][cod_obs]["fecha"]["dia"]
+                mes_q =  lista_1_years[q][cod_obs]["fecha"]["mes"]
+
+                if (year_q == year_p) and (mes_p == mes_q) and (int(dia_p) > int(dia_q)):
+                    t = lista_1_years[p]
+                    lista_1_years[p] = lista_1_years[q]
+                    lista_1_years[q] = t
+
+    return lista_1_years
+
+#Etsa funciónm permite ver la oinformación de un observatorio en particular
+def inf_obs (lst_registros, cod_obs):
+
+    lista_t_min = []
+    lista_t_max = []
+    lista_obs = []
+    for i in lst_registros:
+        cod_i = list(i.keys())[0]
+        if cod_i == cod_obs:
+            lista_obs.append(i)
+
+    cant_obs = len(lista_obs)
+
+    for j in lista_obs:
+        lista_t_min.append(j[cod_obs]["temp_min"])
+        lista_t_max.append(j[cod_obs]["temp_max"])
+    
+    max_temp = max(lista_t_max)
+    min_temp = min(lista_t_min)
+    prom_temp = (max_temp + min_temp)/2
+    return max_temp, min_temp, prom_temp, cant_obs
+
+
+
 #ARCHIVOS
 #validación del nombre del archivo de registro
 
@@ -130,7 +248,7 @@ def verificar_registro_csv (ruta_csv):
         observacion = open(ruta_csv, "r")
         for i in observacion:
             lista_sin_format.append(i.split(";"))
-        print ("lista sin format", lista_sin_format)
+        
         
 
         for j in lista_sin_format[1:]:
@@ -149,7 +267,7 @@ def verificar_registro_csv (ruta_csv):
             lista_con_format.append(dicc_reg)
             dicc_reg = {}
 
-        print (lista_con_format)    
+          
         observacion.close
         return lista_con_format
 
@@ -191,9 +309,6 @@ def csv_json (lst_csv, lst_json):
 
     return lst_json
    
-    
-        
-
 
 
 #DESARROLLO DEL PROGRAMA
@@ -261,10 +376,81 @@ while True:
         input("Presiona cualquier tecla para volver al menú... ")
 
     elif opc == 3:
-        pass
+        print ("\n      3. LISTADO DE OBSERVACIONES DE UN OBSERVATORIO")
+        print ("     ", "-" * 47)
+        print ("\n\n", "=" * 72)
+
+        print("|CÓDIGO\t|   NOMBRE\t|")
+        print ( "=" * 25)
+
+        for i in listar_cod_1 (lista_registro_obs):
+            if len(i[1]) <= 5:
+                i[1] = i[1] + " "
+            print (f"| {i[0]}\t| {i[1]}\t|")
+            print ("." * 25)
+
+        cod_obs = verif_id (lista_registro_obs,"\nIngrese el código del observatorio que desea consultar:\n>>> ")
+        lista_ordenada = reg_observatorio (lista_registro_obs, cod_obs)
+
+        for i in lista_registro_obs:
+            cod_i = list(i.keys())[0]
+            nombre = i[cod_i]["nombre"]
+        
+        print ("\n\n", ":" * 30)
+        print (f"OBSERVATORIO: {nombre}")
+        print ( ":" * 30, )
+        for j in lista_ordenada:
+            cod_j = list(j.keys())[0]
+            dia = j[cod_j]["fecha"]["dia"]
+            mes = j[cod_j]["fecha"]["mes"]
+            year = j[cod_j]["fecha"]["año"]
+            temp_max = j[cod_j]["temp_max"]
+            temp_min = j[cod_j]["temp_min"]
+            print(f"\nFecha de registro: {dia} / {mes} / {year}")
+            print (f"Temperatura máxima: {temp_max} [°C]")
+            print (f"Temperatura máxima: {temp_min} [°C]")
+            print ("." * 30)
+
+        input("\nPresiona cualquier tecla para volver al menú... ")
+
+
+
+
+
+        
 
     elif opc == 4:
-        pass
+        print ("\n      4. INFORMACIÓN DE UN OBSERVATORIO")
+        print ("\t", "-" * 40)
+        print ("\n\n", "=" * 24)
+        
+
+        print("|CÓDIGO\t|   NOMBRE\t|")
+        print ( "=" * 25)
+
+        for i in listar_cod_1 (lista_registro_obs):
+            if len(i[1]) <= 5:
+                i[1] = i[1] + " "
+            print (f"| {i[0]}\t| {i[1]}\t|")
+            print ("." * 25)
+
+        cod_obs = verif_id (lista_registro_obs,"\nIngrese el código del observatorio que desea consultar:\n>>> ")
+        lista_info_obs = inf_obs (lista_registro_obs, cod_obs)
+        for i in lista_registro_obs:
+            cod_i = list(i.keys())[0]
+            nombre = i[cod_i]["nombre"]
+        
+        print ("\n\n", ":" * 35)
+        print (f"OBSERVATORIO: {nombre}")
+        print ( ":" * 35, )
+        print (f"   Cantidad de observaciones: {lista_info_obs[3]}")
+        print (f"   Temperatura máxima: {lista_info_obs[0]} [°C]")
+        print (f"   Temperatura mínima: {lista_info_obs[1]} [°C]")
+        print (f"   Temperatura promedio: {lista_info_obs[2]:.2f} [°C]")
+        print ("_" * 35)
+
+        
+
 
     elif opc == 5:
         #print (listar_cod_2 (lista_registro_obs))
@@ -272,8 +458,8 @@ while True:
         print ("\n      5. LISTADO DE OBSERVACIONES NACIONALES")
         print ("\t", "-" * 40)
         print ("\n\n", "=" * 72)
-        print("|CÓDIGO\t|   NOMBRE\t| Temp max [°C]\t| Temp min [°C]\t| Temp prom [°C]|")
-        print ( "=" * 73)
+
+        
         
         for i in listar_cod_5 (lista_registro_obs):
             cod_i = list(i.keys())[0]
@@ -290,6 +476,7 @@ while True:
                 n = 0
                 input (">>> Seguir [ENTER] --> \n")
 
+        input("\nPresiona cualquier tecla para volver al menú... ")
 
 
     elif opc == 6:
