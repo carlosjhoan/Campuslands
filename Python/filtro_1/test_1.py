@@ -362,10 +362,10 @@ def csv_json (lst_csv, lst_json):
 #DESARROLLO DEL PROGRAMA
  #archivo .csv con los registros diarios de temperatura. Su nombre es la fecha del registro [dia-mes-año]
 archivo_json = "obervatorios.json" #Este es el nombre del archivo .json que contiene la información de todos los observatorios. Recogida diariamente
-carpeta = "filtro_1"
+carpeta = "Python/filtro_1"
 
 #RUTAS: json y csv
-ruta_csv = "filtro_1/datos.csv" #Ruta del registro diaro de datos (formato csv)
+ruta_csv = "Python/filtro_1/datos.csv" #Ruta del registro diaro de datos (formato csv)
 ruta_json = f"{carpeta}/{archivo_json}" #Ruta del archivo que contiene el historial de los registros(formato json)
 
 #LEER LISTAS y CARGARLAS AL JSON
@@ -536,8 +536,8 @@ while True:
         print ("\n      6. LISTADO DE OBSERVACIONES NACIONALES (PROMEDIO TEMPERATURA)")
         print ("\t", "-" * 40)
         print ("\n\n", "=" * 72)
-        lista_cod = lista_cod (lista_registro_obs)
-        for i in lista_prom (lista_cod, lista_registro_obs ):
+        list_cod = lista_cod (lista_registro_obs)
+        for i in lista_prom (list_cod, lista_registro_obs ):
             print (f"\nCÓDIGO:{i[0]}")
             print (f"NOMBRE: {i[1]}")
             print (f"TEMPERATURA PROMEDIO: {i[2]:.2f} [°C]")
