@@ -247,7 +247,7 @@ def listar_libros (opc, lst_libros):
                 input("\n\t\tSeguir --> ")
                 n = 0
 
-        #return list_cons
+        
         
 
     else:
@@ -264,7 +264,7 @@ def listar_libros (opc, lst_libros):
                 id_lista = list(k.keys())[0]
                 if j == k[f"{id_lista}"]["precio"]:
                     list_cons.append(k)
-                    #print (k)
+                  
 
         print ("\n", "." * 50)
         for m in list_cons:
@@ -277,7 +277,7 @@ def listar_libros (opc, lst_libros):
             if n == 3:
                 input("\n\t\tSeguir --> ")
                 n = 0
-        #return list_cons
+      
         
 
 
