@@ -51,7 +51,21 @@
             <br>
             <label for="commit"></label>
             <textarea name="commit" id="commit" cols="30" rows="10" placeholder="Utilice este recuadro para escribir"></textarea>
+            <br>
+            <label for = "elej-fecha">Elija una fecha:</label>
+            <input type="date" name = "elej-fecha" id = "elej-fecha">
+            <br>
 
+
+            <!--<label for="fnombres">nombre:</label>-->
+        <input type="text" name = "fnombres" id = "fnombres" maxlength="15" minlength="3" placeholder="Ingrese el nombre del navegador" size = "20" list = "browser" value = "Chrome" pattern = "[a-zA-Z]{1,10}"><!--Si ponemos readonly no deja modificar-->
+        <datalist id = "browser">
+            <option value="Inglés"></option>
+            <option value="Francés"></option>
+            <option value="Español"></option>
+            <option value="Japonés"></option>
+            <option value="Holandés"></option>
+        </datalist>
         </fieldset>
 
     </form>
