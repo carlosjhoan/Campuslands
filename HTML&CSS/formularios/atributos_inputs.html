@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos Input</title>
+</head>
+<body>
+    <h1>Atributos e Inputs</h1>
+    <hr>
+    <br>
+    <form action = "https://www.google.com/search" method = "get">
+        <label for="fnombres">nombre:</label>
+        <input type="text" name = "fnombres" id = "fnombres" maxlength="15" minlength="3" placeholder="Ingrese el nombre del navegador" size = "20" list = "browser" value = "Chrome" pattern = "[a-zA-Z]{1,10}"><!--Si ponemos readonly no deja modificar-->
+        <!-- <datalist id = "browser">
+            <option value="Chrome"></option>
+            <option value="Opera"></option>
+            <option value="Firefox"></option>
+            <option value="Edge"></option>
+            <option value="Brave"></option>
+        </datalist> -->
+        <br><br>
+        <input type= "submit" value = "Enviar">
+        <br><br>
+        <label for="pass">Contraseña</label>
+        <input type="password" name ="pass" id = "pass">
+        <br><br>
+        <input type="radio" name = "lengprog" id = "Ada" value ="Ada">
+        <label for="Ada">Ada</label>
+        <br><br>
+        <input type="radio" name = "lengprog" id = "Fortran" value ="Fortran">
+        <label for="Fortran">Fortran</label><br><br>
+        <input type="radio" name = "lengprog" id = "C#" value ="C#">
+        <label for="C#">C#</label><br><br>
+        
+        <input type="radio" name = "lengprog" id = "Python" checked value ="Python">
+        <label for="Python">Python</label>
+        <br><br>
+        <input type= "submit" value = "Enviar">
+        <input type= "reset" value = "Limpiar">
+        <br><br>
+
+        <input type="checkbox" name = "pasatiempos" id = "Leer" value ="Leer">
+        <label for="leer">Leer</label>
+        <br><br>
+        <input type="checkbox" name = "pasatiempos" id = "Ciclismo" value ="ciclismo">
+        <label for="Ciclismo">Ciclismo</label><br><br>
+        <input type="checkbox" name = "pasatiempos" id = "Bailar" value ="Bailar">
+        <label for="Bailar">Bailar</label><br><br>
+        
+        <input type="checkbox" name = "pasatiempos" id = "pensar"  value ="pensar">
+        <label for="pensar">Pensar</label>
+        <br><br>
+        <input type= "submit" value = "Enviar">
+        <input type= "reset" value = "Limpiar">
+        <br><br>
+        <input type="button" value = "Ver mensaje" onclick="alert('Feliz Hallowen')">
+        <br><br>
+        <label for="colorfav">Escoja un color</label>
+        <input type="color" name = "colorfav" id = "colorfav">
+        <br><br>
+        <label for="birthday">Fecha de nacimiento: </label>
+        <input type="date" name = "birthday" id = "birthday">
+        <br><br>
+        <label for="histcdate">Ingrese fecha anterior a 2000/01/01: </label>
+        <input type="date" name = "histcdate" id = "histcdate" max = "2024-01-01">
+        <br><br>
+        <label for="histcdate">Ingrese fecha superior a 2000/01/01: </label>
+        <input type="date" name = "histcdate" id = "histcdate" min = "2000-01-01">
+        <br><br>
+        <label for="date-hour-birth">Fecha y hora de nacimiento:</label>
+        <input type="datetime-local" name = "date-hour-birth" id = "date-hour-birth">
+        <br><br>
+        <label for="email">ingrese su correo electrónico:</label>
+        <input type="email" name = "i-email" id = "i-email" required>
+        <br><br>
+        <input type="image" src = "../img/spiderman.png" alt = "spiderman" width="5%" onclick="alert('Feliz Hallowen')">
+        <br><br>
+        <label for="archivo">Escoja archivo</label>
+        <input type="file" name = "archivo" id = "archivo" accept=".png, .jpg, .gif">
+        <br><br>
+        <input type="hidden" name = "estadoform" value = "completo">
+        <br><br>
+        <label for = "monthbirth"  > Mes de nacimiento</label>
+        <input type="month" id = "monthbirth"  name = "monthbirth">
+        <br><br>
+        <label for="quant">Edad</label>
+        <input type="number" name = "edad" id = "edad" min = "18" max = "28" value = "25">
+        <br><br>
+        <label for="volumen">Seleccione el volumen: </label>
+        <input type="range" name = "volumen" id="volumen" min = "10" max = "50" step = "2">
+
+        <br><br>
+        <fieldset>
+        <legend>Busqueda</legend>
+        <br><br>
+        <label for="buscar">Buscar en Google: </label>
+        <input type="search" name = "q" id = "buscar" >
+        </fieldset>
+        
+        <br><br>
+        <label for="commit"></label>
+        <textarea name="commit" id="commit" cols="30" rows="10"></textarea>
+
+
+    </form>
+    
+</body>
+</html>
