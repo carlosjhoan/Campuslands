@@ -18,7 +18,7 @@
             <input type="file" name = "archivo" id = "archivo">
             <br>
             <input type="radio" name = "procesadores" id = "AMD" value = "AMD">
-            <label for=""AMD">AMD</label>
+            <label for="AMD">AMD</label>
             <input type="radio" name = "procesadores" id = "intel-i5" value = "intel-i5" >
             <label for="intel-i5">Intel <b>i5</b></label> 
             <input type="radio" name = "procesadores" id = "intel-i7" value = "intel-i7" >
@@ -58,14 +58,25 @@
 
 
             <!--<label for="fnombres">nombre:</label>-->
-        <input type="text" name = "fnombres" id = "fnombres" maxlength="15" minlength="3" placeholder="Ingrese el nombre del navegador" size = "20" list = "browser" value = "Chrome" pattern = "[a-zA-Z]{1,10}"><!--Si ponemos readonly no deja modificar-->
-        <datalist id = "browser">
-            <option value="Inglés"></option>
-            <option value="Francés"></option>
-            <option value="Español"></option>
-            <option value="Japonés"></option>
-            <option value="Holandés"></option>
-        </datalist>
+            <label for = "lang"></label>
+            <select name="lenguajes" id="lang">
+                <option value="ingles">Inglés</option>
+                <option value="espanol">Español</option>
+                <option value="frances">Francés</option>
+                <option value="italiano">Italiano</option>
+                <option value="aleman">Alemán</option>
+            </select>
+            <br>
+            <label for = "elej-hora">Elija una hora:</label>
+            <input type="time" name = "elej-hora" id = "elej-hora">
+            <br>
+            <label for="archivo">Elija un fichero:</label>
+            <input type="file" name = "archivo" id = "archivo">
+            <br>
+            <input type="radio" name = "sex" id = "mujer" value = "mujer">
+            <label for="mujer">Mujer</label>
+            <input type="radio" name = "sex" id = "hombre" value = "hombre" >
+            <label for="hombre">Hombre </label>
         </fieldset>
 
     </form>
