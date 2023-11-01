@@ -1,0 +1,62 @@
+<!--SRV04 De formularios-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRV04 Formularios</title>
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Indique sus preferencias</legend>
+            <br>
+            <label for = "elej-fecha">Elija una fecha:</label>
+            <input type="date" name = "elej-fecha" id = "elej-fecha">
+            <br>
+            <label for="archivo">Elija un fichero:</label>
+            <input type="file" name = "archivo" id = "archivo">
+            <br>
+            <input type="radio" name = "procesadores" id = "AMD" value = "AMD">
+            <label for=""AMD">AMD</label>
+            <input type="radio" name = "procesadores" id = "intel-i5" value = "intel-i5" >
+            <label for="intel-i5">Intel <b>i5</b></label> 
+            <input type="radio" name = "procesadores" id = "intel-i7" value = "intel-i7" >
+            <label for="intel-i5">Intel <b>i7</b></label> 
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Indique sus preferencias</legend>
+            <br>
+            <input type="checkbox" name = "materias" id = "matematicas" value = "matematicas">
+            <label for="matematicas">Matemáticas</label>
+            <input type="checkbox" name = "materias" id = "historia" value = "historia" >
+            <label for="historia">Historia</label> 
+            <input type="checkbox" name = "materias" id = "geografia" value = "geografia" >
+            <label for="geografia">Geografía</label>
+            <input type="checkbox" name = "materias" id = "lengua" value = "lengua" >
+            <label for="lengua">Lengua</label>
+            <br>
+            <label for="nombres">Nombres:</label>
+            <input type="text" name = "nombres" id = "nombres"  placeholder="Escriba su nombre/nombres">
+            <br>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" name = "apellidos" id = "apellidos"  placeholder="Escriba sus apellidos">
+            <br>
+            <label for="direccion">Dirección:</label>
+            <input type="text" name = "direccion" id = "direccion"  placeholder="Ingrese la dirección de residencia">
+            <br>
+            <label for="colorfav">Elija un color</label>
+            <input type="color" name = "colorfav" id = "colorfav">
+            <br>
+            <label for="commit"></label>
+            <textarea name="commit" id="commit" cols="30" rows="10" placeholder="Utilice este recuadro para escribir"></textarea>
+
+        </fieldset>
+
+    </form>
+
+
+    
+</body>
+</html>
