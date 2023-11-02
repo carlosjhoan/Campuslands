@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinación de selectores</title>
+    <style>
+    p +p{
+        color: tomato;
+    }
+    .hermano span {
+        color: rebeccapurple;
+    }
+    
+    div span {
+        font-weight: bold;
+    }
+    div + p + div{
+        color: teal;
+    }
+    </style>
+
+</head>
+<body>
+    <div clas = "abuelo">
+        <div class = "padre">
+            <p>Hugo</p>
+            <p>Paco</p>
+            <p>Luis</p>
+            <div>
+                <span>Bisnieto</span>
+            </div>
+            <p>primo</p>
+        <div>sobrino</div> 
+        </div>
+        <div class = "hermano">
+            <span>
+                nieto
+            </span>
+        </div>
+          
+    </div>
+    
+
+</body>
+</html>

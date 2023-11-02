@@ -1,0 +1,68 @@
+body {
+    border: rgb(165, 138, 42);
+}
+h1 {
+    color: cadetblue;
+}
+
+p strong {
+    color: crimson;
+}
+
+.destacado {
+    color: rgb(244, 178, 11);
+}
+
+h2 {
+    color: blue;
+}
+h2 ~ p a {
+    color: rgb(232, 39, 78);
+}
+p a em {
+    color: rgb(38, 103, 225);
+}
+
+a + span {
+    color:blueviolet;
+}
+
+caption {
+    color:rgb(19, 19, 230)
+}
+
+table {
+    color:rgb(244, 59, 59)
+}
+
+table .especial {
+    color:rgb(244, 152, 59)
+}
+
+table {
+    border-color: black;
+    border-collapse: collapse ;
+}
+
+th + td {
+    color: darkgreen;
+}
+td + td {
+    color: darkgreen;
+}
+
+td strong {
+    color:rgb(244, 152, 59)
+}
+
+table + div {
+    color: rgb(100, 108, 51);
+}
+
+#especial {
+    color: fuchsia;
+}
+
+div a {
+    color: green;
+}
