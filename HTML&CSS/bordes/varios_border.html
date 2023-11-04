@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varios tipos de bordes</title>
+
+    <style>
+        .una {
+            padding: 20px;
+            text-align: center;
+            border: 5px;
+            border-style: dotted dashed;
+            border-color: green yellow red blue;
+            
+        }
+
+        .una_igual {
+            padding: 20px;
+            margin: 10px 0px;
+            text-align: center;
+            border: 5px;
+            border-style: solid;
+            border-color: rgb(50, 175, 186) black pink;
+            border-width: 5px 8px;
+        }
+
+        .dos {
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 5px;
+            border-style: dotted dashed;
+            border-color: green yellow red blue;
+
+        }
+        .dos div {
+            padding: 20px;
+            /*margin: 10px 0px;*/
+            text-align: center;
+            border: 5px;
+            border-style: solid;
+            border-color: rgb(50, 175, 186) black pink;
+            border-width: 5px 8px;
+        }
+
+        .varias {
+            padding: 0px;
+            text-align: center;
+            border: 3px solid;
+        }
+        .varias_uno {
+            margin: 10px;
+            border: 3px solid;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class = "una">esta es una caja con varios bordes</div>
+    <div class = "una_igual">
+        igual que la anterior
+    </div>
+    <div class = "dos">
+        <div>
+            Una caja dentro de otra caja
+        </div>
+    </div>
+    
+    <div class = "varias">
+        <div class = "varias_uno">
+            <div class = "varias_uno">
+                <div class = "varias_uno">
+                    <div class = "varias_uno">
+                        <div class = "varias_uno">
+                            estas son cajas dentro de cajas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        
+    </div>
+    
+</body>
+</html>
