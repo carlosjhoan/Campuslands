@@ -9,24 +9,47 @@
 
             /*border: 2px solid;*/
             /*margin-bottom: ;*/
-            display: fixed;
+            /*display: flex; flex-flow: row wrap;*/
             width: 40%;
+            background-image: repeating-linear-gradient(rgb(104, 104, 106),rgb(19, 18, 1));
             
             
             
         }
 
         .negro div{
-            height: 10px;
-            margin: 2px 0;
-            border:  2px solid;
+            height: 20px;
+            /*margin: 2px 0;*/
+            border:  2px solid white;
             
-            background-image: linear-gradient(rgb(23, 13, 215),rgb(203, 194, 27));
+            
             /*-background-repeat: no-repeat;*/
-            background-attachment: fixed;
+            /*background-attachment: fixed;*/
             
             
             
+        }
+
+        .rojo {
+
+            /*border: 2px solid;*/
+            /*margin-bottom: ;*/
+            /*display: flex; flex-flow: row wrap;*/
+            width: 40%;
+            background-image: linear-gradient(rgb(210, 24, 24),rgb(107, 38, 24))
+        }
+
+        .rojo div{
+            height: 20px;
+            /*margin: 2px 0;*/
+            border:  2px solid white;
+
+
+            /*-background-repeat: no-repeat;*/
+            /*background-attachment: fixed;*/
+            }
+        .rojo div:hover {
+            background-color: rgba(40, 40, 40, .4);
         }
 
 
@@ -43,21 +66,26 @@
         <h1>Color negro</h1>
     </header>
     <section class = "negro">
-        <div class ="parent_n"></div>
+        <div class ="child_n"></div>
         <div class ="child_n"></div>
         <div class ="child_n"></div>
         <div class ="child_n"></div>
         
+    </section>
+
+    <header>
+        <h1>Color rojo</h1>
+    </header>
+
+    <section class = "rojo">
+        <div class ="child_r"></div>
+        <div class ="child_r"></div>
+        <div class ="child_r"></div>
+        <div class ="child_r"></div>
+    </section>
+
+    <section>
         
-
-
-    </section>
-
-    <section>
-
-    </section>
-    <section>
-
     </section>
     <section>
 
