@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gradientes</title>
     <style>
+        h1 {
+            text-align: center;
+        }
         .negro {
 
             /*border: 2px solid;*/
             /*margin-bottom: ;*/
             /*display: flex; flex-flow: row wrap;*/
-            width: 40%;
+            width: 50%;
             background-image: repeating-linear-gradient(rgb(104, 104, 106),rgb(19, 18, 1));
-            
+            margin: auto;
             
             
         }
@@ -21,41 +24,60 @@
             height: 20px;
             /*margin: 2px 0;*/
             border:  2px solid white;
-            
-            
-            /*-background-repeat: no-repeat;*/
-            /*background-attachment: fixed;*/
-            
-            
-            
+            box-shadow: 3px 3px rgb(200, 200, 200, .3);  
+        }
+
+        .negro div:hover {
+            background-color: rgba(186, 157, 157, 0.4);
         }
 
         .rojo {
 
-            /*border: 2px solid;*/
-            /*margin-bottom: ;*/
-            /*display: flex; flex-flow: row wrap;*/
-            width: 40%;
-            background-image: linear-gradient(rgb(210, 24, 24),rgb(107, 38, 24))
+            width: 50%;
+            background-image: linear-gradient(rgb(210, 24, 24),rgb(107, 38, 24));
+            margin: auto;
         }
 
         .rojo div{
             height: 20px;
             /*margin: 2px 0;*/
             border:  2px solid white;
-
-
-            /*-background-repeat: no-repeat;*/
-            /*background-attachment: fixed;*/
+            box-shadow: 3px 3px rgb(200, 200, 200, .3);
             }
+
+      
+        
         .rojo div:hover {
             background-color: rgba(40, 40, 40, .4);
         }
 
+        .rosa {
+
+            width: 50%;
+            background-image: linear-gradient(rgb(244, 230, 230),rgb(226, 38, 176));
+            margin: auto;
+        }
+
+        .rosa div{
+            height: 20px;
+            /*margin: 2px 0;*/
+            border:  2px solid white;
+            box-shadow: 3px 3px rgba(200, 200, 200, .3);
+            }
+
+      
+        
+        .rosa div:hover {
+            background-color: rgba(40, 40, 40, 0.4);
+        }
+
 
         main{
-            width: 30%;
+            width: 50%;
             margin: auto;
+            border: 3px outset rgb(91, 90, 90);
+            border-radius: 10px;
+            box-shadow: 3px 3px rgb(200, 200, 200, .3);
 
         }
     </style>
@@ -83,12 +105,24 @@
         <div class ="child_r"></div>
         <div class ="child_r"></div>
     </section>
+    
 
     <section>
         
     </section>
-    <section>
 
+    <header>
+        <h1>Color rosa</h1>
+    </header>
+    <section class = "rosa">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </section>
 </main>
 </body>
