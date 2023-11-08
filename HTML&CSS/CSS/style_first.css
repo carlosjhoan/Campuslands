@@ -37,7 +37,7 @@ li:hover {
 .articles {
     width: 40%;
     margin: 0.5% auto ;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .articles div {
@@ -47,6 +47,10 @@ li:hover {
     border: 1px solid black;
     background-color: gray;
     float: left;
+}
+div img {
+    height: 100px;
+    width: 100px;
 }
 
 .articles p {
@@ -62,17 +66,19 @@ hr {
 }
 
 footer {
+    position: relative;
     background-color: rgb(236, 233, 233, .3);
+    height: 20px;
 }
 footer li {
     list-style-type: none;
     display: inline;
 }
 footer p {
-    position:relative;
+    position:absolute;
     /*float: right;*/
-    bottom: 28px;
-    right: -94%;
+    top: -15px;
+    right: 20px;
    /* background-position: right;*/
     
 }
@@ -129,4 +135,15 @@ footer p {
 
 .tres p {
     margin-left: 5%;
+}
+
+@media screen and (max-width: 700px){
+    aside {
+        display: none;
+        
+    }
+    .articles {
+        width: 80%
+    }
+    
 }
