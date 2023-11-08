@@ -41,16 +41,15 @@
         }
 
         .articles {
-            position: relative;
-            width: 50%;
-            right: -25%;
+            width: 40%;
+            margin: 0.5% auto ;
             border: 1px solid black;
         }
 
         .articles div {
             margin-top: 2px;
-            height: 50px;
-            width: 50px;
+            height: 100px;
+            width: 100px;
             border: 1px solid black;
             background-color: gray;
             float: left;
@@ -80,13 +79,58 @@
 
         .dos {
             width: 20%;
-            border: 1px solid black;
-            position: relative;
-        
-            bottom: 450px;
-            right: -80%;
+            border: 2px solid rgb(197, 138, 29);
+            position: absolute;
+            top: 25%;
+            right: 2.6%;
+            
             /*left: 90%;*/
         }
+
+        .dos h2 {
+            margin: 5% auto; 
+            width: 90%;
+            background-color: rgb(197, 138, 29);
+            border: 2px solid orange;
+        }
+
+        .dos article p {
+            margin-left: 5%;
+        }
+
+        .uno {
+            width: 20%;
+            border: 1px solid black;
+            position: absolute;
+            top: 25%;
+            left: 2.6%;
+            background-color: rgb(238, 235, 235, 0.4);
+            border: 2px solid gray;
+        }
+
+        .uno h3 {
+            margin-left: 5%;
+        }
+
+        .uno p {
+            margin-left: 5%;
+        }
+
+        .tres {
+            position: static;
+            width: 20%;
+            top: 105%;
+            border: 2px dotted rgb(255, 208, 0);
+        }
+
+        .tres h2 {
+            margin-left: 5%;
+        }
+
+        .tres p {
+            margin-left: 5%;
+        }
+
 
     </style>
 </head>
@@ -136,34 +180,49 @@
         </section>
         
         <aside class = "uno">
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <h3><a href="">Noticias</a></h3>
+            <p>dd/mm/aaaa <a href="">Primera noticia del día</a></p>
+            <p>dd/mm/aaaa <a href="">Segunda noticia del día</a></p>
+            <p>dd/mm/aaaa <a href="">Tercera noticia del día</a></p>
+            <p>dd/mm/aaaa <a href="">Cuarta noticia del día</a></p>
+            <p>dd/mm/aaaa <a href="">Quinta noticia del día</a></p>
+            <h3><a href="">Enlaces relacionados</a></h3>
+            <p><a href="">1 enlace</a></p>
+            <p><a href="">2 enlace</a></p>
+            <p><a href="">3 enlace</a></p>
+            <p><a href="">4 enlace</a></p>
         </aside>
         <aside class = "dos">
-            <h2>tit_1</h2>
-            <article>nota 1</article>
-            <h2>tit_2</h2>
-            <article>nota 2</article>
+            <article>
+                <h2>Este va a ser el nombre de un artículo 1</h2>
+                <p>&nbsp;&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, laboriosam dolorum. Eum officiis architecto repudiandae optio sed culpa ipsa aperiam dolore, ullam nostrum qui reprehenderit tempore, at dolor modi. Esse.</p>
+                <p><a href="">Seguir leyendo ...</a></p>
+            </article>
+            
+            <article>
+                <h2>Este va a ser el nombre de un artículo 2</h2>
+                <p>&nbsp;&nbsp;&nbsp;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, voluptate ipsum impedit repellat, debitis, aperiam perspiciatis sapiente eligendi repellendus voluptatem itaque. Magni inventore corporis repellendus voluptas, reprehenderit omnis officiis possimus.</p>
+                <p><a href="">Seguir leyendo ...</a></p>
+            </article>
         </aside>
+
         <aside class = "tres">
             <h2><a href="">Publicidad</a></h2>
-            <p>publicidad 1</p>
-            <p>publicidad 2</p>
+            <p>&nbsp;&nbsp;&nbsp;Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus ut aperiam velit voluptas ab. Ipsam delectus quisquam voluptatem commodi reprehenderit, laborum aperiam fuga veritatis? Debitis animi doloremque eaque aut suscipit.</p>
+            <p>&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet in alias, architecto porro officia magnam adipisci, dolor vitae fugiat libero ratione autem omnis ipsum. Facilis totam doloribus saepe? Qui, voluptates.</p>
             <p><a href="">Seguir Leyendo</a></p>
         </aside>
 
-        <footer>
-            <ul>
-                <li> <a href="">footer 1</a></li>
-                <li><a href="">footer 2</a> </li>
-                <li><a href="">footer 3</a> </li>
-            </ul>
-            <p>@Copyright</p>
-        </footer>
+        
     </main>
+    <footer>
+        <ul>
+            <li> <a href="">footer 1</a></li>
+            <li><a href="">footer 2</a> </li>
+            <li><a href="">footer 3</a> </li>
+        </ul>
+        <p>@Copyright</p>
+    </footer>
     
 </body>
 </html>
