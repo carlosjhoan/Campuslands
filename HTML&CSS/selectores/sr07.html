@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú vertical</title>
+
+    <style>
+        .container {
+            position: relative;
+            top: 50px;
+            left: 100px;
+        }
+
+        img[alt="flecha_inactiva"] {
+            position: relative;
+            top: 5px;
+            left: 2px;
+        }
+
+        p {
+            padding-left: 20px;
+            position:relative ;
+            bottom: 30px;
+        }
+
+        .element {
+            width: 100px;
+            height: 30px;
+            border: 1px solid black;
+            background-color: rgb(250, 243, 243);
+        }
+
+        .element:hover{
+            background-color: #e4e4e4;
+            background-image: url(../img/flecha_activa.png);
+            background-repeat: no-repeat;
+            
+        }
+
+        .element:hover img{
+            display: none;
+            
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "element">
+            <img src="../img/flecha_inactiva.png" alt="flecha_inactiva" class = "active">
+            <p>Elemento 1</p>
+        </div>
+        <div class = "element">
+            <img src="../img/flecha_inactiva.png" alt="flecha_inactiva" class = "active">
+            <p>Elemento 2</p>
+        </div>
+        <div class = "element">
+            <img src="../img/flecha_inactiva.png" alt="flecha_inactiva" class = "active">
+            <p>Elemento 3</p>
+        </div>
+        <div class = "element active">
+            <img src="../img/flecha_inactiva.png" alt="flecha_inactiva" class = "active">
+            <p>Elemento 4</p>
+        </div>
+        <div class = "element">
+            <img src="../img/flecha_inactiva.png" alt="flecha_inactiva" class = "active">
+            <p>Elemento 5</p>
+        </div>
+        <div class = "element">
+            <img src="../img/flecha_inactiva.png" alt="flecha_inactiva" class = "active">
+            <p>Elemento 6</p>
+        </div>
+    </div>
+</body>
+</html>
