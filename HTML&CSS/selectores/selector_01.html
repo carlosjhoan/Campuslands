@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores múltiples</title>
+    <style>
+        .classic {
+            border: 1px solid tomato;
+        }
+            .primary {
+                font-size: 5rem;
+            }
+
+            .large {
+                width: 50%;
+            }
+        button.classic.primary.large {
+            color: lightseagreen;
+        }
+
+        button.classic.primary.large:active {
+            background-color: blueviolet;
+            color: aliceblue;
+        }
+
+        button[disabled] {
+            width: 25%
+        }
+
+        [disabled] {
+            background-color: aqua;
+            border: 2px solid black;
+            margin-left: 50px;
+        }
+
+        a[rel = "nofollow"] {
+            background: red;
+        }
+
+        [data-mood~="happy"] {
+            background: green;
+            color: white;
+            padding : 10px;
+        }
+
+        [lang|= "es"]{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
+
+        [lang|= "es"]:hover{
+            background-color: cyan;
+        }
+
+        a[href]::after {
+            content: "URL: ["attr(href)"]";
+            display: inline-block;
+            color: #666;
+        }
+
+        
+
+
+        a[href^="http://"]::after {
+            content: "Página NO SEGURA"
+            attr(href);
+            color: red;
+
+        }
+
+        [href^="https://"]:link {
+            color: red;
+            border: 4px solid green;
+
+        }
+
+        [href^="https://"]:visited {
+            color: rgb(236, 194, 28);
+            border: 4px solid rgb(168, 13, 182);
+
+        }
+
+        a[href$=".pdf"]::before {
+            content: url(../img/icons8-pdf-48.png);
+        }
+
+        a[href*="campus"] {
+            border: 2px solid black;
+        }
+
+        input#nombre:focus {
+            background-color: aquamarine;
+            border: 4px solid pink;
+        }
+
+        div:focus-within {
+            background-color: rgb(251, 127, 255);
+            border: 4px solid pink;
+        }
+
+        input#lastname:focus {
+            background-color: aquamarine;
+            border: 2px solid pink;
+        }
+
+        </style>
+</head>
+<body>
+    <button class = "classic primary large">Botón</button>
+    <br><br>
+    <button class = "classic large" disabled>Botón 2</button>
+    <br><br>
+    <input type="radio" name = "miradio" id = "miradio" disabled>
+    <br><br>
+    <a href="http://www.campuslands.com" rel = "nofollow">Campuslands</a>
+    <br><br>
+    <a href="https://www.google.com" data-mood="happy">Google.com</a>
+    <br><br>
+    <div data-mood="happy sad">Uno</div>
+    <br><br>
+    <div lang = "es-MX en-EN">English</div>
+    <br><br>
+    <a href="https://campuslands.com">Campus lands</a>
+    <br><br>
+    <a href="http://campuslands.com">Campus Lands</a>
+    <br><br>
+    <a href="http://campuslands.pdf" download">Documento PDF de CampusLands</a>
+    <br><br>
+    <label for="nombre">Nombre</label>
+    <br>
+    <input type="text" name = "nombre" id = "nombre">
+    <br><br>
+    
+    <br>
+    <div>
+        <label for="lastname">Apellido</label>
+        <input type="text" name = "lastname" id = "lastname" >
+        
+    </div>
+    
+
+</body>
+</html>
