@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS tipografía</title>
+    <style>
+        .serifs {
+            width: 300px;
+            border: 2px solid red;
+            border-radius: 4px;
+            background-color: beige;
+            margin-left: 100px;
+        }
+
+        #serif {
+            /*height: 20px;*/
+            
+            font-family: serif;
+            font-size: 4em;
+            
+        }
+
+        #san_serif {
+            /*width: 300px;*/
+            font-family: sans-serif;
+            font-size: 4em;
+        }
+        
+        .monospace {
+            padding: 20px;
+            margin: 50px;
+        }
+        .courier, .lucida, .consolas {
+            width: 400px;
+            padding: 10px;
+            border: 2px dotted black;
+            background-color: rgb(247, 175, 149, .3);
+            font-size: 2em;
+        }
+        .courier {
+            font-family:'Courier New', Courier, monospace, sans-serif;
+        }
+
+        .lucida {
+            font-family: 'Lucida Console', monospace;
+        }
+
+        .consolas {
+            font-family: 'Consolas', 'monaco', monospace;
+            font-weight:900;
+        }
+
+        /*Fonts-family*/
+
+        .franklin, .times, .cambria {
+            width: 400px;
+            padding: 10px;
+            border: 2px dotted black;
+            background-color: rgb(247, 175, 149, .3);
+            font-size: 2em;
+        }
+
+        .font-family {
+            padding: 20px;
+            margin: 50px;
+        }
+
+        .franklin {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .times {
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        .cambria {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+
+        .f-12, .f-18, .f-24 {
+            width: 400px;
+            padding: 10px;
+            border: 2px dotted black;
+            background-color: rgb(247, 175, 149, .3);
+            font-size: 2em;
+        }
+
+        .f-12 {
+            font-size: 100%;
+        }
+
+        .f-18 {
+            font-size:3em;
+        }
+
+        .f-24 {
+            font-size:5rem;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class = "serifs">
+            <p id = "serif">Este texto está escrito con <em>Serif</em></p>
+        </div>
+        <br><br><br>
+        <div class = "serifs">
+            <p id = "san_serif">Este texto está escrito con <em>Serif</em></p>
+        </div>
+        
+        <div class = "monospace">
+            <div class = "courier">Este texto está escrito en <b>Courier</b> que es un tipo de fuente monoespaciada</div>
+            <div class = "lucida">Este texto está escrito en <b>lucida</b> que es un tipo de fuente monoespaciada</div>
+            <div class = "consolas">Este texto está escrito en <b>Consolas</b> que es un tipo de fuente monoespaciada</div>
+        </div>
+
+        <div class = "font-family">
+            <div class = "franklin">Texto con <b>Font-family:</b> <em>'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif</em></div>
+            <div class = "times">Texto con <b>Font-family:</b> <em>'Times New Roman', Times, serif</em></div>
+            <div class = "cambria">Texto con <b>Font-family:</b> <em>Cambria, Cochin, Georgia, Times, 'Times New Roman', serif</em></div>
+        </div>
+
+        <div class = "font-size">
+            <div class = "f-12">Fuente 12</div>
+            <div class = "f-18">Fuente 18</div>
+            <div class = "f-24">Fuente 20</div>
+        </div>
+
+    </main>
+    
+</body>
+</html>
