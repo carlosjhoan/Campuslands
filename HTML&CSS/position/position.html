@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 2rem;
+            font-size: 2rem;
+            font-family: sans-serif;
+            background-color: black;
+            height: 2600px;
+        }
+        h1 {
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: gray;
+
+        }
+
+        .parent {
+            position: relative;
+        }
+
+        .static {
+            background-color: #dddddd;
+        }
+
+        .relative {
+            background-color: #cc5858;
+        }
+
+        .absolute {
+            background-color: #9dcac3;
+        }
+
+        .fixed {
+            background-color: #d29ee4;
+        }
+
+        .sticky {
+            background-color: #d3dcbb;
+        }
+
+        /*CSS Position*/
+        .static {
+            position: static;
+            z-index: 3;
+        }
+
+        .relative {
+            position: relative;
+            left: 50px;
+            top: 20px;
+        }
+
+        .absolute {
+            position: absolute;
+            left: 30px;
+            top: 20px;
+            z-index: 2;
+        }
+
+        .fixed {
+            position: fixed;
+            left: 100px;
+
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>CSS Position</h1>
+    <div class="parent">
+        <div class="static">static</div>
+        <div class="relative">relative</div>
+        <div class="absolute">Absolute</div>
+        <div class="fixed">Fixed</div>
+        <div class="sticky">Sticky</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static"></div>
+        <div class="static">static</div>
+        <div class="static"></div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+        <div class="static"></div>
+    </div>
+
+</body>
+</html>
