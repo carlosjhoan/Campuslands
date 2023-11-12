@@ -13,7 +13,7 @@
         .all-browsers {
             margin: 0;
             padding: 5px;
-            background-color: lightgray;
+            background-color: rgb(235, 231, 231);
             
         }
 
@@ -23,7 +23,10 @@
         }
 
         .browser {
-            background-color: white;
+           /* background-color: white;*/
+           background-image: linear-gradient(rgb(249, 247, 247),rgb(245, 241, 241));
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px 5px rgb(183, 172, 172, 0.4);
         }
 
         .browser > h2, p {
@@ -31,6 +34,47 @@
             font-size: 90%;
         }
 
+        .browser:hover {
+            background-image: linear-gradient(rgb(221, 219, 219),rgb(166, 165, 165));
+            height: 100px;
+            /*left: 100px;*/
+            margin-left: 50px;
+        }
+
+        .chrome:hover + .mozilla{
+            display: none;
+            transition: 1s;
+        }
+
+        .chrome:hover ~ .edge{
+            display: none;
+        }
+
+    
+        .mozilla:hover ~ .edge{
+            display: none;
+        }
+
+        .mozilla:hover ~ .brave{
+            display: none;
+        }
+
+        .mozilla:hover > .chrome {
+            display: none;
+        }
+
+        .edge:hover ~ .brave {
+            display: none;
+        }
+
+        .edge:hover:has(+.mozilla) {
+            display: none;
+        }
+
+
+        
+
+        
 
 
     </style>
@@ -39,17 +83,22 @@
 <body>
     <article class = "all-browsers">
         <h1>Most Popular Browsers</h1>
-        <article class = "browser">
+        <article class = "browser chrome">
             <h2>Google Chrome</h2>
             <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
         </article>
 
-        <article class = "browser">
+        <article class = "browser mozilla">
             <h2>Mozilla Firefox</h2>
             <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018.</p>
         </article>
 
-        <article class = "browser">
+        <article class = "browser edge">
+            <h2>Microsoft</h2>
+            <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet Explorer.</p>
+        </article>
+
+        <article class = "browser brave">
             <h2>Microsoft</h2>
             <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet Explorer.</p>
         </article>

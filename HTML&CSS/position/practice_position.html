@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Position</title>
+    <style>
+        header>p {
+            font-style: italic;
+            font-size: small;
+        }
+
+        .box {
+            padding: 5px;
+            height: 70px;
+            width: 70px;
+            border: 1px solid black;
+        }
+
+        .static {
+            background-color: rgb(180, 180, 234, 0.5);
+            margin: 20px;
+        }
+
+        .relative {
+            background-color: rgb(201, 221, 162, .5);
+            position: relative;
+            left: 50px;
+            top: 20px;
+        }
+        .relative .into_rel {
+            width: 40px;
+            height: 40px;
+            border: 1px solid;
+            background-color: beige;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+        }
+
+        .absolute {
+            background-color: rgb(225, 169, 169, .5);
+            position: absolute;
+            left: 200px;
+            top: 470px;
+        }
+
+        .fixed {
+            background-color: rgb(240, 208, 149, .5);
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            border-radius: 70px;
+        }
+
+        .sticky {
+            position: sticky;
+            bottom: 150px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Practicando <em>Position</em></h1>
+        <p>[{Carlos Jhoan Aguilar}]</p>
+        <hr>
+    </header>
+    <main>
+        <article>
+            <h2>Bloques</h2>
+            <p>Vamos a insertar varios bloques y ubicarlos utilizando las diferentes opciones de <em><b>Position</b></em>:</p>
+            <ul>
+                <li>Static</li>
+                <li>Relative</li>
+                <li>Absolute</li>
+                <li>Fixed</li>
+                <li>Sticky</li>
+            </ul>
+            <br>
+            <div class="boxes">
+                <div class="static box">Static</div>
+                <div class="relative box">
+                    Relative
+                    <div class = "into_rel">Into</div>
+                </div>
+                <div class="absolute box">Absolute</div>
+                <div class="fixed box">Fixed</div>
+                <div class="sticky box">Sticky</div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
