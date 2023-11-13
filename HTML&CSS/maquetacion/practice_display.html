@@ -34,7 +34,7 @@
         }
 
         .solo-dos {
-            display:flex;
+            display:inline-block;
         }
 
         .block {
@@ -51,8 +51,20 @@
         }
 
         .texto {
-
+            width: 20%;
             display:inline;
+        }
+
+        .child_o {
+            display: none;
+        }
+
+        .child_g {
+            display: none;
+        }
+
+        .o:hover .child_g {
+            display: inline-block;
         }
     </style>
 </head>
@@ -76,15 +88,14 @@
         <h2>Display: <em>block</em></h2>
     </header>
     <section class = "block">
-        <div class = "g">Div 1</div>
-        <div class = "o">Div 2</div>
+        <div class = "g">Div 1 <div class = "o child_o">Div 2</div></div>
+        <div class = "o">Div 2 <div class = "g child_g">Div 3</div></div>
         <div class = "g">Div 3</div>
         <div class = "o">Div 4</div>
     </section>
 
-    <section class = "solo-dos">
-        <div>Uno</div>
-        <div>dos</div>
+    <section >
+        <div class = "solo-dos">Uno</div><div class = "solo-dos">dos</div>
     </section>
 </body>
 </html>
