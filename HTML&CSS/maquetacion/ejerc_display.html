@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIsplay in CSS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+        }
+
+        #uno {
+            background-color: blue;
+            height: 100px;
+        }
+
+        .dos {
+            background-color: rgb(168, 64, 64, 0.4);
+            transition: height 1s;
+            
+        }
+
+        .dos p{
+            display: none;
+        }
+
+        .dos:hover {
+            height: 150px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px 5px rgb(26, 13, 13);
+        }
+
+        .dos:hover p{
+            background-image: linear-gradient(rgba(117, 116, 116, 0.3), rgba(244, 234, 215, 0.3));
+            display: block;
+            height: 50px;
+            margin: 10px;
+            padding: 3px;
+            box-shadow: 3px 3px 3px 3px rgb(26, 13, 13, 0.3);
+            border-radius: 5px;
+        }
+
+        .tres {
+            background-color: rgba(90, 168, 64, 0.4);
+        }
+
+        .cuatro {
+            height: 100px;
+            width: 50%;
+            background-color: rgba(168, 64, 146, 0.4);
+            transition: height 2s;
+
+        }
+
+        .cuatro:hover {
+            height: 200px;
+        }
+
+        .cinco {
+            background-color: rgba(85, 64, 168, 0.4);
+            height: 50px;
+            
+        }
+
+        .seis {
+            background-color: rgba(49, 148, 198, 0.4);
+            height: 50px;
+        }
+
+
+        .dos-tres {
+            height: 100px;
+            width: 50%;
+            display: inline-block;
+            
+        }
+
+        .cinco-seis {
+            /*display: block;*/
+            height: 100px;
+            width: 50%;
+            position: absolute;
+            /*border: 1px solid;*/
+        }
+
+        .cuatro-cinco {
+            display: inline-block;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id = "uno">Section 1</div>
+    <div class = "dos-tres dos">Section 2 <p>Esto es parte de una reseña</p></div><div class = "dos-tres tres">Section 3</div>
+    <div class = "cuatro cuatro-cinco">Section 4</div>
+    <div class = "cuatro-cinco cinco-seis">
+        <div class = "cinco"> Section 5</div><div class =" seis">section 6</div>
+    </div>
+    
+</body>
+</html>

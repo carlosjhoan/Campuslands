@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando display</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+        }
+        div {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            border: 1px solid ;
+            
+        }
+        .r {
+            background-color: rgb(225, 11, 11, .3);
+        }
+
+        .b {
+            background-color: rgb(56, 56, 230, .3);
+        }
+
+        .g {
+            background-color: rgb(20, 96, 20, .3);
+        }
+
+        .o {
+            background-color: orange;
+        }
+
+        .solo-dos {
+            display:flex;
+        }
+
+        .block {
+            display: flex;
+        }
+
+        .inline-block {
+            border: 1px solid black;
+            margin: 0;
+            padding: 5px;
+            height: 20px;
+            width: 50px;
+            display: inline;
+        }
+
+        .texto {
+
+            display:inline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Display: <em>inline-block</em></h2>
+    </header>
+    <section >
+        <p class = "texto">Texto 1</p>
+        <p class = "texto">Texto 2</p>
+        <p class = "texto">Texto 3</p>
+    </section>
+    <section>
+        <!--<div class = "b"  >Div 1</div>
+        <div class = "r"  class = "inline-block">Div 2</div>
+        <div class = "b"  class = "inline-block">Div 3</div>
+        <div class = "r"  class = "inline-block">Div 4</div>-->
+        <p class = "inline-block">Div 1</p><p class = "inline-block">Div 2</p><p class = "inline-block">Div 3</p><p class = "inline-block"> Div 4</p>
+    </section>
+    <header>
+        <h2>Display: <em>block</em></h2>
+    </header>
+    <section class = "block">
+        <div class = "g">Div 1</div>
+        <div class = "o">Div 2</div>
+        <div class = "g">Div 3</div>
+        <div class = "o">Div 4</div>
+    </section>
+
+    <section class = "solo-dos">
+        <div>Uno</div>
+        <div>dos</div>
+    </section>
+</body>
+</html>
