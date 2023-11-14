@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones desplegables</title>
+    
+    <style>
+        li {
+            display: inline;
+        }
+
+        .main {
+            position: relative;
+            margin: 10%;
+            height: 500px;
+            width: 80%;
+            border: 1px solid black;
+            
+        }
+
+        .button{
+            
+            display: inline-block;
+        }
+
+        .button button {
+            height: 50px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px rgb(148, 148, 75, .3);
+            background-color: rgb(33, 29, 29);
+            color: white;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 0px;
+            left: 40%;
+
+        }
+
+        section {
+            display: none;
+            margin: auto;
+            height: 0px;
+            width: 0px;
+            transition: height 2s, width 2s, background-color 2s;
+        }
+
+        section img {
+            margin: 30%;
+            width: 30%;
+            height: 30%
+        }
+
+        section p {
+            text-align: center;
+            font-style: italic;
+        }
+
+        .recoger {
+            outline: 1px solid purple;
+        }
+
+        .recoger:focus ~ section {
+            display: block;
+            height: 200px;
+            width: 200px;
+            background-color: beige;
+        }
+
+        .recoger:focus {
+
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Nosotros</li>
+            <li>Ubicación</li>
+            <li>Trabajar con nosotros</li>
+        </ul>
+    </nav>
+
+        <div class = "main">
+            
+            <div class="buttons">
+                <div class="pick-up button">
+                    <button class="recoger">Deseo recoger</button>
+                    <section>
+                        <h2>Bandeja paisa</h2>
+                        <hr>
+                        <img src="../img/Band_paisa.png" alt="">
+                        <p>Sopa, arroz, fríjol fresco, chorizo, carne molida, aguacate, tajada de maduro, huevo frito, chicharrón, arepa</p>
+                    </section>
+                </div>
+            
+                
+
+                <div class="delivery button">
+                    <button>Deseo delivery</button>
+                </div>
+            </div>
+
+            
+        </div>
+   
+    
+</body>
+</html>
