@@ -32,31 +32,80 @@
             color: white;
         }
 
-        .buttons {
+        /*.buttons {
             position: absolute;
             bottom: 0px;
             left: 40%;
 
+        }*/
+
+        .pick-up {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 50px;
+            width: 120px;
+            transition: height 2s, width 2s, background-color 2s ;
         }
 
-        section {
-            display: none;
-            margin: auto;
-            height: 0px;
-            width: 0px;
-            transition: height 2s, width 2s, background-color 2s;
+        .recoger {
+            height: 50px;
+            border-radius: 10px;
+            background-color: rgb(36, 34, 34, 0.9);
+            color: white;
         }
+
+        /*transition: height 2s, width 2s, background-color 2s;*/
+        section{
+            display: none;
+            
+                       
+        }
+
+        section h2 {
+            text-align: center;
+        }
+
+        section hr {
+            width: 1%;
+            transition: width 4s;
+        }
+
+        
 
         section img {
-            margin: 30%;
+            display: block;
+            margin: auto;
             width: 30%;
             height: 30%
+            
         }
 
         section p {
+            padding: 1%;
             text-align: center;
             font-style: italic;
         }
+
+        .pick-up:hover {
+            height: 500px;
+            width: 400px;
+            background-color: beige;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px 3px rgb(153, 149, 149);
+            /*text-align: center;*/
+        }
+
+        .pick-up:hover section {
+            display: block;
+            
+        }
+
+        .pick-up:hover section > hr {
+            width: 60%;
+        }
+
+        
 
         .recoger {
             outline: 1px solid purple;
@@ -64,14 +113,12 @@
 
         .recoger:focus ~ section {
             display: block;
-            height: 200px;
-            width: 200px;
+            height: 500px;
+            width: 500px;
             background-color: beige;
         }
 
-        .recoger:focus {
-
-        }
+        
 
 
 
@@ -92,15 +139,17 @@
         <div class = "main">
             
             <div class="buttons">
-                <div class="pick-up button">
+                <div class="pick-up">
                     <button class="recoger">Deseo recoger</button>
                     <section>
-                        <h2>Bandeja paisa</h2>
-                        <hr>
-                        <img src="../img/Band_paisa.png" alt="">
-                        <p>Sopa, arroz, fríjol fresco, chorizo, carne molida, aguacate, tajada de maduro, huevo frito, chicharrón, arepa</p>
+                        <h2 class = "sect">Bandeja paisa</h2>
+                        <hr class = "sect">
+                        <img src="../img/Band_paisa.png" alt="" class = "sect">
+                        <p class = "sect">Sopa, arroz, fríjol fresco, chorizo, carne molida, aguacate, tajada de maduro, huevo frito, chicharrón, arepa</p>
                     </section>
+                    
                 </div>
+                
             
                 
 
