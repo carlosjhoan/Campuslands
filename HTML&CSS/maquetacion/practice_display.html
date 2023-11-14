@@ -39,6 +39,7 @@
 
         .block {
             display: flex;
+            flex-wrap: wrap; /*Dependiendo del ancho de la pantalla los va acomodando debajo*/
         }
 
         .inline-block {
@@ -61,10 +62,12 @@
 
         .child_g {
             display: none;
+            transition: height 2s;
         }
 
         .o:hover .child_g {
             display: inline-block;
+            height: 100px;
         }
     </style>
 </head>

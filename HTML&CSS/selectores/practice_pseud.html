@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Pseudo Classes</title>
+    <style>
+        body p:nth-child(2) {
+            color: rgb(0, 255, 38);
+            transition: font-size 2s;
+        }
+
+        p:focus:nth-child(1) {
+            background-color: rgb(192, 192, 147, 0.3);
+        }
+
+        body p:nth-child(3) {
+            
+            transition: font-size  2s;
+        }
+
+        p:hover:nth-child(3) {
+            color: rgb(94, 178, 107);
+            background-image: linear-gradient(red, orange);
+            
+            font-size: 3em;
+            
+        }
+        button:focus:nth-child(1) {
+            color: red;
+            outline: 3px solid purple;
+        }
+
+        .button {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            transition: height 2s, width 3s, background-color 2s;
+        }
+
+        .button button{
+            height: 20px;
+            transition: height 4s;
+        }
+        
+        .button button:hover {
+            background-color: orange;
+            height: 50px;
+        }
+
+        button ~ p {
+            display: none;
+            
+            
+            
+        }
+        .button:hover  p {
+            display: block;
+            color: white;
+            
+            
+        }
+
+        .button:hover{
+            height: 100px;
+            width: 100px;
+            background-color: gray;
+            border-radius: 10px;
+
+            
+        }
+
+        .prueba {
+            height: 50px;
+            width: 20%;
+            border: 1px solid black;
+            transition: height 2s, width 3s;
+        }
+
+        .prueba button {
+            display: none;
+        }
+
+        .prueba:hover {
+            height: 100px;
+            width: 50%;
+            background-color: beige;
+        }
+
+        .prueba:hover button {
+            display: block;
+        }
+
+        .buscar {
+            transition: background-color 2s;
+
+        }
+
+        .buscar:hover {
+            background-color: red;
+        }
+
+        
+
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <button class = "buscar">Buscar</button>
+    
+    
+    
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aliquid est qui quaerat, maiores libero? Repellat rerum repudiandae magnam dolor cumque! Velit odit illum harum quaerat. Sunt quaerat doloribus voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aut voluptatibus illum tempore labore architecto quas deleniti quo ipsum hic nulla non, inventore, aliquid porro ut? Voluptates dolores autem possimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quas quisquam consequuntur quae suscipit deserunt harum, esse, facilis omnis, amet a in! Repellendus maiores illo modi quaerat provident consectetur corrupti.</p>
+    </div>
+
+    <div class="prueba">
+        prueba
+        <button>Buscar</button>
+    </div>
+    <div class = "button"><button>enviar</button><p>Aquí puedes solicitar tu pedido</p></div>
+    
+</body>
+</html>
