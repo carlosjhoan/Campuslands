@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1er ejercicio de flex</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+        }
+
+        main {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            /*align-items:center*/
+            /*align-content: baseline;*/
+        }
+
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            background-color: gray;
+            color: white;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+
+        }
+
+        .content {
+            background-color: white;
+            padding: 10px 5px;
+        }
+
+        .left, .center, .right {
+            box-shadow: 3px 3px 3px 3px rgb(184, 181, 181);
+            position: relative;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <main>
+        <div class = "left" >
+            <div class="header">
+                Tarjeta izquierda
+            </div>
+
+            <div class="content">
+                
+                Contenido del cuerpo
+                <br><br>
+                Contenido del cuerpo
+                <br><br>
+                Contenido del cuerpo
+                
+
+            </div>
+            <div class="footer">
+                Pie
+            </div>
+        </div>
+
+        <div class = "center">
+            <div class="header">
+                Tarjeta izquierda
+            </div>
+
+            <div class="content">
+                
+                Contenido del cuerpo
+               
+
+            </div>
+            <div class="footer">
+                Pie
+            </div>
+        </div>
+
+        <div class = "right">
+            <div class="header">
+                Tarjeta derecha
+            </div>
+
+            <div class="content">
+                
+                Contenido del cuerpo
+               
+
+            </div>
+            <div class="footer">
+                Pie
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
