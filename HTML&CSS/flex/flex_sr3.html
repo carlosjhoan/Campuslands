@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3er ejercicio flex</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .head {
+            padding: 24px;
+            font-weight: bold;
+            font-size: 24px;
+            background-color: chocolate;
+            
+        }
+
+        
+        .colums {
+            
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            
+
+        }
+
+        .c {
+            padding: 24px;
+            flex-grow: 1;
+            background-color: gray;
+            color: white;
+        }
+        .center {
+            padding: 24px;
+            flex-grow: 2;
+            
+        }
+
+        
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="head">Título de la página</div>
+    <div class="colums">
+        <div class="left c">Lateral izquierdo</div>
+        <div class="center">Zona central</div>
+        <div class="right c">Lateral derecho</div>
+    </div>
+    
+</body>
+</html>
