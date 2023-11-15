@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pRIMERA PRUEBA DE fLEX</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        .item {
+            
+            border: 1px solid rgb(20, 69, 69);
+            background-color: white;
+            font-family: sans-serif;
+            font-weight: bold;
+            /*height: 120px;*/
+            width: 120px;
+            line-height: 120px;
+            text-align: center;
+            margin: 5px;
+            
+            
+        }
+
+        .container {
+            
+            display: flex;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 50px;
+            /*flex-direction: row-reverse;*/
+            width: 80%;
+            margin: auto;
+            /*flex-wrap: wrap;*/
+            /*Se puede simplificar el direction y el wrap en una sola flex-float*/
+            flex-flow: row wrap;
+            justify-content:flex-start;
+            height: 600px;
+            /*align-items: center;*/
+            align-content:space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Aprendiendo Flex</h1>
+    <section class = "container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        
+    </section>
+    
+</body>
+</html>
