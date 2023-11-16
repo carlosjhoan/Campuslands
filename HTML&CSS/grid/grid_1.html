@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo grid con CSS</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            
+            margin: 0 auto;
+            display: grid;
+            /*Como queremos que se dispongan las columnas*/
+            /*grid-template-columns: auto auto auto auto auto auto; /*Funcion acon auto o con procentajes*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/ /*Se puede hacer con fracciones*/
+
+            /*Como queremos que se dispongan las filas*/
+            /*grid-template-rows: 20% auto 20%;*/ /*Aqu´+i también se pueden utilizar fracciones*/
+
+            /*justify-content:space-evenly ;*/
+            /*align-content: center;*/
+            /*Se puede utilizar la propiedad gap para separar la cuadrícula*/
+            /*column-gap: 20px;
+            row-gap: 20px;*/
+            grid-template-areas: 
+            
+            
+            "Encabezado Encabezado Encabezado" "Menu Menu Menu" "Aside_L Principal Aside_R" "Footer Footer Footer";
+
+            grid-template-rows: 20% 10% auto 20%;
+            grid-template-columns: 20% 60% 20%;
+
+
+            gap: 2px;
+            width: 80%;
+            height: 600px;
+            background-color: #2196f3;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgb(255, 255, 255, .8);
+            border: 1px solid rgb(0, 0, 0, .8);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        /*Grid area*/
+        
+        /*.i8 {*/
+            /*fila-inicio /col-inicio / fila-final / col-final*/
+            /*grid-area: 1 / 2 / 5 / 6;
+        }*/
+         
+
+        /*GRID TEMPLATE AREAS*/
+        .i1 {
+            grid-area: Encabezado; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .i2 {
+            grid-area: Menu;
+        }
+
+        .i3 {
+            grid-area: Principal;
+        }
+
+        .i4 {
+            grid-area: Aside_R;
+        }
+
+        .i5 {
+            
+            grid-area: Footer;
+        
+        }
+
+        .i6 {
+            grid-area: Aside_L;
+        }
+
+        /*.i1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .i5 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        .i9 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-item i1">Encabezado</div>
+        <div class="grid-item i2">Menú</div>
+        <div class="grid-item i3">Principal</div>
+        <div class="grid-item i4">Aside R</div>
+        <div class="grid-item i5">Footer</div>
+        <div class="grid-item i6">Aside L</div>
+        <!--<div class="grid-item i7">Item 7</div>
+        <div class="grid-item i8">Item 8</div>
+        <div class="grid-item i9">Item 9</div>
+        <div class="grid-item i10">Item 10</div>
+        <div class="grid-item i11">Item 11</div>
+        <div class="grid-item i12">Item 12</div>
+        <div class="grid-item i13">Item 13</div>
+        <div class="grid-item i14">Item 14</div>
+        <div class="grid-item i15">Item 15</div>-->
+
+    </div>
+</body>
+</html>
