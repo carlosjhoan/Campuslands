@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difernetes cuadrículas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        
+        
+           
+        }
+
+        body {
+            margin: 0;
+            padding: 0px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+         /*PRIMER LAYOUT*/
+
+        .container1 {
+            padding: 10px;
+            height: 200px;
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            gap: 5px;
+            background-color: rgb(229, 223, 223);
+        }
+        
+        .c1 {
+            background-color:darkorange;
+        }
+
+        .c2 {
+            background-color:darkcyan;
+        }
+
+        .c3 {
+            background-color: rgb(132, 66, 157);
+        }
+
+            /*SEGUNDO LAYOUT*/
+
+            .container2 {
+            padding: 10px;
+            height: 200px;
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            grid-template-rows: auto auto auto;
+            gap: 5px;
+            background-color: rgb(229, 223, 223);
+        }
+
+        .d1, .d2, .d3 {
+            background-color:darkorange;
+        }
+        
+        .d4 {
+            background-color:darkcyan
+        }
+
+        .d5, .d6 {
+            background-color: rgb(132, 66, 157)
+        }
+
+        .d1 {
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .d2 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .d3 {
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .d4 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .d5 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+            /*TERCER LAYOUT*/
+
+            .container3 {
+            padding: 10px;
+            height: 200px;
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            grid-template-rows: auto auto auto;
+            gap: 5px;
+            background-color: rgb(229, 223, 223);
+        }
+
+        .e1, .e2 {
+            background-color:darkorange;
+        }
+        
+        .e3 {
+            background-color:darkcyan
+        }
+
+        .e4, .e5, .e6 {
+            background-color: rgb(132, 66, 157)
+        }
+
+        .e1 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        .e2 {
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        .e3 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        .e4 {
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .e5 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .e6 {
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+         /*CUARTO LAYOUT*/
+
+         .container4 {
+            padding: 10px;
+            height: 200px;
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            grid-template-rows: auto auto auto;
+            gap: 5px;
+            background-color: rgb(229, 223, 223);
+        }
+
+        
+
+
+        .f1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .f2 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+        .f3 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .f4 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        .f5 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .f6 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+
+        .f1, .f2 {
+            background-color:darkorange;
+        }
+
+        .f3, .f4 {
+            background-color:darkcyan
+        }   
+
+        .f5, .f6 {
+            background-color:rgb(132, 66, 157)
+        } 
+        
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Primer Layout</h1>
+    <hr>
+    <div class="container1">
+        <div class="1erL c1"></div>
+        <div class="1erL c2">c</div>
+        <div class="1erL c3">c</div>
+    </div>
+
+    <h1>Segundo Layout</h1>
+    <hr>
+    <div class="container2">
+        <div class="2doL d1">d1</div>
+        <div class="2doL d2">d2</div>
+        <div class="2doL d3">d3</div>
+        <div class="2doL d4">d4</div>
+        <div class="2doL d5">d5</div>
+        <div class="2doL d6">d6</div>
+    </div>
+
+    <h1>tercer Layout</h1>
+    <hr>
+    <div class="container3">
+        <div class="3erL e1">d1</div>
+        <div class="3erL e2">d2</div>
+        <div class="3erL e3">d3</div>
+        <div class="3erL e4">d4</div>
+        <div class="3erL e5">d5</div>
+        <div class="3erL e6">d6</div>
+    </div>
+
+    <h1>Cuarto Layout</h1>
+    <hr>
+    <div class="container4">
+        <div class="4toL f1">f1</div>
+        <div class="4toL f2">f2</div>
+        <div class="4toL f3">f3</div>
+        <div class="4toL f4">f4</div>
+        <div class="4toL f5">f5</div>
+        <div class="4toL f6">f6</div>
+    </div>
+
+    
+</body>
+</html>
