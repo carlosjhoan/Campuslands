@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo Repsonsive</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        div {
+            text-align: center;
+        }
+
+        img {
+            width: 70%;
+            
+            /*height: 20%;*/
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+        @media screen and (max-width: 580px) {
+            body {
+                background-color: aquamarine;
+            }
+            h1 {
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            img {
+            width: 30%;
+            border-radius: 50%;
+            
+            /*height: 20%;*/
+            }
+        }
+
+        @media screen  and (min-width: 768px) {
+            body {
+                background-color: rgb(233, 174, 229);
+            }
+
+            h1 {
+                text-align: right;
+                text-transform: capitalize;
+            }
+
+            img {
+            width: 50%;
+            
+            /*height: 20%;*/
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendiendo responsive design</h1>
+    <div class = "photo"><img src= "../media_queries/subway.webp" alt="subay"></div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid en media</title>
+    <style>
+        
+        body {
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            font-weight: bolder;
+            gap: 5px;
+        }
+
+        header {
+            background-color: rgb(255, 221, 198);
+        }
+
+        nav {
+            background-color: rgb(253, 196, 91);
+        }
+
+        section {
+            background-color: rgb(240, 180, 60);
+        }
+
+        article {
+            background-color: rgb(220, 150, 40);
+        }
+
+        aside {
+            background-color: rgb(180, 100, 20);
+        }
+
+        footer {
+            background-color: rgb(209, 76, 14);
+        }
+        /*0  --> 480*/
+        @media (max-width:480px) {
+            header {
+                grid-column: 1 / -1;
+            }
+
+            nav {
+                grid-column: 1 / -1;
+            }
+
+            section {
+                grid-column: 1 / -1;
+                grid-row: 3 /span 3;
+            }
+
+            article {
+                grid-column: 1 / -1;
+                grid-row: 6 /span 2;
+            }
+
+            aside {
+                grid-column: 1 / -1;
+                grid-row: 8 /span 2;
+            }
+
+            footer {
+                grid-column: 1 / -1;
+                
+            }
+        }
+
+        /*480  --> 768*/
+        @media (min-width:480px) and (max-width:768px) {
+            header {
+                grid-column: 1 / -1;
+            }
+
+            nav {
+                grid-column: 1 / span 6;
+                grid-row: 2 /span 3;
+            }
+
+            section {
+                grid-column: 7 / span 6;
+                grid-row: 2 /span 3;
+            }
+
+            article {
+                grid-column: 1 / span 6;
+                grid-row: 5 /span 2;
+            }
+
+            aside {
+                grid-column: 7 / span 6;
+                grid-row: 5 /span 2;
+            }
+
+            footer {
+                grid-column: 1 / -1;
+                
+            }
+        }
+
+        /*768  --> ...*/
+        @media (min-width:768px) {
+            header {
+                grid-column: 1 / -1;
+            }
+
+            nav {
+                grid-column: 1 / 4;
+                grid-row: 2 /6;
+            }
+
+            section {
+                grid-column: 4 / 10;
+                grid-row: 2 /6;
+            }
+
+            article {
+                grid-column: 10 / 13;
+                grid-row: 2 /4;
+            }
+
+            aside {
+                grid-column: 10 / 13;
+                grid-row: 4 /6;
+            }
+
+            footer {
+                grid-column: 1 / -1;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>Nav</nav>
+    <section>Section</section>
+    <article>Article</article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+    
+</body>
+</html>
