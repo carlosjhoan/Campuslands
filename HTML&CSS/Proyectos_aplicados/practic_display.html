@@ -13,19 +13,18 @@
         }
 
         .a, .b, .c{
-            margin: auto;
+            /*margin: auto;*/
            height: 100px;
             width: 100px;
-            display:inline-block;
+            /*display:flex;
+            flex-direction:;*/
         }
         .block1, .block2, .block3 {
             height: 100px;
             width: 100px;
             
         }
-        .a {
-            float: left;
-        }
+   
          
         .a hr{
             width: 0px;
@@ -59,12 +58,16 @@
         }
 
         .first {
-            width: 200px;
+            width: 300px;
             margin: auto;
+            text-align: center;
         }
 
         .container {
             border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            
         }
         
        
@@ -73,9 +76,10 @@
 </head>
 <body>
     <header class = "first">
-        <h1>Primera prueba</h1>
+        <h1>Primera prueba</h1>         
         <hr>
     </header>
+
     <div class="cointainer">
         <div class = "a">
             <div class="block1"></div>
