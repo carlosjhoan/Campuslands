@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloques, hover y transition</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+            
+        }
+
+        .a, .b, .c{
+            margin: auto;
+           height: 100px;
+            width: 100px;
+            display:inline-block;
+        }
+        .block1, .block2, .block3 {
+            height: 100px;
+            width: 100px;
+            
+        }
+        .a {
+            float: left;
+        }
+         
+        .a hr{
+            width: 0px;
+        }
+
+        .a:hover hr {
+            transition: width 1s;
+            width: 50px;
+            color: blue;
+            font-weight: 900;
+        }
+        .a:hover .block1 {
+            transition: background-color 1s, border-radius 2s;
+            border-radius: 20px;
+            background-color: rgb(107, 224, 224);
+        }
+
+        .block1 {
+            background-color: aqua;
+            
+            
+        }
+
+        
+
+        .block2 {
+            background-color: black;
+        }
+        .block3 {
+            background-color: rgb(214, 20, 20);
+        }
+
+        .first {
+            width: 200px;
+            margin: auto;
+        }
+
+        .container {
+            border: 1px solid black;
+        }
+        
+       
+
+    </style>
+</head>
+<body>
+    <header class = "first">
+        <h1>Primera prueba</h1>
+        <hr>
+    </header>
+    <div class="cointainer">
+        <div class = "a">
+            <div class="block1"></div>
+            <hr>
+        </div>
+        
+        <div class = "b">
+            <div class = "block2" ></div>
+            <hr>
+        </div>
+
+        <div class = "c">
+            <div class = "block3"></div>
+            <hr>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

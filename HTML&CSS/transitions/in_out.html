@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent > div[class] {
+            width: 12em;
+            min-width: 12em;
+            padding: 3px;
+            margin-bottom: 4px;
+            background-color: black;
+            color: white;
+            transition-property: all;
+            transition-duration: 7s;
+        }
+
+        .parent:hover > div[class] {
+            width: 90vw;
+            min-width: 24em;
+            background-color: blue;
+            color: orange;
+            border: 1px solid orange;
+            transition-property: all;
+            transition-duration: 2s;
+        }
+
+        .ease {
+            transition-timing-function: ease;
+        }
+
+        .easein {
+            transition-timing-function: ease-in;
+        }
+
+        .easeout {
+            transition-timing-function: ease-in-out;
+        }
+
+        .easeout {
+            transition-timing-function: linear;
+        }
+        .cb {
+            transition-timing-function: cubic-bezier(.1, .81, .9, -0.02);
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="ease">Ease</div>
+        <div class="easein">easein</div>
+        <div class="easeout">easeout</div>
+        <div class="easeinout">easeinout</div>
+        <div class="linear">linear</div>
+        <div class = "cb">Cubic-bezier</div>
+    </div>
+</body>
+</html>

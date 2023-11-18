@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1er Transition</title>
+
+    <style>
+        .box {
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            transition: all 2s 0.5s; /*Acá colocamos lo que queremos que haga cuando salga*/
+        }
+        .box:hover {
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+            rotate: 120deg;
+            /*transition-property: background-color, width, height;*/
+            /*transition-property: all;
+            transition-duration: 2s;
+            transition-delay: 0.5s;*/
+            border-radius: 50%;
+
+            /*PODEMOS REHACER ATAJO*/
+            /*transition: all 2s 0.5s;*/
+            transition: width 0.5s 15s, height 3s 30s, background-color 4s 12s, rotate 5s 8s, border-radius 6s 5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendiendo Transition</h1>
+    <br><br>
+    <div class = box></div>
+</body>
+</html>
