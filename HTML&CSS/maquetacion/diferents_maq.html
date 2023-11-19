@@ -6,19 +6,34 @@
     <title>Probando maquetación</title>
     
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
         .uno {
             height: 50px;
-            background-color: red;
-            border-radius: 20px;
+            /*background-color: red;*/
+            background-image: url("../img_proyecto/madera.PNG");
+            background-repeat: repeat;
+            
+            border-radius: 0px;
+            position: sticky;
+            top: 0px;
         }
 
-        .a {
-            display: inline-block;
+        .uno img {
+            height: 50px;
+            width: 80px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
         }
 
         .dos {
             margin: 10px;
-            height: 500px;
+            height: 1000px;
             width: 20%;
             background-color: aquamarine;
             /*float: left;*/
@@ -26,26 +41,39 @@
 
         .tres {
             margin:  10px;
-            height: 500px;
+            height: 1000px;
             width: 40%;
             background-color: rgb(50, 91, 187);
         }
 
         .cuatro {
             margin: 10px;
-            height: 500px;
+            height: 1000px;
             width: 20%;
             background-color: rgb(236, 127, 255);
             float: right;
+        }
+
+        .wpp {
+            height: 50px;
+            width: 50px;
+            background-color: green;
+            position: fixed;
+            right: 1%;
+            bottom: 1.5%;
+
         }
     </style>
 
 </head>
 <body>
-    <div class = "uno"></div>
-    <div class = "dos a"></div>
+    <div class = "uno"><img src="../img_proyecto/logo_tranparent.png" alt=""></div>
+    <div class = "flex">
+        <div class = "dos a"></div>
     <div class = "tres a"></div>
     <div class = "cuatro a"></div>
+    </div>
+    <div class = "wpp"></div>
     
 </body>
 </html>

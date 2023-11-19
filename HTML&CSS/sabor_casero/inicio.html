@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Casero</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*CUADRÍCULA PRINCIPAL*/
+        main {
+            display: grid;
+            grid-template-rows: 50px 70% auto;
+            grid-template-columns: 50% 50%;
+            grid-template-areas: "Nav Nav" "Pickup Delivery" "Footer Footer";
+            height: 110vh;
+        
+        }
+
+        .grid {
+            border: 1px solid black;
+        }
+
+        .nav {
+            grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .pick-up {
+            grid-area: Pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .delivery {
+            grid-area: Delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .footer {
+            grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+
+
+
+
+        /*BOTÓN DE WPP*/
+
+        .wpp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="grid nav">nav</div>
+        <div class=" grid pick-up">Pick-up</div>
+        <div class=" grid delivery">delivery</div>
+        <div class="grid footer">footer</div>
+    </main>
+
+    <div class="wpp">wpp</div>
+    
+</body>
+</html>
