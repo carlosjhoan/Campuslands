@@ -12,15 +12,18 @@
         body {
             margin: 0;
             padding: 0;
+            height: 150vh;
         }
 
         /*CUADRÍCULA PRINCIPAL*/
         main {
             display: grid;
-            grid-template-rows: 50px 70% auto;
+            grid-template-rows: 70% auto;
             grid-template-columns: 50% 50%;
-            grid-template-areas: "Nav Nav" "Pickup Delivery" "Footer Footer";
-            height: 110vh;
+            grid-template-areas:  "Pickup Delivery" "Footer Footer";
+            height: 90%;
+            margin-top: 5%;
+            
         
         }
 
@@ -28,9 +31,8 @@
             border: 1px solid black;
         }
 
-        .nav {
-            grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-        }
+
+
 
         .pick-up {
             grid-area: Pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
@@ -45,8 +47,84 @@
         }
 
 
+        /*CUADRÍCULAS NAV*/
+        nav {
+            height: 11%;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+        }
+
+        .nav {
+            grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            background-image: url("../img_proyecto/madera.PNG");
+            background-repeat: repeat;
+            display: grid;
+            grid-template-columns: 5% 10% 30% 10% 10% 10% 20% 5%;
+            grid-template-areas: "A Logo B Buscar C  E Barra D";
+            align-items:center;
+            height: 100%;
+            
+
+        }
+        .logo {
+            grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .logo  a img{
+            width: 90%;
+            height: 60%;
+            float: left;
+        }
 
 
+        .barr_nav {
+            grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .buscar {
+            grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .buscar form input {
+            float: right;
+            width: 75%;
+            height: 30px;
+            border: 3px solid black;
+            border-radius: 20px;
+            background-color: rgb(240, 202, 157, 0.5);
+
+        }
+
+        .buscar form input:focus {
+            color: white;
+            background-color: black;
+        }
+
+
+        .buscar form label img {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .barr_nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+
+        .barr_nav ul li{
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .barr_nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
 
         /*BOTÓN DE WPP*/
 
@@ -60,8 +138,32 @@
 
 </head>
 <body>
+
+
+    <nav>
+        <div class="grid nav">
+            <div class="logo">
+                <a href=""><img src="../img_proyecto/logo_tranparent.png" alt=""></a>
+            </div>
+
+            <div class="buscar">
+                <form action = "https://www.google.com/search" method = "get">
+                    <label for="search"><img src="../img_proyecto/search_logo.png" alt="search"></label>
+                    <input type="search" name = "q" id = "search" placeholder="Buscar">
+            </form>
+            </div>
+            
+            <div class="barr_nav">
+                <ul>
+                    <li><a href="">Menú</a></li>
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <main>
-        <div class="grid nav">nav</div>
         <div class=" grid pick-up">Pick-up</div>
         <div class=" grid delivery">delivery</div>
         <div class="grid footer">footer</div>
