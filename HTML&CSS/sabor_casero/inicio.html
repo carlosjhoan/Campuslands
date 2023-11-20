@@ -61,7 +61,7 @@
             background-repeat: repeat;
             display: grid;
             grid-template-columns: 5% 10% 30% 10% 10% 10% 20% 5%;
-            grid-template-areas: "A Logo B Buscar C  E Barra D";
+            grid-template-areas: "A Buscar B Logo C  E Barra D";
             align-items:center;
             height: 100%;
             
@@ -72,8 +72,8 @@
         }
 
         .logo  a img{
-            width: 90%;
-            height: 60%;
+            width: 80%;
+            height: 55%;
             float: left;
         }
 
@@ -126,6 +126,23 @@
             color: black;
         }
 
+
+        /*PICKUP*/
+
+        main .pick-up{
+            background-image: url("../img_proyecto/pickup_large_3.webp");
+            background-repeat: no-repeat;
+            
+
+        }
+
+        main .delivery{
+            background-image: url("../img_proyecto/delivery_large.webp");
+            background-repeat: no-repeat;
+            
+
+        }
+
         /*BOTÓN DE WPP*/
 
         .wpp {
@@ -164,8 +181,8 @@
     </nav>
 
     <main>
-        <div class=" grid pick-up">Pick-up</div>
-        <div class=" grid delivery">delivery</div>
+        <div class=" grid pick-up"></div>
+        <div class=" grid delivery"></div>
         <div class="grid footer">footer</div>
     </main>
 
