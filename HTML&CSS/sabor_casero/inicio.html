@@ -12,17 +12,17 @@
         body {
             margin: 0;
             padding: 0;
-            height: 140vh;
+            height: cal(100vh-80px);
         }
 
         /*CUADRÍCULA PRINCIPAL*/
         main {
             display: grid;
-            grid-template-rows: 70% 45%;
+            grid-template-rows: 650px auto;
             grid-template-columns: 50% 50%;
             grid-template-areas: "Pickup Delivery" "Footer Footer";
             height: 90%;
-            margin-top: 80px;
+            margin-top: 85px;
             
         
         }
@@ -49,7 +49,7 @@
 
         /*CUADRÍCULAS NAV*/
         nav {
-            height: 80px;
+            height: 85px;
             width: 100%;
             position: fixed;
             top: 0px;
@@ -150,8 +150,8 @@
         .msj-pickup {
         
         height: 170px;
-        width: 250px;
-        padding: 5%;
+        width: 220px;
+        padding: 20px;
         border: 3px solid black;
         margin-top: 10px;
         margin-left: 5%;
@@ -229,13 +229,30 @@
 
         
         
-
+        /*DELIVERY*/
         main .delivery{
             background-image: url("../img_proyecto/delivery_large.webp");
             background-repeat: no-repeat;
-            display: grid;
+            
+        }
 
+        .msj-delivery {
+        
+            height: 90px;
+            width: 220px;
+            padding: 15px;
+            border: 3px solid black;
+            margin-top: 10px;
+            margin-left: 60%;
+            background-color: rgb(252, 243, 243, .5);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.1rem;
+        }
 
+        .msj-delivery b {
+            padding: 2px;
+            background-color: black;
+            color: white;
         }
 
         /*BOTÓN DE WPP*/
@@ -277,10 +294,14 @@
 
     <main>
         <div class=" grid pick-up">
-            <div class="msj-pickup">¡Hora de almorzar, tiempo sagrado! <br><br> Pide tu almuerzo y pasa a <b>recogerlo</b> ...</div>
+            <div class="msj-pickup">¡Hora de almorzar, tiempo sagrado! <br><br> Pide tu almuerzo y  <b>pasa a recogerlo</b> ...</div>
             <div class="botton_pickup"><button><img src="../img_proyecto/food-pickup_1.png" alt=""><a href="">Paso a recoger</a><img src="../img_proyecto/food-pickup_2.png" alt=""></button></div>
         </div>
-        <div class=" grid delivery"></div>
+        <div class=" grid delivery">
+            <div class="msj-delivery">.. O mejor dinos a donde <b>te lo llevamos</b>.</div>
+            <div class="botton_delivery"><button><img src="" alt=""><a href="">Porfa me lo traen</a><img src="" alt=""></button></div>
+
+        </div>
         <div class="grid footer">Footer</div>
     </main>
 
