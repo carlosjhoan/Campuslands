@@ -13,14 +13,15 @@
             margin: 0;
             padding: 0;
             height: cal(100vh-80px);
+            /**/
         }
 
         /*CUADRÍCULA PRINCIPAL*/
         main {
             display: grid;
-            grid-template-rows: 650px auto;
+            grid-template-rows: 650px 20% 10%;
             grid-template-columns: 50% 50%;
-            grid-template-areas: "Pickup Delivery" "Footer Footer";
+            grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
             height: 90%;
             margin-top: 85px;
             
@@ -40,6 +41,10 @@
 
         .delivery {
             grid-area: Delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .legal {
+            grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
         .footer {
@@ -72,9 +77,10 @@
         }
 
         .logo  a img{
-            width: 80%;
-            height: 55%;
-            float: left;
+            width: 120px;
+            height: 90px;
+            margin-left: 35px;
+            /*float: left;*/
         }
 
 
@@ -175,8 +181,8 @@
             height: 50px;
             border: 3px solid black;
             border-radius: 30px;
-            left: 18%;
-            margin-top: 45%;
+            left: 200px;
+            margin-top: 400px;
             display: flex;
             justify-content:space-around;
             align-items: center;
@@ -255,6 +261,135 @@
             color: white;
         }
 
+        .botton_delivery button {
+            background-color: rgb(212, 205, 205, 0.8);
+            position: relative;
+            width: 200px;
+            height: 50px;
+            border: 3px solid black;
+            border-radius: 30px;
+            left: 530px;
+            margin-top: 480px;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .botton_delivery button a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+            width: 35px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover {
+            background-color: black;
+
+        }
+
+        .botton_delivery button:hover a {
+            color: white;
+        }
+
+        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+
+
+
+        /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+        .legal {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(23, 23, 23);
+        }
+
+        .terms {
+            display: flex;
+            /*align-items: center;*/
+        }
+
+
+        .social_media {
+            
+            display: flex;
+            width: 150px;
+            
+            justify-content:space-around;
+        }
+
+        .social_media a img{
+            height: 50px;
+
+        }
+        
+
+        .terms ul {
+            display: flex;
+            justify-content:space-between;
+            /*align-items: center;*/
+            width: 500px;
+            
+        }
+
+        .terms ul li{
+            /*height: 50px;*/
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+
+        .terms ul li a{
+            text-decoration: none ;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo_legal {
+            display: flex;
+        }
+
+        .logo_legal img{
+            height: 100px;
+            width: 140px;
+        }
+
+        
+
+
+
+
         /*BOTÓN DE WPP*/
 
         .wpp {
@@ -299,7 +434,21 @@
         </div>
         <div class=" grid delivery">
             <div class="msj-delivery">.. O mejor dinos a donde <b>te lo llevamos</b>.</div>
-            <div class="botton_delivery"><button><img src="" alt=""><a href="">Porfa me lo traen</a><img src="" alt=""></button></div>
+            <div class="botton_delivery"><button><img src="../img_proyecto/food-delivery.png" alt=""><a href="">Porfa me lo traen</a><img src="../img_proyecto/food-delivery_2.png" alt=""></button></div>
+
+        </div>
+        <div class="grid legal">
+            <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
+            <div class="terms">
+                <ul>
+                    <li><a href="">Términos y condiciones</a></li>
+                    <li><a href="">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="social_media">
+                <a href = "https://www.facebook.com/lalitoy/" target = "_blank"><img src = "../img_proyecto/facebook_logo.png" alt = "facebook">
+                    <a href = "https://www.instagram.com/carlos.aguilar0512/?hl=es-la" target = "_blank"><img src = "../img_proyecto/instagram_logo.png" alt = "instagram"></a>
+            </div>
 
         </div>
         <div class="grid footer">Footer</div>
