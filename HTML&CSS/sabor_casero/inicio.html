@@ -29,7 +29,7 @@
         }
 
         .grid {
-            border: 1px solid black;
+            /*border: 1px solid black;*/
         }
 
 
@@ -149,6 +149,7 @@
             /*width: 100%;*/
             background-image: url("../img_proyecto/pickup_large_3.webp");
             background-repeat: no-repeat;
+            border-right:1px solid black ;
             
             
         }
@@ -385,6 +386,22 @@
             width: 140px;
         }
 
+        .footer {
+            display: flex;
+            align-items:center ;
+            flex-direction: column;
+            background-color: rgb(23, 23, 23);
+        }
+
+        .footer hr {
+            width: 60%;
+            color: white;
+        }
+
+        .footer p {
+            color: white;
+        }
+
         
 
 
@@ -396,6 +413,22 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wpp a img {
+            height: 50px;
+            width: 50px;
+        }
+        .wpp p {
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+
         }
 
     </style>
@@ -448,13 +481,22 @@
             <div class="social_media">
                 <a href = "https://www.facebook.com/lalitoy/" target = "_blank"><img src = "../img_proyecto/facebook_logo.png" alt = "facebook">
                     <a href = "https://www.instagram.com/carlos.aguilar0512/?hl=es-la" target = "_blank"><img src = "../img_proyecto/instagram_logo.png" alt = "instagram"></a>
+
             </div>
 
         </div>
-        <div class="grid footer">Footer</div>
+        <div class="grid footer">
+            <hr>
+            <p>@LaliToy.All right reserved.</p>
+        </div>
     </main>
 
-    <div class="wpp">wpp</div>
+    <div class="wpp">
+        <p>Escríbenos</p>
+        <a href = "https://w.app/CarlosJhoanAguilarGalvis" target = "_blank"><img src = "https://github.com/carlosjhoan/Campuslands/blob/main/HTML&CSS/img/wpp_logo.png?raw=true" alt = "whatsapp"></a>
+        
+    
+    </div>
     
 </body>
 </html>
