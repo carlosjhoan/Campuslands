@@ -16,8 +16,1379 @@
             box-sizing: border-box;
             /**/
         }
+        
+       
 
+        @media screen and (max-width:550px) {
+
+            /*Esto es lo que quería*/
+            /*CUADRÍCULA PRINCIPAL*/
+
+        main {
+            display: grid;
+            grid-template-rows: 330px 330px 20% 10%;
+            grid-template-columns: 50% 50%;
+            grid-template-areas: "Pickup Pickup" "Delivery Delivery" "Legal Legal""Footer Footer";
+            height: 90%;
+            margin-top: 85px;
+            
+        
+        }
+
+        .grid {
+            /*border: 1px solid black;*/
+        }
+
+
+
+
+        .pick-up {
+            grid-area: Pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .delivery {
+            grid-area: Delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .legal {
+            grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .footer {
+            grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+
+        /*CUADRÍCULAS NAV*/
+        nav {
+            height: 85px;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            background-image: url("../img_proyecto/madera.PNG");
+            background-repeat: repeat;
+            display: grid;
+            grid-template-columns: 20px 20% auto    400px 20px;
+            grid-template-areas: "A Buscar  Logo    Barra C";
+            align-items:center;
+            height: 100%;
+            
+
+        }
+        .logo {
+            grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .logo  a {
+            display: flex;
+            justify-content:start;
+        }
+
+        .logo  a img{
+            width: 120px;
+            height: 90px;
+            margin-left: 0px;
+            /*float: left;*/
+        }
+
+
+        .barr_nav {
+            grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .buscar {
+            grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .buscar form {
+            display: flex;
+            justify-content:center;
+        }
+
+        .buscar form input {
+            /*float: right;*/
+            width: 40%;
+            height: 30px;
+            margin-left: 5px;
+            border: 3px solid black;
+            border-radius: 20px;
+            background-color: rgb(240, 202, 157, 0.5);
+
+        }
+
+        .buscar form input:focus {
+            color: white;
+            background-color: black;
+        }
+
+
+        .buscar form label img {
+            width: 25px;
+            height: 25px;
+        }
+
+
+        .barr_nav ul {
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            /*border: 1px solid black;*/
+            
+        }
+
+        .barr_nav ul li{
+            height: 50px;
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .barr_nav ul li a{
+            
+            text-decoration: none;
+            color: black;
+        }
+
+        .barr_nav ul li:hover{
+            background-color: rgb(218, 190, 147,0.7);
+            border-radius: 10px;
+            transition: background-color 0.5s;
+        }
+
+
+        /*PICKUP*/
+
+        .pick-up{
+            /*width: 100%;*/
+            background-image: url("../img_proyecto/pickup_large_3_M.webp");
+            background-repeat: no-repeat;
+            border-right:1px solid black ;
+            
+            
+        }
+
+        .msj-pickup {
+        
+        height: 170px;
+        width: 220px;
+        padding: 20px;
+        border: 3px solid black;
+        margin-top: 10px;
+        margin-left: 5%;
+        background-color: rgb(252, 243, 243, .5);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        }
+
+        .msj-pickup .recogerlo {
+            padding: 2px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+
+        .msj-pickup .almuerzo {
+            padding: 2px;
+            background-color: rgb(204, 137, 43);
+            color: black;
+        }
+
+
+
+        .botton_pickup button {
+            background-color: rgb(212, 205, 205, 0.8);
+            position: relative;
+            width: 200px;
+            height: 50px;
+            border: 3px solid black;
+            border-radius: 30px;
+            /*left: 200px;*/
+            left: 25%;
+            margin-top: 250px;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .botton_pickup button a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+        }
+        
+
+        .botton_pickup button img[src= "../img_proyecto/food-pickup_1.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
+
+            width: 0;
+            height: 0;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button:hover {
+            background-color: black;
+            
+        }
+
+        .botton_pickup button:hover a {
+            color: white;
+        }
+
+        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        
+        
+        /*DELIVERYddd*/
+        main .delivery{
+            background-image: url("../img_proyecto/delivery_large_M.webp");
+            background-repeat: no-repeat;
+            
+        }
+
+        .msj-delivery {
+            
+            height: 90px;
+            width: 220px;
+            padding: 15px;
+            border: 3px solid black;
+            margin-top: 10px;
+            margin-left: 40%;
+            background-color: rgb(252, 243, 243, .5);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+        }
+
+        .msj-delivery b {
+            padding: 2px;
+            background-color: black;
+            color: white;
+        }
+
+        .botton_delivery button {
+            background-color: rgb(212, 205, 205, 0.8);
+            position: relative;
+            width: 200px;
+            height: 50px;
+            border: 3px solid black;
+            border-radius: 30px;
+            /*left: 530px;*/
+            right: -25%;
+            top: 330px;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .botton_delivery button a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+            width: 35px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover {
+            background-color: black;
+
+        }
+
+        .botton_delivery button:hover a {
+            color: white;
+        }
+
+        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+
+
+
+        /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+        .legal {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(23, 23, 23);
+        }
+
+        .terms {
+            display: flex;
+            /*align-items: center;*/
+        }
+
+
+        .social_media {
+            
+            display: flex;
+            width: 150px;
+            
+            justify-content:space-around;
+        }
+
+        .social_media a img{
+            height: 30px;
+
+        }
+        
+
+        .terms ul {
+            display: flex;
+            justify-content:space-between;
+            /*align-items: center;*/
+            width: 300px;
+            
+        }
+
+        .terms ul li{
+            /*height: 50px;*/
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.0rem;
+            display: flex;
+            align-items: center;
+        }
+        
+
+        .terms ul li a{
+            text-decoration: none ;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo_legal {
+            display: flex;
+        }
+
+        .logo_legal img{
+            height: 100px;
+            width: 140px;
+        }
+
+        .footer {
+            display: flex;
+            align-items:center ;
+            flex-direction: column;
+            background-color: rgb(23, 23, 23);
+        }
+
+        .footer hr {
+            width: 60%;
+            color: white;
+        }
+
+        .footer p {
+            color: white;
+        }
+
+        
+
+
+
+
+        /*BOTÓN DE WPP*/
+
+        .wpp {
+            position: fixed;
+            bottom: 200px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wpp a img {
+            height: 40px;
+            width: 40px;
+            transition: height 0.1s, width 0.1s;
+
+        }
+
+        .wpp a img:hover {
+            height: 50px;
+            width: 50px;
+            transition: height 0.1s, width 0.1s;
+            
+        }
+        .wpp p {
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+
+        }
+
+            
+        }
+
+
+
+        @media  (min-width:550px) and (max-width:768px) {
+        
+        /*Esto es lo que quería*/
         /*CUADRÍCULA PRINCIPAL*/
+
+    main {
+        display: grid;
+        grid-template-rows: 260px 46% 30%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+    
+    }
+
+    .grid {
+        /*border: 1px solid black;*/
+    }
+
+
+
+
+    .pick-up {
+        grid-area: Pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .delivery {
+        grid-area: Delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+
+    /*CUADRÍCULAS NAV*/
+    nav {
+        height: 85px;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        box-sizing: border-box;
+    }
+
+    .nav {
+        grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        background-image: url("../img_proyecto/madera.PNG");
+        background-repeat: repeat;
+        display: grid;
+        grid-template-columns: 20px 20% auto    400px 20px;
+        grid-template-areas: "A Buscar  Logo    Barra C";
+        align-items:center;
+        height: 100%;
+        
+
+    }
+    .logo {
+        grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .logo  a {
+        display: flex;
+        justify-content:start;
+    }
+
+    .logo  a img{
+        width: 120px;
+        height: 90px;
+        margin-left: 0px;
+        /*float: left;*/
+    }
+
+
+    .barr_nav {
+        grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .buscar {
+        grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .buscar form {
+        display: flex;
+        justify-content:center;
+    }
+
+    .buscar form input {
+        /*float: right;*/
+        width: 40%;
+        height: 30px;
+        margin-left: 5px;
+        border: 3px solid black;
+        border-radius: 20px;
+        background-color: rgb(240, 202, 157, 0.5);
+
+    }
+
+    .buscar form input:focus {
+        color: white;
+        background-color: black;
+    }
+
+
+    .buscar form label img {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .barr_nav ul {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        /*border: 1px solid black;*/
+        
+    }
+
+    .barr_nav ul li{
+        height: 50px;
+        list-style-type: none;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .barr_nav ul li a{
+        
+        text-decoration: none;
+        color: black;
+    }
+
+    .barr_nav ul li:hover{
+        background-color: rgb(218, 190, 147,0.7);
+        border-radius: 10px;
+        transition: background-color 0.5s;
+    }
+
+
+    /*PICKUP*/
+
+    .pick-up{
+        /*width: 100%;*/
+        background-image: url("../img_proyecto/pickup_large_3_M.webp");
+        background-repeat: no-repeat;
+        border-right:1px solid black ;
+        
+        
+    }
+
+    .msj-pickup {
+    
+    height: 110px;
+    width: 150px;
+    padding: 20px;
+    border: 3px solid black;
+    margin-top: 10px;
+    margin-left: 1%;
+    background-color: rgb(252, 243, 243, .5);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+    }
+
+    .msj-pickup .recogerlo {
+        padding: 2px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+
+    .msj-pickup .almuerzo {
+        padding: 2px;
+        background-color: rgb(204, 137, 43);
+        color: black;
+    }
+
+
+
+    .botton_pickup button {
+        background-color: rgb(212, 205, 205, 0.8);
+        position: relative;
+        width: 150px;
+        height: 50px;
+        border: 3px solid black;
+        border-radius: 30px;
+        /*left: 200px;*/
+        left: 52%;
+        margin-top: 23%;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .botton_pickup button a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 0.9rem;
+        color: black;
+        text-decoration: none;
+    }
+    
+
+    .botton_pickup button img[src= "../img_proyecto/food-pickup_1.png"] {
+
+        width: 30px;
+        height: 30px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
+
+        width: 0;
+        height: 0;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_pickup button:hover {
+        background-color: black;
+        
+    }
+
+    .botton_pickup button:hover a {
+        color: white;
+    }
+
+    .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
+
+        width: 0px;
+        height: 0px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+
+        width: 30px;
+        height: 30px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    
+    
+    /*DELIVERYddd*/
+    main .delivery{
+        background-image: url("../img_proyecto/delivery_large_M.webp");
+        background-repeat: no-repeat;
+        
+    }
+
+    .msj-delivery {
+        
+        height: 70px;
+        width: 150px;
+        padding: 15px;
+        border: 3px solid black;
+        margin-top: 10px;
+        margin-left: 40%;
+        background-color: rgb(252, 243, 243, .5);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 0.76rem;
+        line-height: 1.1rem;
+    }
+
+    .msj-delivery b {
+        padding: 2px;
+        background-color: black;
+        color: white;
+    }
+
+    .botton_delivery button {
+        background-color: rgb(212, 205, 205, 0.8);
+        position: relative;
+        width: 140px;
+        height: 50px;
+        border: 3px solid black;
+        border-radius: 30px;
+        /*left: 530px;*/
+        right: -55%;
+        top: 125px;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .botton_delivery button a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 0.9rem;
+        color: black;
+        text-decoration: none;
+    }
+
+
+    .botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+        width: 35px;
+        height: 30px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+        width: 0px;
+        height: 0px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_delivery button:hover {
+        background-color: black;
+
+    }
+
+    .botton_delivery button:hover a {
+        color: white;
+    }
+
+    .botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+        width: 0px;
+        height: 0px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+        width: 30px;
+        height: 30px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+
+
+
+    /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+    .legal {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(23, 23, 23);
+    }
+
+    .terms {
+        display: flex;
+        /*align-items: center;*/
+    }
+
+
+    .social_media {
+        
+        display: flex;
+        width: 150px;
+        
+        justify-content:space-around;
+    }
+
+    .social_media a img{
+        height: 30px;
+
+    }
+    
+
+    .terms ul {
+        display: flex;
+        justify-content:space-between;
+        /*align-items: center;*/
+        width: 300px;
+        
+    }
+
+    .terms ul li{
+        /*height: 50px;*/
+        list-style-type: none;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.0rem;
+        display: flex;
+        align-items: center;
+    }
+    
+
+    .terms ul li a{
+        text-decoration: none ;
+        color: white;
+        font-weight: bold;
+    }
+
+    .logo_legal {
+        display: flex;
+    }
+
+    .logo_legal img{
+        height: 100px;
+        width: 140px;
+    }
+
+    .footer {
+        display: flex;
+        align-items:center ;
+        flex-direction: column;
+        background-color: rgb(23, 23, 23);
+    }
+
+    .footer hr {
+        width: 60%;
+        color: white;
+    }
+
+    .footer p {
+        color: white;
+    }
+
+    
+
+
+
+
+    /*BOTÓN DE WPP*/
+
+    .wpp {
+        position: fixed;
+        bottom: 200px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wpp a img {
+        height: 40px;
+        width: 40px;
+        transition: height 0.1s, width 0.1s;
+
+    }
+
+    .wpp a img:hover {
+        height: 50px;
+        width: 50px;
+        transition: height 0.1s, width 0.1s;
+        
+    }
+    .wpp p {
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 0.9rem;
+        font-weight: bold;
+
+    }
+
+
+    }
+
+
+
+        @media  (min-width:768px) and (max-width:1200px) {
+        
+            /*Esto es lo que quería*/
+            /*CUADRÍCULA PRINCIPAL*/
+
+        main {
+            display: grid;
+            grid-template-rows: 500px 20% 10%;
+            grid-template-columns: 50% 50%;
+            grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
+            height: 90%;
+            margin-top: 85px;
+            
+        
+        }
+
+        .grid {
+            /*border: 1px solid black;*/
+        }
+
+
+
+
+        .pick-up {
+            grid-area: Pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .delivery {
+            grid-area: Delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .legal {
+            grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .footer {
+            grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+
+        /*CUADRÍCULAS NAV*/
+        nav {
+            height: 85px;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            background-image: url("../img_proyecto/madera.PNG");
+            background-repeat: repeat;
+            display: grid;
+            grid-template-columns: 20px 20% auto    400px 20px;
+            grid-template-areas: "A Buscar  Logo    Barra C";
+            align-items:center;
+            height: 100%;
+            
+
+        }
+        .logo {
+            grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .logo  a {
+            display: flex;
+            justify-content:start;
+        }
+
+        .logo  a img{
+            width: 120px;
+            height: 90px;
+            margin-left: 0px;
+            /*float: left;*/
+        }
+
+
+        .barr_nav {
+            grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .buscar {
+            grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .buscar form {
+            display: flex;
+            justify-content:center;
+        }
+
+        .buscar form input {
+            /*float: right;*/
+            width: 40%;
+            height: 30px;
+            margin-left: 5px;
+            border: 3px solid black;
+            border-radius: 20px;
+            background-color: rgb(240, 202, 157, 0.5);
+
+        }
+
+        .buscar form input:focus {
+            color: white;
+            background-color: black;
+        }
+
+
+        .buscar form label img {
+            width: 25px;
+            height: 25px;
+        }
+
+
+        .barr_nav ul {
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            /*border: 1px solid black;*/
+            
+        }
+
+        .barr_nav ul li{
+            height: 50px;
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .barr_nav ul li a{
+            
+            text-decoration: none;
+            color: black;
+        }
+
+        .barr_nav ul li:hover{
+            background-color: rgb(218, 190, 147,0.7);
+            border-radius: 10px;
+            transition: background-color 0.5s;
+        }
+
+
+        /*PICKUP*/
+
+        .pick-up{
+            /*width: 100%;*/
+            background-image: url("../img_proyecto/pickup_large_3_t.webp");
+            background-repeat: no-repeat;
+            border-right:1px solid black ;
+            
+            
+        }
+
+        .msj-pickup {
+        
+        height: 170px;
+        width: 220px;
+        padding: 20px;
+        border: 3px solid black;
+        margin-top: 10px;
+        margin-left: 5%;
+        background-color: rgb(252, 243, 243, .5);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        }
+
+        .msj-pickup .recogerlo {
+            padding: 2px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+
+        .msj-pickup .almuerzo {
+            padding: 2px;
+            background-color: rgb(204, 137, 43);
+            color: black;
+        }
+
+
+
+        .botton_pickup button {
+            background-color: rgb(212, 205, 205, 0.8);
+            position: relative;
+            width: 200px;
+            height: 50px;
+            border: 3px solid black;
+            border-radius: 30px;
+            /*left: 200px;*/
+            left: 25%;
+            margin-top: 250px;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .botton_pickup button a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+        }
+        
+
+        .botton_pickup button img[src= "../img_proyecto/food-pickup_1.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
+
+            width: 0;
+            height: 0;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button:hover {
+            background-color: black;
+            
+        }
+
+        .botton_pickup button:hover a {
+            color: white;
+        }
+
+        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        
+        
+        /*DELIVERYddd*/
+        main .delivery{
+            background-image: url("../img_proyecto/delivery_large_t.webp");
+            background-repeat: no-repeat;
+            
+        }
+
+        .msj-delivery {
+            
+            height: 90px;
+            width: 220px;
+            padding: 15px;
+            border: 3px solid black;
+            margin-top: 10px;
+            margin-left: 40%;
+            background-color: rgb(252, 243, 243, .5);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+        }
+
+        .msj-delivery b {
+            padding: 2px;
+            background-color: black;
+            color: white;
+        }
+
+        .botton_delivery button {
+            background-color: rgb(212, 205, 205, 0.8);
+            position: relative;
+            width: 200px;
+            height: 50px;
+            border: 3px solid black;
+            border-radius: 30px;
+            /*left: 530px;*/
+            right: -25%;
+            top: 330px;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .botton_delivery button a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+            width: 35px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover {
+            background-color: black;
+
+        }
+
+        .botton_delivery button:hover a {
+            color: white;
+        }
+
+        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+
+
+
+        /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+        .legal {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(23, 23, 23);
+        }
+
+        .terms {
+            display: flex;
+            /*align-items: center;*/
+        }
+
+
+        .social_media {
+            
+            display: flex;
+            width: 150px;
+            
+            justify-content:space-around;
+        }
+
+        .social_media a img{
+            height: 30px;
+
+        }
+        
+
+        .terms ul {
+            display: flex;
+            justify-content:space-between;
+            /*align-items: center;*/
+            width: 300px;
+            
+        }
+
+        .terms ul li{
+            /*height: 50px;*/
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.0rem;
+            display: flex;
+            align-items: center;
+        }
+        
+
+        .terms ul li a{
+            text-decoration: none ;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo_legal {
+            display: flex;
+        }
+
+        .logo_legal img{
+            height: 100px;
+            width: 140px;
+        }
+
+        .footer {
+            display: flex;
+            align-items:center ;
+            flex-direction: column;
+            background-color: rgb(23, 23, 23);
+        }
+
+        .footer hr {
+            width: 60%;
+            color: white;
+        }
+
+        .footer p {
+            color: white;
+        }
+
+        
+
+
+
+
+        /*BOTÓN DE WPP*/
+
+        .wpp {
+            position: fixed;
+            bottom: 200px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wpp a img {
+            height: 40px;
+            width: 40px;
+            transition: height 0.1s, width 0.1s;
+
+        }
+
+        .wpp a img:hover {
+            height: 50px;
+            width: 50px;
+            transition: height 0.1s, width 0.1s;
+            
+        }
+        .wpp p {
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+
+        }
+    
+
+        }
+
+        @media (min-width:1200px) {
+        /*Esto es lo que quería*/
+            /*CUADRÍCULA PRINCIPAL*/
+
         main {
             display: grid;
             grid-template-rows: 650px 20% 10%;
@@ -78,6 +1449,11 @@
             grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
+        .logo  a {
+            display: flex;
+            justify-content:start;
+        }
+
         .logo  a img{
             width: 120px;
             height: 90px;
@@ -103,6 +1479,7 @@
             /*float: right;*/
             width: 40%;
             height: 30px;
+            margin-left: 5px;
             border: 3px solid black;
             border-radius: 20px;
             background-color: rgb(240, 202, 157, 0.5);
@@ -173,6 +1550,7 @@
         background-color: rgb(252, 243, 243, .5);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 1.1rem;
+        line-height: 1.4rem;
         }
 
         .msj-pickup .recogerlo {
@@ -269,6 +1647,7 @@
             background-color: rgb(252, 243, 243, .5);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 1.1rem;
+            line-height: 1.4rem;
         }
 
         .msj-delivery b {
@@ -455,6 +1834,11 @@
             font-weight: bold;
 
         }
+    
+        }
+
+
+        
 
     </style>
 
