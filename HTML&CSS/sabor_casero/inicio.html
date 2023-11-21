@@ -67,8 +67,8 @@
             background-image: url("../img_proyecto/madera.PNG");
             background-repeat: repeat;
             display: grid;
-            grid-template-columns: 20px 20% 20%    40% 20px;
-            grid-template-areas: "A Buscar  Logo    Barra D";
+            grid-template-columns: 20px 20% auto    400px 20px;
+            grid-template-areas: "A Buscar  Logo    Barra C";
             align-items:center;
             height: 100%;
             
@@ -94,9 +94,14 @@
             grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
+        .buscar form {
+            display: flex;
+            justify-content:center;
+        }
+
         .buscar form input {
-            float: right;
-            width: 75%;
+            /*float: right;*/
+            width: 40%;
             height: 30px;
             border: 3px solid black;
             border-radius: 20px;
@@ -118,8 +123,9 @@
 
         .barr_nav ul {
             display: flex;
-            justify-content: space-around;
+            justify-content:space-evenly;
             align-items: center;
+            /*border: 1px solid black;*/
             
         }
 
@@ -127,7 +133,7 @@
             height: 50px;
             list-style-type: none;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
         }
@@ -169,10 +175,16 @@
         font-size: 1.1rem;
         }
 
-        .msj-pickup b {
+        .msj-pickup .recogerlo {
             padding: 2px;
-            background-color: black;
+            background-color: rgb(0, 0, 0);
             color: white;
+        }
+
+        .msj-pickup .almuerzo {
+            padding: 2px;
+            background-color: rgb(204, 137, 43);
+            color: black;
         }
 
 
@@ -426,6 +438,15 @@
         .wpp a img {
             height: 50px;
             width: 50px;
+            transition: height 0.1s, width 0.1s;
+
+        }
+
+        .wpp a img:hover {
+            height: 60px;
+            width: 60px;
+            transition: height 0.1s, width 0.1s;
+            
         }
         .wpp p {
             color: white;
@@ -466,7 +487,7 @@
 
     <main>
         <div class=" grid pick-up">
-            <div class="msj-pickup">¡Hora de almorzar, tiempo sagrado! <br><br> Pide tu almuerzo y  <b>pasa a recogerlo</b> ...</div>
+            <div class="msj-pickup">¡Hora del <b class = "almuerzo">almuerzo</b>, tiempo sagrado! <br><br> Pide tu almuerzo y  <b class = "recogerlo">pasa a recogerlo</b> ...</div>
             <div class="botton_pickup"><button><img src="../img_proyecto/food-pickup_1.png" alt=""><a href="">Paso a recoger</a><img src="../img_proyecto/food-pickup_2.png" alt=""></button></div>
         </div>
         <div class=" grid delivery">
