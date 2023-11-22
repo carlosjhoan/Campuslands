@@ -204,7 +204,7 @@
 
 
         .botton_pickup button {
-            background-color:black;
+            background-color: rgb(212, 205, 205, 0.8);
             position: relative;
             width: 150px;
             height: 50px;
@@ -221,24 +221,51 @@
         .botton_pickup button a {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 0.9rem;
-            color: white;
+            color: black;
             text-decoration: none;
         }
         
 
         .botton_pickup button img[src= "../img_proyecto/food-pickup_1.png"] {
 
-            width: 0px;
-            height: 0px;
+            width: 25px;
+            height: 25px;
             transition: height 0.1s, width 0.1s;
         }
 
         .botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
 
-            width: 25px;
-            height: 25px;
+            width: 0px;
+            height: 0px;
             transition: height 0.1s, width 0.1s;
         }
+
+
+       
+
+        .botton_pickup button:hover {
+            background-color: black;
+
+        }
+
+        .botton_pickup button:hover a {
+                color: white;
+        }
+
+        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+
+            width: 30px;
+            height: 30px;
+            transition: height 0.1s, width 0.1s;
+        }
+
 
         
 
@@ -273,7 +300,7 @@
         }
 
         .botton_delivery button {
-            background-color:black;
+            background-color:rgb(212, 205, 205, 0.8);
             position: relative;
             width: 180px;
             height: 50px;
@@ -290,25 +317,47 @@
         .botton_delivery button a {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 0.9rem;
-            color: white;
+            color: black;
             text-decoration: none;
         }
 
 
         .botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
 
-            width: 0px;
-            height: 0px;
-            transition: height 0.1s, width 0.1s;
-        }
-
-        .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
-
             width: 25px;
             height: 25px;
             transition: height 0.1s, width 0.1s;
         }
 
+        .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+            width: 0px;
+            height: 0px;
+            transition: height 0.1s, width 0.1s;
+        }
+
+        .botton_delivery button:hover {
+        background-color: black;
+
+    }
+
+    .botton_delivery button:hover a {
+        color: white;
+    }
+
+    .botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+        width: 0px;
+        height: 0px;
+        transition: height 0.1s, width 0.1s;
+    }
+
+    .botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+        width: 25px;
+        height: 25px;
+        transition: height 0.1s, width 0.1s;
+    }
         
 
 
@@ -425,6 +474,8 @@
             
         }
         .wpp p {
+            padding: 2px;
+            background-color: black;
             color: white;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 0.7rem;
@@ -574,6 +625,7 @@
         visibility: hidden;
         transition: heigth 0.1s;
         border-radius: 0px 0px 20px 20px;
+        
         /*border: 1px solid black;*/
         
     }
@@ -637,7 +689,7 @@
 
 
 
-    /*PICKUPa*/
+    /*PICKUP*/
 
     .pick-up{
         /*width: 100%;*/
@@ -654,6 +706,7 @@
     width: 230px;
     padding: 10px;
     border: 3px solid black;
+    border-radius: 20px;
     margin-top: 10px;
     margin-left: 1%;
     background-color: rgb(252, 243, 243, .5);
@@ -685,7 +738,7 @@
         border-radius: 30px;
         /*left: 200px;*/
         left: 43%;
-        margin-top: 44%;
+        margin-top: 370px;
         display: flex;
         justify-content:space-around;
         align-items: center;
@@ -751,6 +804,7 @@
         width: 220px;
         padding: 10px;
         border: 3px solid black;
+        border-radius: 30px;
         margin-top: 10px;
         margin-left: 60%;
         background-color: rgb(252, 243, 243, .5);
@@ -944,6 +998,8 @@
         
     }
     .wpp p {
+        padding: 2px;
+        background-color: black;
         color: white;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 0.9rem;
@@ -1121,6 +1177,7 @@
         width: 220px;
         padding: 20px;
         border: 3px solid black;
+        border-radius: 20px;
         margin-top: 10px;
         margin-left: 5%;
         background-color: rgb(252, 243, 243, .5);
@@ -1218,6 +1275,7 @@
             width: 220px;
             padding: 15px;
             border: 3px solid black;
+            border-radius: 20px;
             margin-top: 10px;
             margin-left: 50%;
             background-color: rgb(252, 243, 243, .5);
@@ -1405,6 +1463,8 @@
             
         }
         .wpp p {
+            padding: 2px;
+            background-color: black;
             color: white;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 0.9rem;
@@ -1579,6 +1639,7 @@
         width: 220px;
         padding: 20px;
         border: 3px solid black;
+        border-radius: 20px;
         margin-top: 10px;
         margin-left: 5%;
         background-color: rgb(252, 243, 243, .5);
@@ -1676,6 +1737,7 @@
             width: 220px;
             padding: 15px;
             border: 3px solid black;
+            border-radius: 20px;
             margin-top: 10px;
             margin-left: 45%;
             background-color: rgb(252, 243, 243, .5);
@@ -1862,6 +1924,8 @@
             
         }
         .wpp p {
+            padding: 3px;
+            background-color: black;
             color: white;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 0.9rem;
