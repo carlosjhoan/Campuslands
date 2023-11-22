@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Casero</title>
+    <link rel="stylesheet" href="contacto_style.css">
+    
+
+</head>
+<body>
+
+
+    <nav>
+        <div class="grid nav">
+            <div class="logo">
+                <a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/inicio.html"><img src="../img_proyecto/logo_tranparent.png" alt=""></a>
+            </div>
+
+            <div class="buscar">
+                <form action = "https://www.google.com/search" method = "get">
+                    <label for="search"><img src="../img_proyecto/search_logo.png" alt="search"></label>
+                    <input type="search" name = "q" id = "search" placeholder="Buscar">
+            </form>
+            </div>
+            
+            <div class="barr_nav">
+                <div class="menu"><button><img src="../img_proyecto/menu_logo.png" alt=""></button></div>
+                <ul>
+                    <li><a href="">Menú</a></li>
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Contáctanos</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class=" grid franja"></div>
+        <div class="grid formulario">
+            <form action="">
+                <label for="nombre">nombre:</label>
+                <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
+                <label for="i-email">Email:</label>
+                <input type="email" name = "i-email" id = "i-email" required>
+                <label for="nombre">Celular</label>
+                <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
+                <label for="lang">Language</label>
+            <select name="languages" id="lang">
+                <option value="javascript">Consultar vacantes</option>
+                <option value="php">Deseo invitarlos a un evento</option>
+                <option value="java">Les tengo una propuesta</option>
+                <option value="golang">Queja o sugerencia</option>
+               
+            </select>
+                
+                <label for="commit"></label>
+                <textarea name="commit" id="commit" cols="30" rows="10"></textarea>
+                <input type="submit" value="Submit" />
+
+            </form>
+        </div>
+        <div class="grid legal">
+            <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
+            <div class="terms">
+                <ul>
+                    <li><a href="https://www.restaurantemuy.com/terminosycondiciones" target="_blank">Términos y condiciones</a></li>
+                    <li><a href="https://www.restaurantemuy.com/politicadeprivacidad" target="_blank">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="social_media">
+                <a href = "https://www.facebook.com/lalitoy/" target = "_blank"><img src = "../img_proyecto/facebook_logo.png" alt = "facebook">
+                    <a href = "https://www.instagram.com/carlos.aguilar0512/?hl=es-la" target = "_blank"><img src = "../img_proyecto/instagram_logo.png" alt = "instagram"></a>
+
+            </div>
+
+        </div>
+        <div class="grid footer">
+            <hr>
+            <p>@LaliToy. All right reserved.</p>
+        </div>
+    </main>
+
+    <div class="wpp">
+        <p>Escríbenos</p>
+        <a href = "https://w.app/CarlosJhoanAguilarGalvis" target = "_blank"><img src = "https://github.com/carlosjhoan/Campuslands/blob/main/HTML&CSS/img/wpp_logo.png?raw=true" alt = "whatsapp"></a>
+        
+    
+    </div>
+    
+</body>
+</html>
