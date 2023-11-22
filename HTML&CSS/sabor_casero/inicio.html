@@ -19,14 +19,14 @@
         
        
 
-        @media screen and (max-width:450px) {
+        @media screen and (max-width:460px) {
 
             /*Esto es lo que quería*/
             /*CUADRÍCULA PRINCIPAL*/
 
         main {
             display: grid;
-            grid-template-rows: 330px 330px 20% 10%;
+            grid-template-rows: 312px 312px 20% 10%;
             grid-template-columns: 50% 50%;
             grid-template-areas: "Pickup Pickup" "Delivery Delivery" "Legal Legal""Footer Footer";
             height: 90%;
@@ -167,25 +167,26 @@
 
         .pick-up{
             /*width: 100%;*/
-            background-image: url("../img_proyecto/pickup_large_3_M.webp");
+            background-image: url("../img_proyecto/pickup_small.webp");
             background-repeat: no-repeat;
-            border-right:1px solid black ;
+            border-bottom:1px solid black ;
             
             
         }
 
         .msj-pickup {
         
-        height: 170px;
-        width: 220px;
-        padding: 20px;
+        height: 120px;
+        width: 150px;
+        padding: 15px;
         border: 3px solid black;
+        border-radius: 5px;
         margin-top: 10px;
         margin-left: 5%;
         background-color: rgb(252, 243, 243, .5);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 1.1rem;
-        line-height: 1.5rem;
+        font-size: 0.75rem;
+        line-height: 1.1rem;
         }
 
         .msj-pickup .recogerlo {
@@ -203,15 +204,15 @@
 
 
         .botton_pickup button {
-            background-color: rgb(212, 205, 205, 0.8);
+            background-color:black;
             position: relative;
-            width: 200px;
+            width: 150px;
             height: 50px;
             border: 3px solid black;
             border-radius: 30px;
             /*left: 200px;*/
-            left: 25%;
-            margin-top: 250px;
+            left: 29%;
+            margin-top: 30%;
             display: flex;
             justify-content:space-around;
             align-items: center;
@@ -219,69 +220,49 @@
 
         .botton_pickup button a {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 1rem;
-            color: black;
+            font-size: 0.9rem;
+            color: white;
             text-decoration: none;
         }
         
 
         .botton_pickup button img[src= "../img_proyecto/food-pickup_1.png"] {
 
-            width: 30px;
-            height: 30px;
-            transition: height 0.1s, width 0.1s;
-        }
-
-        .botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
-
-            width: 0;
-            height: 0;
-            transition: height 0.1s, width 0.1s;
-        }
-
-        .botton_pickup button:hover {
-            background-color: black;
-            
-        }
-
-        .botton_pickup button:hover a {
-            color: white;
-        }
-
-        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
-
             width: 0px;
             height: 0px;
             transition: height 0.1s, width 0.1s;
         }
 
-        .botton_pickup button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+        .botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
 
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             transition: height 0.1s, width 0.1s;
         }
+
+        
 
         
         
         /*DELIVERYddd*/
         main .delivery{
-            background-image: url("../img_proyecto/delivery_large_M.webp");
+            background-image: url("../img_proyecto/delivery_small.webp");
             background-repeat: no-repeat;
             
         }
 
         .msj-delivery {
             
-            height: 90px;
-            width: 210px;
-            padding: 15px;
+            height: 80px;
+            width: 170px;
+            padding: 10px;
             border: 3px solid black;
+            border-radius: 5px;
             margin-top: 10px;
-            margin-left: 40%;
+            margin-left: 50%;
             background-color: rgb(252, 243, 243, .5);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.75rem;
             line-height: 1.5rem;
         }
 
@@ -292,15 +273,15 @@
         }
 
         .botton_delivery button {
-            background-color: rgb(212, 205, 205, 0.8);
+            background-color:black;
             position: relative;
-            width: 200px;
+            width: 180px;
             height: 50px;
             border: 3px solid black;
             border-radius: 30px;
             /*left: 530px;*/
             right: -25%;
-            top: 330px;
+            top: 160px;
             display: flex;
             justify-content:space-around;
             align-items: center;
@@ -308,48 +289,27 @@
 
         .botton_delivery button a {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 1rem;
-            color: black;
+            font-size: 0.9rem;
+            color: white;
             text-decoration: none;
         }
 
 
         .botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
 
-            width: 35px;
-            height: 30px;
+            width: 0px;
+            height: 0px;
             transition: height 0.1s, width 0.1s;
         }
 
         .botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
 
-            width: 0px;
-            height: 0px;
+            width: 25px;
+            height: 25px;
             transition: height 0.1s, width 0.1s;
         }
 
-        .botton_delivery button:hover {
-            background-color: black;
-
-        }
-
-        .botton_delivery button:hover a {
-            color: white;
-        }
-
-        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
-
-            width: 0px;
-            height: 0px;
-            transition: height 0.1s, width 0.1s;
-        }
-
-        .botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
-
-            width: 30px;
-            height: 30px;
-            transition: height 0.1s, width 0.1s;
-        }
+        
 
 
 
@@ -358,6 +318,7 @@
 
         .legal {
             display: flex;
+            flex-direction: column;
             justify-content: space-around;
             align-items: center;
             background-color: rgb(23, 23, 23);
@@ -365,6 +326,7 @@
 
         .terms {
             display: flex;
+            flex-direction: column;
             /*align-items: center;*/
         }
 
@@ -378,7 +340,7 @@
         }
 
         .social_media a img{
-            height: 30px;
+            height: 25px;
 
         }
         
@@ -395,7 +357,7 @@
             /*height: 50px;*/
             list-style-type: none;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 1.0rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
         }
@@ -412,8 +374,8 @@
         }
 
         .logo_legal img{
-            height: 100px;
-            width: 140px;
+            height: 80px;
+            width: 110px;
         }
 
         .footer {
@@ -442,7 +404,7 @@
         .wpp {
             position: fixed;
             bottom: 200px;
-            right: 20px;
+            right: 5%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -465,7 +427,7 @@
         .wpp p {
             color: white;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             font-weight: bold;
 
         }
@@ -475,16 +437,16 @@
 
 
 
-        @media  (min-width:450px) and (max-width:900px) {
+        @media  (min-width:460px) and (max-width:900px) {
         
         /*Esto es lo que quería*/
         /*CUADRÍCULA PRINCIPAL*/
 
     main {
         display: grid;
-        grid-template-rows: 260px 60% 460%;
+        grid-template-rows: 600px 600px 20% 30%;
         grid-template-columns: 50% 50%;
-        grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
+        grid-template-areas: "Pickup Pickup""Delivery Delivery" "Legal Legal""Footer Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -623,25 +585,25 @@
 
     .pick-up{
         /*width: 100%;*/
-        background-image: url("../img_proyecto/pickup_large_3_M.webp");
+        background-image: url("../img_proyecto/pickup_tablet.webp");
         background-repeat: no-repeat;
-        border-right:1px solid black ;
+        border-bottom:1px solid black ;
         
         
     }
 
     .msj-pickup {
     
-    height: 110px;
-    width: 120px;
+    height: 150px;
+    width: 230px;
     padding: 10px;
     border: 3px solid black;
     margin-top: 10px;
     margin-left: 1%;
     background-color: rgb(252, 243, 243, .5);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 0.7rem;
-    line-height: 0.9rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     }
 
     .msj-pickup .recogerlo {
@@ -666,8 +628,8 @@
         border: 3px solid black;
         border-radius: 30px;
         /*left: 200px;*/
-        left: 47%;
-        margin-top: 85px;
+        left: 43%;
+        margin-top: 44%;
         display: flex;
         justify-content:space-around;
         align-items: center;
@@ -722,23 +684,23 @@
     
     /*DELIVERYddd*/
     main .delivery{
-        background-image: url("../img_proyecto/delivery_large_M.webp");
+        background-image: url("../img_proyecto/delivery_tablet.webp");
         background-repeat: no-repeat;
         
     }
 
     .msj-delivery {
         
-        height: 70px;
-        width: 170px;
+        height: 90px;
+        width: 220px;
         padding: 10px;
         border: 3px solid black;
         margin-top: 10px;
-        margin-left: 40%;
+        margin-left: 60%;
         background-color: rgb(252, 243, 243, .5);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 0.76rem;
-        line-height: 1.1rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
     }
 
     .msj-delivery b {
@@ -750,13 +712,13 @@
     .botton_delivery button {
         background-color: rgb(212, 205, 205, 0.8);
         position: relative;
-        width: 140px;
+        width: 200px;
         height: 50px;
         border: 3px solid black;
         border-radius: 30px;
         /*left: 530px;*/
-        right: -50%;
-        top: 125px;
+        left: 40%;
+        top: 430px;
         display: flex;
         justify-content:space-around;
         align-items: center;
@@ -814,14 +776,17 @@
 
     .legal {
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
-        align-items: center;
+        align-items:center;
         background-color: rgb(23, 23, 23);
     }
 
     .terms {
         display: flex;
-        /*align-items: center;*/
+        flex-direction: column;
+        
+        align-items: center;
     }
 
 
@@ -842,7 +807,8 @@
     .terms ul {
         display: flex;
         justify-content:space-between;
-        /*align-items: center;*/
+        align-items: center;
+        height: 80px;
         width: 300px;
         
     }
@@ -851,8 +817,9 @@
         /*height: 50px;*/
         list-style-type: none;
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 1.0rem;
+        font-size: 0.9rem;
         display: flex;
+        justify-content: center;
         align-items: center;
     }
     
@@ -865,6 +832,8 @@
 
     .logo_legal {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .logo_legal img{
@@ -1270,6 +1239,7 @@
 
         .legal {
             display: flex;
+            
             justify-content: space-around;
             align-items: center;
             background-color: rgb(23, 23, 23);
@@ -1643,7 +1613,7 @@
             padding: 15px;
             border: 3px solid black;
             margin-top: 10px;
-            margin-left: 40%;
+            margin-left: 45%;
             background-color: rgb(252, 243, 243, .5);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 1.1rem;
