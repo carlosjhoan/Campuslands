@@ -1039,6 +1039,17 @@ nav {
     align-items: center;
 }
 
+.barr_nav ul .menu_dia{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .menu_dia a{
+    padding: 2px;
+    color: rgb(204, 137, 43)
+}
+
 .barr_nav ul li a{
     
     text-decoration: none;
