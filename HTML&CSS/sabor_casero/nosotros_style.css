@@ -921,9 +921,9 @@ nav {
 
 main {
     display: grid;
-    grid-template-rows: 650px 20% 10%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
+    grid-template-rows: 800px auto auto;
+    
+    grid-template-areas: "Content" "Legal""Footer";
     height: 90%;
     margin-top: 85px;
     
@@ -931,13 +931,13 @@ main {
 }
 
 .grid {
-    /*border: 1px solid black;*/
+    border: 1px solid black;
 }
 
 
-
-
-
+.content {
+    grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
 
 .legal {
     grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
@@ -1056,7 +1056,92 @@ nav {
 }
 
 
-/*FORMULARIO*/
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.historia{
+    width: 60%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    float: left;
+    margin-right: 5px;
+    padding: 5px;
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.luz, .eugenia {
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 10px;
+    width: 80%;
+    height: 80%;
+    padding: 5%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+
+
+
+
 
 
 
