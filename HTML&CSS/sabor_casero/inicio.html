@@ -72,11 +72,14 @@
             grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
             background-image: url("../img_proyecto/madera.PNG");
             background-repeat: repeat;
-            display: grid;
-            grid-template-columns: 20px 20% auto    400px 20px;
-            grid-template-areas: "A Buscar  Logo    Barra C";
-            align-items:center;
+            display: flex;
+            justify-content: space-around;
             height: 100%;
+        /*display: grid;
+        grid-template-columns: 20px 20% auto    400px 20px;
+        grid-template-areas: "A Buscar  Logo    Barra C";
+        align-items:center;*/
+            
             
 
         }
@@ -102,42 +105,58 @@
         }
 
         .buscar {
-            grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-        }
+        grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        display: flex;
+        align-items:center
+    }
 
-        .buscar form {
-            display: flex;
-            justify-content:center;
-        }
+    .buscar form {
+        display: flex;
+        
+        justify-content:center;
+    }
 
-        .buscar form input {
-            /*float: right;*/
-            width: 40%;
-            height: 30px;
-            margin-left: 5px;
-            border: 3px solid black;
-            border-radius: 20px;
-            background-color: rgb(240, 202, 157, 0.5);
+    .buscar form input {
+        /*float: right;*/
+        width: 40%;
+        height: 30px;
+        margin-left: 5px;
+        border: 3px solid black;
+        border-radius: 20px;
+        background-color: rgb(240, 202, 157, 0.5);
 
-        }
+    }
 
-        .buscar form input:focus {
-            color: white;
-            background-color: black;
-        }
+    .buscar form input:focus {
+        color: white;
+        background-color: black;
+    }
 
 
-        .buscar form label img {
-            width: 25px;
-            height: 25px;
-        }
+    .buscar form label img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .barr_nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 
         .barr_nav ul {
+            background-image: url("../img_proyecto/madera.PNG");
             display: flex;
-            justify-content:space-evenly;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            /*border: 1px solid black;*/
+            margin-left: 0px;
+            height: 80px;
+            padding: 5px;
+            visibility: hidden;
+            transition: heigth 0.1s;
+            border-radius: 0px 0px 20px 20px;
             
         }
 
@@ -161,6 +180,39 @@
             border-radius: 10px;
             transition: background-color 0.5s;
         }
+
+        .barr_nav .menu {
+        display: flex;
+        justify-content:center;
+        width: 100px;
+        margin-top: 15px;
+        /*border: 1px solid black;*/
+        
+    }
+
+    .barr_nav .menu button{
+        background-image: url("../img_proyecto/madera.PNG");
+        background-repeat: repeat;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+        
+    .barr_nav .menu button img{
+            height: 30px;
+            width: 30px;
+            
+    }
+
+    .barr_nav:hover ul{
+    
+        visibility: visible;
+        height: 120px;
+        transition: height 0.1s;
+    }
 
 
         /*PICKUP*/
