@@ -19,11 +19,11 @@ body {
    
 
     main {
-        background-color: rgb(212, 162, 92);
+        background-color: white;
         display: grid;
-        grid-template-rows:  auto auto auto auto auto auto auto auto;
+        grid-template-rows:  auto auto auto auto auto auto auto auto auto;
 
-        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Legal" "Footer";
+        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_pickup" "Legal" "Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -69,6 +69,10 @@ body {
     
     .chatas {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .info_pickup {
+        grid-area: Info_pickup;
     }
 
 
@@ -259,6 +263,7 @@ transition: height 0.1s;
     height: 3px;
     width: 70%;
     background-color: black;
+    border-radius: 5px;
 }
 
 .precio {
@@ -273,8 +278,8 @@ transition: height 0.1s;
 
 .foto {
     /*border: 1px solid black;*/
-    width: 200px;
-    border-radius: 200px;
+    width: 120px;
+    border-radius: 120px;
 }
 
 .q_trae{
@@ -286,7 +291,7 @@ transition: height 0.1s;
 
 .dish_name {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .sancochos {
@@ -298,6 +303,198 @@ transition: height 0.1s;
     width: 100%;
     display: flex;
 }
+
+/*FORMULARIO*/
+
+
+
+.info_pickup {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 80%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 1rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
 
 
 
@@ -435,60 +632,64 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-    background-color: (212, 162, 92);
+    background-color: white;
     display: grid;
-    grid-template-rows:  auto auto auto auto auto;
+    grid-template-rows:  auto auto auto auto auto auto;
     grid-template-columns: 50% 50% ;
-    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Legal Legal"" Footer Footer";
+    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
     height: 90%;
     margin-top: 85px;
     
-
-}
-
-.grid {
+    
+    }
+    
+    .grid {
     /*border: 1px solid black;*/
-}
-
-
-
-
-
-
-.legal {
+    }
+    
+    
+    
+    
+    
+    
+    .legal {
     grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.footer {
+    }
+    
+    .footer {
     grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-
-.gallina {
+    }
+    
+    
+    .gallina {
     grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.costilla {
+    }
+    
+    .costilla {
     grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.cola {
+    }
+    
+    .cola {
     grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-
-
-.sobrebarriga {
+    }
+    
+    
+    
+    .sobrebarriga {
     grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.oreada {
+    }
+    
+    .oreada {
     grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.chatas {
+    }
+    
+    .chatas {
     grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
+    }
+    
+    .info_pickup {
+        grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
 
 
 /*CUADRÍCULAS NAV*/
@@ -666,7 +867,7 @@ transition: height 0.1s;
     background-color: rgb(219, 219, 215, 0.5);
     padding: 2%;
     margin: 5% 12.5%;
-    width: 300px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -692,8 +893,8 @@ transition: height 0.1s;
 
 .foto {
     /*border: 1px solid black;*/
-    width: 250px;
-    border-radius: 250px;
+    width: 200px;
+    border-radius: 200px;
 }
 
 .q_trae{
@@ -716,6 +917,197 @@ transition: height 0.1s;
 .ejecutivos {
     width: 100%;
     display: flex;
+}
+
+/*FORMULARIO*/
+
+
+
+.info_pickup {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 1.5rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
 }
 
 
@@ -814,8 +1206,8 @@ color: white;
 
 .wpp {
 position: fixed;
-bottom: 200px;
-right: 20px;
+bottom: 10%;
+right: 2%;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -856,61 +1248,64 @@ font-weight: bold;
     /*CUADRÍCULA PRINCIPAL*/
 
     main {
-        background-color: rgb(212, 162, 92);
+        background-color: white;
         display: grid;
-        grid-template-rows:  auto auto auto auto;
+        grid-template-rows:  auto auto auto auto auto;
         grid-template-columns: auto auto auto;
-        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Legal Legal Legal""Footer Footer Footer";
+        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
         height: 90%;
         margin-top: 85px;
         
-    
-    }
-    
-    .grid {
+        
+        }
+        
+        .grid {
         /*border: 1px solid black;*/
-    }
-    
-    
-    
-    
-    
-    
-    .legal {
+        }
+        
+        
+        
+        
+        
+        
+        .legal {
         grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .footer {
+        }
+        
+        .footer {
         grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    
-    .gallina {
+        }
+        
+        
+        .gallina {
         grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .costilla {
+        }
+        
+        .costilla {
         grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .cola {
+        }
+        
+        .cola {
         grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    
-    
-    .sobrebarriga {
+        }
+        
+        
+        
+        .sobrebarriga {
         grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .oreada {
+        }
+        
+        .oreada {
         grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .chatas {
+        }
+        
+        .chatas {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-
+        }
+        
+        .info_pickup {
+            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
 
 /*CUADRÍCULAS NAV*/
 nav {
@@ -1036,8 +1431,8 @@ nav {
 .each {
     background-color: rgb(219, 219, 215, 0.5);
     padding: 2%;
-    margin: 5% 25%;
-    width: 250px;
+    margin: 5% 15%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1088,6 +1483,200 @@ nav {
     width: 100%;
     display: flex;
 }
+
+
+/*FORMULARIO*/
+
+
+
+.info_pickup {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 1.5rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
+
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
 
@@ -1215,18 +1804,1115 @@ nav {
 /*Esto es lo que quería*/
     /*CUADRÍCULA PRINCIPAL*/
 
-main {
-    background-color: rgb(212, 162, 92);
-    display: grid;
-    grid-template-rows:  auto auto auto auto;
-    grid-template-columns: auto auto auto;
-    grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Legal Legal Legal""Footer Footer Footer";
-    height: 90%;
-    margin-top: 85px;
+    main {
+        background-color: white;
+        display: grid;
+        grid-template-rows:  auto auto auto auto auto;
+        grid-template-columns: auto auto auto;
+        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+        
+        }
+        
+        .grid {
+        /*border: 1px solid black;*/
+        }
+        
+        
+        
+        
+        
+        
+        .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        
+        .gallina {
+        grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        .costilla {
+        grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        .cola {
+        grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        
+        
+        .sobrebarriga {
+        grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        .oreada {
+        grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        .chatas {
+        grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+        
+        .info_pickup {
+            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+height: 85px;
+width: 100%;
+position: fixed;
+top: 0px;
+box-sizing: border-box;
+}
+
+.nav {
+grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+background-image: url("../img_proyecto/madera.PNG");
+background-repeat: repeat;
+display: grid;
+grid-template-columns: 20px 20% auto    400px 20px;
+grid-template-areas: "A Buscar  Logo    Barra C";
+align-items:center;
+height: 100%;
+
+
+}
+.logo {
+grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.logo  a {
+display: flex;
+justify-content:start;
+}
+
+.logo  a img{
+width: 120px;
+height: 90px;
+margin-left: 0px;
+/*float: left;*/
+}
+
+
+.barr_nav {
+grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar {
+grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar form {
+display: flex;
+justify-content:center;
+}
+
+.buscar form input {
+/*float: right;*/
+width: 40%;
+height: 30px;
+margin-left: 5px;
+border: 3px solid black;
+border-radius: 20px;
+background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+color: white;
+background-color: black;
+}
+
+
+.buscar form label img {
+width: 25px;
+height: 25px;
+}
+
+
+.barr_nav ul {
+display: flex;
+justify-content:space-evenly;
+align-items: center;
+/*border: 1px solid black;*/
+
+}
+
+.barr_nav ul li{
+height: 50px;
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 1.3rem;
+display: flex;
+align-items: center;
+}
+
+.barr_nav ul li a{
+
+text-decoration: none;
+color: black;
+}
+
+.barr_nav ul li:hover{
+background-color: rgb(218, 190, 147,0.7);
+border-radius: 10px;
+transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+display: none;
+}
+
+.barr_nav ul .menu_dia{
+background-color: black;
+border-radius: 10px;
+
+}
+
+.barr_nav ul .menu_dia a{
+padding: 2px;
+color: rgb(204, 137, 43)
+}
+
+/*menú*/
+
+
+.each {
+background-color: rgb(219, 219, 215, 0.5);
+padding: 2%;
+margin: 5% 25%;
+width: 250px;
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 20px;
+box-shadow: 0 0 3px 3px gray;
+}
+
+.hr {
+height: 3px;
+width: 70%;
+background-color: black;
+}
+
+.precio {
+/*border: 1px solid black;*/
+padding: 2px;
+border-radius: 10px;
+background-color: rgb(204, 137, 43);
+color: black;
+text-align: center;
+font-weight: bold;
+}
+
+.foto {
+/*border: 1px solid black;*/
+width: 250px;
+border-radius: 250px;
+}
+
+.q_trae{
+padding: 5px;
+border-radius: 10px;
+text-align:center;
+/*background-color: white;*/
+}
+
+.dish_name {
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+.sancochos {
+width: 100%;
+display: flex;
+}
+
+.ejecutivos {
+width: 100%;
+display: flex;
+}
+
+
+
+/*FORMULARIO*/
+
+
+
+.info_pickup {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
     
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 1.5rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+display: flex;
+
+justify-content: space-around;
+align-items: center;
+background-color: rgb(23, 23, 23);
+}
+
+.terms {
+display: flex;
+/*align-items: center;*/
+}
+
+
+.social_media {
+
+display: flex;
+width: 150px;
+
+justify-content:space-around;
+}
+
+.social_media a img{
+height: 30px;
+
+}
+
+
+.terms ul {
+display: flex;
+justify-content:space-between;
+/*align-items: center;*/
+width: 300px;
+
+}
+
+.terms ul li{
+/*height: 50px;*/
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 1.0rem;
+display: flex;
+align-items: center;
+}
+
+
+.terms ul li a{
+text-decoration: none ;
+color: white;
+font-weight: bold;
+}
+
+.logo_legal {
+display: flex;
+}
+
+.logo_legal img{
+height: 100px;
+width: 140px;
+}
+
+.footer {
+display: flex;
+align-items:center ;
+flex-direction: column;
+background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+width: 60%;
+color: white;
+}
+
+.footer p {
+color: white;
+}
+
+
+
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+position: fixed;
+bottom: 200px;
+right: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.wpp a img {
+height: 40px;
+width: 40px;
+transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+height: 50px;
+width: 50px;
+transition: height 0.1s, width 0.1s;
+
+}
+.wpp p {
+padding: 2px;
+background-color: black;
+color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 0.9rem;
+font-weight: bold;
+
+}
+
+
+}
+
+@media (min-width:1200px) {
+/*Esto es lo que quería*/
+/*CUADRÍCULA PRINCIPAL*/
+
+main {
+background-color:white;
+display: grid;
+grid-template-rows:  auto auto auto auto auto;
+grid-template-columns: auto auto auto;
+grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_delivery Info_delivery Info_delivery" "Legal Legal Legal""Footer Footer Footer";
+height: 90%;
+margin-top: 85px;
+
 
 }
 
 .grid {
+/*border: 1px solid black;*/
+}
+
+
+
+
+
+
+.legal {
+grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.footer {
+grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+
+.gallina {
+grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.costilla {
+grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.cola {
+grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+
+
+.sobrebarriga {
+grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.oreada {
+grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.chatas {
+grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.info_delivery {
+    grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+/*FORMULARIO*/
+
+
+
+.info_delivery {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(204, 137, 43);
     /*border: 1px solid black;*/
 }
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 1.5rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+height: 85px;
+width: 100%;
+position: fixed;
+top: 0px;
+box-sizing: border-box;
+}
+
+.nav {
+grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+background-image: url("../img_proyecto/madera.PNG");
+background-repeat: repeat;
+display: grid;
+grid-template-columns: 20px 20% auto    400px 20px;
+grid-template-areas: "A Buscar  Logo    Barra C";
+align-items:center;
+height: 100%;
+
+
+}
+.logo {
+grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.logo  a {
+display: flex;
+justify-content:start;
+}
+
+.logo  a img{
+width: 120px;
+height: 90px;
+margin-left: 0px;
+/*float: left;*/
+}
+
+
+.barr_nav {
+grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar {
+grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar form {
+display: flex;
+justify-content:center;
+}
+
+.buscar form input {
+/*float: right;*/
+width: 40%;
+height: 30px;
+margin-left: 5px;
+border: 3px solid black;
+border-radius: 20px;
+background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+color: white;
+background-color: black;
+}
+
+
+.buscar form label img {
+width: 25px;
+height: 25px;
+}
+
+
+.barr_nav ul {
+display: flex;
+justify-content:space-evenly;
+align-items: center;
+/*border: 1px solid black;*/
+
+}
+
+.barr_nav ul li{
+height: 50px;
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 1.3rem;
+display: flex;
+align-items: center;
+}
+
+.barr_nav ul .menu_dia{
+background-color: black;
+border-radius: 10px;
+
+}
+
+.barr_nav ul .menu_dia a{
+padding: 2px;
+color: rgb(204, 137, 43)
+}
+
+.barr_nav ul li a{
+
+text-decoration: none;
+color: black;
+}
+
+.barr_nav ul li:hover{
+background-color: rgb(218, 190, 147,0.7);
+border-radius: 10px;
+transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+display: none;
+}
+
+
+
+
+/*menú*/
+
+
+.each {
+background-color: rgb(219, 219, 215, 0.5);
+padding: 2%;
+margin: 5% 25%;
+width: 250px;
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 20px;
+box-shadow: 0 0 3px 3px gray;
+}
+
+.hr {
+height: 3px;
+width: 70%;
+background-color: black;
+}
+
+.precio {
+/*border: 1px solid black;*/
+padding: 2px;
+border-radius: 10px;
+background-color: rgb(204, 137, 43);
+color: black;
+text-align: center;
+font-weight: bold;
+}
+
+.foto {
+/*border: 1px solid black;*/
+width: 250px;
+border-radius: 250px;
+}
+
+.q_trae{
+padding: 5px;
+border-radius: 10px;
+text-align:center;
+/*background-color: white;*/
+}
+
+.dish_name {
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+.sancochos {
+width: 100%;
+display: flex;
+}
+
+.ejecutivos {
+width: 100%;
+display: flex;
+}
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: rgb(23, 23, 23);
+}
+
+.terms {
+display: flex;
+/*align-items: center;*/
+}
+
+
+.social_media {
+
+display: flex;
+width: 150px;
+
+justify-content:space-around;
+}
+
+.social_media a img{
+height: 50px;
+
+}
+
+
+.terms ul {
+display: flex;
+justify-content:space-between;
+/*align-items: center;*/
+width: 500px;
+
+}
+
+.terms ul li{
+/*height: 50px;*/
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 1.2rem;
+display: flex;
+align-items: center;
+}
+
+
+.terms ul li a{
+text-decoration: none ;
+color: white;
+font-weight: bold;
+}
+
+.logo_legal {
+display: flex;
+}
+
+.logo_legal img{
+height: 100px;
+width: 140px;
+}
+
+.footer {
+display: flex;
+align-items:center ;
+flex-direction: column;
+background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+width: 60%;
+color: white;
+}
+
+.footer p {
+color: white;
+}
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+position: fixed;
+bottom: 20px;
+right: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.wpp a img {
+height: 50px;
+width: 50px;
+transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+height: 60px;
+width: 60px;
+transition: height 0.1s, width 0.1s;
+
+}
+.wpp p {
+padding: 3px;
+background-color: black;
+color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 0.9rem;
+font-weight: bold;
+
+}
+
+}
+
+

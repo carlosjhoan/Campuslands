@@ -23,7 +23,7 @@ body {
         display: grid;
         grid-template-rows:  auto auto auto auto auto auto auto auto auto;
 
-        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_pickup" "Legal" "Footer";
+        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_delivery" "Legal" "Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -71,8 +71,8 @@ body {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
     }
 
-    .info_pickup {
-        grid-area: Info_pickup;
+    .info_delivery {
+        grid-area: Info_delivery;
     }
 
 
@@ -308,7 +308,7 @@ transition: height 0.1s;
 
 
 
-.info_pickup {
+.info_delivery {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
@@ -636,7 +636,7 @@ main {
     display: grid;
     grid-template-rows:  auto auto auto auto auto auto;
     grid-template-columns: 50% 50% ;
-    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
+    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_delivery Info_delivery" "Legal Legal"" Footer Footer";
     height: 90%;
     margin-top: 85px;
     
@@ -687,8 +687,8 @@ main {
     grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
     }
     
-    .info_pickup {
-        grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    .info_delivery {
+        grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
     }
 
 
@@ -923,7 +923,7 @@ transition: height 0.1s;
 
 
 
-.info_pickup {
+.info_delivery {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
@@ -1303,8 +1303,8 @@ font-weight: bold;
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
         
-        .info_pickup {
-            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        .info_delivery {
+            grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
 /*CUADRÍCULAS NAV*/
@@ -1489,7 +1489,7 @@ nav {
 
 
 
-.info_pickup {
+.info_delivery {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
@@ -1809,7 +1809,7 @@ select {
         display: grid;
         grid-template-rows:  auto auto auto auto auto;
         grid-template-columns: auto auto auto;
-        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
+        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_delivery Info_delivery Info_delivery" "Legal Legal Legal""Footer Footer Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -1860,8 +1860,8 @@ select {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
         
-        .info_pickup {
-            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        .info_delivery {
+            grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
 
@@ -2048,7 +2048,7 @@ display: flex;
 
 
 
-.info_pickup {
+.info_delivery {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
@@ -2362,7 +2362,7 @@ font-weight: bold;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-background-color: rgb(212, 162, 92);
+background-color: white;
 display: grid;
 grid-template-rows:  auto auto auto auto auto;
 grid-template-columns: auto auto auto;

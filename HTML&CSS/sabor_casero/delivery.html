@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabor Casero</title>
-    <link rel="stylesheet" href="menu_style.css">
+    <link rel="stylesheet" href="pickup_style.css">
     
 
 </head>
@@ -88,59 +88,50 @@
         </div>
 
         <div class="info_delivery">
-            <form action="">
-                <div class="name-email">
-                    <div class="nombre">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
-                    </div>
-                    <div class="email">
-                        <label for="i-email">Email</label>
-                        <input type="email" name = "i-email" id = "i-email" required>
-                    </div>
-                    
-                </div>
-
-                <div class="cel-porque">
-                    <div class="celular">
-                        <label for="nombre">Celular</label>
-                        <input type="text" name = "nombre" id = "nombre" pattern = "{1,10}">
-                    </div>
-                    <div class="porque">
-                        <label for="lang">¿Por qué nos contactas?</label>
-                    <select name="languages" id="lang">
-                        <option value="javascript">Consultar vacantes</option>
-                        <option value="php">Deseo invitarlos a un evento</option>
-                        <option value="java">Les tengo una propuesta</option>
-                        <option value="golang">Queja o sugerencia</option>               
-                    </select>
-                    </div>
-                    
-                </div>
-                
-                <div class="escrito">
-                    <label for="commit">Algo que nos quieras comentar</label>
-                    <textarea name="commit" id="commit" cols="30" rows="7"></textarea>
-                </div>
-                
-                <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
-
-            </form>
-        </div>
-
-        
-        <div class="grid legal">
-            <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
-            <div class="terms">
-                <ul>
-                    <li><a href="https://www.restaurantemuy.com/terminosycondiciones" target="_blank">Términos y condiciones</a></li>
-                    <li><a href="https://www.restaurantemuy.com/politicadeprivacidad" target="_blank">Política de privacidad</a></li>
-                </ul>
+            <div class="titulo">
+                <div class="linea"></div>
+                <div class="head">Información para recogerlo</div>
+                <div class="linea"></div>
             </div>
-            <div class="social_media">
-                <a href = "https://www.facebook.com/lalitoy/" target = "_blank"><img src = "../img_proyecto/facebook_logo.png" alt = "facebook">
-                    <a href = "https://www.instagram.com/carlos.aguilar0512/?hl=es-la" target = "_blank"><img src = "../img_proyecto/instagram_logo.png" alt = "instagram"></a>
+            <div class="grid formulario">
+                <form action="">
+                    <div class="name-email">
+                        <div class="nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
+                        </div>
+                        <div class="email">
+                            <label for="i-email">Email</label>
+                            <input type="email" name = "i-email" id = "i-email" required>
+                        </div>
+                        
+                    </div>
 
+                    <div class="cel-porque">
+                        <div class="celular">
+                            <label for="nombre">Celular</label>
+                            <input type="text" name = "nombre" id = "nombre" pattern = "{1,10}">
+                        </div>
+                        <div class="porque">
+                            <label for="lang">Deseo recogerlo entre</label>
+                        <select name="languages" id="lang">
+                            <option value="javascript">11:30 am - 12:00 m</option>
+                            <option value="php">12:00 m - 12:15 pm</option>
+                            <option value="java">12:15 pm - 12:30 pm</option>
+                            <option value="golang">12:30 pm - 1:00pm</option>               
+                        </select>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="escrito">
+                        <label for="commit">¿Qué deseas que tengamos en cuenta?</label>
+                        <textarea name="commit" id="commit" cols="30" rows="7"></textarea>
+                    </div>
+                    
+                    <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
+
+                </form>
             </div>
 
         </div>
