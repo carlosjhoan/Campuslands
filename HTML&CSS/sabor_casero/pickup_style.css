@@ -435,11 +435,11 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-    background-color:white;
+    background-color: white;
     display: grid;
-    grid-template-rows:  auto auto auto auto auto;
-    grid-template-columns: auto auto auto;
-    grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
+    grid-template-rows:  auto auto auto auto auto auto;
+    grid-template-columns: 50% 50% ;
+    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
     height: 90%;
     margin-top: 85px;
     
@@ -696,8 +696,8 @@ transition: height 0.1s;
 
 .foto {
     /*border: 1px solid black;*/
-    width: 250px;
-    border-radius: 250px;
+    width: 200px;
+    border-radius: 200px;
 }
 
 .q_trae{
@@ -788,7 +788,7 @@ transition: height 0.1s;
 .name-email {
     width: 60%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content:space-between;
     
@@ -821,7 +821,7 @@ transition: height 0.1s;
 .cel-porque {
     width: 60%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:space-between;
     align-items: center;
 }
@@ -1009,8 +1009,8 @@ color: white;
 
 .wpp {
 position: fixed;
-bottom: 200px;
-right: 20px;
+bottom: 10%;
+right: 2%;
 display: flex;
 flex-direction: column;
 justify-content: center;
