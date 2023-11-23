@@ -1235,7 +1235,7 @@ nav {
     align-items: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
-    width: 50%;
+    width: 80%;
     background-color: rgb(204, 137, 43);
     /*border: 1px solid black;*/
 }
@@ -1313,12 +1313,13 @@ nav {
     width: 60%;
     display: flex;
     justify-content:space-between;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
 }
 
 .celular {
     display: flex;
     flex-direction: column;
+    justify-content: end;
     margin: 5px;
 
 }
@@ -1375,7 +1376,7 @@ input:focus {
 
 select {
     height: 40px;
-    width: 87%;
+    width: 90%;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -1785,7 +1786,7 @@ nav {
     width: 60%;
     display: flex;
     justify-content:space-between;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .celular {
