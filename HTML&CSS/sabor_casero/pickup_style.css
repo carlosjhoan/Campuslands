@@ -19,11 +19,11 @@ body {
    
 
     main {
-        background-color: rgb(212, 162, 92);
+        background-color: white;
         display: grid;
-        grid-template-rows:  auto auto auto auto auto auto auto auto;
+        grid-template-rows:  auto auto auto auto auto auto auto auto auto;
 
-        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Legal" "Footer";
+        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_pickup" "Legal" "Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -69,6 +69,10 @@ body {
     
     .chatas {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+    .info_pickup {
+        grid-area: Info_pickup;
     }
 
 
@@ -259,6 +263,7 @@ transition: height 0.1s;
     height: 3px;
     width: 70%;
     background-color: black;
+    border-radius: 5px;
 }
 
 .precio {
@@ -273,8 +278,8 @@ transition: height 0.1s;
 
 .foto {
     /*border: 1px solid black;*/
-    width: 200px;
-    border-radius: 200px;
+    width: 120px;
+    border-radius: 120px;
 }
 
 .q_trae{
@@ -286,7 +291,7 @@ transition: height 0.1s;
 
 .dish_name {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .sancochos {
@@ -298,6 +303,198 @@ transition: height 0.1s;
     width: 100%;
     display: flex;
 }
+
+/*FORMULARIO*/
+
+
+
+.info_pickup {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 80%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 1rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
 
 
 
@@ -1608,7 +1805,7 @@ select {
     /*CUADRÍCULA PRINCIPAL*/
 
     main {
-        background-color: rgb(212, 162, 92);
+        background-color: white;
         display: grid;
         grid-template-rows:  auto auto auto auto auto;
         grid-template-columns: auto auto auto;
