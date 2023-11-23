@@ -19,7 +19,7 @@ body {
    
 
     main {
-        background-color: rgb(212, 162, 92);
+        background-color: white;
         display: grid;
         grid-template-rows:  auto auto auto auto auto auto auto auto;
 
@@ -435,7 +435,7 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-    background-color: rgb(212, 162, 92);
+    background-color: white;
     display: grid;
     grid-template-rows:  auto auto auto auto auto;
     grid-template-columns: 50% 50% ;
@@ -856,7 +856,7 @@ font-weight: bold;
     /*CUADRÍCULA PRINCIPAL*/
 
     main {
-        background-color: rgb(212, 162, 92);
+        background-color: white;
         display: grid;
         grid-template-rows:  auto auto auto auto;
         grid-template-columns: auto auto auto;
@@ -1036,8 +1036,8 @@ nav {
 .each {
     background-color: rgb(219, 219, 215, 0.5);
     padding: 2%;
-    margin: 5% 25%;
-    width: 250px;
+    margin: 5% 15%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1216,7 +1216,7 @@ nav {
     /*CUADRÍCULA PRINCIPAL*/
 
 main {
-    background-color: rgb(212, 162, 92);
+    background-color: white;
     display: grid;
     grid-template-rows:  auto auto auto auto;
     grid-template-columns: auto auto auto;
@@ -1402,7 +1402,7 @@ nav {
     background-color: rgb(219, 219, 215, 0.5);
     padding: 2%;
     margin: 5% 25%;
-    width: 250px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
