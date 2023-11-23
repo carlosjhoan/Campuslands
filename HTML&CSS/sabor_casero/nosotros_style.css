@@ -921,7 +921,7 @@ nav {
 
 main {
     display: grid;
-    grid-template-rows: 800px auto auto;
+    grid-template-rows: auto auto auto;
     
     grid-template-areas: "Content" "Legal""Footer";
     height: 90%;
@@ -1055,6 +1055,17 @@ nav {
     display: none;
 }
 
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43)
+}
+
 
 /*NOSOTROS*/
 .content {
@@ -1127,6 +1138,7 @@ nav {
 }
 
 .luz, .eugenia {
+
     flex-grow: 1;
     background-color:  rgb(204, 137, 43, 0.3);
     margin: 10px;
@@ -1138,13 +1150,33 @@ nav {
 
 }
 
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 60%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 60%;
+    
+}
+    
 
 
+.oficio {
+    font-size: 0.8rem;
+}
 
-
-
-
-
+.testimonio {
+    text-align:left;
+}
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
 
@@ -1245,6 +1277,7 @@ nav {
     height: 50px;
     width: 50px;
     transition: height 0.1s, width 0.1s;
+    box-shadow: 2px gray;
 
 }
 
