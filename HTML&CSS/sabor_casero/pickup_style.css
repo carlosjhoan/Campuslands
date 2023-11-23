@@ -1303,8 +1303,8 @@ font-weight: bold;
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
         
-        .info_delivery {
-            grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        .info_pickup {
+            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
 /*CUADRÍCULAS NAV*/
@@ -1489,7 +1489,7 @@ nav {
 
 
 
-.info_delivery {
+.info_pickup {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
@@ -1809,7 +1809,7 @@ select {
         display: grid;
         grid-template-rows:  auto auto auto auto auto;
         grid-template-columns: auto auto auto;
-        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_delivery Info_delivery Info_delivery" "Legal Legal Legal""Footer Footer Footer";
+        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_delivery Info_pickup" "Legal Legal Legal""Footer Footer Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -1860,8 +1860,8 @@ select {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
         
-        .info_delivery {
-            grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        .info_pickup {
+            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
 
 
@@ -2048,7 +2048,7 @@ display: flex;
 
 
 
-.info_delivery {
+.info_pickup {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
