@@ -16,8 +16,10 @@ body {
 
     /*Esto es lo que quería*/
     /*CUADRÍCULA PRINCIPAL*/
+   
 
     main {
+        background-color: rgb(212, 162, 92);
         display: grid;
         grid-template-rows:  auto auto auto auto auto auto auto auto;
 
@@ -225,6 +227,17 @@ height: 120px;
 transition: height 0.1s;
 }
 
+.barr_nav ul .menu_dia{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .menu_dia a{
+    padding: 2px;
+    color: rgb(204, 137, 43)
+}
+
 /*menú*/
 
 .gallina {
@@ -422,6 +435,7 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
+    background-color: (212, 162, 92);
     display: grid;
     grid-template-rows:  auto auto auto auto auto;
     grid-template-columns: 50% 50% ;
@@ -634,6 +648,17 @@ height: 120px;
 transition: height 0.1s;
 }
 
+.barr_nav ul .menu_dia{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .menu_dia a{
+    padding: 2px;
+    color: rgb(204, 137, 43)
+}
+
 /*menú*/
 
 
@@ -831,6 +856,7 @@ font-weight: bold;
     /*CUADRÍCULA PRINCIPAL*/
 
     main {
+        background-color: rgb(212, 162, 92);
         display: grid;
         grid-template-rows:  auto auto auto auto;
         grid-template-columns: auto auto auto;
@@ -991,6 +1017,17 @@ nav {
 
 .barr_nav .menu {
     display: none;
+}
+
+.barr_nav ul .menu_dia{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .menu_dia a{
+    padding: 2px;
+    color: rgb(204, 137, 43)
 }
 
 /*menú*/
@@ -1179,6 +1216,7 @@ nav {
     /*CUADRÍCULA PRINCIPAL*/
 
 main {
+    background-color: rgb(212, 162, 92);
     display: grid;
     grid-template-rows:  auto auto auto auto;
     grid-template-columns: auto auto auto;
@@ -1353,6 +1391,8 @@ nav {
 .barr_nav .menu {
     display: none;
 }
+
+
 
 
 /*menú*/
