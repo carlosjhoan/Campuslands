@@ -17,30 +17,33 @@ body {
     /*Esto es lo que quería*/
     /*CUADRÍCULA PRINCIPAL*/
 
-main {
-    display: grid;
-    grid-template-rows: 312px 312px 20% 10%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "Pickup Pickup" "Delivery Delivery" "Legal Legal""Footer Footer";
-    height: 90%;
-    margin-top: 85px;
+    main {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        
+        grid-template-areas: "Content" "Legal""Footer";
+        height: 90%;
+        margin-top: 85px;
+        
     
-
-}
-
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
-
-.legal {
-    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.footer {
-    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
+    }
+    
+    .grid {
+        /*border: 1px solid black;*/
+    }
+    
+    
+    .content {
+        grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
 
 
 /*CUADRÍCULAS NAV*/
@@ -198,8 +201,152 @@ height: 120px;
 transition: height 0.1s;
 }
 
-/*FORMULARIO*/
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
 
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.historia{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    /*float: left;*/
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    /*border: 1px solid black;*/
+    content: url("../img_proyecto/empleados_2.jpg");
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.7rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 100%;
+    height: 300px;
+    padding: 2% 2%;
+    margin-left: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:end;
+    /*border: 1px solid black;*/
+    text-align: center;
+
+}
+
+.luz, .eugenia {
+
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 5px;
+    width: 100%;
+    height: 90%;
+    padding: 0% 2%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 100%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 100%;
+    
+}
+.eugenia h2 {
+    font-size: 1rem;
+}
+
+.luz h2 {
+    font-size: 1rem;
+}
+    
+
+
+.oficio {
+    font-size: 0.6rem;
+}
+
+.testimonio {
+    text-align:left;
+    font-size: 0.67rem;
+}
 
 
 
@@ -293,8 +440,8 @@ transition: height 0.1s;
 
 .wpp {
     position: fixed;
-    bottom: 200px;
-    right: 5%;
+    bottom: 15%;
+    right: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -302,8 +449,8 @@ transition: height 0.1s;
 }
 
 .wpp a img {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     transition: height 0.1s, width 0.1s;
 
 }
@@ -321,6 +468,7 @@ transition: height 0.1s;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 0.7rem;
     font-weight: bold;
+    border-radius: 2px;
 
 }
 
@@ -335,28 +483,31 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-display: grid;
-grid-template-rows: 600px 600px 20% 30%;
-grid-template-columns: 50% 50%;
-grid-template-areas: "Pickup Pickup""Delivery Delivery" "Legal Legal""Footer Footer";
-height: 90%;
-margin-top: 85px;
-
+    display: grid;
+    grid-template-rows: auto auto auto;
+    
+    grid-template-areas: "Content" "Legal""Footer";
+    height: 90%;
+    margin-top: 85px;
+    
 
 }
 
 .grid {
-/*border: 1px solid black;**/
+    /*border: 1px solid black;*/
 }
 
 
+.content {
+    grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
 
 .legal {
-grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
 
 .footer {
-grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
 
 
@@ -515,8 +666,155 @@ background-repeat: repeat;
 visibility: visible;
 height: 120px;
 transition: height 0.1s;
+box-shadow: 2px 2px rgb(69, 69, 69, 0.7);
 }
 
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.historia{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.7rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    /*float: left;*/
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    /*border: 1px solid black;*/
+    /*content: url("../img_proyecto/empleados_1.jpg");*/
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 100%;
+    height: 300px;
+    padding: 2% 2%;
+    margin-left: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:end;
+    /*border: 1px solid black;*/
+    text-align: center;
+
+}
+
+.luz, .eugenia {
+
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 5px;
+    width: 100%;
+    height: 90%;
+    padding: 0% 2%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 100%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 100%;
+    
+}
+.eugenia h2 {
+    font-size: 1.2rem;
+}
+
+.luz h2 {
+    font-size: 1.2rem;
+}
+    
+
+
+.oficio {
+    font-size: 0.7rem;
+}
+
+.testimonio {
+    text-align:left;
+    font-size: 0.75rem;
+}
 
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
