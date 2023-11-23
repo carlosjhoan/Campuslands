@@ -16,31 +16,38 @@ body {
 
     /*Esto es lo que quería*/
     /*CUADRÍCULA PRINCIPAL*/
-
-main {
-    display: grid;
-    grid-template-rows: 312px 312px 20% 10%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "Pickup Pickup" "Delivery Delivery" "Legal Legal""Footer Footer";
-    height: 90%;
-    margin-top: 85px;
+    main {
+        display: grid;
+        grid-template-rows: 600px auto auto;
+        
+        grid-template-areas: "Contenido" "Legal""Footer";
+        height: 90%;
+        margin-top: 85px;
+        
     
-
-}
-
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
-
-.legal {
-    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.footer {
-    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
+    }
+    
+    .grid {
+        /*border: 1px solid black;*/
+    }
+    
+    
+    
+    
+    
+    
+    .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .contenido {
+        grid-area: Contenido; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        
+    }
 
 
 /*CUADRÍCULAS NAV*/
@@ -214,6 +221,189 @@ transition: height 0.1s;
 
 
 
+.contenido {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 90%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 3rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    justify-content:space-between;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1.2rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
 
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
@@ -347,30 +537,34 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-display: grid;
-grid-template-rows: 600px 600px 20% 30%;
-grid-template-columns: 50% 50%;
-grid-template-areas: "Pickup Pickup""Delivery Delivery" "Legal Legal""Footer Footer";
-height: 90%;
-margin-top: 85px;
-
+    display: grid;
+    grid-template-rows: 600px auto auto;
+    
+    grid-template-areas: "Contenido" "Legal""Footer";
+    height: 90%;
+    margin-top: 85px;
+    
 
 }
 
 .grid {
-/*border: 1px solid black;**/
+    /*border: 1px solid black;*/
 }
 
 
 
 .legal {
-grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
 
 .footer {
-grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
 
+.contenido {
+    grid-area: Contenido; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    
+}
 
 /*CUADRÍCULAS NAV*/
 nav {
@@ -541,6 +735,199 @@ transition: height 0.1s;
     font-weight: bold;
 }
 
+/*FORMULARIO*/
+
+.contenido {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 80%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 3rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 80%;
+    display: flex;
+    justify-content:space-between;
+    /*border: 1px solid black;*/
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 80%;
+    display: flex;
+    justify-content:space-between;
+    /*border: 1px solid black;*/
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 5px;
+    /*border: 1px solid black;*/
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 80%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2s;
+    font-size: 1rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
+
+
 
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
@@ -678,32 +1065,38 @@ font-weight: bold;
     /*Esto es lo que quería*/
     /*CUADRÍCULA PRINCIPAL*/
 
-main {
-    display: grid;
-    grid-template-rows: 500px 30% 20%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
-    height: 90%;
-    margin-top: 85px;
+    main {
+        display: grid;
+        grid-template-rows: 600px auto auto;
+        
+        grid-template-areas: "Contenido" "Legal""Footer";
+        height: 90%;
+        margin-top: 85px;
+        
     
-
-}
-
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
-
-
-.legal {
-    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
-.footer {
-    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
-
+    }
+    
+    .grid {
+        /*border: 1px solid black;*/
+    }
+    
+    
+    
+    
+    
+    
+    .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .contenido {
+        grid-area: Contenido; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        
+    }
 
 /*CUADRÍCULAS NAV*/
 nav {
@@ -826,7 +1219,193 @@ nav {
 
 /*FORMULARIO*/
 
+.contenido {
+    width: 100%;
+    background-color:rgb(204, 137, 43) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
 
+}
+
+.formulario {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 50%;
+    background-color: rgb(204, 137, 43);
+    /*border: 1px solid black;*/
+}
+
+
+.formulario form {
+    /*border: 1px solid black;*/
+    flex-grow: 1;
+    padding-bottom: 2%;
+    height: 90%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color:rgb(216, 178, 124);
+    border-radius: 30px;
+    
+    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.linea {
+    height: 5px;
+    width:15%;
+    background-color: black;
+}
+
+.head {
+    font-size: 3rem;
+    display: flex;
+    
+}
+
+
+.name-email {
+    width: 60%;
+    display: flex;
+    justify-content:space-between;
+    
+
+
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.nombre label {
+    margin: 5px;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.email label {
+    margin: 5px;
+}
+
+.cel-porque {
+    width: 60%;
+    display: flex;
+    justify-content:space-between;
+    border: 1px solid black;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+
+.celular label {
+    margin: 5px;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+
+    margin: 5px;
+}
+
+.porque label {
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+
+
+.escrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.escrito label {
+    margin: 5px;
+    
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px ;
+    
+}
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+
+select {
+    height: 40px;
+    width: 87%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit input {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+    transition: height 2;
+    font-size: 1.2rem;
+}
+
+.submit img {
+    height: 0;
+    width: 0;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover img {
+    height: 20px;
+    width: 20px ;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.submit:hover {
+    background-color: green;
+    border-radius: 10px;
+}
 
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
@@ -1206,6 +1785,7 @@ nav {
     width: 60%;
     display: flex;
     justify-content:space-between;
+    border: 1px solid black;
 }
 
 .celular {
@@ -1222,11 +1802,14 @@ nav {
 .porque {
     display: flex;
     flex-direction: column;
+    align-items:end;
+
     margin: 5px;
 }
 
 .porque label {
     margin: 5px;
+    font-size: 0.9rem;
 }
 
 
@@ -1252,7 +1835,7 @@ textarea {
 input {
     border: 2px solid black;
     height: 40px;
-    width: 200px;
+    width: 100%;
     border-radius: 10px ;
     
 }
@@ -1264,6 +1847,7 @@ input:focus {
 
 select {
     height: 40px;
+    width: 87%;
     border: 2px solid black;
     border-radius: 10px;
 }
