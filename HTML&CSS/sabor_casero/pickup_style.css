@@ -23,7 +23,7 @@ body {
         display: grid;
         grid-template-rows:  auto auto auto auto auto auto auto auto auto;
 
-        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_delivery" "Legal" "Footer";
+        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_pickup" "Legal" "Footer";
         height: 90%;
         margin-top: 85px;
         
@@ -71,8 +71,8 @@ body {
         grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
     }
 
-    .info_delivery {
-        grid-area: Info_delivery;
+    .info_pickup {
+        grid-area: Info_pickup;
     }
 
 
@@ -308,7 +308,7 @@ transition: height 0.1s;
 
 
 
-.info_delivery {
+.info_pickup {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
@@ -320,7 +320,7 @@ transition: height 0.1s;
 
 .formulario {
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
     align-items: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
@@ -368,7 +368,7 @@ transition: height 0.1s;
 
 
 .name-email {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -401,7 +401,7 @@ transition: height 0.1s;
 }
 
 .cel-porque {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -636,7 +636,7 @@ main {
     display: grid;
     grid-template-rows:  auto auto auto auto auto auto;
     grid-template-columns: 50% 50% ;
-    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_delivery Info_delivery" "Legal Legal"" Footer Footer";
+    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
     height: 90%;
     margin-top: 85px;
     
@@ -687,8 +687,8 @@ main {
     grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
     }
     
-    .info_delivery {
-        grid-area: Info_delivery; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    .info_pickup {
+        grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
     }
 
 
@@ -923,7 +923,7 @@ transition: height 0.1s;
 
 
 
-.info_delivery {
+.info_pickup {
     width: 100%;
     background-color:rgb(204, 137, 43) ;
     display: flex;
