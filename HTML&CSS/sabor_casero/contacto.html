@@ -38,16 +38,20 @@
 
     <main>
         <div class="contenido">
-            
+            <div class="titulo">
+                <div class="linea"></div>
+                <div class="head">Contáctanos</div>
+                <div class="linea"></div>
+            </div>
             <div class="grid formulario">
                 <form action="">
                     <div class="name-email">
                         <div class="nombre">
-                            <label for="nombre">nombre:</label>
+                            <label for="nombre">Nombre</label>
                             <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
                         </div>
                         <div class="email">
-                            <label for="i-email">Email:</label>
+                            <label for="i-email">Email</label>
                             <input type="email" name = "i-email" id = "i-email" required>
                         </div>
                         
@@ -71,11 +75,11 @@
                     </div>
                     
                     <div class="escrito">
-                        <label for="commit"></label>
+                        <label for="commit">Algo que nos quieras comentar</label>
                         <textarea name="commit" id="commit" cols="30" rows="10"></textarea>
                     </div>
                     
-                    <input type="submit" value="Submit" />
+                    <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
 
                 </form>
             </div>
