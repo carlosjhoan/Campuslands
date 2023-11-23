@@ -435,7 +435,7 @@ transition: height 0.1s;
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-    background-color: (212, 162, 92);
+    background-color: rgb(212, 162, 92);
     display: grid;
     grid-template-rows:  auto auto auto auto auto;
     grid-template-columns: 50% 50% ;
