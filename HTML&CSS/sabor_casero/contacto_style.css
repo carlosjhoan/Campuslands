@@ -198,6 +198,18 @@ height: 120px;
 transition: height 0.1s;
 }
 
+.barr_nav ul .contact{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .contact a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
 /*FORMULARIO*/
 
 
@@ -517,6 +529,18 @@ height: 120px;
 transition: height 0.1s;
 }
 
+.barr_nav ul .contact{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .contact a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
 
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
@@ -788,6 +812,18 @@ nav {
     display: none;
 }
 
+.barr_nav ul .contact{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .contact a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
 /*FORMULARIO*/
 
 
@@ -921,9 +957,9 @@ nav {
 
 main {
     display: grid;
-    grid-template-rows: 650px 20% 10%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "Pickup Delivery" "Legal Legal""Footer Footer";
+    grid-template-rows: auto auto auto;
+    
+    grid-template-areas: "Contenido" "Legal""Footer";
     height: 90%;
     margin-top: 85px;
     
@@ -946,6 +982,13 @@ main {
 .footer {
     grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
+
+.contenido {
+    grid-area: Contenido; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    
+}
+
+
 
 
 /*CUADRÍCULAS NAV*/
@@ -1055,9 +1098,55 @@ nav {
     display: none;
 }
 
+.barr_nav ul .contact{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .contact a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
 
 /*FORMULARIO*/
 
+form {
+    
+}
+
+.contenido {
+    width: 100%;
+}
+
+.name-email {
+    display: flex;
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+}
+
+.cel-porque {
+    display: flex;
+}
+
+.celular {
+    display: flex;
+    flex-direction: column;
+}
+
+.porque {
+    display: flex;
+    flex-direction: column;
+}
 
 
 

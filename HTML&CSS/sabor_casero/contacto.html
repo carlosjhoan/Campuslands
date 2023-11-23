@@ -28,8 +28,8 @@
                 <div class="menu"><button><img src="../img_proyecto/menu_logo.png" alt=""></button></div>
                 <ul>
                     <li><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/menu.html">Menú</a></li>
-                    <li><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/nosotros.html">Nosotros</a></li>
-                    <li><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/contacto.html">Contáctanos</a></li>
+                    <li ><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/nosotros.html">Nosotros</a></li>
+                    <li class = "contact"><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/contacto.html">Contáctanos</a></li>
                 </ul>
 
             </div>
@@ -37,30 +37,52 @@
     </nav>
 
     <main>
-        <div class=" grid franja"></div>
-        <div class="grid formulario">
-            <form action="">
-                <label for="nombre">nombre:</label>
-                <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
-                <label for="i-email">Email:</label>
-                <input type="email" name = "i-email" id = "i-email" required>
-                <label for="nombre">Celular</label>
-                <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
-                <label for="lang">Language</label>
-            <select name="languages" id="lang">
-                <option value="javascript">Consultar vacantes</option>
-                <option value="php">Deseo invitarlos a un evento</option>
-                <option value="java">Les tengo una propuesta</option>
-                <option value="golang">Queja o sugerencia</option>
-               
-            </select>
-                
-                <label for="commit"></label>
-                <textarea name="commit" id="commit" cols="30" rows="10"></textarea>
-                <input type="submit" value="Submit" />
+        <div class="contenido">
+            
+            <div class="grid formulario">
+                <form action="">
+                    <div class="name-email">
+                        <div class="nombre">
+                            <label for="nombre">nombre:</label>
+                            <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
+                        </div>
+                        <div class="email">
+                            <label for="i-email">Email:</label>
+                            <input type="email" name = "i-email" id = "i-email" required>
+                        </div>
+                        
+                    </div>
 
-            </form>
+                    <div class="cel-porque">
+                        <div class="celular">
+                            <label for="nombre">Celular</label>
+                            <input type="text" name = "nombre" id = "nombre" pattern = "{1,10}">
+                        </div>
+                        <div class="porque">
+                            <label for="lang">¿Por qué nos contactas?</label>
+                        <select name="languages" id="lang">
+                            <option value="javascript">Consultar vacantes</option>
+                            <option value="php">Deseo invitarlos a un evento</option>
+                            <option value="java">Les tengo una propuesta</option>
+                            <option value="golang">Queja o sugerencia</option>               
+                        </select>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="escrito">
+                        <label for="commit"></label>
+                        <textarea name="commit" id="commit" cols="30" rows="10"></textarea>
+                    </div>
+                    
+                    <input type="submit" value="Submit" />
+
+                </form>
+            </div>
+      
+
         </div>
+        
         <div class="grid legal">
             <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
             <div class="terms">
