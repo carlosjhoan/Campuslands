@@ -71,32 +71,100 @@
         grid-template-rows: auto auto auto auto 210px;
         
         grid-template-areas: "Logo" "Call_action" "Info_box""Articles" "Footer";
-        height: 95vh;
+        /*height: 95vh;*/
         margin-top: 70px;
-        border: 1px solid black;
+        
         }
 
         .logo-main {
-            grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Logo; 
             background-image: url("../filtro/img_test/enium-fondo.jpg");
             display: flex;
             justify-content: center;
         }
 
         .call_action {
-            grid-area: Call_action; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            padding: 2%;
+            grid-area: Call_action;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            
+
         }
 
+        .call_action button{
+            padding: 15px 40px;
+            background-color: black;
+            color: white;
+            font-size: 1em;
+            -webkit-transition:background-color 0.5s linear;
+        }
+
+        .call_action button:hover{
+            
+            background-color: #4A4959;
+            -webkit-transition:background-color 0.5s linear;
+        }
+
+        .call_action div {
+            text-align: center;
+            width: 50%;
+            line-height: 1.5em;
+            font-size: 1.1em;
+        }
+
+        
+        
+
+
+
         .info_box {
-            grid-area: Info_box; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Info_box; 
         }
 
         .articles {
-            grid-area: Articles; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            padding: 2%;
+            grid-area: Articles; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
         }
 
+        .articles .section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 2%;
+        }
+        .art1, .art2 {
+            width: 40%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .img {
+            display: flex;
+            justify-content: center;
+        }
+        .img img{
+            width: 100%;
+        }
+        
+
+        .text {
+            text-align: justify;
+            width: 100%;
+        }
+
+
         .footer {
-            grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Footer; 
             background-color: black;
         }
 
@@ -117,7 +185,7 @@
         <div class="barr_nav">
             
             <ul>
-                <li><a href=""></a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
@@ -128,9 +196,25 @@
 
     <main>
         <div class="logo-main"><img src="../filtro/img_test/ENIUNLogotipo.png" alt=""></div>
-        <div class="call_action">Call_action</div>
+        <div class="call_action">
+            <header><h2>This is a call to action</h2></header>
+            <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, veniam! Similique sequi odit eligendi animi repellat aperiam aspernatur ex vel, tenetur non minima rerum natus esse, nam et pariatur error!</p></div>
+            <button>Call to action</button>
+        </div>
         <div class="info_box">Info_box</div>
-        <div class="articles">Articles</div>
+        <div class="articles">
+            <header><h2>Articles</h2></header>
+            <div class="section">
+                <div class="art1">
+                    <div class="img"><img src="../filtro/img_test/img_article_1.png" alt=""></div>
+                    <div class = "text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus officiis qui quas assumenda ea unde adipisci doloremque, tempore nostrum quod nobis corporis voluptas porro repellat, reiciendis delectus quos! Fugiat?</p></div>
+                </div>
+                <div class="art2">
+                    <div class="img"><img src="../filtro/img_test/img_article_2.png" alt=""></div>
+                    <div class = "text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus officiis qui quas assumenda ea unde adipisci doloremque, tempore nostrum quod nobis corporis voluptas porro repellat, reiciendis delectus quos! Fugiat?</p></div>
+                </div>
+            </div>
+        </div>
         <div class="footer">Footer</div>
     </main>
     
