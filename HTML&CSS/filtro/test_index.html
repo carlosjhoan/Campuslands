@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: cal(100vh-70px);
+            box-sizing: border-box;
+        }
+
+        /*NAV*/
+
+        nav {
+            height: 70px;
+            width: 100%;
+            padding: 5px;
+            position: fixed;
+            display: flex;
+            top: 0px;
+            justify-content: space-around;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background-color: white;
+        }
+
+        .barr_nav {
+            display: flex;
+            width: 250px;
+        }
+
+        .barr_nav ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /*border: 1px solid black;*/
+    
+        }
+
+        .barr_nav ul li{
+            /*height: 50px;*/
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .barr_nav ul li a{
+            
+            text-decoration: none;
+            color: black;
+        }
+
+        .barr_nav ul li a:hover{
+            
+            text-decoration: none;
+            color: #5E5D6E;
+        }
+
+        /*MAIN*/
+
+        main {
+            
+        display: grid;
+        grid-template-rows: auto auto auto auto 210px;
+        
+        grid-template-areas: "Logo" "Call_action" "Info_box""Articles" "Footer";
+        height: 95vh;
+        margin-top: 70px;
+        border: 1px solid black;
+        }
+
+        .logo-main {
+            grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            background-image: url("../filtro/img_test/enium-fondo.jpg");
+            display: flex;
+            justify-content: center;
+        }
+
+        .call_action {
+            grid-area: Call_action; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .info_box {
+            grid-area: Info_box; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .articles {
+            grid-area: Articles; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        }
+
+        .footer {
+            grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            background-color: black;
+        }
+
+
+    </style>
+
+    <script src="https://kit.fontawesome.com/509deda241.js"></script>
+</head>
+<body>
+   <nav>
+    
+        <div class="logo">
+            <img src="../filtro/img_test/ENIUN_Logo_Header.png" alt="">
+        </div>
+
+        
+        
+        <div class="barr_nav">
+            
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        
+    </div>
+   </nav>
+
+    <main>
+        <div class="logo-main"><img src="../filtro/img_test/ENIUNLogotipo.png" alt=""></div>
+        <div class="call_action">Call_action</div>
+        <div class="info_box">Info_box</div>
+        <div class="articles">Articles</div>
+        <div class="footer">Footer</div>
+    </main>
+    
+</body>
+</html>
