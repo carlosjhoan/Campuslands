@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "salida"></p>
+    <h1>Probando document.write e inhertHTML</h1>
+    <div id = "container">Este es el texto</div>
+    <script>
+        num_1 = prompt("Digite un número:")
+        num_2 = prompt ("digite otro número: ")
+        num_1 = Number(num_1)
+        num_2 = Number(num_2)
+        suma= num_1 + num_2;
+        resta = num_1 - num_2
+        mult = num_1 * num_2
+        div = num_1 /num_2
+        salida = `Suma = ${suma}\nResta = ${resta}\nmultiplicación = ${mult}\nDivisión = ${div}`
+        document.write("<h2> Probando</h2>");
+        let element = document.getElementById("container");
+        document.getElementById("salida").innerHTML = salida
+        
+    </script>
+    <script src = "../primer_script.js">
+    
+
+    </script>
+</body>
+</html>
