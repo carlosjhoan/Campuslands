@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review grid</title>
+    <style>
+        .body {
+            height: 100vh;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto auto;
+        }
+
+        .container div {
+            border: 1px solid black;
+        }
+
+        .box1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            
+        }
+
+        .box2 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .box3 {
+            grid-area: 3 / 1 / 4/ 2;
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 3px;        }
+
+        .box4 {
+            grid-area: 3 / 2 / 4/ 3;
+        }
+
+        .box5 {
+            grid-area: 4 / 1 / 5/ 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">
+            <div class="child1">child 1</div>
+            <div class="child2">child 2</div>
+            <div class="child3">child 3</div>
+            <div class="child4">child 4</div>
+        </div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+
+</body>
+</html>
