@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const en = 31; const feb = 28; const mar = 30; const may = 31; const jun = 30
+        const jul = 31; const ag = 31; const sep = 30; const oct = 31; const nov = 30; const dic = 31
+        const mes_max = 12
+        let fecha = prompt("Ingrese una fecha: [DD/MM/AAA]")
+        list_fecha = fecha.split("/")
+        console.log(Number(fecha))
+        console.log(list_fecha)
+        dia = Number(fecha.slice(0, 2))
+        mes =  Number(fecha.slice(3, 5))
+        year =  Number(fecha.slice(6))
+        alert(`el dia es ${dia}, el mes es ${mes} y el año es ${year}`)
+        if (dia >0 && mes >= 0 && mes <=12 && year >= "0000" && year <= "9999" ) {
+            alert("Fecha válida")
+        }
+
+        
+        else {
+            alert ("PAILAS!!!")
+        }
+
+        
+
+        
+
+
+    </script>
+</body>
+</html>
