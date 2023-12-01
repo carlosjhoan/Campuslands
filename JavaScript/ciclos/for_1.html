@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular primos entre 1 y 100</title>
+</head>
+<body>
+    <h1>Caluclar los primos hasta el 100</h1>
+    <hr>
+    <p>Los primos hasta 100 son: </p>
+    <div id="primos"></div>
+
+    <script>
+        let str = "2,"
+        for (let num = 3; num<= 100; num+=2) {
+            esprimo = true
+            for (let i = 3; i < num; i++) {
+                if (num%i == 0) {
+                    esprimo = false;
+                    break;
+                }
+            }
+
+            str += (esprimo) ? `${num}, `: ""
+        }
+        document.getElementById("primos").innerHTML = str
+    </script>
+</body>
+</html>

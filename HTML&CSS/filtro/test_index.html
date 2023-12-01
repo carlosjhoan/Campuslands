@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: cal(100vh-70px);
+            box-sizing: border-box;
+        }
+
+        /*NAV*/
+
+        nav {
+            height: 70px;
+            width: 100%;
+            padding: 5px;
+            position: fixed;
+            display: flex;
+            top: 0px;
+            justify-content: space-around;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background-color: rgb(243, 242, 242);
+        }
+
+        .barr_nav {
+            display: flex;
+            width: 250px;
+        }
+
+        .barr_nav ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /*border: 1px solid black;*/
+    
+        }
+
+        .barr_nav ul li{
+            /*height: 50px;*/
+            list-style-type: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .barr_nav ul li a{
+            
+            text-decoration: none;
+            color: black;
+        }
+
+        .barr_nav ul li a:hover{
+            
+            text-decoration: none;
+            color: #5E5D6E;
+        }
+
+        /*MAIN*/
+
+        main {
+            
+        display: grid;
+        grid-template-rows: auto auto auto auto 210px;
+        
+        grid-template-areas: "Logo" "Call_action" "Info_box""Articles" "Footer";
+        /*height: 95vh;*/
+        margin-top: 70px;
+        
+        }
+
+        .logo-main {
+            grid-area: Logo; 
+            background-image: url("../filtro/img_test/enium-fondo.jpg");
+            display: flex;
+            justify-content: center;
+        }
+
+        .call_action {
+            padding: 5%;
+            grid-area: Call_action;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            
+
+        }
+
+        .call_action button{
+            padding: 15px 40px;
+            background-color: black;
+            color: white;
+            font-size: 1em;
+            -webkit-transition:background-color 0.5s linear;
+        }
+
+        .call_action button:hover{
+            
+            background-color: #4A4959;
+            -webkit-transition:background-color 0.5s linear;
+        }
+
+        .call_action div {
+            text-align: center;
+            width: 50%;
+            line-height: 1.5em;
+            font-size: 1.1em;
+        }
+
+
+
+
+
+
+
+
+
+        .info_box {
+            padding: 2%;
+            grid-area: Info_box; 
+            background-color: #1C1D22;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .box {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .fa-star, .fa-thumbs-up, .fa-check{
+            font-size: 2.7em;
+            color: white;
+        }
+
+
+
+        .articles {
+            padding: 5%;
+            grid-area: Articles; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .articles .section {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:center;
+            gap: 2%;
+        }
+        .art1, .art2 {
+            width: 40%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .img {
+            display: flex;
+            justify-content: center;
+        }
+        .img img{
+            width: 100%;
+        }
+        
+
+        .text {
+            text-align: justify;
+            width: 100%;
+        }
+
+
+        .footer {
+            grid-area: Footer; 
+            background-color: black;
+        }
+
+        @media screen and (max-width:460px) {
+            .articles {
+            box-sizing: border-box;
+            padding: 0%;
+            grid-area: Articles; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            }
+
+            .articles .section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            
+            }
+        
+            .art1, .art2 {
+            width: 80%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .info_box {
+            grid-area: Info_box; 
+            background-color: #1C1D22;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+
+        .boxes {
+            display: flex;
+            flex-flow: row wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            }
+        
+        .box {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+        
+
+            .logo-main img {
+                width: 30%;
+            }
+        }
+
+        @media  (min-width:468px) and (max-width:1020px) {
+            
+            .info_box {
+            grid-area: Info_box; 
+            background-color: #1C1D22;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .box {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        
+            
+        }
+
+
+    </style>
+
+    <script src="https://kit.fontawesome.com/509deda241.js"></script>
+</head>
+<body>
+   <nav>
+    
+        <div class="logo">
+            <img src="../filtro/img_test/ENIUN_Logo_Header.png" alt="">
+        </div>
+
+        
+        
+        <div class="barr_nav">
+            
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        
+    </div>
+   </nav>
+
+    <main>
+        <div class="logo-main"><img src="../filtro/img_test/ENIUNLogotipo.png" alt=""></div>
+        <div class="call_action">
+            <header><h2>This is a call to action</h2></header>
+            <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, veniam! Similique sequi odit eligendi animi repellat aperiam aspernatur ex vel, tenetur non minima rerum natus esse, nam et pariatur error!</p></div>
+            <button>Call to action</button>
+        </div>
+        <div class="info_box">
+            <header><h2>This is an info-box</h2></header>
+            <div class="boxes">
+                <div class="box box1">
+                    <i class = "fas fa-star"></i>
+                    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deleniti nobis. Iste dicta qui id illum. Excepturi nulla mollitia, ab temporibus voluptate vel atque alias, neque et eum fugiat corrupti!</p></div>
+                </div>
+                <div class="box box2">
+                    <i class = "fas fa-thumbs-up"></i>
+                    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deleniti nobis. Iste dicta qui id illum. Excepturi nulla mollitia, ab temporibus voluptate vel atque alias, neque et eum fugiat corrupti!</p></div>
+                </div>
+                <div class="box box3">
+                    <i class = "fas fa-check"></i>
+                    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deleniti nobis. Iste dicta qui id illum. Excepturi nulla mollitia, ab temporibus voluptate vel atque alias, neque et eum fugiat corrupti!</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="articles">
+            <header><h2>Articles</h2></header>
+            <div class="section">
+                <div class="art1">
+                    <div class="img"><img src="../filtro/img_test/img_article_1.png" alt=""></div>
+                    <div class = "text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus officiis qui quas assumenda ea unde adipisci doloremque, tempore nostrum quod nobis corporis voluptas porro repellat, reiciendis delectus quos! Fugiat?</p></div>
+                </div>
+                <div class="art2">
+                    <div class="img"><img src="../filtro/img_test/img_article_2.png" alt=""></div>
+                    <div class = "text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus officiis qui quas assumenda ea unde adipisci doloremque, tempore nostrum quod nobis corporis voluptas porro repellat, reiciendis delectus quos! Fugiat?</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Footer</div>
+    </main>
+    
+</body>
+</html>
