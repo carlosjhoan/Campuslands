@@ -21,9 +21,12 @@
         while (permiso === true) {
             let  user_number = Number(prompt("Ingrese un número: "))
             if (user_number >= 0) {
+                //debugger
+                //aparte del console.log, se puede utilizar el comnsole.trace(number), ya que hacemos una traza
+                //
                 list_html += '<li>'+ `${user_number}`+'</li>'
-            i++
-            suma += user_number
+                i++
+                suma += user_number
             }
 
             else if (Number.isNaN(user_number)) {

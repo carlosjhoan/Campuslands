@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atletas</title>
+</head>
+<body>
+    <script>
+        const n_max = 5
+        const max_marca = 15.50
+        let marca_ganadora = 0
+        let atleta_ganadora = ""
+        for (let i = 1; i<=n_max; i++) {
+            let nombre = prompt(`Nombre de atleta ${i}: `)
+            let marca = Number(prompt(`Marca de la atleta ${i}: `))
+            
+            let atleta = `${nombre}-${marca}` 
+            
+            if (marca > marca_ganadora) {
+                marca_ganadora = marca
+                atleta_ganadora = nombre
+            }
+
+            else if (marca > max_marca) {
+
+            }
+
+        }
+        alert (`La campeona es ${atleta_ganadora} y su marca es ${marca_ganadora}`)
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let num_1 = Number(prompt("Ingresar el valor del primero número: "))
+        let num_2 = Number(prompt("Ingresar el valor del segundo número: "))
+        let sumar
+        let restar
+        let multiplica
+        let divide
+        let suma = function (a, b) {
+            let sum = a + b
+            return sum
+        }
+
+        let resta = function (a, b) {
+            let res = a - b
+            return res
+        }
+
+        let multiplicar = function (a, b) {
+            let mult = a * b
+            return mult
+        }
+
+        let division = function (a, b) {
+            let div = a / b
+            return div
+        }
+
+        if (num_1 > num_2) {
+            alert (`La suma es: ${suma(num_1, num_2)}\nLa resta es: ${resta(num_1, num_2)}`)
+        }
+
+        else if (isNaN(num_1) || isNaN(num_2) ) {
+            alert("Lo sentimos, tiene que ingresar números")
+        }
+
+        else {
+            alert (`La multiplicación es: ${multiplicar(num_1, num_2)}\nLa división es: ${division(num_1, num_2)}`)
+        }
+
+    </script>
+</body>
+</html>

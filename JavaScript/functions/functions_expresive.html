@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*const nombre_funcion = function (par1, par2, ...) {
+
+        }*/
+        const cuad = function(a, b, c) {
+            let raiz = Math.sqrt(b**2-(4*a*c))
+            let resultado = undefined
+            let x_1, x_2
+            if (raiz < 0) {
+                resultado = "NaN"
+            } else {
+                let x_1 = (-b+raiz)/(2*a)
+                let x_2 = (-b-raiz)/(2*a)
+                resultado = `X_1 = ${x_1}\nx_2 = ${x_2}`
+            }
+
+            return resultado
+        }
+        
+
+    </script>
+</body>
+</html>
