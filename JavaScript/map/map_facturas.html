@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facturas</title>
+</head>
+<body>
+    <script>
+
+        function agregar_factura () {
+            let num_fact
+            let valor_fact
+            let Num_valor = new Array()
+            do {
+                check_num = false
+                num_fact = Number(prompt("Ingrese el número de la factura: "))
+                if (Number.isNaN(num_fact) || num_fact<0) {
+                    alert("No sea bobo. Tienen que ser números y positivos")
+
+                } else {
+                    check_num = true
+                }
+            } while (check_num == false)
+
+            do {
+                check_valor = false
+                valor_fact = Number(prompt("Ingrese el valor de la factura: "))
+                if (Number.isNaN(valor_fact)) {
+                    alert("No sea bobo. Tienen que ser números")
+
+                } else {
+                    check_valor = true
+                }
+            } while (check_valor == false)
+            
+            return num_fact, valor_fact        
+        }
+
+        console.log(agregar_factura())
+    </script>
+</body>
+</html>
