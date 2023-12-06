@@ -24,14 +24,29 @@
     </table>
 
     <button onclick="agregar_factura (map_facturas)">Agregar factura</button>
-        <button>Finalizar</button>
+        <button onclick="eliminar_factura(map_facturas)">Eliminar factura</button>
     <script>
         let map_facturas = new Map()
         let map_x = new Map()
-        map_facturas.set("111", 1000)
+        //map_facturas.set("111", 1000)
+
+        const table_html = function ( map_a) {
+            let tabla = ""
+            for (const [p, v] of map_a) 
+                tabla += `<tr><td>${p}</td><td>${v}</td></tr>` 
+            return tabla
+        }
+
+
+        function pintar_html (map_a) {
+        document.getElementById("datos").innerHTML = 
+            (map_a.size > 0) ? table_html(map_a) : "<i>No se encuentra ninguna factura registrada</i>"
+        
+        }
+
         function agregar_factura (map_a) {
             let num_fact
-            let valor_fact 
+            let valor_fact
             
             do {
                 check_num = false
@@ -60,22 +75,38 @@
                    
                 }
             } while (check_valor == false)
-            
-            map_a.set(String(num_fact), valor_fact)       
+            alert("Factura registrada")
+            map_a.set(String(num_fact), valor_fact)     
+            pintar_html (map_a)  
         }
 
-        const table_html = function ( map_a) {
-            let tabla = ""
-            for (const [p, v] of map_a) 
-                tabla += `<tr><td>${p}</td><td>${v}</td></tr>` 
-            return tabla
+        function eliminar_factura (map_a) {
+            let num_fact
+            let valor_fact
+            
+            do {
+                check_num = false
+                num_fact = Number(prompt("Ingrese el número de la factura: "))
+                if (Number.isNaN(num_fact) || num_fact<0) {
+                    alert("No sea bobo. Tienen que ser números y positivos")
+
+                }
+                else if (map_a.get(String(num_fact)) == undefined) {
+                    alert("Esta factura no existe en el registro, por tanto no se puede borrar")
+                } 
+                else {
+                    check_num = true
+                    alert("La factura se ha borrado con éxito")
+                    
+                }
+            } while (check_num == false)
+
+            
+            map_a.delete(String(num_fact))     
+            pintar_html (map_a)  
         }
 
         
-        //agregar_factura(map_facturas)
-
-        document.getElementById("datos").innerHTML = 
-            (map_facturas.size > 0) ? table_html(map_facturas) : "<i>No se encuentra ninguna factura registrada</i>"
 
        /* for (const [k, v] of map_facturas.entries()) {
             alert(map_x.size)
