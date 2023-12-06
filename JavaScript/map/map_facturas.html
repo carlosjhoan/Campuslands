@@ -6,38 +6,81 @@
     <title>facturas</title>
 </head>
 <body>
-    <script>
+    <h2>Esta es la tabla con las facturas</h2>
+    <hr>
+    <table border = "1">
+        <thead>
+            <tr>
+                <th>Num de factura</th>
+                <th>Valor de factura</th>
+            </tr>
+        </thead>
 
-        function agregar_factura () {
+        <tbody id = "datos">
+
+        </tbody>
+        
+
+    </table>
+
+    <button onclick="agregar_factura (map_facturas)">Agregar factura</button>
+        <button>Finalizar</button>
+    <script>
+        let map_facturas = new Map()
+        let map_x = new Map()
+        map_facturas.set("111", 1000)
+        function agregar_factura (map_a) {
             let num_fact
-            let valor_fact
-            let Num_valor = new Array()
+            let valor_fact 
+            
             do {
                 check_num = false
                 num_fact = Number(prompt("Ingrese el número de la factura: "))
                 if (Number.isNaN(num_fact) || num_fact<0) {
                     alert("No sea bobo. Tienen que ser números y positivos")
 
-                } else {
+                }
+                else if (map_a.get(String(num_fact)) != undefined) {
+                    alert("Este factura ya se encuentra registrada")
+                } 
+                else {
                     check_num = true
+                    
                 }
             } while (check_num == false)
 
             do {
                 check_valor = false
                 valor_fact = Number(prompt("Ingrese el valor de la factura: "))
-                if (Number.isNaN(valor_fact)) {
-                    alert("No sea bobo. Tienen que ser números")
+                if (Number.isNaN(valor_fact) || valor_fact < 0) {
+                    alert("No sea bobo. Tienen que ser números positivos")
 
                 } else {
                     check_valor = true
+                   
                 }
             } while (check_valor == false)
             
-            return num_fact, valor_fact        
+            map_a.set(String(num_fact), valor_fact)       
         }
 
-        console.log(agregar_factura())
+        const table_html = function ( map_a) {
+            let tabla = ""
+            for (const [p, v] of map_a) 
+                tabla += `<tr><td>${p}</td><td>${v}</td></tr>` 
+            return tabla
+        }
+
+        
+        //agregar_factura(map_facturas)
+
+        document.getElementById("datos").innerHTML = 
+            (map_facturas.size > 0) ? table_html(map_facturas) : "<i>No se encuentra ninguna factura registrada</i>"
+
+       /* for (const [k, v] of map_facturas.entries()) {
+            alert(map_x.size)
+        }*/
+        //alert(`El mapa resultante es: ${map_facturas}`)
     </script>
 </body>
 </html>
