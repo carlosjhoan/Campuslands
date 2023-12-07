@@ -50,7 +50,7 @@
         const amortizar_html = function (alg_credito) {
             let tabla = ""
             for (let i = 0; i < alg_credito.length; i++) 
-                tabla += `<tr><td>${alg_credito[0]}</td><td>${alg_credito[1]}</td><td>${alg_credito[2]}</td><td>${alg_credito[3]}</td><td>${alg_credito[4]}</td><td>${alg_credito[5]}</td></tr>` 
+                tabla += `<tr><td>${alg_credito[i][0]}</td><td>${alg_credito[i][1]}</td><td>${alg_credito[i][2]}</td><td>${alg_credito[i][3]}</td><td>${alg_credito[i][4]}</td><td>${alg_credito[i][5]}</td></tr>` 
             return tabla
         }
 
@@ -77,17 +77,23 @@
             for (let i = 0; i < cuotas; i++) {
                 let arr_men = new Array()
                 let num_cuota = i + 1
-                rest_capital -= (i*arr_credito[2])
-                rest_total -= (i*arr_credito[1])
+                //rest_capital -= (i*arr_credito[2])
+                //rest_total -= (i*arr_credito[1])
+                let a = rest_capital-(i*arr_credito[2])
+                let b = rest_total- (i*arr_credito[1])
+                let c = arr_credito[2]
+                let d = arr_credito[3]
+                let e = arr_credito[1]
                 arr_men.push(num_cuota)
-                arr_men.push(rest_capital)
-                arr_men.push(rest_total)
-                arr_men.push(arr_credito[2])
-                arr_men.push(arr_credito[3])
-                arr_men.push(arr_credito[1])
+                arr_men.push(`${a.toFixed(2)}`)
+                arr_men.push(`${b.toFixed(2)}`)
+                arr_men.push(`${c.toFixed(2)}`)
+                arr_men.push(`${d.toFixed(2)}`)
+                arr_men.push(`${e.toFixed(2)}`)
                 amort.push(arr_men)
 
             }
+            //console.log(amort)
 
         }
 
@@ -132,7 +138,7 @@
                     
                 }
             } while (check_monto == false)
-            console.log(monto)
+            
 
             // Interés
             do {
@@ -164,16 +170,16 @@
                    
                 }
             } while (check_cuotas == false)
-            console.log(monto, interes, cant_cuotas)
+            
             interes_y_total = valor_total(monto, interes, cant_cuotas)
-            console.log(interes_y_total)
+            
             let to_p = `$${interes_y_total[0]}`
             credito.set("Total a pagar:", to_p)
             let cuota_format = `$${interes_y_total[1].toFixed(2)}`
             credito.set("Cuota Mensual:", cuota_format)
             amortizar(interes_y_total, monto, cant_cuotas)
             pintar_credito (credito)
-            pintar_amort (credito)
+            pintar_amort (amort)
             
         }
 
