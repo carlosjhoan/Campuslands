@@ -21,7 +21,17 @@
     <h2>Amortización del crédito</h2>
     <hr>
     <table border = "1">
-        <tbody id = "datos_credito">
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Valor</th>
+                <th>Valor_total</th>
+                <th>Capital</th>
+                <th>Interes</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id = "amort_credito">
             
         </tbody>
         
@@ -29,10 +39,18 @@
     </table>
     <script>
         let credito = new Map()
+        let amort = new Array()
         const credito_html = function (map_credito) {
             let tabla = ""
             for (const [p, v] of map_credito) 
-                tabla += `<tr><th>${p}</td><td>${v}</td></tr>` 
+                tabla += `<tr><th>${p}</th><td>${v}</td></tr>` 
+            return tabla
+        }
+
+        const amortizar_html = function (alg_credito) {
+            let tabla = ""
+            for (let i = 0; i < alg_credito.length; i++) 
+                tabla += `<tr><td>${alg_credito[0]}</td><td>${alg_credito[1]}</td><td>${alg_credito[2]}</td><td>${alg_credito[3]}</td><td>${alg_credito[4]}</td><td>${alg_credito[5]}</td></tr>` 
             return tabla
         }
 
@@ -40,17 +58,49 @@
             let arr_credito = new Array()
             let pagar_interes = valor * (interes/100)
             let total_pagar = valor + pagar_interes
-            let valor_cuota = (valor/cuotas) + (pagar_interes/cuotas)
+            let v_mens = valor/cuotas
+            let i_mens = pagar_interes/cuotas
+            let valor_cuota = v_mens + i_mens
             arr_credito.push(total_pagar)
             arr_credito.push(valor_cuota)
+            arr_credito.push(v_mens)
+            arr_credito.push(i_mens)
             return arr_credito
 
             
         }
 
+        function amortizar (arr_credito, monto, cuotas) {
+            let rest_capital = monto
+            let rest_total = arr_credito[0]
+             //Acá voy a guardar la info de cada cuota mensual
+            for (let i = 0; i < cuotas; i++) {
+                let arr_men = new Array()
+                let num_cuota = i + 1
+                rest_capital -= (i*arr_credito[2])
+                rest_total -= (i*arr_credito[1])
+                arr_men.push(num_cuota)
+                arr_men.push(rest_capital)
+                arr_men.push(rest_total)
+                arr_men.push(arr_credito[2])
+                arr_men.push(arr_credito[3])
+                arr_men.push(arr_credito[1])
+                amort.push(arr_men)
+
+            }
+
+        }
+
         function pintar_credito (map_credito) {
             document.getElementById("datos_credito").innerHTML = 
             (map_credito.size > 0) ? credito_html(map_credito) : "<i>No se encuentra ningun credito registrada</i>"
+        
+        
+        }
+
+        function pintar_amort (alg_credito) {
+            document.getElementById("amort_credito").innerHTML = 
+            (alg_credito.length > 0) ? amortizar_html(alg_credito) : "<i>No se encuentra ningun credito registrada</i>"
         
         
         }
@@ -67,6 +117,7 @@
             // Registro del monto
             do {
                 check_monto = false
+              
                 monto = Number(prompt("Ingrese el monto del crédito: "))
                 if (Number.isNaN(monto) || monto<0) {
                     alert("El monto debe ser un número positivo")
@@ -81,6 +132,7 @@
                     
                 }
             } while (check_monto == false)
+            console.log(monto)
 
             // Interés
             do {
@@ -112,16 +164,20 @@
                    
                 }
             } while (check_cuotas == false)
-
+            console.log(monto, interes, cant_cuotas)
             interes_y_total = valor_total(monto, interes, cant_cuotas)
+            console.log(interes_y_total)
             let to_p = `$${interes_y_total[0]}`
             credito.set("Total a pagar:", to_p)
-            let cuota_format = `${interes_y_total[1].toFixed(2)}`
+            let cuota_format = `$${interes_y_total[1].toFixed(2)}`
             credito.set("Cuota Mensual:", cuota_format)
+            amortizar(interes_y_total, monto, cant_cuotas)
             pintar_credito (credito)
+            pintar_amort (credito)
             
         }
 
+        
         
         /*for (const [k, v] of input_credito ().entries()) {
             alert(`${k}: ${v}`)
