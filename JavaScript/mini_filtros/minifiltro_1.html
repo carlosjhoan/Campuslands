@@ -93,7 +93,7 @@
                 amort.push(arr_men)
 
             }
-            //console.log(amort)
+            
 
         }
 
@@ -178,6 +178,8 @@
             let cuota_format = `$${interes_y_total[1].toFixed(2)}`
             credito.set("Cuota Mensual:", cuota_format)
             amortizar(interes_y_total, monto, cant_cuotas)
+            interes_format = monto*(interes/100)
+            amort.push(["", "", "", monto, `${interes_format.toFixed(2)}`, interes_y_total[0]])
             pintar_credito (credito)
             pintar_amort (amort)
             
