@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amortización anual</title>
+</head>
+<body>
+    <h2>Información del crédito</h2>
+    <hr>
+    <table border = "1">
+        <tbody id = "datos_credito">
+            
+        </tbody>
+        
+
+    </table>
+    <br>
+    <button onclick="input_credito ()">Datos del crédito</button>
+    <script>
+        let credito = new Map()
+        const credito_html = function (map_credito) {
+            let tabla = ""
+            for (const [p, v] of map_credito) 
+                tabla += `<tr><th>${p}</td><td>${v}</td></tr>` 
+            return tabla
+        }
+
+        const valor_total = function (valor, interes, cuotas) {
+            let arr_credito = new Array()
+            let pagar_interes = valor * (interes/100)
+            let total_pagar = valor + pagar_interes
+            let valor_cuota = (valor/cuotas) + (pagar_interes/cuotas)
+            arr_credito.push(total_pagar)
+            arr_credito.push(valor_cuota)
+            return arr_credito
+
+            
+        }
+
+        function pintar_credito (map_credito) {
+            document.getElementById("datos_credito").innerHTML = 
+            (map_credito.size > 0) ? credito_html(map_credito) : "<i>No se encuentra ningun credito registrada</i>"
+        
+        
+        }
+
+
+
+
+        function input_credito () {
+            let monto
+            let interes
+            let cant_cuotas
+            let interes_y_total
+            
+            // Registro del monto
+            do {
+                check_monto = false
+                monto = Number(prompt("Ingrese el monto del crédito: "))
+                if (Number.isNaN(monto) || monto<0) {
+                    alert("El monto debe ser un número positivo")
+
+                }
+                 
+                else {
+                    check_monto = true
+                    alert("Monto registrado")
+                    credito.set("Monto del crédito", monto)
+                    
+                }
+            } while (check_monto == false)
+
+            // Interés
+            do {
+                check_interes = false
+                interes = Number(prompt("Ingrese el porcentaje de interés (anual): "))
+                if (Number.isNaN(interes) || interes < 0) {
+                    alert("El interés debe ser un número positivo")
+
+                } else {
+                    check_interes = true
+                    alert("Interés registrado")
+                    credito.set("% Interés (anual)", interes)
+                   
+                }
+            } while (check_interes == false)
+
+            // Total de cuotas
+            do {
+                check_cuotas = false
+                cant_cuotas = Number(prompt("Ingrese la cantidad cuotas a pagar: "))
+                if (Number.isNaN(cant_cuotas) || cant_cuotas < 0 || Number.isInteger(cant_cuotas)!=true) {
+                    alert("La cantidad de cuotas debe ser un número entero positivo")
+
+                } else {
+                    check_cuotas = true
+                    alert("Cantidad de cuotas registradas")
+                    credito.set("Cantidad de Cuotas", cant_cuotas)
+                   
+                }
+            } while (check_cuotas == false)
+
+            interes_y_total = valor_total(monto, interes, cant_cuotas)
+            credito.set("Total a pagar:", interes_y_total[0])
+            credito.set("Cuota Mensual:", interes_y_total[1])
+            pintar_credito (credito)
+            
+        }
+
+        
+        /*for (const [k, v] of input_credito ().entries()) {
+            alert(`${k}: ${v}`)
+        }*/
+         
+    </script>
+</body>
+</html>
