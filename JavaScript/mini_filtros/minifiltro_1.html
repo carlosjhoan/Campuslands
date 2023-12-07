@@ -17,6 +17,16 @@
     </table>
     <br>
     <button onclick="input_credito ()">Datos del crédito</button>
+    <br><br>
+    <h2>Amortización del crédito</h2>
+    <hr>
+    <table border = "1">
+        <tbody id = "datos_credito">
+            
+        </tbody>
+        
+
+    </table>
     <script>
         let credito = new Map()
         const credito_html = function (map_credito) {
@@ -66,7 +76,8 @@
                 else {
                     check_monto = true
                     alert("Monto registrado")
-                    credito.set("Monto del crédito", monto)
+                    mont_format = `$${monto}`
+                    credito.set("Monto del crédito", mont_format)
                     
                 }
             } while (check_monto == false)
@@ -81,7 +92,8 @@
                 } else {
                     check_interes = true
                     alert("Interés registrado")
-                    credito.set("% Interés (anual)", interes)
+                    int_formtat = `${interes}%`
+                    credito.set("% Interés (anual)", int_formtat)
                    
                 }
             } while (check_interes == false)
@@ -102,8 +114,10 @@
             } while (check_cuotas == false)
 
             interes_y_total = valor_total(monto, interes, cant_cuotas)
-            credito.set("Total a pagar:", interes_y_total[0])
-            credito.set("Cuota Mensual:", interes_y_total[1])
+            let to_p = `$${interes_y_total[0]}`
+            credito.set("Total a pagar:", to_p)
+            let cuota_format = `${interes_y_total[1].toFixed(2)}`
+            credito.set("Cuota Mensual:", cuota_format)
             pintar_credito (credito)
             
         }
