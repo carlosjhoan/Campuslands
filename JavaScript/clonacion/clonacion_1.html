@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name : "jhon Doe",
+            age: 30,
+            val : [1, 2], //Hay que tener cuidado cuando clono, porque esto lo hace por referencia, es decir, si modifico uno acá, se modifica en el clonado y viceversa.
+            address : {
+                street : "Main Street",
+                city : "New York",
+                state : "NY"
+            }
+        }
+        // Forma 1 para clonar
+        const cloned_person = Object.assign({}, person)
+        console.log(cloned_person)
+
+        // Forma 2 de clonar
+        const cloned_2 = {...person}
+        console.log(cloned_2)
+
+        const o_1 = {a: 1}
+        const o_2 = {b: 2}
+        const o_3 = {c: 3}
+
+        //Verificar esto: const op = Object.assign{{}, o_1, o_2, o_3}
+        const ot = {... o_1, ... o_2, ...o_3}
+        console.log(ot)
+        person.val.push(3)
+        console.log(cloned_2)
+    </script>
+</body>
+</html>

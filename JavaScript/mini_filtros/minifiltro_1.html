@@ -16,6 +16,12 @@
 
     </table>
     <br>
+    <form action="">
+        <label for=""></label>
+        <input type="text">
+        <label for=""></label>
+        <input type="text">
+    </form>
     <button onclick="input_credito ()">Datos del crédito</button>
     <br><br>
     <h2>Amortización del crédito</h2>
@@ -123,7 +129,6 @@
             // Registro del monto
             do {
                 check_monto = false
-              
                 monto = Number(prompt("Ingrese el monto del crédito: "))
                 if (Number.isNaN(monto) || monto<0) {
                     alert("El monto debe ser un número positivo")

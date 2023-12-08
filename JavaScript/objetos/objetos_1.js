@@ -31,3 +31,5 @@ console.log(cadena_JSON) //Me devuelve una cadena
 
 //Cómo convierto un JSOn en objeto
 const obj_Per = JSON.parse(cadena_JSON) 
+
+//-
