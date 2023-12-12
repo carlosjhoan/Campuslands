@@ -1,3 +1,9 @@
 Funciones de order superior
 
 Son funciones qiue pueden aceptra otras funciones como parámteros o argumentos
+
+
+Requisitos de orden superior:
+
+1). Acepta una o más funciopnes como argumentos
+2). Devuelve función como resultado
