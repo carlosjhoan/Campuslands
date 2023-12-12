@@ -1,0 +1,46 @@
+La asincronía tiene que ver con una forma de rpogramación que no es secuencial. Correr cosas en paralelo. 
+
+Las cosas que llevan un orden de ejecución son síncronas.
+
+La lectura del disco, por ejemplo, es una acción síncrona que quita tiempo y en lo cual se pueden hacer otras actividades.
+
+<fundamental en el desarrollo de aplicaciones modernas. 
+
+Ahora, en Javascript:
+- Su hilo principal es síncrono
+
+Se usan las operaciones asíncronas en: Servidores, temproizadores, interacciones de usuario, lectura/escritiuura de archivos. 
+
+- Funciones utilizadas: callbacks, promesas y async/await
+
+** Solicitudes a servidores: Un servidor necesita poder manipiular varias solicitudes a la vez.
+
+** Temporizadores: Cuando se necesitan programar tareas en el futuro, como animaciones, actualizaciones, etc.
+
+** Interacciones con usuario: A menudo las apps web esperan que el usuARIO INTERACTÚE 
+
+** Lectura / ESCRITURA DE ARCHIUVOIS:  EN entpornos como Node.js cuando se trabaj con arechivos, lectura y escriutura.
+
+** Procesamiento de datos por lotes: Procesamiento intensivo de datos. 
+
+
+*/*/* Casos de uso: 
+
+
+- lenguaje no bloquenate: Son útiles en aplicaciones que requieren alkta concurrencia, 
+
+
+IMPORTANTE: JS es un lenguaje bloquenate o no bloqueante. 
+
+
+** Tareas asíncronas en JS:
+-- Solicitud a una URL
+-- Play de un -mp3 con new Audio()
+-- tareas programadas con setTimeout
+
+
+* DESVENTAJAS DE asincronía
+- Dificultad de lectura y comprensión
+- Dificultad de depuración
+- Causas de errores
+- 

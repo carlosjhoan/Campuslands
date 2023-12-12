@@ -1,0 +1,3 @@
+Funciones de order superior
+
+Son funciones qiue pueden aceptra otras funciones como parámteros o argumentos

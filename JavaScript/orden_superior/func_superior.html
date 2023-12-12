@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Función de orden superior</title>
+</head>
+<body>
+    <script>
+        function operar(arr, operacion) {
+            let resultado;
+            if (operacion[1] == 0) {
+                resultado = 0
+            }
+            else {
+                resultado = 1
+            }
+            for (let num of arr) {
+                resultado = operacion(resultado, num)[0];
+            }
+            return resultado;
+        }
+
+        function suma(a, b) {
+            return [a +b, 0];
+        }
+
+        function producto(a, b) {
+            return [a * b, 1];
+        }
+
+        const numeros = [1, 2, 3, 4, 5]
+        const suma_total = operar(numeros, suma);
+        const producto_total = operar(numeros, producto);
+        console.log(suma_total);
+        console.log(producto_total);
+
+        //Otra función
+        function multiplicador (factor) {
+            return function(numero) {
+                return numero * factor
+            }
+        }
+
+        const duplicar = multiplicador(2);
+        const triplicar = multiplicador(3);
+
+        console.log(duplicar(5));
+        console.log(trilicar(5));
+
+    </script>
+</body>
+</html>

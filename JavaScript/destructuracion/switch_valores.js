@@ -6,6 +6,8 @@ let b = 7
 /*let t = b
 b = a
 a = t*/
-[a, b] = [b, a]
+console.log(a, b);
+
+[a, b] = [b, a];
 
 console.log(a, b)
