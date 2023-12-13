@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try {
+            const a = 90/0;
+        } catch (e) {
+            console.log(e)
+        }
+
+        try {
+            throw "Hemos tenido un error"
+        } catch (e) {
+            console.log(e)
+        } finally { //Quiero que ejecute, suceda o no el error
+            console.log("Solicitud obtenida")
+
+        }
+
+        function calcular_cuadratica (numero) {
+            if (isNaN(numero))
+                throw new Error("La entrada debe ser un númnero")
+            return numero * numero
+        }
+
+        try {
+            const input = prompt("Ingrese un número: ")
+            const numero = parseFloat(input)
+            const resultado = calcular_cuadratica(numero)
+            console.log(`El cuadrado de ${numero} es ${resultado}`)
+        } catch (error) {
+            console.error(`Se produjo un error: ${error.message}`)
+        }
+    </script>
+</body>
+</html>

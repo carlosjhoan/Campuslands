@@ -1,0 +1,3 @@
+Para lanzar una excepcion se utiliza -*-> throw
+
+Se maneja con Try, catch, finally

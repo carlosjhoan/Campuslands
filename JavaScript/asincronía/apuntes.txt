@@ -43,4 +43,5 @@ IMPORTANTE: JS es un lenguaje bloquenate o no bloqueante.
 - Dificultad de lectura y comprensión
 - Dificultad de depuración
 - Causas de errores
-- 
+-
+
