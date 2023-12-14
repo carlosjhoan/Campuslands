@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Api Pokemon</title>
 </head>
 <body>
     <script>
@@ -24,16 +24,16 @@
                 throw new Error("Este Pokemon no existe")
             const json = await answer.json()
 
-            //console.log(json.name)
+            console.log(json)
             //console.log(json.sprites.front_default)
-            return json.sprites.front_default
+            //return json//.sprites.front_default
         }
 
-        /*get_name("squirtle")
+        get_name("squirtle")
         .then (name => console.log(name))
-        .catch (error => console.error(error.message))*/
+        .catch (error => console.error(error.message))
 
-        (async function() {
+        /*(async function() {
             try {
                 let url_img = await get_name("pikachu")
                 console.log(url_img)
@@ -43,7 +43,7 @@
             } catch (error) {
                 console.error(error.message)
             }
-        })()
+        })()*/
     </script>
 </body>
 </html>

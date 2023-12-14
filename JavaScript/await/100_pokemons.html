@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (async function get_name () {
+            
+            for (let i=1; i<=100;i++) {
+                const url = `https://pokeapi.co/api/v2/pokemon/${i}/`
+                const answer = await fetch(url)
+                const json = await answer.json()
+                 let name_p = json.forms[0].name
+                 const url_img = `https://pokeapi.co/api/v2/pokemon/${name_p}/`
+
+                console.log(name_p)
+                console.log(json.sprites.front_default)
+
+            }
+            
+            
+            //console.log(json.sprites.front_default)
+            //return json//.sprites.front_default
+        })()
+
+        
+    </script>
+</body>
+</html>
