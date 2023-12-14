@@ -59,6 +59,18 @@
         get_Data_promise()
         .then ((datos) => {console.table(datos)})
         .catch((error) => {console.error(error.message)})
+
+
+        async function obtener_datos() {
+            try {
+                const datos_obtenidos = await get_datos()
+                console.error(error.message)
+            } catch (error) {
+                console.error(error.message)
+            }
+        }
+
+        obtener_datos()
     </script>
 </body>
-</html>
+</html>m
