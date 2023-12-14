@@ -6,9 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Back Shiny</th>
+            <th>Front Default</th>
+            <th>Front Shiny</th>
+        </tr>
+    </thead>
+    <tbody id = "pokemones">
+
+    </tbody>
+    </table>
     <script>
         (async function get_name () {
-            
+            let tabla = ""
             for (let i=1; i<=100;i++) {
                 const url = `https://pokeapi.co/api/v2/pokemon/${i}/`
                 const answer = await fetch(url)
@@ -16,10 +30,15 @@
                  let name_p = json.forms[0].name
                  const url_img = `https://pokeapi.co/api/v2/pokemon/${name_p}/`
 
-                console.log(name_p)
-                console.log(json.sprites.front_default)
+                const front_default = json.sprites.front_default
+                const front_shiny = json.sprites.front_shiny
+                const back_shiny = json.sprites.back_shiny
+                tabla += `<tr><td>${i}</td><td>${name_p}</td><td><img src = ${front_default} ></td><td><img src = ${front_shiny} ></td><td><img src = ${back_shiny} ></td></tr>`
+                /*console.log(name_p)
+                console.log(json.sprites.front_default)*/
 
             }
+            document.getElementById("pokemones").innerHTML = tabla
             
             
             //console.log(json.sprites.front_default)
