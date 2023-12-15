@@ -64,11 +64,17 @@
     </main>
     <script>
         let mi_pok = []
+        let cpu_pok = []
         let hp_mine
         function hp_var (var_hp, def, sp, att) {
             let v_hp = var_hp- (def*(1+(sp/100))-att)
             return v_hp
         }
+
+        function battle () {
+
+        }
+
         const mi_pokemon = async function get_mine () {
 
             const map_mine = new Map()
@@ -113,16 +119,43 @@
             const fight = async function get_cpu () {
 
                 const map_mine = new Map()
+                const time_now = new Date()
+                let time_i = 0
+                
 
                 let tabla = ""
+
+                    do {
+                        time_i = new Date()
+                        
+                        diff = Math.floor(((time_i- time_now)/1000))
+
+                        /*for (let i = 0; i=50; i++) {
+
+                        }*/
+                        /*(async function() {
+                            tabla_aleatoria = ""
+                            const n_aleatorio = 1 + Math.floor(Math.random()* 805.5)
+
+                            const url_al = `https://pokeapi.co/api/v2/pokemon/${n_aleatorio}/`
+                            const answer_al = await fetch(url_al)
+                            
+                            const json_1 = await answer_al.json()
+                            //const url_img_al = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${n_aleatorio}.svg`
+                            const front_default_al = json_1.sprites.other["official-artwork"].front_default
+                            tabla_aleatoria = `<li><img src = ${front_default_al} ></li>`
+                            document.getElementById("ul_cpu").innerHTML = tabla_aleatoria})()*/
+                        
+
+                    } while (diff <= 5)
 
 
                 
                     //check = false
-                    setTimeout(() => {
+                    /*setTimeout(() => {
                     document.getElementById("ul_cpu").innerHTML = tabla_principal
                     
-                    }, 7000)
+                    }, 7000)*/
 
 
                     /*do {
@@ -172,6 +205,7 @@
 
                 tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
                 
+                document.getElementById("ul_cpu").innerHTML = tabla_principal
                 
                 //setTimeout(() => {
                     /*do {
@@ -211,11 +245,11 @@
                     //console.log("terminó el combate")
                     //}, 5001)*/
                     
-                    console.log(mi_pok)
-                    console.log(hp, speed, defense, attack)
+                    //console.log(mi_pok)
+                    //console.log(hp, speed, defense, attack)
                 
-
-                //return [hp, attack, defense, speed]
+                cpu_pok = [hp, attack, defense, speed]
+                    
                     
 
                 }
