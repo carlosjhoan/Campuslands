@@ -4,8 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            text-decoration: none;
+            list-style: none;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            
+        }
+
+        #mi_pokemon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cpu_pokemon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
+    <h1>El club de la pelea pokemon</h1>
+    <main>
+    <div id = "mi_pokemon">
+        <button onclick="mi_pokemon()">Mi Pokemón</button>
+        <ul id = "ul_mi"></ul>
+        <div id = "winner_mi"></div>
+    </div>
+    <div id = "fight" onclick="fight()"><button>Fight!</button></div>
+
+    <div id = "cpu_pokemon">
+        <button>CPU Pokemon</button>
+        <ul id = "ul_cpu"></ul>
+        <div id = "winner_cpu"></div>
+
+    </div>
+
+    </main>
+    <script>
+        let mi_pok = []
+        let hp_mine
+        function hp_var (var_hp, def, sp, att) {
+            let v_hp = var_hp- (def*(1+(sp/100))-att)
+            return v_hp
+        }
+        const mi_pokemon = async function get_mine () {
+
+            const map_mine = new Map()
+
+            let tabla = ""
+            const n_mine = 1 + Math.floor(Math.random()* 805.5)
+            
+            const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
+                
+            const answer_1 = await fetch(url_1)
+                
+            const json_1 = await answer_1.json()
+                
+            const name_mine = json_1.forms[0].name
+            const hp = json_1.stats[0].base_stat
+            const attack = json_1.stats[1].base_stat
+            const defense = json_1.stats[2].base_stat
+            const speed = json_1.stats[5].base_stat
+
+            map_mine.set("name", name_mine)
+            map_mine.set("hp", hp)
+            map_mine.set("attack", attack)
+            map_mine.set("defense", defense)
+            map_mine.set("speed", speed)
+
+                 
+            const url_img_1 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${n_mine}.svg`
+
+            const front_default_1 = json_1.sprites.other["official-artwork"].front_default
+         
+            tabla = `<ul><li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
+ 
+            document.getElementById("ul_mi").innerHTML = tabla
+            mi_pok = [hp, attack, defense, speed]
+
+            return mi_pok
+                
+            }
+
+
+
+            const fight = async function get_cpu () {
+
+                const map_mine = new Map()
+
+                let tabla = ""
+
+
+                
+                    //check = false
+                    setTimeout(() => {
+                    document.getElementById("ul_cpu").innerHTML = tabla_principal
+                    
+                    }, 7000)
+
+
+                    /*do {
+                        check = false
+                setTimeout(() => {
+                    (async function() {
+                    const n_aleatorio = 1 + Math.floor(Math.random()* 805.5)
+
+                    const url_al = `https://pokeapi.co/api/v2/pokemon/${n_aleatorio}/`
+                    const answer_al = await fetch(url_al)
+                    
+                    const json_1 = await answer_1.json()
+                    //const url_img_al = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${n_aleatorio}.svg`
+                    const front_default_al = json_1.sprites.other["official-artwork"].front_default
+                    tabla_aleatoria = `<li><img src = ${front_default_al} ></li>`
+                    document.getElementById("cpu_pokemon").innerHTML = tabla_aleatoria})()
+                }, 100)
+                } while (check == false)*/
+                
+                
+
+
+                const n_mine = 1 + Math.floor(Math.random()* 805.5)
+
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
+                    
+                const answer_1 = await fetch(url_1)
+                    
+                const json_1 = await answer_1.json()
+                    
+                let name_mine = json_1.forms[0].name
+                let hp = json_1.stats[0].base_stat
+                let attack = json_1.stats[1].base_stat
+                let defense = json_1.stats[2].base_stat
+                let speed = json_1.stats[5].base_stat
+
+                map_mine.set("name", name_mine)
+                map_mine.set("hp", hp)
+                map_mine.set("attack", attack)
+                map_mine.set("defense", defense)
+                map_mine.set("speed", speed)
+
+                    
+                const url_img_1 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${n_mine}.svg`
+
+                const front_default_1 = json_1.sprites.other["official-artwork"].front_default
+
+                tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
+                
+                
+                //setTimeout(() => {
+                    /*do {
+                        console.log(mi_pok[0])
+                    hp_mine = mi_pok[0]
+                    
+                    if (mi_pok[4] > speed) {
+                        let turno = Math.abs(speed - mi_pok[3])
+                        for (let i=1; i<= turno;i++) {
+                        hp = hp_var (hp, mi_pok[2], mi_pok[3], mi_pok[1])
+                        //mi_pok = [hp, attack, defense, speed]
+                        }
+                        hp_mine = hp_var (hp_mine, defense, speed, attack)
+                    
+                    
+                    } else {
+                        let turno = Math.abs(speed - mi_pok[3])
+                        for (let i=1; i<= turno;i++) {
+                        
+                        hp_mine = hp_var (hp_mine, defense, speed, attack)
+                        //mi_pok = [hp, attack, defense, speed]
+                        }
+                        
+                        hp = hp_var (hp, mi_pok[2], mi_pok[3], mi_pok[1])
+                        
+                    }
+
+                    if (hp <= 0) {
+                        document.getElementById("winner_mi").innerHTML = "WINNER!"
+                    } else {
+                        document.getElementById("winner_cpu").innerHTML = "WINNER!"
+                    }
+                    
+                    
+                    
+                    } while (hp <= 0 || hp_mine <= 0)*/
+                    //console.log("terminó el combate")
+                    //}, 5001)*/
+                    
+                    console.log(mi_pok)
+                    console.log(hp, speed, defense, attack)
+                
+
+                //return [hp, attack, defense, speed]
+                    
+
+                }
+
+                
+    </script>
     
 </body>
 </html>
