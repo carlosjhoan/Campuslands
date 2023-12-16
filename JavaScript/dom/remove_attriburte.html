@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "mi_button" disabled>Botón Deshabilitado</button>
+
+    <script>
+        const mi_boton = document.getElementById("mi_button")
+        console.log("¿Botón desahabilitado?", mi_boton.disabled)
+
+        mi_boton.removeAttribute("disabled");
+        console.log("¿Botón desahbilitado?", mi_boton.disabled)
+    </script>
+</body>
+</html>
