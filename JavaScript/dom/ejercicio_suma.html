@@ -69,6 +69,7 @@
             let num_1 = document.getElementById('num1').value;
             let num_2 = document.getElementById('num2').value
             console.log(Number(num_1) + Number(num_2))
+            console.log(Number.isNaN(num1))
             if (!Number.isNaN(num1) || !Number.isNaN(num2)) {
                 document.getElementById('result').value = "Pailas!!"
             }  else {
