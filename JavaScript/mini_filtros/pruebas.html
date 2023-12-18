@@ -6,15 +6,24 @@
     <title>Prueba</title>
 </head>
 <body>
+    <ul id = "prueba"></ul>
     <script>
-        const a = "Comienza"
-        console.log(a);
-        const now = new Date();
-        do {
-            const time_i = new Date();
-            diff = time_i - now
-        } while(diff <= 2000)
-        console.log("Finaliza")
+        let tabla_aleatoria = "";
+        for (let i = 0; i<7; i++) {
+                    
+                    
+                    
+                    
+                    let time_for_now = new Date();
+                    do {
+                        let time_i_for = new Date ();
+                        diff_for = time_i_for - time_for_now;
+                        
+                    } while (diff_for <=1000)
+                    tabla_aleatoria = `<li>${i}</li><li>2</li>`;
+                    document.getElementById("prueba").innerHTML = tabla_aleatoria;
+                    console.log(i)
+                }
         
     </script>
 </body>

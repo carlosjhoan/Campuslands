@@ -233,8 +233,8 @@
                 let tabla = ""
                 let tabla_aleatoria = ""
                 let tabla_principal = ""
-                document.getElementById("winner_mi").innerHTML = ""
-                document.getElementById("winner_cpu").innerHTML = ""
+                document.getElementById("winner_mi").innerHTML = "";
+                document.getElementById("winner_cpu").innerHTML = "";
 
                 tabla_aleatoria = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>2</li>`;
                 document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
@@ -276,7 +276,7 @@
 
                             
                         
-                        const front_default_1 = json_1.sprites.other["official-artwork"].front_default
+                        const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
 
                         tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
                         //tabla_principal = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
