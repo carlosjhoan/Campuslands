@@ -227,23 +227,29 @@
                 const map_mine = new Map()
                 
                 let time_i = 0
-                const n = 1 + Math.floor(Math.random()* 200)
+                
                 
 
                 let tabla = ""
                 let tabla_aleatoria = ""
+                let tabla_principal = ""
                 document.getElementById("winner_mi").innerHTML = ""
                 document.getElementById("winner_cpu").innerHTML = ""
 
-                tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li>`
+                
                 //document.getElementById("ul_cpu").innerHTML = tabla_aleatoria
-                for (let i = 0; i<=100; i++) {
+                for (let i = 0; i<7; i++) {
+                    let n = 1 + Math.floor(Math.random()* 200)
+                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li>`;
+                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
+                    console.log(arr_pokemons[n-1].get("picture"))
+                    
                     let time_for_now = new Date()
                     do {
                         let time_i_for = new Date ()
                         diff_for = time_i_for - time_for_now
-                        document.getElementById("ul_cpu").innerHTML = `${i}`
-                    } while (diff_for <=70)
+                        
+                    } while (diff_for <=1000)
                     
                 }
                 const n_mine = 1 + Math.floor(Math.random()* 805.5)
@@ -275,10 +281,10 @@
                         
                     
                    
-                    console.log(arr_pokemons[n-1].get("picture"))
-                    const time_now = new Date()
+                    /*console.log(arr_pokemons[n-1].get("picture"))
+                    const time_now = new Date()*/
                     
-                    do {
+                    /*do {
                         time_i = new Date();
                         
                         diff = time_i- time_now;
@@ -305,7 +311,7 @@
 
                         
                     
-                    } while (diff <= 7000)
+                    //} while (diff <= 7000)
 
 
                 console.log("listo!!!")      
