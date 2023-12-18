@@ -240,23 +240,25 @@
                 /*tabla_aleatoria = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>2</li>`;
                 document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;*/
                 let imag = document.getElementById("image")
-                imag.src = arr_pokemons[10].get("picture")
+                //imag.src = arr_pokemons[10].get("picture")
                 //document.getElementById("ul_cpu").innerHTML = tabla_aleatoria
-                for (let i = 0; i<7; i++) {
-                    let n = 1 + Math.floor(Math.random()* 200)
-                    imag.src = arr_pokemons[n-1].get("picture")
-                    /*tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li><li>2</li>`;
-                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;*/
-                    console.log(arr_pokemons[n-1].get("picture"))
-                    
+                for (let i = 0; i<1000; i++) {
                     let time_for_now = new Date()
                     do {
                         let time_i_for = new Date ()
                         diff_for = time_i_for - time_for_now
                         
                         
-                    } while (diff_for <=1000)
+                    } while (diff_for <=500)
+                    let n = 1 + Math.floor(Math.random()* 200)
+                    imag.src = arr_pokemons[n-1].get("picture")
+                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li><li>2</li>`;
                     
+                    console.log(arr_pokemons[n-1].get("picture"))
+                    
+                    
+                    
+                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
                 }
                 
                 const n_mine = 1 + Math.floor(Math.random()* 805.5)
