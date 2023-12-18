@@ -60,6 +60,7 @@
         <div id = "winner_cpu"></div>
 
     </div>
+    <img src="" alt="" id = "image">
 
     </main>
     <script>
@@ -236,19 +237,23 @@
                 document.getElementById("winner_mi").innerHTML = "";
                 document.getElementById("winner_cpu").innerHTML = "";
 
-                tabla_aleatoria = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>2</li>`;
-                document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
+                /*tabla_aleatoria = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>2</li>`;
+                document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;*/
+                let imag = document.getElementById("image")
+                imag.src = arr_pokemons[10].get("picture")
                 //document.getElementById("ul_cpu").innerHTML = tabla_aleatoria
                 for (let i = 0; i<7; i++) {
                     let n = 1 + Math.floor(Math.random()* 200)
-                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li><li>2</li>`;
-                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
+                    imag.src = arr_pokemons[n-1].get("picture")
+                    /*tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li><li>2</li>`;
+                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;*/
                     console.log(arr_pokemons[n-1].get("picture"))
                     
                     let time_for_now = new Date()
                     do {
                         let time_i_for = new Date ()
                         diff_for = time_i_for - time_for_now
+                        
                         
                     } while (diff_for <=1000)
                     
@@ -285,6 +290,7 @@
                 console.log("listo!!!")      
                 
                 document.getElementById("ul_cpu").innerHTML = tabla_principal
+                imag.src = ""
                 cpu_pok = [hp, attack, defense, speed]
                 battle(mi_pok, cpu_pok)
                 
