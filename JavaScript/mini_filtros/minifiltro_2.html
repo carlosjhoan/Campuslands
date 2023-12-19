@@ -60,7 +60,6 @@
         <div id = "winner_cpu"></div>
 
     </div>
-    <img src="" alt="" id = "image">
 
     </main>
     <script>
@@ -237,22 +236,19 @@
                 document.getElementById("winner_mi").innerHTML = "";
                 document.getElementById("winner_cpu").innerHTML = "";
 
-                /*tabla_aleatoria = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>2</li>`;
-                document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;*/
-                let imag = document.getElementById("image")
-                //imag.src = arr_pokemons[10].get("picture")
-                //document.getElementById("ul_cpu").innerHTML = tabla_aleatoria
-                for (let i = 0; i<1000; i++) {
+                
+                
+               
+                for (let i = 0; i<7; i++) {
                     let time_for_now = new Date()
                     do {
                         let time_i_for = new Date ()
                         diff_for = time_i_for - time_for_now
                         
                         
-                    } while (diff_for <=500)
+                    } while (diff_for <1000)
                     let n = 1 + Math.floor(Math.random()* 200)
-                    imag.src = arr_pokemons[n-1].get("picture")
-                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li><li>2</li>`;
+                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li>`;
                     
                     console.log(arr_pokemons[n-1].get("picture"))
                     
@@ -263,45 +259,36 @@
                 
                 const n_mine = 1 + Math.floor(Math.random()* 805.5)
 
-                        const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
                             
-                        const answer_1 = await fetch(url_1)
+                const answer_1 = await fetch(url_1)
                             
-                        const json_1 = await answer_1.json()
+                const json_1 = await answer_1.json()
                             
-                        let name_mine = json_1.forms[0].name
-                        let hp = json_1.stats[0].base_stat
-                        let attack = json_1.stats[1].base_stat
-                        let defense = json_1.stats[2].base_stat
-                        let speed = json_1.stats[5].base_stat
+                let name_mine = json_1.forms[0].name;
+                let hp = json_1.stats[0].base_stat;
+                let attack = json_1.stats[1].base_stat;
+                let defense = json_1.stats[2].base_stat;
+                let speed = json_1.stats[5].base_stat;
 
-                        map_mine.set("name", name_mine)
-                        map_mine.set("hp", hp)
-                        map_mine.set("attack", attack)
-                        map_mine.set("defense", defense)
-                        map_mine.set("speed", speed)
+                map_mine.set("name", name_mine);
+                map_mine.set("hp", hp);
+                map_mine.set("attack", attack);
+                map_mine.set("defense", defense);
+                map_mine.set("speed", speed);
+                const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
 
-                            
+                tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
                         
-                        const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
-
-                        tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
-                        //tabla_principal = `<li><img src = ${arr_pokemons[10].get("picture")} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
-
 
                 console.log("listo!!!")      
                 
                 document.getElementById("ul_cpu").innerHTML = tabla_principal
-                imag.src = ""
+                
                 cpu_pok = [hp, attack, defense, speed]
                 battle(mi_pok, cpu_pok)
                 
-                //setTimeout(() => {
-                                        //console.log("terminó el combate")
-                    //}, 5001)*/
-                    
-                    //console.log(mi_pok)
-                    //console.log(hp, speed, defense, attack)
+        
                 
                 
                     

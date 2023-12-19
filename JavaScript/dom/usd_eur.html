@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro a Dólares</title>
+</head>
+<body>
+    <main>
+        <form action="">
+            <div class = "grades">
+                <fieldset>
+                    <legend>USD</legend>
+                <!--<label for="num1">Número 1:</label>-->
+                    <input type="text" name="usd" id = "usd" class = "form-control" placeholder="Cantidad de USD">
+            </fieldset>
+            </div>
+
+            <div class = "grades">
+                <fieldset>
+                    <legend>EUR</legend>
+                    <!--<label for="num2">Número 2:</label>-->
+                    <input type="text" name="eur" id = "eur" class = "form-control" >
+                </fieldset>
+            </div>
+        
+        </form>
+        <div id = "buttons">
+            <button onclick= "one_usd_to_eur()">Convertir a EUR</button>
+        </div>
+    </main>
+    <script>
+        const one_usd_to_eur = async function() {
+            const url_1 = `https://cdn.dinero.today/api/ecb.json`;
+            const answer_1 = await fetch(url_1)
+            const json_1 = await answer_1.json()
+            const eur = json_1.rates.EUR
+            //console.log(eur * 2)
+            //return json_1.rates.EUR
+            const q_usd = Number(document.getElementById('usd').value);
+            
+            if (Number.isNaN(q_usd)) {
+                document.getElementById('eur').value = "NON-VALUE"
+            } 
+            else {
+                document.getElementById('eur').value = `${(json_1.rates.EUR*q_usd).toFixed(2)}`
+            }
+            return json_1.rates.EUR
+        }
+
+        let a = one_usd_to_eur ()
+            .then (name => {return name})
+        
+            console.log(a[0])
+        
+    </script>
+</body>
+</html>
