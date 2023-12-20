@@ -9,20 +9,22 @@
     window.onload = function() {
         let n = 0; //número de links
         let prueba_coincidence = 0
-        let a_elements = document.querySelectorAll("a")
-        let p_elements = document.querySelectorAll("p")
+        const a_elements = document.querySelectorAll("a")
+        const p_elements = document.querySelectorAll("p")
+        const paragraph_3er = p_elements[2];
+        const links_3er_paragraph = paragraph_3er.querySelectorAll("a")
+
         
         for (let i = 0; i< a_elements.length; i++) {
             console.log(a_elements[i].href)
             if (a_elements[i].href == "http://prueba/") {
-                console.log("YES")
                 prueba_coincidence++;
             }
         }
 
-        alert(`Hay ${a_elements.length} links en la pagina\nDireccion del penultimo enlace: ${a_elements[a_elements.length-2].href}\nhttp://prueba/ aparece ${prueba_coincidence} veces`)
+        alert(`Hay ${a_elements.length} links en la pagina\nDireccion del penultimo enlace: ${a_elements[a_elements.length-2].href}\nhttp://prueba/ aparece ${prueba_coincidence} veces\nCantidad de links en el 3er párrafo; ${links_3er_paragraph.length}`)
 
-        console.log(p_elements.match('href="'))
+        console.log(links_3er_paragraph)
         
 	// Numero de enlaces de la pagina
 
