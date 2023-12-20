@@ -11,7 +11,7 @@
         let prueba_coincidence = 0
         let a_elements = document.querySelectorAll("a")
         let p_elements = document.querySelectorAll("p")
-        const a_3er_p = p_elements.querySelectorAll("a")
+        
         for (let i = 0; i< a_elements.length; i++) {
             console.log(a_elements[i].href)
             if (a_elements[i].href == "http://prueba/") {
@@ -22,8 +22,8 @@
 
         alert(`Hay ${a_elements.length} links en la pagina\nDireccion del penultimo enlace: ${a_elements[a_elements.length-2].href}\nhttp://prueba/ aparece ${prueba_coincidence} veces`)
 
-        console.log(p_elements[2])
-        console.log(a_3er_p)
+        console.log(p_elements.match('href="'))
+        
 	// Numero de enlaces de la pagina
 
 	// Direccion del penultimo enlace
