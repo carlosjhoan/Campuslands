@@ -98,7 +98,7 @@
             const question_i = document.getElementById("question").value;
             const answer_i = document.getElementById("answer").value;
             const div_1= document.createElement("div");
-            div_1.innerHTML = `<button onclick = 'collapse("p${n_p_id}")'>X</button><br><p><b>${question_i}</b></p><br><div id = 'p${n_p_id}' onclick = 'see_answer("p${n_p_id}", "${answer_i}" )' class = "p_answer"></div>`
+            div_1.innerHTML = `<button onclick = 'collapse("p${n_p_id}")' id = 'p${n_p_id}1'>X</button><br><p id = 'p${n_p_id}2'><b>${question_i}</b></p><br><div id = 'p${n_p_id}' onclick = 'see_answer("p${n_p_id}", "${answer_i}" )' class = "p_answer"></div>`
             cards.appendChild(div_1)
 
             
@@ -119,8 +119,12 @@
         }
 
         function collapse(id) {
-            const id_answer = document.querySelector(`#${id}`);
-            id_answer.remove ()
+            const id_p_answer = document.querySelector(`#${id}`);
+            const id_p1_answer = document.querySelector(`#${id}2`);
+            const id_button_answer= document.querySelector(`#${id}1`);
+            id_p_answer.remove ()
+            id_p1_answer.remove ()
+            id_button_answer.remove ()
         }
     </script>
 </body>
