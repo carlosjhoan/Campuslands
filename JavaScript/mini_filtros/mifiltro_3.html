@@ -84,8 +84,12 @@
 
         function eliminate () {
                 const form_mine = document.querySelector("#my_form");
-                const my_cards = document.querySelector(".cards");
+                const my_cards = document.getElementById("cards");
+                console.log (my_cards)
                 form_mine.style.visibility = "hidden";
+                //my_cards.remove();
+                my_cards.innerHTML = ""
+                n_p_id = 0
         }
 
         function save () {
@@ -94,7 +98,7 @@
             const question_i = document.getElementById("question").value;
             const answer_i = document.getElementById("answer").value;
             const div_1= document.createElement("div");
-            div_1.innerHTML = `<button onclick = 'collapse()'>X</button><br><p><b>${question_i}</b></p><br><div id = 'p${n_p_id}' onclick = 'see_answer("p${n_p_id}", "${answer_i}" )' class = "p_answer"></div>`
+            div_1.innerHTML = `<button onclick = 'collapse("p${n_p_id}")'>X</button><br><p><b>${question_i}</b></p><br><div id = 'p${n_p_id}' onclick = 'see_answer("p${n_p_id}", "${answer_i}" )' class = "p_answer"></div>`
             cards.appendChild(div_1)
 
             
@@ -112,6 +116,11 @@
             
             
             
+        }
+
+        function collapse(id) {
+            const id_answer = document.querySelector(`#${id}`);
+            id_answer.remove ()
         }
     </script>
 </body>
