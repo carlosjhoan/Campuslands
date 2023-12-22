@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlasCard</title>
+    <style>
+        .start {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid;
+        }
+
+        .cards {
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid;
+            
+        }
+
+        #my_form {
+            visibility:hidden;
+            width: 40%;
+            border: 1px solid;
+            background-color: aliceblue;
+            margin: 0 auto;
+            box-shadow: 2px gray;
+        }
+
+        .p_answer {
+            background-color: rgb(212, 208, 208);
+            height: 15px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="start">
+        <h2>Gestión de Tarjetas</h1>
+        <div class = "buttons">
+            <button onclick="add()">Agregar</buttton>
+            <button onclick="eliminate()">Eliminar</buttton>
+        </div>
+    </div>
+
+    <div id = "my_form">
+        <form action="">
+            <fieldset>
+                <legend>Pregunta</legend>
+                <input type="text" id = "question">
+            </fieldset>
+            <fieldset>
+                <legend>Respuesta</legend>
+                <input type="text" id = "answer">
+            </fieldset>
+        </form>
+        <button onclick="save()">Guardar</button>
+        <button onclick="close_card()">Cerrar</button>
+    </div>
+
+
+    <div id="cards">
+        
+        
+    </div>
+
+    <script>
+        let n_p_id = 0
+        
+        function add () {
+            
+                const form_mine = document.querySelector("#my_form");
+                form_mine.style.visibility = "visible";
+            
+            
+
+        }
+
+        function eliminate () {
+                const form_mine = document.querySelector("#my_form");
+                const my_cards = document.querySelector(".cards");
+                form_mine.style.visibility = "hidden";
+        }
+
+        function save () {
+            n_p_id++
+            const cards = document.getElementById("cards")
+            const question_i = document.getElementById("question").value;
+            const answer_i = document.getElementById("answer").value;
+            const div_1= document.createElement("div");
+            div_1.innerHTML = `<button onclick = 'collapse()'>X</button><br><p><b>${question_i}</b></p><br><div id = 'p${n_p_id}' onclick = 'see_answer("p${n_p_id}", "${answer_i}" )' class = "p_answer"></div>`
+            cards.appendChild(div_1)
+
+            
+        }
+
+        function see_answer(id, ans) {
+            
+            const id_answer = document.getElementById(id);
+            const cont_id = id_answer.textContent
+            if (cont_id.length == 0) {
+                id_answer.innerHTML = ans
+            } else {
+                id_answer.innerHTML = ""
+            }
+            
+            
+            
+        }
+    </script>
+</body>
+</html>
