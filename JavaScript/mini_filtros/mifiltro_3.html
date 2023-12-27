@@ -51,18 +51,81 @@
             height: 30px;
             border-radius: 20px;
             box-shadow: 3px 3px 3px 3px rgb(193, 192, 192, 0.5);
+            transition: width 0.5s, height 0.5s;
+
+        }
+
+        #cards div button:hover {
+            background-color: rgb(172, 50, 50);
+            color: white;
+            width: 35px;
+            height: 35px;
+            transition: width 0.5s, height 0.5s;
 
         }
 
         #my_form {
             /*visibility:hidden;*/
             display: none;
-            width: 40%;
+            width: 30%;
             border: 1px solid;
-            background-color: aliceblue;
+            border-radius: 20px;
+            background-color: rgba(252, 245, 245, 0.8);
             margin: 0 auto;
             box-shadow: 2px gray;
+            text-align: center;
+            
         }
+
+        form {
+            margin-left: 15%;
+        }
+
+        fieldset {
+            font-weight: bold;
+            width: 70%;
+            background-color: rgba(217, 215, 215, 0.5);
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px rgb(210, 209, 209);
+        }
+
+        fieldset input {
+            height: 30px;
+            width: 60%;
+            border-radius: 30px;
+            border: 2px solid;
+        }
+
+        #my_form button.flash-button {
+            display: inline-block;
+            justify-content: center;
+            height: 30px;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #save_it {
+            background-color: rgb(167, 241, 167);
+            
+        }
+        #save_it:hover {
+            background-color: rgb(20, 76, 20);
+            color: white;
+        }
+
+        #close_it {
+            background-color: rgb(241, 179, 167);
+            
+        }
+        #close_it:hover {
+            background-color: rgb(113, 40, 29);
+            color: white;
+        }
+
+        
+
+
 
        
     </style>
@@ -89,8 +152,8 @@
                 <input type="text" id = "answer">
             </fieldset>
         </form>
-        <button onclick="save()">Guardar</button>
-        <button onclick="close_card()">Cerrar</button>
+        <button onclick="save()" class="flash-button" id = "save_it">Guardar</button>
+        <button onclick="close_card()" class="flash-button" id = "close_it">Cerrar</button>
     </div>
 
 
