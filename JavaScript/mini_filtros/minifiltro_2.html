@@ -226,37 +226,12 @@
 
                 const map_mine = new Map()
                 
-                
-                
-                
+
 
                 let tabla = ""
                 let tabla_aleatoria = ""
                 let tabla_principal = ""
-                document.getElementById("winner_mi").innerHTML = "";
-                document.getElementById("winner_cpu").innerHTML = "";
 
-                
-                
-               
-                for (let i = 0; i<7; i++) {
-                    let time_for_now = new Date()
-                    do {
-                        let time_i_for = new Date ()
-                        diff_for = time_i_for - time_for_now
-                        
-                        
-                    } while (diff_for <1000)
-                    let n = 1 + Math.floor(Math.random()* 200)
-                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li>`;
-                    
-                    console.log(arr_pokemons[n-1].get("picture"))
-                    
-                    
-                    
-                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
-                }
-                
                 const n_mine = 1 + Math.floor(Math.random()* 805.5)
 
                 const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
@@ -277,9 +252,32 @@
                 map_mine.set("defense", defense);
                 map_mine.set("speed", speed);
                 const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
-
-                tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
+                
+               
+                for (let i = 0; i<7; i++) {
+                    let time_for_now = new Date()
+                    let n = 1 + Math.floor(Math.random()* 200)
+                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li>`
+                    
+                    
+                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
+                    console.log(arr_pokemons[n-1].get("picture"))
+                    
+                    
+                    
+                    
+                    console.log("pintada!!")
+                    do {
+                        let time_i_for = new Date ()
+                        diff_for = time_i_for - time_for_now
                         
+                        
+                        
+                    } while (diff_for <1000)
+                    
+                }             
+
+                tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`                       
 
                 console.log("listo!!!")      
                 
@@ -287,12 +285,7 @@
                 
                 cpu_pok = [hp, attack, defense, speed]
                 battle(mi_pok, cpu_pok)
-                
-        
-                
-                
-                    
-                    
+     
 
                 }
 
