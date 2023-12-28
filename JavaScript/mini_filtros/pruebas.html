@@ -6,25 +6,83 @@
     <title>Prueba</title>
 </head>
 <body>
-    <ul id = "prueba"></ul>
+    <ul id="prueba"></ul>
     <script>
-        let tabla_aleatoria = "";
-        for (let i = 0; i<7; i++) {
+    let arr_pokemons = [];
+    (async function() {
+            for (let i=1; i<= 205;i++) {
+                let pokemon_i = new Map()
+                
+            
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${i}/`;
                     
+                const answer_1 = await fetch(url_1);
                     
+                const json_1 = await answer_1.json();
                     
-                    
-                    let time_for_now = new Date();
-                    do {
-                        let time_i_for = new Date ();
-                        diff_for = time_i_for - time_for_now;
-                        
-                    } while (diff_for <=1000)
-                    tabla_aleatoria = `<li>${i}</li><li>2</li>`;
-                    document.getElementById("prueba").innerHTML = tabla_aleatoria;
-                    console.log(i)
-                }
+                const name_i = json_1.forms[0].name;
+                const hp = json_1.stats[0].base_stat;
+                const attack = json_1.stats[1].base_stat;
+                const defense = json_1.stats[2].base_stat;
+                const speed = json_1.stats[5].base_stat;
+
+                const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
+                pokemon_i.set("picture",front_default_1 );
+                pokemon_i.set("name",name_i );
+                pokemon_i.set("hp", hp);
+                pokemon_i.set("attack",attack );
+                pokemon_i.set("defense",defense );
+                pokemon_i.set("speed",speed );
+                
+                arr_pokemons.push(pokemon_i);
+ 
+            }
+    })()
+    
+    let time_now = new Date();
+ 
+    let i=0;
+    let diff = 0;
+    
+    do {
+        let time_i = new Date();
+        diff = time_i-time_now
+        setTimeout(() => {
+            let n = 1 + Math.floor(Math.random()* 200)
+            tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
+            document.getElementById("prueba").innerHTML = tabla_aleatoria;
+            i++;
+            console.log(i);
+        }, 2000)
+
+        setTimeout(() => {
+            let n = 1 + Math.floor(Math.random()* 200)
+            tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
+            document.getElementById("prueba").innerHTML = tabla_aleatoria;
+            i++;
+            console.log(i);
+        }, 2300)
+
+        setTimeout(() => {
+            let n = 1 + Math.floor(Math.random()* 200)
+            tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
+            document.getElementById("prueba").innerHTML = tabla_aleatoria;
+            i++;
+            console.log(i);
+            
+           
+            
+        }, 2600)
         
+        
+        
+    } while (diff <7000)
+    console.log("Breves")
+
+    //tabla_aleatoria = `<li>${i}</li><li>2</li>`;
+    
+                   
+
     </script>
 </body>
 </html>

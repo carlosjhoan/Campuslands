@@ -257,7 +257,7 @@
                 for (let i = 0; i<7; i++) {
                     let time_for_now = new Date()
                     let n = 1 + Math.floor(Math.random()* 200)
-                    tabla_aleatoria = `<li><img src = ${arr_pokemons[n-1].get("picture")} ></li>`
+                    tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
                     
                     
                     document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
