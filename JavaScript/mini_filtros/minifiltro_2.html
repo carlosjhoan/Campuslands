@@ -10,6 +10,10 @@
             list-style: none;
             margin: 0 auto;
         }
+
+        body {
+            background-color: red;
+        }
         h1 {
             text-align: center;
             margin: 0 auto;
@@ -42,9 +46,56 @@
             justify-content: center;
             align-items: center;
         }
+
+        #entry_image {
+            width: 100%;
+            height: 110vh;
+            position: absolute;
+            text-align: center;
+            background-color: rgb(245, 239, 239, 0.5);
+            border: 1px solid; 
+            display: flex;
+            justify-content:center;
+            align-items: center;
+  
+        }
+
+        
+
+        #entry_image img {
+            width: 250px;
+            position: absolute;
+            margin-top: 20%;
+            
+        }
+
+        #entry_image button {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            transition: width 0.5s, height 0.5s;
+            
+        }
+
+        #entry_image button:hover {
+            width: 35px;
+            height: 35px;
+            background-color: red;
+            color: white;
+            transition: width 0.5s, height 0.5s;
+        }
+        
+        
+
+
     </style>
 </head>
 <body>
+    <div id = "entry_image">
+        
+        <img src="../img_proyecto/costilla.PNG" alt="" class = "el_entry">
+        <button onclick="close_entry()" class = "el_entry">X</button>
+    </div>
     <h1>El club de la pelea pokemon</h1>
     <main>
     <div id = "mi_pokemon">
@@ -68,6 +119,10 @@
         let hp_mine
 
         let arr_pokemons = [];
+        function close_entry() {
+            const entry_div = document.getElementById("entry_image")
+            entry_div.style.display = "none"
+        }
         (async function() {
             for (let i=1; i<= 205;i++) {
                 let pokemon_i = new Map()
