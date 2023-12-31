@@ -35,14 +35,21 @@
                 pokemon_i.set("speed",speed );
                 
                 arr_pokemons.push(pokemon_i);
+                
  
             }
     })()
+    /*for (let i=0; i< 8000000000; i++) {
+
+    }
+
+    console.log(arr_pokemons.length)*/
+    
     
     let time_now = new Date();
  
     let i=0;
-    let diff = 0;
+    //let diff = 0;
     
     do {
         let time_i = new Date();
@@ -53,9 +60,9 @@
             document.getElementById("prueba").innerHTML = tabla_aleatoria;
             i++;
             console.log(i);
-        }, 2000)
+        }, 200)
 
-        setTimeout(() => {
+        /*setTimeout(() => {
             let n = 1 + Math.floor(Math.random()* 200)
             tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
             document.getElementById("prueba").innerHTML = tabla_aleatoria;
@@ -72,14 +79,19 @@
             
            
             
-        }, 2600)
+        }, 2600)*/
         
         
+    console.log(diff)
         
     } while (diff <7000)
     console.log("Breves")
 
     //tabla_aleatoria = `<li>${i}</li><li>2</li>`;
+    
+    
+    console.log("Listo!!")
+    console.log(arr_pokemons.length)
     
                    
 
