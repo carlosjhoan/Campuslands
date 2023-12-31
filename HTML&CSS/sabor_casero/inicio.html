@@ -10,6 +10,18 @@
 </head>
 <body>
 
+    <div id = "entry_image">
+        <div class = "div_entry">
+            <h2>Bienvenidos a </h2>
+            <img src="../img_proyecto/logo_tranparent_white.png" alt="">
+            <h3>Horarios de servicio:</h3>
+            <p>Lunes a Sábado: <b>11:00 am - 2:30pm</b></p>
+
+        </div>
+        
+        
+        <button onclick="close_entry()"><img src="../img_proyecto/close.png" alt=""></button>
+    </div>
 
     <nav>
         <div class="grid nav">
@@ -39,11 +51,11 @@
     <main>
         <div class=" grid pick-up">
             <div class="msj-pickup">¡Hora del <b class = "almuerzo">almuerzo</b>, tiempo sagrado! <br><br> Pide tu almuerzo y  <b class = "recogerlo">pasa a recogerlo</b> ...</div>
-            <div class="botton_pickup"><button><img src="../img_proyecto/food-pickup_1.png" alt=""><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/pickup.html">Paso a recoger</a><img src="../img_proyecto/food-pickup_2.png" alt=""></button></div>
+            <div class="botton_pickup"><button id = "b_pickup"><img src="../img_proyecto/food-pickup_1.png" alt=""><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/pickup.html">Paso a recoger</a><img src="../img_proyecto/food-pickup_2.png" alt=""></button></div>
         </div>
         <div class=" grid delivery">
             <div class="msj-delivery">.. O mejor dinos a donde <b>te lo llevamos</b>.</div>
-            <div class="botton_delivery"><button><img src="../img_proyecto/food-delivery.png" alt=""><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/delivery.html">Porfa me lo traen</a><img src="../img_proyecto/food-delivery_2.png" alt=""></button></div>
+            <div class="botton_delivery"><button id = "b_delivery"><img src="../img_proyecto/food-delivery.png" alt=""><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/delivery.html">Porfa me lo traen</a><img src="../img_proyecto/food-delivery_2.png" alt=""></button></div>
 
         </div>
         <div class="grid legal">
@@ -73,6 +85,19 @@
         
     
     </div>
+
+    <script>
+        function close_entry() {
+            const entry_div = document.getElementById("entry_image")
+            const button_pickup = document.getElementById("b_pickup")
+            const button_delivery = document.getElementById("b_delivery")
+            const wpp_div = document.getElementsByClassName("wpp")[0]
+            entry_div.style.display = "none"
+            button_pickup.style.visibility = "visible"
+            button_delivery.style.visibility = "visible"
+            wpp_div.style.visibility = "visible"
+        }
+    </script>
     
 </body>
 </html>

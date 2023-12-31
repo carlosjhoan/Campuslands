@@ -47,41 +47,82 @@
             align-items: center;
         }
 
+        /*Aquí empieza el logo de entrada a Sabor Casero*/
+
         #entry_image {
             width: 100%;
             height: 110vh;
             position: absolute;
             text-align: center;
-            background-color: rgb(245, 239, 239, 0.5);
+            background-color: rgba(236, 201, 103, 0.8);
             border: 1px solid; 
-            display: flex;
-            justify-content:center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto ;
+            grid-template-rows: auto auto auto auto;
   
         }
 
         
 
-        #entry_image img {
-            width: 250px;
-            position: absolute;
-            margin-top: 20%;
-            
+        #entry_image .div_entry {
+            width: 300px;
+            height: 370px;
+            grid-column-start: 4;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;  
+            border-radius: 35px;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            -webkit-box-shadow: 0 0 10px #a39c9c;
+            box-shadow: 0 0 10px #a39c9c;
         }
+
+        #entry_image .div_entry img {
+            width: 240px;
+            height: 200px;
+        }
+
+
+
+
 
         #entry_image button {
             width: 30px;
             height: 30px;
             border-radius: 30px;
+            background-color: #d4d3d2;
             transition: width 0.5s, height 0.5s;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             
+        }
+
+        #entry_image button img {
+            width: 17px;
+            height: 17px;
+            transition: width 0.5s, height 0.5s;
         }
 
         #entry_image button:hover {
             width: 35px;
             height: 35px;
-            background-color: red;
+            background-color: rgb(243, 92, 89);
             color: white;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        #entry_image button:hover img {
+            width: 22px;
+            height: 22px;
             transition: width 0.5s, height 0.5s;
         }
         
@@ -92,9 +133,16 @@
 </head>
 <body>
     <div id = "entry_image">
+        <div class = "div_entry">
+            <h2>Bienvenidos a </h2>
+            <img src="../img_proyecto/logo_tranparent_white.png" alt="">
+            <h3>Horarios de servicio:</h3>
+            <p>Lunes a Sábado: <b>11:00 am - 2:30pm</b></p>
+
+        </div>
         
-        <img src="../img_proyecto/costilla.PNG" alt="" class = "el_entry">
-        <button onclick="close_entry()" class = "el_entry">X</button>
+        
+        <button onclick="close_entry()"><img src="../img_proyecto/close.png" alt=""></button>
     </div>
     <h1>El club de la pelea pokemon</h1>
     <main>
