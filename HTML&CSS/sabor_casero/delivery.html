@@ -23,6 +23,12 @@
                     <input type="search" name = "q" id = "search" placeholder="Buscar">
             </form>
             </div>
+            <div id = "buy_car">
+                <div id = "img_car">
+                    <img src="../img_proyecto/buy_car.png" alt="Buy_car">
+                </div>
+                <input type="text"  readonly id = "value_order">
+            </div>
             
             <div class="barr_nav">
                 <div class="menu"><button><img src="../img_proyecto/menu_logo.png" alt=""></button></div>
@@ -165,6 +171,13 @@
         
     
     </div>
+
+    <script>
+       window.onpageshow = function () {
+        const inpu_car = document.getElementById("value_order");
+        inpu_car.value = 0
+       }
+    </script>
     
 </body>
 </html>
