@@ -27,7 +27,11 @@
                 <div id = "img_car">
                     <img src="../img_proyecto/buy_car.png" alt="Buy_car">
                 </div>
-                <input type="text"  readonly id = "value_order">
+                <div id = "mi_pedido">
+                    <input type="text"  readonly id = "value_order">
+                    <button id = "button_mi_pedido">Ver pedido</button>
+                </div>
+                
             </div>
             
             <div class="barr_nav">
@@ -51,7 +55,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, cuarto de gallina, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
             <div class="button_i_want">
-                <button class = "i_want" id = "but_gallina">Yo quiero!</button>
+                <button class = "i_want" id = "but_gallina" onclick="order_buy()">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="">
             </div>
         </div>
@@ -177,6 +181,19 @@
         const inpu_car = document.getElementById("value_order");
         inpu_car.value = 0
        }
+
+       function order_buy () {
+        const buy_car = document.getElementById("img_car");
+        const value_order = document.getElementById("value_order");
+        const but_mi_pedido = document.getElementById("button_mi_pedido")
+        buy_car.style["background-color"] = "rgb(69, 244, 69)";
+        value_order.style["background-color"] = "rgb(5, 132, 5)";
+        value_order.style.width = "100px";
+        but_mi_pedido.style.visibility = "visible";
+        
+       }
+
+
     </script>
     
 </body>
