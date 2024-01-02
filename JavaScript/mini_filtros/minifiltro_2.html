@@ -135,7 +135,7 @@
     <div id = "entry_image">
         <div class = "div_entry">
             <h2>Bienvenidos a </h2>
-            <img src="../img_proyecto/logo_tranparent_white.png" alt="">
+            <img src="../img_proyecto/logo_tranparent_white.png" alt="" id = "logo_white">
             <h3>Horarios de servicio:</h3>
             <p>Lunes a Sábado: <b>11:00 am - 2:30pm</b></p>
 
@@ -162,11 +162,25 @@
 
     </main>
     <script>
-        let mi_pok = []
-        let cpu_pok = []
-        let hp_mine
+        let mi_pok = [];
+        let cpu_pok = [];
+        let hp_mine;
 
         let arr_pokemons = [];
+
+        let d_C = 0;
+        window.onpageshow = function () {
+            const logo_white = document.getElementById("logo_white");
+            rotate_animation = setInterval(frame, 10)
+            function frame () {
+                if (d_C == 360) {
+                    clearInterval(rotate_animation)
+                } else {
+                    d_C += 10
+                    logo_white.style.rotate = d_C + "deg"
+                }
+            }  
+        }
         function close_entry() {
             const entry_div = document.getElementById("entry_image")
             entry_div.style.display = "none"
