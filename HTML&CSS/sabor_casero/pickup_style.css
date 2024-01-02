@@ -2044,13 +2044,61 @@ grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni ro
 background-image: url("../img_proyecto/madera.PNG");
 background-repeat: repeat;
 display: grid;
-grid-template-columns: 20px 20% auto    400px 20px;
-grid-template-areas: "A Buscar  Logo    Barra C";
+grid-template-columns: 20px 20% auto  auto  400px 20px;
+grid-template-areas: "A Buscar  Logo  Car  Barra C";
 align-items:center;
 height: 100%;
 
 
 }
+
+#buy_car {
+    
+    grid-area: Car;
+    display: flex;
+    justify-content: center;
+
+}
+
+#mi_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#mi_pedido button {
+    visibility: hidden;
+    padding: 4px;
+    border-radius: 5px;
+    background-color:rgb(4, 131, 4);
+    color: white;
+    
+}
+
+#img_car {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+#value_order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+
 .logo {
 grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
