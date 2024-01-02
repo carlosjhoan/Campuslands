@@ -275,16 +275,7 @@ height: 120px;
 transition: height 0.1s;
 }
 
-.barr_nav ul .menu_dia{
-    background-color: black;
-    border-radius: 10px;
-    
-}
 
-.barr_nav ul .menu_dia a{
-    padding: 2px;
-    color: rgb(204, 137, 43)
-}
 
 /*menú*/
 
@@ -322,7 +313,7 @@ transition: height 0.1s;
 
 .foto {
     /*border: 1px solid black;*/
-    width: 120px;
+    width: 170px;
     border-radius: 120px;
 }
 
@@ -687,13 +678,6 @@ main {
     
     }
     
-    .grid {
-    /*border: 1px solid black;*/
-    }
-    
-    
-    
-    
     
     
     .legal {
@@ -893,16 +877,7 @@ height: 120px;
 transition: height 0.1s;
 }
 
-.barr_nav ul .menu_dia{
-    background-color: black;
-    border-radius: 10px;
-    
-}
 
-.barr_nav ul .menu_dia a{
-    padding: 2px;
-    color: rgb(204, 137, 43)
-}
 
 /*menú*/
 
@@ -1303,14 +1278,6 @@ font-weight: bold;
         
         }
         
-        .grid {
-        /*border: 1px solid black;*/
-        }
-        
-        
-        
-        
-        
         
         .legal {
         grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
@@ -1458,16 +1425,6 @@ nav {
     display: none;
 }
 
-.barr_nav ul .menu_dia{
-    background-color: black;
-    border-radius: 10px;
-    
-}
-
-.barr_nav ul .menu_dia a{
-    padding: 2px;
-    color: rgb(204, 137, 43)
-}
 
 /*menú*/
 
