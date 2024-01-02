@@ -10,6 +10,52 @@ body {
     /**/
 }
 
+.each {
+    background-color: rgb(219, 219, 215, 0.5);
+    padding: 2%;
+    margin: 5% 25%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px gray;
+    }
+
+/*BOTÓN PEDIR*/
+.button_i_want {
+    display: flex;
+}
+
+
+.button_i_want img {
+    width: 0px;
+    height: 0px;
+    transition: width 0.5s, height 0.5s;
+}
+
+.button_i_want:hover img {
+    width: 30px;
+    height: 30px;
+    transition: width 0.5s, height 0.5s;
+}
+
+.i_want {
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: padding 0.5s;
+    background-color: rgb(5, 132, 5);
+    font-weight: bold;
+    color: white;
+}
+
+.i_want:hover {
+    padding: 8px;
+    transition: padding 0.5s;
+}
+
 
 
 @media screen and (max-width:460px) {
@@ -2369,16 +2415,7 @@ grid-template-columns: auto auto auto;
 grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
 height: 90%;
 margin-top: 85px;
-
-
 }
-
-.grid {
-/*border: 1px solid black;*/
-}
-
-
-
 
 
 
@@ -2741,17 +2778,7 @@ display: none;
 /*menú*/
 
 
-.each {
-background-color: rgb(219, 219, 215, 0.5);
-padding: 2%;
-margin: 5% 25%;
-width: 250px;
-display: flex;
-flex-direction: column;
-align-items: center;
-border-radius: 20px;
-box-shadow: 0 0 3px 3px gray;
-}
+
 
 .hr {
 height: 3px;
