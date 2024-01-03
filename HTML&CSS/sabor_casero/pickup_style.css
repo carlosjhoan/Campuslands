@@ -2116,6 +2116,7 @@ height: 100%;
 
 #mi_pedido button {
     visibility: hidden;
+    width: 0px;
     padding: 4px;
     border-radius: 5px;
     background-color:rgb(4, 131, 4);

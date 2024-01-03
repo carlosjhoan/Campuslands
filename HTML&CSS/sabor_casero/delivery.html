@@ -194,15 +194,16 @@
        }
 
        function order_buy (div_id, img_id, pos_arr_pedido) {
-            let total_price; //
-            let q_orders = 0; //
-            let moneyFormatter  = new Intl.NumberFormat(); //
+            let total_price;
+            let q_orders = 0;
+            let moneyFormatter  = new Intl.NumberFormat();
             const id_input = div_id + '_input'
             const img_check = document.getElementById(img_id);
             const div_proteina = document.querySelector(`#${div_id}`);
             const buy_car = document.getElementById("img_car");
             const value_order = document.getElementById("value_order");
-            const but_mi_pedido = document.getElementById("button_mi_pedido")
+            const but_mi_pedido = document.getElementById("button_mi_pedido");
+            but_mi_pedido.style.width = "80px";
             buy_car.style["background-color"] = "rgb(69, 244, 69)";
             value_order.style["background-color"] = "rgb(5, 132, 5)";
             value_order.style.width = "100px";
@@ -256,12 +257,15 @@
 
         function minus(div_id, id_input, img_id, pos_arr_pedido) {
             console.log(div_id)
-            let total_price; //
-            let q_orders = 0; //
-            let moneyFormatter  = new Intl.NumberFormat(); //
+            let total_price;
+            let q_orders = 0;
+            let moneyFormatter  = new Intl.NumberFormat();
+            const buy_car = document.getElementById("img_car"); //
+            const but_mi_pedido = document.getElementById("button_mi_pedido"); //
+            const value_order = document.getElementById("value_order");//
             const div_proteina = document.querySelector(`#${div_id}`)
             const input_quantity = document.getElementById(id_input);
-            input_quantity.style["font-weight"] = "bold"; //
+            input_quantity.style["font-weight"] = "bold";
             let quant_number = Number(input_quantity.value);
             quant_number--;
             if (quant_number == 0) {
@@ -282,8 +286,17 @@
             for (let i = 0; i < arr_pedido.length; i++) {
                 q_orders += arr_pedido[i][1];
             }
-            total_price = 14000 * q_orders;
-            value_order.value = `$ ${moneyFormatter.format(total_price)} COP`;
+            if (q_orders == 0) {
+                buy_car.style["background-color"] = "white";
+                but_mi_pedido.style.visibility = "hidden";
+                but_mi_pedido.style.width = "30px";
+                value_order.style["background-color"] = "black";
+                value_order.style.width = "30px";
+                value_order.value = 0;
+            } else {
+                total_price = 14000 * q_orders;
+                value_order.value = `$ ${moneyFormatter.format(total_price)} COP`; 
+            }
             
         }
 
