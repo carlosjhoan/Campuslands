@@ -220,6 +220,9 @@
         }
  
         function order_buy (div_id, img_id, pos_arr_pedido) {
+            let total_price; //
+            let q_orders = 0; //
+            let moneyFormatter  = new Intl.NumberFormat(); //
             const id_input = div_id + '_input'
             const img_check = document.getElementById(img_id);
             const div_proteina = document.querySelector(`#${div_id}`);
@@ -239,19 +242,30 @@
             img_check.remove();
             div_proteina.appendChild(div_quantity);
             const input_element = document.getElementById(`${id_input}`);
+            input_element.style["font-weight"] = "bold"; //
             input_element.value = 1;
             input_element.style["text-align"] = "center";
             input_element.style.width = "30px";
-            //input_element.style["border-radius"] = "30px";
-            //console.log(input_element);
-         
+            ///////////////////
+            arr_pedido[pos_arr_pedido][1] = 1;
+
+            for (let i = 0; i < arr_pedido.length; i++) {
+                q_orders += arr_pedido[i][1];
+            }
+            total_price = 14000 * q_orders;
+            console.log("q_orders", q_orders)
+
+            value_order.value = `$ ${moneyFormatter.format(total_price)} COP`;
+            ///
+
         }
 
         function add(id_input, pos_arr_pedido) {
-            let total_price;
-            let q_orders = 0;
-            let moneyFormatter  = new Intl.NumberFormat();
+            let total_price; //
+            let q_orders = 0; //
+            let moneyFormatter  = new Intl.NumberFormat(); //
             const input_quantity = document.getElementById(id_input);
+            input_quantity.style["font-weight"] = "bold"; //
             let quant_number = Number(input_quantity.value);
             const value_order = document.getElementById("value_order");
             quant_number++;
@@ -263,17 +277,18 @@
             total_price = 14000 * q_orders;
 
             value_order.value = `$ ${moneyFormatter.format(total_price)} COP`;
-
+            //////////////////////
 
         }
 
         function minus(div_id, id_input, img_id, pos_arr_pedido) {
             console.log(div_id)
-            let total_price;
-            let q_orders = 0;
-            let moneyFormatter  = new Intl.NumberFormat();
+            let total_price; //
+            let q_orders = 0; //
+            let moneyFormatter  = new Intl.NumberFormat(); //
             const div_proteina = document.querySelector(`#${div_id}`)
             const input_quantity = document.getElementById(id_input);
+            input_quantity.style["font-weight"] = "bold"; //
             let quant_number = Number(input_quantity.value);
             quant_number--;
             if (quant_number == 0) {
@@ -281,8 +296,8 @@
                     div_proteina.children[i].remove ();
                 }
                 const div_i_want = document.createElement("div");
-                div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}')">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`;
+                div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}', ${pos_arr_pedido})">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`; //
                 div_proteina.appendChild(div_i_want);
 
                 
