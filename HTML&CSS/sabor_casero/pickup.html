@@ -55,9 +55,9 @@
             <p class = "dish_name">Sancocho de gallina</p>
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, cuarto de gallina, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
-            <div class="button_i_want">
-                <button class = "i_want" id = "but_gallina" onclick="order_buy()">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="">
+            <div class="button_i_want" id = "i_want_gallina">
+                <button class = "i_want" id = "but_gallina" onclick = "order_buy('i_want_gallina', 'img_check_gallina')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_gallina">
             </div>
             
         </div>
@@ -67,9 +67,9 @@
             <p class = "dish_name">Sancocho de costilla</p>
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, costilla guisada, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
-            <div class="button_i_want">
-                <button class = "i_want" id = "but_costilla">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="">
+            <div class="button_i_want" id = "i_want_costilla">
+                <button class = "i_want" id = "but_costilla" onclick="order_buy('i_want_costilla', 'img_check_costilla')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_costilla">
             </div>
             
         </div>
@@ -79,9 +79,9 @@
             <p class = "dish_name">Sancocho de cola</p>
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, cola de res guisada, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
-            <div class="button_i_want">
-                <button class = "i_want" id = "but_cola">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="">
+            <div class="button_i_want" id = "i_want_cola">
+                <button class = "i_want" id = "but_cola" onclick="order_buy('i_want_cola', 'img_check_cola')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_cola">
             </div> 
         </div>
         
@@ -91,9 +91,9 @@
             <p class = "dish_name">Sobrebarriga (160gr)</p>
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
-            <div class="button_i_want">
-                <button class = "i_want" id = "but_sobre">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="">
+            <div class="button_i_want" id = "i_want_sobre">
+                <button class = "i_want" id = "but_sobre" onclick="order_buy('i_want_sobre', 'img_check_sobre')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_sobre">
             </div>  
         </div>
 
@@ -103,9 +103,9 @@
             <p class = "dish_name">Chatas (160gr)</p>
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
-            <div class = "button_i_want">
-                <button class = "i_want" id = "but_chatas">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="">
+            <div class = "button_i_want" id = "i_want_chatas">
+                <button class = "i_want" id = "but_chatas" onclick="order_buy('i_want_chatas', 'img_check_chatas')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_chatas">
             </div>
         </div>
 
@@ -115,9 +115,9 @@
             <p class = "dish_name">Oreada (160gr)</p>
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
-            <div class="button_i_want">
-                <button class = "i_want" id = "but_oreada">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="">
+            <div class="button_i_want" id = "i_want_ore">
+                <button class = "i_want" id = "but_oreada" onclick="order_buy('i_want_ore', 'img_check_ore')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_ore">
             </div>
         </div>
 
@@ -203,7 +203,10 @@
             inpu_car.value = 0
         }
  
-        function order_buy () {
+        function order_buy (div_id, img_id) {
+            const id_input = div_id + '_input'
+            const img_check = document.getElementById(img_id);
+            const div_proteina = document.querySelector(`#${div_id}`);
             const buy_car = document.getElementById("img_car");
             const value_order = document.getElementById("value_order");
             const but_mi_pedido = document.getElementById("button_mi_pedido")
@@ -211,7 +214,50 @@
             value_order.style["background-color"] = "rgb(5, 132, 5)";
             value_order.style.width = "100px";
             but_mi_pedido.style.visibility = "visible";
+            const div_quantity= document.createElement("div");
+            div_quantity.innerHTML = `<div class = "plus_minus"><button onclick ='minus("${div_id}","${id_input}", "${img_id}")'>-</button><input type="text" readonly id = ${id_input}>
+            <button onclick = 'add("${id_input}")'>+</button></div>`;
+            for (let i = 0; i<div_proteina.children.length; i++) {
+                div_proteina.children[i].remove ();
+            }
+            img_check.remove();
+            div_proteina.appendChild(div_quantity);
+            const input_element = document.getElementById(`${id_input}`);
+            input_element.value = 1;
+            input_element.style["text-align"] = "center";
+            input_element.style.width = "30px"
+            //input_element.style["border-radius"] = "30px";
+            //console.log(input_element);
          
+        }
+
+        function add(id_input) {
+            const input_quantity = document.getElementById(id_input);
+            let quant_number = Number(input_quantity.value);
+            quant_number++;
+            input_quantity.value = `${quant_number}`
+        }
+
+        function minus(div_id, id_input, img_id) {
+            console.log(div_id)
+            const div_proteina = document.querySelector(`#${div_id}`)
+            const input_quantity = document.getElementById(id_input);
+            let quant_number = Number(input_quantity.value);
+            quant_number--;
+            if (quant_number == 0) {
+                for (let i = 0; i<div_proteina.children.length; i++) {
+                    div_proteina.children[i].remove ();
+                }
+                const div_i_want = document.createElement("div");
+                div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}')">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`;
+                div_proteina.appendChild(div_i_want);
+
+                
+            } else {
+                input_quantity.value = `${quant_number}`
+            }
+            
         }
  
  

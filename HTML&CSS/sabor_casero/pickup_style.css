@@ -41,6 +41,27 @@ body {
     transition: width 0.5s, height 0.5s;
 }
 
+/*--- cuando llegue a cero el valor de la cantidad ---*/
+.button_i_want div{
+    display: flex;
+}
+
+
+.button_i_want div img {
+    width: 0px;
+    height: 0px;
+    transition: width 0.5s, height 0.5s;
+}
+
+.button_i_want div:hover img {
+    width: 30px;
+    height: 30px;
+    transition: width 0.5s, height 0.5s;
+}
+
+/*------*/
+
+
 .i_want {
     padding: 5px;
     border-radius: 10px;
@@ -2097,6 +2118,38 @@ height: 100%;
     border-radius: 30px;
     text-align: center;
 }
+
+.plus_minus {
+    width: 80px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    
+    
+    
+}
+.plus_minus input {
+    text-align: center;
+    height: 30px;
+}
+
+.plus_minus button {
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px gray;
+}
+
+.plus_minus button:hover {
+    background-color: rgb(251, 218, 71);
+}
+
+.plus_minus button:active {
+    background-color: rgb(138, 114, 5);
+}
+
+
+
+
 
 
 .logo {
