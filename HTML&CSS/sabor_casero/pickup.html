@@ -56,7 +56,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, cuarto de gallina, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
             <div class="button_i_want" id = "i_want_gallina">
-                <button class = "i_want" id = "but_gallina" onclick = "order_buy('i_want_gallina', 'img_check_gallina')">Yo quiero!</button>
+                <button class = "i_want" id = "but_gallina" onclick = "order_buy('i_want_gallina', 'img_check_gallina', 0)">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "img_check_gallina">
             </div>
             
@@ -68,7 +68,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, costilla guisada, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
             <div class="button_i_want" id = "i_want_costilla">
-                <button class = "i_want" id = "but_costilla" onclick="order_buy('i_want_costilla', 'img_check_costilla')">Yo quiero!</button>
+                <button class = "i_want" id = "but_costilla" onclick="order_buy('i_want_costilla', 'img_check_costilla', 1)">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "img_check_costilla">
             </div>
             
@@ -80,7 +80,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de sancocho, cola de res guisada, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
             <div class="button_i_want" id = "i_want_cola">
-                <button class = "i_want" id = "but_cola" onclick="order_buy('i_want_cola', 'img_check_cola')">Yo quiero!</button>
+                <button class = "i_want" id = "but_cola" onclick="order_buy('i_want_cola', 'img_check_cola', 2)">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "img_check_cola">
             </div> 
         </div>
@@ -92,7 +92,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
             <div class="button_i_want" id = "i_want_sobre">
-                <button class = "i_want" id = "but_sobre" onclick="order_buy('i_want_sobre', 'img_check_sobre')">Yo quiero!</button>
+                <button class = "i_want" id = "but_sobre" onclick="order_buy('i_want_sobre', 'img_check_sobre', 3)">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "img_check_sobre">
             </div>  
         </div>
@@ -104,7 +104,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
             <div class = "button_i_want" id = "i_want_chatas">
-                <button class = "i_want" id = "but_chatas" onclick="order_buy('i_want_chatas', 'img_check_chatas')">Yo quiero!</button>
+                <button class = "i_want" id = "but_chatas" onclick="order_buy('i_want_chatas', 'img_check_chatas', 4)">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "img_check_chatas">
             </div>
         </div>
@@ -116,7 +116,7 @@
             <div class= "hr"></div>
             <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
             <div class="button_i_want" id = "i_want_ore">
-                <button class = "i_want" id = "but_oreada" onclick="order_buy('i_want_ore', 'img_check_ore')">Yo quiero!</button>
+                <button class = "i_want" id = "but_oreada" onclick="order_buy('i_want_ore', 'img_check_ore', 5)">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "img_check_ore">
             </div>
         </div>
@@ -198,12 +198,28 @@
     </div>
 
     <script>
+        
+        let arr_pedido = [["S. de gallina", 0],
+            ["S. de costilla", 0],
+
+            ["S. de cola", 0],
+
+            ["Sobrebarriga", 0],
+
+            ["Chatas", 0],
+
+            ["Oreada",  0],
+        ]
+
+        
+
         window.onpageshow = function () {
             const inpu_car = document.getElementById("value_order");
-            inpu_car.value = 0
+            inpu_car.value = 0;
+            
         }
  
-        function order_buy (div_id, img_id) {
+        function order_buy (div_id, img_id, pos_arr_pedido) {
             const id_input = div_id + '_input'
             const img_check = document.getElementById(img_id);
             const div_proteina = document.querySelector(`#${div_id}`);
@@ -215,8 +231,8 @@
             value_order.style.width = "100px";
             but_mi_pedido.style.visibility = "visible";
             const div_quantity= document.createElement("div");
-            div_quantity.innerHTML = `<div class = "plus_minus"><button onclick ='minus("${div_id}","${id_input}", "${img_id}")'>-</button><input type="text" readonly id = ${id_input}>
-            <button onclick = 'add("${id_input}")'>+</button></div>`;
+            div_quantity.innerHTML = `<div class = "plus_minus"><button onclick ='minus("${div_id}","${id_input}", "${img_id}", "${pos_arr_pedido}")'>-</button><input type="text" readonly id = ${id_input}>
+            <button onclick = 'add("${id_input}", "${pos_arr_pedido}")'>+</button></div>`;
             for (let i = 0; i<div_proteina.children.length; i++) {
                 div_proteina.children[i].remove ();
             }
@@ -231,15 +247,31 @@
          
         }
 
-        function add(id_input) {
+        function add(id_input, pos_arr_pedido) {
+            let total_price;
+            let q_orders = 0;
+            let moneyFormatter  = new Intl.NumberFormat();
             const input_quantity = document.getElementById(id_input);
             let quant_number = Number(input_quantity.value);
+            const value_order = document.getElementById("value_order");
             quant_number++;
-            input_quantity.value = `${quant_number}`
+            arr_pedido[pos_arr_pedido][1] = quant_number;
+            input_quantity.value = `${quant_number}`;
+            for (let i = 0; i < arr_pedido.length; i++) {
+                q_orders += arr_pedido[i][1];
+            }
+            total_price = 14000 * q_orders;
+
+            value_order.value = `$ ${moneyFormatter.format(total_price)} COP`;
+
+
         }
 
-        function minus(div_id, id_input, img_id) {
+        function minus(div_id, id_input, img_id, pos_arr_pedido) {
             console.log(div_id)
+            let total_price;
+            let q_orders = 0;
+            let moneyFormatter  = new Intl.NumberFormat();
             const div_proteina = document.querySelector(`#${div_id}`)
             const input_quantity = document.getElementById(id_input);
             let quant_number = Number(input_quantity.value);
@@ -256,8 +288,13 @@
                 
             } else {
                 input_quantity.value = `${quant_number}`
+            };
+            arr_pedido[Number(pos_arr_pedido)][1] = quant_number;
+            for (let i = 0; i < arr_pedido.length; i++) {
+                q_orders += arr_pedido[i][1];
             }
-            
+            total_price = 14000 * q_orders;
+            value_order.value = `$ ${moneyFormatter.format(total_price)} COP`;  
         }
  
  
