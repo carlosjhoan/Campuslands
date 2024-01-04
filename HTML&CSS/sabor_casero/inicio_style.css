@@ -1797,6 +1797,7 @@ line-height: 1.4rem;
     justify-content:space-around;
     align-items: center;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .botton_pickup button a {
@@ -1888,6 +1889,7 @@ main .delivery{
     justify-content:space-around;
     align-items: center;
     visibility: hidden;
+    cursor:pointer;
 }
 
 .botton_delivery button a {
