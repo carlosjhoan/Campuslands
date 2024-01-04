@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mat_sq = [[1, 12, 14, 5],
+                        [-1, 22, -13, 3],
+                        [50, -25, -9, -11],
+                        [5, -2, 17, -15],]
+
+        function diag_diff (mat) {
+            let diag_right = 0;
+            let diag_left= 0;
+            const n=mat.length;
+            for (let i = 0; i<mat.length; i++) {
+                diag_right += mat[i][i];
+                diag_left += mat[i][n-1];
+                n--;
+                
+            }
+            const dif_diagonals = diag_right - diag_left;
+            return ([Math.abs(dif_diagonals), diag_right, diag_left])
+            
+        }
+
+        const result = diag_diff(mat_sq);
+        console.log(`Diferencia diagonal up-bottom: ${result[1]}\nDiferencia diagonal bottom-up: ${result[2]}\nDiferencia absoluta de las diagonales: ${result[0]}`)
+    </script>
+</body>
+</html>
