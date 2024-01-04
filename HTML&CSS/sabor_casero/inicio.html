@@ -13,11 +13,14 @@
 
         let d_C = 0;
         window.onpageshow = function () {
+            const but_close = document.getElementById("button_close_entry");
             const logo_white = document.getElementById("logo_white");
             rotate_animation = setInterval(frame, 10)
             function frame () {
                 if (d_C == 360) {
-                    clearInterval(rotate_animation)
+                    clearInterval(rotate_animation);
+                    but_close.style.visibility = "visible";
+
                 } else {
                     d_C += 10
                     logo_white.style.rotate = d_C + "deg"
@@ -48,7 +51,7 @@
         </div>
         
         
-        <button onclick="close_entry()"><img src="../img_proyecto/close.png" alt=""></button>
+        <button onclick="close_entry()" id = "button_close_entry"><img src="../img_proyecto/close.png" alt=""></button>
     </div>
 
     <nav>
