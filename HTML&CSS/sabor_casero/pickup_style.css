@@ -70,6 +70,7 @@ body {
     background-color: rgb(5, 132, 5);
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
 
 .i_want:hover {
@@ -95,6 +96,7 @@ body {
     font-weight: bold;
     border-radius: 5px;
     box-shadow: 0 0 2px 2px gray;
+    cursor: pointer;
 }
 
 .plus_minus button:hover {
@@ -2121,6 +2123,7 @@ height: 100%;
     border-radius: 5px;
     background-color:rgb(4, 131, 4); /**/
     color: white;
+    cursor: pointer;
     
 }
 
@@ -2397,6 +2400,75 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: 0.9rem;
 font-weight: bold;
 
+}
+
+/* BOTON PICKUP*/
+.buttons_deliv_pickup {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 90px;
+    left: 10px;
+
+}
+
+.botton_delivery button {
+    width: 120px;
+    background-color: rgb(133, 234, 87);
+    border: 3px solid black;
+    border-radius: 30px;
+    /*left: 530px;*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.botton_delivery button a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+
+.botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+    width: 35px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover {
+    background-color: black;
+
+}
+
+.botton_delivery button:hover a {
+    color: white;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+    width: 30px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
 }
 
 }
