@@ -446,13 +446,6 @@ main {
 
 }
 
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
-
-
 
 
 .legal {
@@ -806,43 +799,166 @@ color: white;
 }
 
 
-
-
-
-
 /*BOTÓN DE WPP*/
 
 .wpp {
-position: fixed;
-bottom: 200px;
-right: 20px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    position: fixed;
+    bottom: -2%;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .wpp a img {
-height: 40px;
-width: 40px;
-transition: height 0.1s, width 0.1s;
+    height: 40px;
+    width: 40px;
+    transition: height 0.1s, width 0.1s;
 
 }
 
 .wpp a img:hover {
-height: 50px;
-width: 50px;
-transition: height 0.1s, width 0.1s;
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
 
 }
 .wpp p {
-padding: 2px;
-background-color: black;
-color: white;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 0.9rem;
-font-weight: bold;
+    padding: 2px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
 
+}
+
+/* BOTONES DE DELIVERY Y PICKUP*/
+
+.buttons_deliv_pickup {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 90px;
+    left: 42.0%;
+
+}
+
+.botton_delivery button {
+    width: 115px;
+    background-color: rgb(133, 234, 87);
+    border: 3px solid black;
+    border-radius: 40px;
+    /*left: 530px;*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.botton_delivery button a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+
+.botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+    width: 35px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover {
+    background-color: black;
+
+}
+
+.botton_delivery button:hover a {
+    color: white;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+    width: 30px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_pickup button {
+
+    width: 115px;
+    background-color: rgb(133, 234, 87);
+    border: 3px solid black;
+    border-radius: 40px;
+    /*left: 200px;*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.botton_pickup button a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+
+.botton_pickup button img[src= "../img_proyecto/food-pickup_1.png"] {
+
+    width: 30px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_pickup button img[src= "../img_proyecto/food-pickup_2.png"] {
+
+    width: 0;
+    height: 0;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_pickup button:hover {
+    background-color: black;
+    
+}
+
+.botton_pickup button:hover a {
+    color: white;
+}
+
+.botton_pickup button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_pickup button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+
+    width: 30px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
 }
 
 
@@ -867,14 +983,7 @@ font-weight: bold;
     
     }
     
-    .grid {
-        /*border: 1px solid black;*/
-    }
-    
-    
-    
-    
-    
+
     
     .legal {
         grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
@@ -1226,13 +1335,6 @@ main {
     
 
 }
-
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
-
 
 
 
