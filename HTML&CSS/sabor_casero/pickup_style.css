@@ -2127,6 +2127,11 @@ height: 100%;
     
 }
 
+#mi_pedido button:hover {
+    background-color:rgb(119, 241, 119);
+    color: black;
+}
+
 #img_car {
     padding: 10px;
     width: 60px;
