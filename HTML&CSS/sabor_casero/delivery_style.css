@@ -115,7 +115,7 @@ body {
     
     height: 80%;
     width: 60%;
-    position: absolute;
+    position: fixed;
     top: 15%;
     left: 20%;
     display: flex;
@@ -133,6 +133,7 @@ body {
 .lista_pedido table {
     width: 80%;
     text-align: center;
+    border: 1px solid;
     
 }
 
