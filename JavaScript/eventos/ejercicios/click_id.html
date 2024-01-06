@@ -14,9 +14,10 @@
     <div id="boton2" class="boton">Pulsar aquí</div>
     <div id="boton3" class="boton">Pulsar aquí</div>
     <script>
-        const botones = document.getElementsByTagName("div");
-        for (let i = 0; i<botones.length; i++) {
-            botones[i].addEventListener("click", ()=> alert(`${botones[i].id}`))
+        const d = document;
+        const botones = d.getElementsByTagName("div");
+        for (let boton of botones) {
+            boton.addEventListener("click", ()=> alert(`${boton.id}`))
         }
         
     </script>
