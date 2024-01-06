@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click ID</title>
+    <style>
+        .boton{display:block; width:100px;cursor:pointer;margin: 10px;border:1px
+        solid black}
+        </style>
+</head>
+<body>
+    <div id="boton1" class="boton">Pulsar aquí</div>
+    <div id="boton2" class="boton">Pulsar aquí</div>
+    <div id="boton3" class="boton">Pulsar aquí</div>
+    <script>
+        const botones = document.getElementsByTagName("div");
+        for (let i = 0; i<botones.length; i++) {
+            botones[i].addEventListener("click", ()=> alert(`${botones[i].id}`))
+        }
+        
+    </script>
+    
+        
+</body>
+</html>
