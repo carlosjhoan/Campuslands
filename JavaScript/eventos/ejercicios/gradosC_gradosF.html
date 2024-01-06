@@ -83,12 +83,12 @@
                 document.getElementById("g_F").style.backgroundColor = "#71ff74";
                 document.getElementById("g_C").style.backgroundColor = "white";
                 grados_C = grados_C_ahora;
-                grados_F =  grados_F_ahora;
+                grados_F =  grados_F_ant;
             } else if (grados_F_ahora != grados_F_ant) {
                 document.getElementById("g_C").value = `${((Number(grados_F_ahora)-32)*(5/9)).toFixed(2)}`;
                 document.getElementById("g_C").style.backgroundColor = "#71ff74";
                 document.getElementById("g_F").style.backgroundColor = "white";
-                grados_C = grados_C_ahora;
+                grados_C = grados_C_ant;
                 grados_F =  grados_F_ahora;
             }
             
