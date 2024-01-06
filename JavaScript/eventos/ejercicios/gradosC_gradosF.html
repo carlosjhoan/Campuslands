@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converstir °C y °F</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items:first baseline;
+            justify-content: center;
+        }
+        div {
+            width: 40%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-around;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 3px 3px rgb(197, 195, 195, 0.5);
+        }
+        fieldset {
+            width: 30%;
+            border-radius: 20px;
+            border: 1px dotted;
+        }
+
+        input {
+            height: 30px;
+            width: 80%;
+            border-radius: 20px;
+            text-align: center;
+            
+        }
+        /*input:active {
+            background-color: white;
+        }*/
+        button {
+            padding: 8px;
+            border-radius: 20px;
+            border: 1px white;
+            background-color: rgb(216, 218, 218);
+            box-shadow: 0 0 5px 5px white;
+            cursor: pointer;
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        button:hover {
+            background-color: rgb(208, 211, 211);
+            box-shadow: 0 0 5px 5px rgb(233, 231, 231);
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>°C</legend>
+            <input type="text" id = "g_C">
+        </fieldset>
+        <fieldset>
+            <legend>°F</legend>
+            <input type="text" id = "g_F">
+        </fieldset>
+        <button id = "calculate">Calcular</button>
+    </div>
+    <script>
+        let grados_C = document.getElementById("g_C").value;
+        let grados_F = document.getElementById("g_F").value;
+        const input_elements = document.getElementsByClassName("input");
+        const C_input = document.getElementById("g_C");
+        const F_input = document.getElementById("g_F");
+        function calculate () {
+            const grados_C_ant = grados_C;
+            const grados_F_ant = grados_F;
+            const grados_C_ahora = document.getElementById("g_C").value;
+            const grados_F_ahora = document.getElementById("g_F").value;
+            if (grados_C_ahora != grados_C_ant) {
+                document.getElementById("g_F").value = `${((Number(grados_C_ahora)*9/5)+32).toFixed(2)}`;
+                document.getElementById("g_F").style.backgroundColor = "#71ff74";
+                document.getElementById("g_C").style.backgroundColor = "white";
+                grados_C = grados_C_ahora;
+                grados_F =  grados_F_ahora;
+            } else if (grados_F_ahora != grados_F_ant) {
+                document.getElementById("g_C").value = `${((Number(grados_F_ahora)-32)*(5/9)).toFixed(2)}`;
+                document.getElementById("g_C").style.backgroundColor = "#71ff74";
+                document.getElementById("g_F").style.backgroundColor = "white";
+                grados_C = grados_C_ahora;
+                grados_F =  grados_F_ahora;
+            }
+            
+        }
+
+        function click_input_C () {
+            //C_input.value = "";
+            //F_input.value = "";
+            document.querySelector("#g_C").style.backgroundColor = "#feff64";
+            document.querySelector("#g_F").style.backgroundColor = "#9dd2fd";
+        }
+        function click_input_F () {
+            //F_input.value = "";
+            //C_input.value = "";
+            document.querySelector("#g_F").style.backgroundColor = "#feff64";
+            document.querySelector("#g_C").style.backgroundColor = "#9dd2fd";
+        }
+
+        function press_C () {
+
+        }
+
+        document.getElementById("calculate").addEventListener("click", calculate);
+        C_input.addEventListener("click", click_input_C);
+        F_input.addEventListener("click", click_input_F);
+
+        //F_input.addEventListener("keypress", calculate);
+        C_input.addEventListener("keypress", press_C);
+
+
+
+
+
+    </script>
+</body>
+</html>
