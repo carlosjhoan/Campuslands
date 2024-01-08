@@ -223,7 +223,7 @@
             ["Oreada",  0],
         ]
 
-        
+        let total_price;
 
         window.onpageshow = function () {
             const inpu_car = document.getElementById("value_order");
@@ -234,7 +234,6 @@
         function order_buy (div_id, img_id, pos_arr_pedido) {
             let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";//
             const table_order = document.getElementById("table_order");//
-            let total_price;
             let q_orders = 0;
             let moneyFormatter  = new Intl.NumberFormat(); 
             const id_input = div_id + '_input'
@@ -277,14 +276,14 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td></tr>`
                 }
             }
+            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
             table_order.innerHTML = table;
 
         }
 
         function add(id_input, pos_arr_pedido) {
             let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";//
-            const table_order = document.getElementById("table_order");//
-            let total_price; 
+            const table_order = document.getElementById("table_order");// 
             let q_orders = 0; 
             let moneyFormatter  = new Intl.NumberFormat(); 
             const input_quantity = document.getElementById(id_input);
@@ -306,6 +305,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td></tr>`
                 }
             }
+            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
             table_order.innerHTML = table;
 
         }
@@ -313,7 +313,6 @@
         function minus(div_id, id_input, img_id, pos_arr_pedido) {
             let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";//
             const table_order = document.getElementById("table_order");//
-            let total_price;
             let q_orders = 0;
             let moneyFormatter  = new Intl.NumberFormat();
             const buy_car = document.getElementById("img_car");
@@ -358,6 +357,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td></tr>`
                 }
             }
+            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
             table_order.innerHTML = table;
              
         }
@@ -372,6 +372,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td></tr>`
                 }
             }
+            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`;
             table_order.innerHTML = table;
             review_order.style.visibility = "visible";
         }
