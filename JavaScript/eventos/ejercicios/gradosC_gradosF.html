@@ -13,7 +13,7 @@
         }
         div {
             width: 40%;
-            height: 200px;
+            height: 250px;
             display: flex;
             flex-direction: column;
             justify-content:space-around;
@@ -41,7 +41,7 @@
             padding: 8px;
             border-radius: 20px;
             border: 1px white;
-            background-color: rgb(216, 218, 218);
+            background-color: rgb(242, 244, 244);
             box-shadow: 0 0 5px 5px white;
             cursor: pointer;
             transition: background-color 0.5s, box-shadow 0.5s;
@@ -68,47 +68,55 @@
         <button id = "calculate">Calcular</button>
     </div>
     <script>
-        let grados_C = document.getElementById("g_C").value;
-        let grados_F = document.getElementById("g_F").value;
+        let check_C = true;
+        let check_F = true;
+        let digit = "";
         const input_elements = document.getElementsByClassName("input");
         const C_input = document.getElementById("g_C");
         const F_input = document.getElementById("g_F");
         function calculate () {
-            const grados_C_ant = grados_C;
-            const grados_F_ant = grados_F;
-            const grados_C_ahora = document.getElementById("g_C").value;
-            const grados_F_ahora = document.getElementById("g_F").value;
-            if (grados_C_ahora != grados_C_ant) {
-                document.getElementById("g_F").value = `${((Number(grados_C_ahora)*9/5)+32).toFixed(2)}`;
+            if (check_C == true) {
+                document.getElementById("g_F").value = `${((Number(C_input.value)*9/5)+32).toFixed(2)}`;
                 document.getElementById("g_F").style.backgroundColor = "#71ff74";
-                document.getElementById("g_C").style.backgroundColor = "white";
-                grados_C = grados_C_ahora;
-                grados_F =  grados_F_ant;
-            } else if (grados_F_ahora != grados_F_ant) {
-                document.getElementById("g_C").value = `${((Number(grados_F_ahora)-32)*(5/9)).toFixed(2)}`;
+                document.getElementById("g_C").style.backgroundColor = "white";   
+            } else if (check_F == true) {
+                document.getElementById("g_C").value = `${((Number(F_input.value)-32)*(5/9)).toFixed(2)}`;
                 document.getElementById("g_C").style.backgroundColor = "#71ff74";
-                document.getElementById("g_F").style.backgroundColor = "white";
-                grados_C = grados_C_ant;
-                grados_F =  grados_F_ahora;
+                document.getElementById("g_F").style.backgroundColor = "white";   
             }
             
         }
 
         function click_input_C () {
-            //C_input.value = "";
-            //F_input.value = "";
+            C_input.value = "";
+            F_input.value = "";
+            digit = "";
+            check_C = true;
+            check_F = false;
             document.querySelector("#g_C").style.backgroundColor = "#feff64";
             document.querySelector("#g_F").style.backgroundColor = "#9dd2fd";
         }
         function click_input_F () {
-            //F_input.value = "";
-            //C_input.value = "";
+            F_input.value = "";
+            C_input.value = "";
+            digit = "";
+            check_C = false;
+            check_F = true;
             document.querySelector("#g_F").style.backgroundColor = "#feff64";
             document.querySelector("#g_C").style.backgroundColor = "#9dd2fd";
         }
 
-        function press_C () {
-
+        function press (event) {
+            digit += event.key
+            if (check_C == true) {
+                document.getElementById("g_F").value = `${((Number(digit)*9/5)+32).toFixed(2)}`;
+                document.getElementById("g_F").style.backgroundColor = "#71ff74";
+                document.getElementById("g_C").style.backgroundColor = "white";   
+            } else if (check_F == true) {
+                document.getElementById("g_C").value = `${((Number(digit)-32)*(5/9)).toFixed(2)}`;
+                document.getElementById("g_C").style.backgroundColor = "#71ff74";
+                document.getElementById("g_F").style.backgroundColor = "white";   
+            }
         }
 
         document.getElementById("calculate").addEventListener("click", calculate);
@@ -116,8 +124,10 @@
         F_input.addEventListener("click", click_input_F);
 
         //F_input.addEventListener("keypress", calculate);
-        C_input.addEventListener("keypress", press_C);
-
+        C_input.addEventListener("keypress", press);
+        F_input.addEventListener("keypress", press);
+        console.log(document.getElementsByTagName("input"));
+    
 
 
 
