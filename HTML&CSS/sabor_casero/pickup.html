@@ -209,6 +209,49 @@
         <button id = "ok_button" onclick="collapse_order()"><img src="../img_proyecto/close_order.png" alt=""></button>
     </div>
 
+    <div class="check_buy">
+        <form action="">
+            <fieldset>
+                <legend>Nombre</legend>
+                <input type="text">
+            </fieldset>
+
+            <fieldset>
+                <legend>Apellido</legend>
+                <input type="text">
+            </fieldset>
+
+            <fieldset>
+                <legend>Email</legend>
+                <input type="email">
+            </fieldset>
+
+            <fieldset>
+                <legend>Celular</legend>
+                <input type="number">
+            </fieldset>
+
+            <div class="horario_pickup">
+                <label for="range_time">Deseo recogerlo entre</label>
+            <select name="languages" id="range_time">
+                <option value="11:30 am - 12:00 m">11:30 am - 12:00 m</option>
+                <option value="12:00 m - 12:15 pm">12:00 m - 12:15 pm</option>
+                <option value="12:15 pm - 12:30 pm">12:15 pm - 12:30 pm</option>
+                <option value="12:30 pm - 1:00pm">12:30 pm - 1:00pm</option>               
+            </select>
+            </div>
+
+            <div class="escrito">
+                <label for="commit">¿Algo que debemos tener en cuenta?</label>
+                <textarea name="commit" id="commit" cols="30" rows="7"></textarea>
+            </div>
+            
+            <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
+
+        </form>
+
+    </div>
+
     <script>
         
         let arr_pedido = [["S. de gallina", 0],
