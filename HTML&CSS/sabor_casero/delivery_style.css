@@ -169,6 +169,47 @@ body {
 
 /*-------------------*/
 
+/*CONFIRMO BOTÓN*/
+
+#confirmo_button {
+    width: 130px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgb(204, 137, 43,0.7);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+#check {
+    width: 0px;
+    transition: width 0.5s;
+}
+
+#order_list {
+    width: 30px;
+    transition: width 0.5s;
+}
+
+#confirmo_button:hover {
+    background-color: rgb(204, 137, 43);
+}
+
+#confirmo_button:hover #check {
+    width: 30px;
+    transition: width 0.5s;
+}
+
+#confirmo_button:hover #order_list {
+    width: 0px;
+    transition: width 0.5s;
+}
+
+
+/*-------------------*/
+
+
 @media screen and (max-width:460px) {
 
     /*Esto es lo que quería*/
