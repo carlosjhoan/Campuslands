@@ -296,6 +296,7 @@
         function minus(div_id, id_input, img_id, pos_arr_pedido) {
             let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";
             const table_order = document.getElementById("table_order");
+            const review_order = document.querySelector(".lista_pedido");
             let q_orders = 0;
             let moneyFormatter  = new Intl.NumberFormat();
             const buy_car = document.getElementById("img_car"); 
@@ -331,6 +332,7 @@
                 value_order.style["background-color"] = "black";
                 value_order.style.width = "30px";
                 value_order.value = 0;
+                review_order.style.visibility = "collapse";
             } else {
                 total_price = 14000 * q_orders;
                 value_order.value = `$ ${moneyFormatter.format(total_price)} COP`; 
@@ -366,6 +368,8 @@
             const review_order = document.querySelector(".lista_pedido")
             review_order.style.visibility = "collapse";
         }
+
+        
 
     </script>
     

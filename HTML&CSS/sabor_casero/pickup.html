@@ -282,8 +282,8 @@
         }
 
         function add(id_input, pos_arr_pedido) {
-            let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";//
-            const table_order = document.getElementById("table_order");// 
+            let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";
+            const table_order = document.getElementById("table_order"); 
             let q_orders = 0; 
             let moneyFormatter  = new Intl.NumberFormat(); 
             const input_quantity = document.getElementById(id_input);
@@ -311,8 +311,9 @@
         }
 
         function minus(div_id, id_input, img_id, pos_arr_pedido) {
-            let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";//
-            const table_order = document.getElementById("table_order");//
+            let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th></tr>";
+            const table_order = document.getElementById("table_order");
+            const review_order = document.querySelector(".lista_pedido");
             let q_orders = 0;
             let moneyFormatter  = new Intl.NumberFormat();
             const buy_car = document.getElementById("img_car");
@@ -329,7 +330,7 @@
                 }
                 const div_i_want = document.createElement("div");
                 div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}', ${pos_arr_pedido})">Yo quiero!</button>
-                <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`; //
+                <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`;
                 div_proteina.appendChild(div_i_want);
 
                 
@@ -347,6 +348,7 @@
                 value_order.style["background-color"] = "black";
                 value_order.style.width = "30px";
                 value_order.value = 0;
+                review_order.style.visibility = "collapse";
             } else {
                 total_price = 14000 * q_orders;
                 value_order.value = `$ ${moneyFormatter.format(total_price)} COP`; 
