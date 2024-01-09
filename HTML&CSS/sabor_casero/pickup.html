@@ -205,11 +205,12 @@
         <table id = "table_order">
             
         </table>
-        <button id = "confirmo_button"><img src="../img_proyecto/order_list.png" alt="" id = "order_list">Confirmo!<img src="../img_proyecto/check_icon.png" alt="" id = "check"></button>
+        <button id = "confirmo_button" onclick="confirm_order()"><img src="../img_proyecto/order_list.png" alt="" id = "order_list">Confirmo!<img src="../img_proyecto/check_icon.png" alt="" id = "check"></button>
         <button id = "ok_button" onclick="collapse_order()"><img src="../img_proyecto/close_order.png" alt=""></button>
     </div>
 
     <div class="check_buy">
+        <h2>Información para que pases a recoger</h2>
         <form action="">
             <fieldset>
                 <legend>Nombre</legend>
@@ -231,24 +232,26 @@
                 <input type="number">
             </fieldset>
 
-            <div class="horario_pickup">
-                <label for="range_time">Deseo recogerlo entre</label>
-            <select name="languages" id="range_time">
-                <option value="11:30 am - 12:00 m">11:30 am - 12:00 m</option>
-                <option value="12:00 m - 12:15 pm">12:00 m - 12:15 pm</option>
-                <option value="12:15 pm - 12:30 pm">12:15 pm - 12:30 pm</option>
-                <option value="12:30 pm - 1:00pm">12:30 pm - 1:00pm</option>               
-            </select>
-            </div>
+            <fieldset>
+                <legend>Deseo recogerlo entre</legend>
+                <!--<label for="range_time">Deseo recogerlo entre</label>-->
+                <select name="languages" id="range_time">
+                    <option value="11:30 am - 12:00 m">11:30 am - 12:00 m</option>
+                    <option value="12:00 m - 12:15 pm">12:00 m - 12:15 pm</option>
+                    <option value="12:15 pm - 12:30 pm">12:15 pm - 12:30 pm</option>
+                    <option value="12:30 pm - 1:00pm">12:30 pm - 1:00pm</option>               
+                </select>
+            </fieldset>
 
-            <div class="escrito">
-                <label for="commit">¿Algo que debemos tener en cuenta?</label>
-                <textarea name="commit" id="commit" cols="30" rows="7"></textarea>
-            </div>
+            <fieldset>
+                <legend>¿Qué deseas que tengamos en cuenta?</legend>
+                <textarea name="commit" id="commit" cols="30" rows="4"></textarea>
+            </fieldset>
             
-            <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
+            
 
         </form>
+        <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
 
     </div>
 
@@ -425,6 +428,18 @@
         function collapse_order() {
             const review_order = document.querySelector(".lista_pedido")
             review_order.style.visibility = "collapse";
+        }
+
+        function confirm_order() {
+            const i_want = document.getElementsByClassName("button_i_want");
+            const button_confirm = document.getElementsByClassName("check_buy");
+            const review_order = document.querySelector(".lista_pedido");
+            for (let div of i_want) {
+                div.style.visibility = "hidden";
+            }
+            button_confirm[0].style.visibility = "visible";
+            review_order.style.visibility = "hidden";
+            console.log(button_confirm[0])
         }
  
  

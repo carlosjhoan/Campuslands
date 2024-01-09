@@ -211,14 +211,14 @@ body {
 
 .check_buy {
     
-    height: 90%;
+    height: 95%;
     width: 40%;
     position: fixed;
-    top: 12%;
+    top: 5%;
     left: 30%;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items: center;
     background-color: white;
     border-radius: 20px;
@@ -228,8 +228,17 @@ body {
 
 }
 
-.check_buy fieldset {
-    height: 80px;
+.check_buy form fieldset {
+    border: 1px dotted;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.check_buy form fieldset input {
+    height: 35px;
 }
 
 
