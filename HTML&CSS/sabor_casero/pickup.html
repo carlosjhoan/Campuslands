@@ -121,53 +121,7 @@
             </div>
         </div>
 
-        <div class="info_pickup">
-            <div class="titulo">
-                <div class="linea"></div>
-                <div class="head">Información para recogerlo</div>
-                <div class="linea"></div>
-            </div>
-            <div class="grid formulario">
-                <form action="">
-                    <div class="name-email">
-                        <div class="nombre">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" name = "nombre" id = "nombre"  minlength="3"  pattern = "[a-zA-Z]{1,10}">
-                        </div>
-                        <div class="email">
-                            <label for="i-email">Email</label>
-                            <input type="email" name = "i-email" id = "i-email" required>
-                        </div>
-                        
-                    </div>
-
-                    <div class="cel-porque">
-                        <div class="celular">
-                            <label for="nombre">Celular</label>
-                            <input type="text" name = "nombre" id = "nombre" pattern = "{1,10}">
-                        </div>
-                        <div class="porque">
-                            <label for="lang">Deseo recogerlo entre</label>
-                        <select name="languages" id="lang">
-                            <option value="javascript">11:30 am - 12:00 m</option>
-                            <option value="php">12:00 m - 12:15 pm</option>
-                            <option value="java">12:15 pm - 12:30 pm</option>
-                            <option value="golang">12:30 pm - 1:00pm</option>               
-                        </select>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="escrito">
-                        <label for="commit">¿Qué deseas que tengamos en cuenta?</label>
-                        <textarea name="commit" id="commit" cols="30" rows="7"></textarea>
-                    </div>
-                    
-                    <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
-
-                </form>
-            </div>
-        </div>
+        
         
         <div class="grid legal">
             <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
@@ -210,32 +164,41 @@
     </div>
 
     <div class="check_buy">
-        <h2>Información para que pases a recoger</h2>
+        <div class="titulo">
+            <div class="linea"></div>
+            <div class="head">Información para recogerlo</div>
+            <div class="linea"></div>
+        </div>
         <form action="">
-            <fieldset>
-                <legend>Nombre</legend>
-                <input type="text">
-            </fieldset>
+            <div>
+                <label for="first_name">Nombre</label>
+                <input type="text" id = "first_name">
+            </div>
+            
+            
+            <div>
+                <label for="last_name">Apellido</label>
+                <input type="text" id = "last_name">
+            </div>
+            
+            
 
-            <fieldset>
-                <legend>Apellido</legend>
-                <input type="text">
-            </fieldset>
+            <div>
+                <label for="email">Email</label>
+                <input type="email"  id = "email">
+            </div>
+                
+            <div>
+                <label for="cell_number">Celular</label>
+                <input type="text"  id = "cell_number">
+            </div>
 
-            <fieldset>
-                <legend>Email</legend>
-                <input type="email">
-            </fieldset>
-
-            <fieldset>
-                <legend>Celular</legend>
-                <input type="number">
-            </fieldset>
+            
 
             <fieldset>
                 <legend>Deseo recogerlo entre</legend>
                 <!--<label for="range_time">Deseo recogerlo entre</label>-->
-                <select name="languages" id="range_time">
+                <select name="range_time" id="range_time">
                     <option value="11:30 am - 12:00 m">11:30 am - 12:00 m</option>
                     <option value="12:00 m - 12:15 pm">12:00 m - 12:15 pm</option>
                     <option value="12:15 pm - 12:30 pm">12:15 pm - 12:30 pm</option>
@@ -247,9 +210,6 @@
                 <legend>¿Qué deseas que tengamos en cuenta?</legend>
                 <textarea name="commit" id="commit" cols="30" rows="4"></textarea>
             </fieldset>
-            
-            
-
         </form>
         <div class="submit"><input type="submit" value="Enviar"/><img src="../img_proyecto/send.png" alt=""></div>
 

@@ -220,26 +220,40 @@ body {
     flex-direction: column;
     justify-content:space-evenly;
     align-items: center;
-    background-color: white;
+    background-color: rgb(203, 153, 83);
     border-radius: 20px;
     box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);
     visibility: collapse;
     
 
 }
+.check_buy form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.check_buy form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .check_buy form fieldset {
     border: 1px dotted;
     text-align: center;
     border-radius: 20px;
-    box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);
+    /*box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);*/
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 
 }
 
 .check_buy form fieldset input {
     height: 35px;
 }
+
 
 
 @media screen and (max-width:460px) {
@@ -1973,9 +1987,9 @@ select {
 main {
 background-color: white;
 display: grid;
-grid-template-rows:  auto auto auto auto auto;
+grid-template-rows:  auto auto auto auto;
 grid-template-columns: auto auto auto;
-grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
+grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Legal Legal Legal""Footer Footer Footer";
 height: 90%;
 margin-top: 85px;
 }
@@ -2017,200 +2031,11 @@ grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni
 grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
 
-.info_pickup {
-    grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-}
 
 /*FORMULARIO*/
 
 
 
-.info_pickup {
-    width: 100%;
-    background-color:rgb(204, 137, 43) ;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: center;
-
-}
-
-.formulario {
-    display: flex;
-    /*justify-content: center;*/
-    align-items: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
-    width: 70%;
-    background-color: rgb(204, 137, 43);
-    /*border: 1px solid black;*/
-}
-
-
-.formulario form {
-    /*border: 1px solid black;*/
-    flex-grow: 1;
-    padding-bottom: 2%;
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color:rgb(216, 178, 124);
-    border-radius: 30px;
-    
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
-}
-
-.titulo {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    /*border: 1px solid black;*/
-}
-
-.linea {
-    height: 5px;
-    width:15%;
-    background-color: black;
-}
-
-.head {
-    font-size: 1.5rem;
-    display: flex;
-    
-}
-
-
-.name-email {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-between;
-    
-
-
-}
-
-.nombre {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    
-}
-
-.nombre label {
-    margin: 5px;
-}
-
-
-.email {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-
-.email label {
-    margin: 5px;
-}
-
-.cel-porque {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-}
-
-.celular {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-
-}
-
-.celular label {
-    margin: 5px;
-}
-
-.porque {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-
-.porque label {
-    margin: 5px;
-}
-
-
-
-.escrito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.escrito label {
-    margin: 5px;
-    
-}
-
-textarea {
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 60%;
-}
-
-input {
-    border: 2px solid black;
-    height: 40px;
-    width: 200px;
-    border-radius: 10px ;
-    
-}
-input:focus {
-    background-color: black;
-    color: white;
-}
-
-
-select {
-    height: 40px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.submit input {
-    background-color: green;
-    color: white;
-    font-weight: 300;
-    transition: height 2;
-    font-size: 1rem;
-}
-
-.submit img {
-    height: 0;
-    width: 0;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover img {
-    height: 20px;
-    width: 20px ;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover {
-    background-color: green;
-    border-radius: 10px;
-}
 
 
 
