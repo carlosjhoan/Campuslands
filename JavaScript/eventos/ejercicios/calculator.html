@@ -130,23 +130,32 @@
     <script>
         let table = "";
         let operator = "";
+        const arr_operators = ['+', '-', 'x', '÷' ]
         let number_class = document.getElementsByClassName("number");
         let operation_button = document.getElementsByClassName("operation");
         for (let i = 0; i<number_class.length; i++) {
             number_class[i].addEventListener("click", () => {
                 table += number_class[i].textContent;
-                console.log(table[0]);
+                console.log(table);
             })
         }
 
         for (let i = 0; i<operation_button.length; i++) {
             operation_button[i].addEventListener("click", () => {
-                if (table[table.length - 1]) {
-
-                }
                 operator= operation_button[i].textContent;
-                table += operator;
-                console.log(table);
+                if (!arr_operators.includes(table[table.length - 1])) {
+                    table[table.length - 1] = operator;
+                    table += operator;
+                    console.log(table);
+                } else if (table[table.length - 1] != operator) {
+                    table = table.replace(table[table.length - 1], operator);
+                    console.log(table);
+                    
+                }
+                
+                
+                //console.log(table[table.length - 1]);
+                
                 
                 
             })
