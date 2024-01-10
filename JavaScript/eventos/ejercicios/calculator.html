@@ -131,21 +131,60 @@
         let table = "";
         let operator = "";
         let result_content = "";
+        let result_operation;
         const arr_operators = ['+', '-', 'x', '÷' ]
         const result_div = document.getElementById("result");
         const number_class = document.getElementsByClassName("number");
         const operation_button = document.getElementsByClassName("operation");
+        const even_button = document.getElementById("even");
+        
+        const operation_obj = {
+            '+' : function(a, b) {return (a + b)},
+            '-' : function(a, b) {return (a - b)},
+            'x' : function(a, b) {return (a * b)},
+            '÷' : function(a, b) {return (a / b)},
+        }
+        
+        even_button.addEventListener("click", () => {
+            result_div.innerHTML = result_operation;
+        })
+
+
         for (let i = 0; i<number_class.length; i++) {
             number_class[i].addEventListener("click", () => {
-                table += number_class[i].textContent;
-                result_content += number_class[i].textContent;
-                result_div.innerHTML = result_content;
-                console.log(table);
+
+                if (operator != "" && table.split(operator).length == 2) {
+                    console.log("operator", operator)
+                    table += number_class[i].textContent;
+                    result_content += number_class[i].textContent;
+                    result_div.innerHTML = result_content;
+                    result_operation = operation_obj[operator](Number(table.split(operator)[0]), Number(table.split(operator)[1] ));
+                    console.log(result_operation);
+
+                } else if (table.length == 0) {
+                    table += number_class[i].textContent;
+                    result_content += number_class[i].textContent;
+                    result_div.innerHTML = result_content;
+                    result_operation = Number(table);
+                } else {
+                    table += number_class[i].textContent;
+                    result_operation = Number(table)
+                    result_content += number_class[i].textContent;
+                    result_div.innerHTML = result_content;
+                }
+                
+                //console.log(table);
             })
         }
 
         for (let i = 0; i<operation_button.length; i++) {
             operation_button[i].addEventListener("click", () => {
+                if (isNaN(table) && table[table.length - 1] != operator) {
+                    result_operation = operation_obj[operator](Number(table.split(operator)[0]), Number(table.split(operator)[1] ));
+                    table = String(result_operation);
+                    console.log("resultado: ",result_operation)
+                }
+                
                 operator= operation_button[i].textContent;
                 result_content = " ";
                 result_div.innerHTML = result_content;
@@ -159,21 +198,12 @@
                     console.log(table);
                     
                 }
-                
-                
-                //console.log(table[table.length - 1]);
-                
-                
-                
+    
             })
             
         }
 
-        function sum () {
-            const array_table = table.split("-");
-            return (Number(array_table[0]) - Number(array_table[1])) 
-            
-        }
+        
         
     </script>
 </body>
