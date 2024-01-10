@@ -157,7 +157,6 @@
                     table = table.slice(0, table.length - 1);
                     result_content = result_content.slice(0, result_content.length - 1);
                     result_div.innerHTML = result_content;
-                    
 
                 }
 
@@ -167,6 +166,7 @@
                     result_content += number_class[i].textContent;
                     result_div.innerHTML = result_content;
                     result_operation = operation_obj[operator](Number(table.split(operator)[0]), Number(table.split(operator)[1] ));
+                    console.log(table)
                     
                     
 
@@ -175,12 +175,14 @@
                     result_content += number_class[i].textContent;
                     result_div.innerHTML = result_content;
                     result_operation = Number(table);
+                    console.log(table)
                     
                 } else {
                     table += number_class[i].textContent;
                     result_operation = Number(table)
                     result_content += number_class[i].textContent;
                     result_div.innerHTML = result_content;
+                    console.log(table)
                     
                 }
 
