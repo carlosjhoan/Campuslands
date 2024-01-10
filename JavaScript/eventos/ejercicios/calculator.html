@@ -75,6 +75,7 @@
             grid-row-start: 3;
             grid-row-end: 7;
             background-color: rgb(161, 95, 95);
+            
             font-size: 2.5rem;
             font-weight: bold;
             color: white;
@@ -83,6 +84,7 @@
 
         #even:hover {
             background-color: rgb(163, 63, 63);
+            box-shadow: 0 0 3px 3px rgb(199, 103, 103);
             transition: background-color 0.5s;
         }
 
@@ -146,7 +148,13 @@
         }
         
         even_button.addEventListener("click", () => {
-            result_div.innerHTML = result_operation;
+            if (table == "" || table == 0) {
+                result_operation = 0;
+                result_div.innerHTML = result_operation
+            } else {
+                result_div.innerHTML = result_operation;
+            }
+            
         })
 
 
@@ -160,7 +168,7 @@
 
                 }
 
-                if (operator != "" && table.split(operator).length == 2) {
+                if (table.split(operator).length == 2) {
                     
                     table += number_class[i].textContent;
                     result_content += number_class[i].textContent;
@@ -201,7 +209,7 @@
                 operator= operation_button[i].textContent;
                 result_content = " ";
                 result_div.innerHTML = result_content;
-                if (!arr_operators.includes(table[table.length - 1]) && table.length != 0) {
+                if (!arr_operators.includes(table[table.length - 1]) ) {
                     table[table.length - 1] = operator;
                     table += operator;
                     
