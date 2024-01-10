@@ -29,7 +29,7 @@
             box-shadow: 0 0 3px 3px rgb(192, 158, 221);
             display: grid;
             grid-template-columns: auto auto auto auto;
-            grid-template-rows: auto auto auto auto auto auto;
+            grid-template-rows: 100px auto auto auto auto auto;
             gap: 2px;
 
             transition: background-color 0.5s;
@@ -130,12 +130,16 @@
     <script>
         let table = "";
         let operator = "";
+        let result_content = "";
         const arr_operators = ['+', '-', 'x', '÷' ]
-        let number_class = document.getElementsByClassName("number");
-        let operation_button = document.getElementsByClassName("operation");
+        const result_div = document.getElementById("result");
+        const number_class = document.getElementsByClassName("number");
+        const operation_button = document.getElementsByClassName("operation");
         for (let i = 0; i<number_class.length; i++) {
             number_class[i].addEventListener("click", () => {
                 table += number_class[i].textContent;
+                result_content += number_class[i].textContent;
+                result_div.innerHTML = result_content;
                 console.log(table);
             })
         }
@@ -143,10 +147,12 @@
         for (let i = 0; i<operation_button.length; i++) {
             operation_button[i].addEventListener("click", () => {
                 operator= operation_button[i].textContent;
-
+                result_content = " ";
+                result_div.innerHTML = result_content;
                 if (!arr_operators.includes(table[table.length - 1]) && table.length != 0) {
                     table[table.length - 1] = operator;
                     table += operator;
+                    
                     console.log(table);
                 } else if (table[table.length - 1] != operator) {
                     table = table.replace(table[table.length - 1], operator);
