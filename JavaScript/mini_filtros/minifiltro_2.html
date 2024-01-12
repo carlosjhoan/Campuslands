@@ -174,16 +174,17 @@
 
         let arr_pokemons = [];
 
-        let d_C = 0;
+        let d_C = 20;
         window.onpageshow = function () {
             const logo_white = document.getElementById("logo_white");
-            rotate_animation = setInterval(frame, 10)
+            rotate_animation = setInterval(frame, 20)
             function frame () {
-                if (d_C == 360) {
+                if (d_C == -20) {
+                    logo_white.style.translate = 0 + "px"
                     clearInterval(rotate_animation)
                 } else {
-                    d_C += 10
-                    logo_white.style.rotate = d_C + "deg"
+                    d_C -= 5
+                    logo_white.style.translate = d_C + "px"
                 }
             }  
         }

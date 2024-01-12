@@ -200,7 +200,6 @@
 
             <fieldset>
                 <legend>Deseo recogerlo entre</legend>
-                <!--<label for="range_time">Deseo recogerlo entre</label>-->
                 <select name="range_time" id="range_time">
                     <option value="11:30 am - 12:00 m">11:30 am - 12:00 m</option>
                     <option value="12:00 m - 12:15 pm">12:00 m - 12:15 pm</option>
@@ -220,16 +219,17 @@
 
     <script>
         
-        let arr_pedido = [["S. de gallina", 0],
-            ["S. de costilla", 0],
+        let arr_pedido = [["S. de gallina", 0,"i_want_gallina" , "img_check_gallina"],
 
-            ["S. de cola", 0],
+                            ["S. de costilla", 0, "i_want_costilla" , "img_check_costilla"],
 
-            ["Sobrebarriga", 0],
+                            ["S. de cola", 0, "i_want_cola" , "img_check_cola"],
 
-            ["Chatas", 0],
+                            ["Sobrebarriga", 0, "i_want_sobre" , "img_check_sobre"],
 
-            ["Oreada",  0],
+                            ["Chatas", 0, "i_want_chatas" , "img_check_chatas"],
+
+                            ["Oreada",  0, "i_want_ore" , "img_check_ore"],
         ]
 
         let total_price;
@@ -283,7 +283,7 @@
             ///
             for (let i=0; i<arr_pedido.length; i++) {
                 if (arr_pedido[i][1] > 0) {
-                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick =''><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón cancelar
+                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón cancelar
                 }
             }
             table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`; 
@@ -312,7 +312,7 @@
             //////////////////////
             for (let i=0; i<arr_pedido.length; i++) {
                 if (arr_pedido[i][1] > 0) {
-                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick =''><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón
+                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón
                 }
             }
             table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
@@ -329,7 +329,7 @@
             const buy_car = document.getElementById("img_car");
             const but_mi_pedido = document.getElementById("button_mi_pedido");
             const value_order = document.getElementById("value_order");
-            const div_proteina = document.querySelector(`#${div_id}`)
+            const div_proteina = document.querySelector(`#${div_id}`);
             const input_quantity = document.getElementById(id_input);
             input_quantity.style["font-weight"] = "bold";
             let quant_number = Number(input_quantity.value);
@@ -345,8 +345,9 @@
 
                 
             } else {
-                input_quantity.value = `${quant_number}`
-            };
+                input_quantity.value = `${quant_number}`;
+            }
+
             arr_pedido[Number(pos_arr_pedido)][1] = quant_number;
             for (let i = 0; i < arr_pedido.length; i++) {
                 q_orders += arr_pedido[i][1];
@@ -366,7 +367,7 @@
 
             for (let i=0; i<arr_pedido.length; i++) {
                 if (arr_pedido[i][1] > 0) {
-                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick =''><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
+                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
                 }
             }
             table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
@@ -381,7 +382,7 @@
             const table_order = document.getElementById("table_order");
             for (let i=0; i<arr_pedido.length; i++) {
                 if (arr_pedido[i][1] > 0) {
-                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick =''><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
+                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
                 }
             }
             table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`;
@@ -405,6 +406,56 @@
             review_order.style.visibility = "hidden";
             console.log(button_confirm[0])
         }
+
+        function cancel_order(div_id, img_id, pos_arr_pedido) {
+            arr_pedido[pos_arr_pedido][1] = 0; 
+            let q_orders = 0;
+            let moneyFormatter  = new Intl.NumberFormat();
+            const review_order = document.querySelector(".lista_pedido");
+            const table_order = document.getElementById("table_order");
+            const buy_car = document.getElementById("img_car");
+            const but_mi_pedido = document.getElementById("button_mi_pedido");
+            const value_order = document.getElementById("value_order");
+            const div_proteina = document.querySelector(`#${div_id}`);
+            let table = "<tr><th><b>Cant</b></th><th><b>Plato</b></th><th><b>$/unidad</b></th> <th><b>Valor</b></th><th><b>Cancelar</b></th></tr>";
+            
+
+            for (let i=0; i<arr_pedido.length; i++) {
+                if (arr_pedido[i][1] > 0) {
+                    q_orders += arr_pedido[i][1]
+                    table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón cancelar
+                }
+            }
+            total_price = q_orders * 14000
+            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`; 
+            table_order.innerHTML = table;
+
+            if (q_orders == 0) {
+                buy_car.style["background-color"] = "white";
+                but_mi_pedido.style.visibility = "hidden";
+                but_mi_pedido.style.width = "30px";
+                value_order.style["background-color"] = "black";
+                value_order.style.width = "30px";
+                value_order.value = 0;
+                review_order.style.visibility = "collapse";
+            } else {
+                total_price = 14000 * q_orders;
+                value_order.value = `$ ${moneyFormatter.format(total_price)} COP`; 
+            }
+
+            for (let i = 0; i<div_proteina.children.length; i++) {
+                    div_proteina.children[i].remove ();
+                }
+                const div_i_want = document.createElement("div");
+                div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}', ${pos_arr_pedido})">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`;
+                div_proteina.appendChild(div_i_want);
+
+        }
+
+        
+
+
  
  
      </script>
