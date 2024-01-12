@@ -20,7 +20,7 @@ body {
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 0 3px 3px gray;
+    box-shadow: 0 0 5px 5px rgb(193, 192, 192);
     }
 
 /*BOTÓN PEDIR*/
@@ -68,14 +68,16 @@ body {
     margin-bottom: 5px;
     transition: padding 0.5s;
     background-color: rgb(5, 132, 5);
+    border: 1px rgb(5, 132, 5);
     font-weight: bold;
     color: white;
     cursor: pointer;
 }
 
 .i_want:hover {
-    padding: 8px;
+    padding: 5px;
     transition: padding 0.5s;
+    border: 1px rgb(5, 132, 5);
 }
 
 .plus_minus {
@@ -90,6 +92,8 @@ body {
 .plus_minus input {
     text-align: center;
     height: 30px;
+    border: 2px solid;
+    border-radius: 10px;
 }
 
 .plus_minus button {
@@ -153,17 +157,30 @@ body {
 
 .lista_pedido button:hover {
     background-color: rgb(231, 226, 226) ;
+    box-shadow: 0 0 2px 2px rgb(235, 235, 235);
     transition: background-color 0.5s;
 }
 
 .lista_pedido button:active {
-    background-color: rgb(206, 201, 201) ;
+    background-color: rgb(233, 233, 233) ;
 }
 
 .lista_pedido button img {
     width: 30px;
     
 }
+
+.lista_pedido table button {
+    width: 30px;
+    height: 30px;
+}
+
+.lista_pedido table button img {
+    width: 20px;
+}
+
+
+
 
 /*-------------------*/
 
@@ -203,6 +220,8 @@ body {
     width: 0px;
     transition: width 0.5s;
 }
+
+
 
 
 /*-------------------*/
@@ -2161,7 +2180,8 @@ height: 100%;
     width: 0px;
     padding: 4px;
     border-radius: 5px;
-    background-color:rgb(4, 131, 4); /**/
+    background-color:rgb(2, 90, 2); /**/
+    border: 1px rgb(2, 90, 2);
     color: white;
     cursor: pointer;
     
@@ -2169,6 +2189,7 @@ height: 100%;
 
 #mi_pedido button:hover {
     background-color:rgb(119, 241, 119);
+    border: 1px solid;
     color: black;
 }
 
