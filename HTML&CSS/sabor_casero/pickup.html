@@ -213,7 +213,7 @@
                 <textarea name="commit" id="commit" cols="30" rows="4"></textarea>
             </fieldset>
         </form>
-        <button type="submit" id = "listo_button"><img src="../img_proyecto/check_listo.png" alt="" id = "listo_1">Listo!<img src="../img_proyecto/confirm_order.png" alt="" id = "listo_2"></button>
+        <button type="submit" id = "listo_button" onclick="ok_my_order()"><img src="../img_proyecto/check_listo.png" alt="" id = "listo_1">Listo!<img src="../img_proyecto/confirm_order.png" alt="" id = "listo_2"></button>
 
     </div>
 
@@ -238,6 +238,21 @@
             const inpu_car = document.getElementById("value_order");
             inpu_car.value = 0;
             
+        }
+
+        function vibrate (div_id) {
+            let d_C = 20;
+            const input_element = document.getElementById(div_id);
+            rotate_animation = setInterval(frame, 20)
+            function frame () {
+                if (d_C == -20) {
+                    input_element.style.translate = 0 + "px"
+                    clearInterval(rotate_animation)
+                } else {
+                    d_C -= 5
+                    input_element.style.translate = d_C + "px"
+                }
+            }  
         }
  
         function order_buy (div_id, img_id, pos_arr_pedido) {
@@ -404,7 +419,7 @@
             }
             button_confirm[0].style.visibility = "visible";
             review_order.style.visibility = "hidden";
-            console.log(button_confirm[0])
+            
         }
 
         function cancel_order(div_id, img_id, pos_arr_pedido) {
@@ -453,7 +468,24 @@
 
         }
 
-        
+        function ok_my_order () {
+            const confirm_div = document.querySelector(".check_buy");
+            const children_confirm = confirm_div.childNodes[3].childNodes;
+            console.log(children_confirm)
+            for ( let i= 0; i <children_confirm.length; i++) {
+                
+                if (children_confirm[i].nodeName == "DIV") {
+                    if (children_confirm[i].childNodes[3].value === "") {
+                        vibrate (children_confirm[i].childNodes[3].id);
+                    }
+                    
+                    
+                    
+                }
+            }
+            
+            
+        }
 
 
  
