@@ -245,14 +245,18 @@
             const input_element = document.getElementById(div_id);
             rotate_animation = setInterval(frame, 20)
             function frame () {
-                if (d_C == -20) {
-                    input_element.style.translate = 0 + "px"
-                    clearInterval(rotate_animation)
+                if (d_C <= -20) {
+                    input_element.style.translate = "0px";
+                    console.log("listo");
+                    clearInterval(rotate_animation);
+                    
+                    
                 } else {
                     d_C -= 5
-                    input_element.style.translate = d_C + "px"
+                    input_element.style.translate = d_C + "px" 
                 }
-            }  
+            } 
+
         }
  
         function order_buy (div_id, img_id, pos_arr_pedido) {
@@ -477,7 +481,11 @@
                 if (children_confirm[i].nodeName == "DIV") {
                     if (children_confirm[i].childNodes[3].value === "") {
                         vibrate (children_confirm[i].childNodes[3].id);
+                        console.log(children_confirm[i].childNodes[3].id)
+                        
                     }
+                    children_confirm[i].style.translate = "0px";
+                    console.log(children_confirm[i].style.translate)
                     
                     
                     
