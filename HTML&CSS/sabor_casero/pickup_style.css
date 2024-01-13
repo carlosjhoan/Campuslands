@@ -314,6 +314,45 @@ body {
     background-color: black;
 }
 
+.before_ready {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+}
+#previous {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(176, 114, 26);
+    box-shadow: 0 0 7px 7px rgb(202, 144, 63);
+    border: 1px rgb(208, 141, 47);
+    transition: background-color 0.5s;
+}
+
+#previous:hover {
+    background-color: rgb(208, 151, 71);
+    box-shadow: 0 0 8px 8px rgb(183, 129, 53);
+    border: 1px rgb(208, 151, 71);
+    transition: background-color 0.5s;
+}
+
+#previous img {
+    width: 30px;
+    transition: width 0.5s;
+}
+
+#previous:hover img {
+    width: 35px;
+    transition: width 0.5s;
+}
+
+
+
 #listo_button {
     width: 100px;
     height: 40px;
@@ -330,13 +369,13 @@ body {
 #listo_button #listo_2 {
     
     width: 0px;
-    transition: width 0.5s;
+    transition: width 0.3s;
 }
 
 #listo_button #listo_1 {
     
     width: 25px;
-    transition: width 0.5s;
+    transition: width 0.3s;
 }
 
 #listo_button:hover {
@@ -345,12 +384,12 @@ body {
 
 #listo_button:hover #listo_2 {
     width: 30px;
-    transition: width 0.5s;
+    transition: width 0.3s;
 }
 
 #listo_button:hover #listo_1 {
     width: 0px;
-    transition: width 0.5s;
+    transition: width 0.3s;
 }
 
 

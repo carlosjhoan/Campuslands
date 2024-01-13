@@ -213,8 +213,12 @@
                 <textarea name="commit" id="commit" cols="30" rows="4"></textarea>
             </fieldset>
         </form>
-        <button type="submit" id = "listo_button" onclick="ok_my_order()"><img src="../img_proyecto/check_listo.png" alt="" id = "listo_1">Listo!<img src="../img_proyecto/confirm_order.png" alt="" id = "listo_2"></button>
 
+        <div class="before_ready">
+            <button id = "previous" onclick="previous()"><img src="../img_proyecto/previous.png" alt=""></button>
+            <button type="submit" id = "listo_button" onclick="ok_my_order()"><img src="../img_proyecto/check_listo.png" alt="" id = "listo_1">Listo!<img src="../img_proyecto/confirm_order.png" alt="" id = "listo_2"></button>
+        </div>
+        
     </div>
 
     <script>
@@ -240,21 +244,25 @@
             
         }
 
-        function vibrate (div_id) {
+        function vibrate (arr_div_id) {
             let d_C = 20;
-            const input_element = document.getElementById(div_id);
+            //const input_element = document.getElementById(div_id);
             rotate_animation = setInterval(frame, 20)
             function frame () {
-                if (d_C <= -20) {
-                    input_element.style.translate = "0px";
+                for (let i=0; i< arr_div_id.length; i++) {
+                    if (d_C <= -20) {
+                    document.getElementById(arr_div_id[i]).style.translate = "0px";
                     console.log("listo");
                     clearInterval(rotate_animation);
                     
                     
                 } else {
                     d_C -= 5
-                    input_element.style.translate = d_C + "px" 
+                    document.getElementById(arr_div_id[i]).style.translate = d_C + "px" 
+                    
                 }
+                }
+                
             } 
 
         }
@@ -473,6 +481,7 @@
         }
 
         function ok_my_order () {
+            let arr_divs_id = []; //Array para llenar con los Id's de divs que van a moverse
             const confirm_div = document.querySelector(".check_buy");
             const children_confirm = confirm_div.childNodes[3].childNodes;
             console.log(children_confirm)
@@ -480,17 +489,19 @@
                 
                 if (children_confirm[i].nodeName == "DIV") {
                     if (children_confirm[i].childNodes[3].value === "") {
-                        vibrate (children_confirm[i].childNodes[3].id);
-                        console.log(children_confirm[i].childNodes[3].id)
+                        
+                        arr_divs_id.push(children_confirm[i].childNodes[3].id)
                         
                     }
-                    children_confirm[i].style.translate = "0px";
-                    console.log(children_confirm[i].style.translate)
+                    
                     
                     
                     
                 }
             }
+            console.log(arr_divs_id)
+
+            vibrate (arr_divs_id);
             
             
         }
