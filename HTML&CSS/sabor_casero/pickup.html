@@ -174,29 +174,24 @@
         </div>
         <form action="">
             <div>
-                <label for="first_name">Nombre</label>
-                <input type="text" id = "first_name" class = "input_buy">
-            </div>
-            
+                <label for="first_name">Nombre *</label>
+                <input type="text" id = "first_name" class = "input_buy" placeholder=" Digite su nombre">
+            </div>           
             
             <div>
-                <label for="last_name">Apellido</label>
-                <input type="text" id = "last_name" class = "input_buy">
+                <label for="last_name">Apellido <em>(opcional)</em></label>
+                <input type="text" id = "last_name" class = "input_buy" placeholder=" Digite su apellido">
             </div>
-            
-            
 
             <div>
-                <label for="email">Email</label>
-                <input type="email"  id = "email" class = "input_buy">
+                <label for="email">Email *</label>
+                <input type="email"  id = "email" class = "input_buy" placeholder=" example@this.com" >
             </div>
                 
             <div>
-                <label for="cell_number">Celular</label>
-                <input type="text"  id = "cell_number" class = "input_buy">
+                <label for="cell_number">Celular *</label>
+                <input type="text"  id = "cell_number" class = "input_buy" placeholder=" Número de cel...">
             </div>
-
-            
 
             <fieldset>
                 <legend>Deseo recogerlo entre</legend>
@@ -480,28 +475,45 @@
 
         }
 
+        function previous() {
+            const i_want = document.getElementsByClassName("button_i_want");
+            const list_order = document.querySelector(".lista_pedido");
+            const order_form = document.querySelector(".check_buy");
+            list_order.style.visibility = "visible";
+            order_form.style.visibility = "collapse";
+            for (let div of i_want) {
+                div.style.visibility = "visible";
+            }
+            console.log(i_want);
+        }
+
+
         function ok_my_order () {
+            const regex_name = /^[a-zA-Z\s]+$/; //Para comprobar nombres
+            const regex_whitespace = /\S/; //Regex para comprobar que no esté vacío
+            const regex_cel = /^[0-9]+$/; //regex para comprobar el número de teléfono
+            const regex_email = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //reex para comprobar el email
+            let arr_divs_verification = []; //Divs para verificar
             let arr_divs_id = []; //Array para llenar con los Id's de divs que van a moverse
+            let arr_true_false = []; //Array para ubicar las verificaciones, False o True
             const confirm_div = document.querySelector(".check_buy");
             const children_confirm = confirm_div.childNodes[3].childNodes;
-            console.log(children_confirm)
+    
             for ( let i= 0; i <children_confirm.length; i++) {
                 
-                if (children_confirm[i].nodeName == "DIV") {
-                    if (children_confirm[i].childNodes[3].value === "") {
-                        
-                        arr_divs_id.push(children_confirm[i].childNodes[3].id)
-                        
-                    }
-                    
-                    
-                    
-                    
+                if (children_confirm[i].nodeName == "DIV" && children_confirm[i].childNodes[3].id != "last_name") {
+ 
+                    arr_divs_verification.push([children_confirm[i].childNodes[3].id, children_confirm[i].childNodes[3].value]);
+ 
                 }
             }
-            console.log(arr_divs_id)
+            arr_true_false = [[arr_divs_verification[0][0], Boolean(regex_whitespace.test(arr_divs_verification[0][1])*regex_name.test(arr_divs_verification[0][1]))],
+                                     [arr_divs_verification[1][0], regex_email.test(arr_divs_verification[1][1])],
+                                     [arr_divs_verification[2][0], regex_cel.test(arr_divs_verification[2][1])]]
 
-            vibrate (arr_divs_id);
+            console.log(arr_true_false)
+
+            //vibrate (arr_divs_id);
             
             
         }
