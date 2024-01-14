@@ -178,10 +178,10 @@
                 <input type="text" id = "first_name" class = "input_buy" placeholder=" Digite su nombre">
             </div>           
             
-            <div>
+           <!-- <div>
                 <label for="last_name">Apellido <em>(opcional)</em></label>
                 <input type="text" id = "last_name" class = "input_buy" placeholder=" Digite su apellido">
-            </div>
+            </div>-->
 
             <div>
                 <label for="email">Email *</label>
@@ -247,13 +247,22 @@
                 for (let i=0; i< arr_div_id.length; i++) {
                     if (d_C <= -20) {
                     document.getElementById(arr_div_id[i]).style.translate = "0px";
-                    console.log("listo");
+                    document.getElementById(arr_div_id[i]).addEventListener("click", () => {
+                        document.getElementById(arr_div_id[i]).style.color = "black";
+                        document.getElementById(arr_div_id[i]).style.backgroundColor = "rgb(254, 236, 236)";
+                        document.getElementById(arr_div_id[i]).style.border = "2px solid";
+                        
+                    
+                    })
+                    
                     clearInterval(rotate_animation);
                     
                     
                 } else {
                     d_C -= 5
-                    document.getElementById(arr_div_id[i]).style.translate = d_C + "px" 
+                    document.getElementById(arr_div_id[i]).style.translate = d_C + "px";
+                    document.getElementById(arr_div_id[i]).style.color = "red";
+                    document.getElementById(arr_div_id[i]).value = "Información incorrecta";
                     
                 }
                 }
@@ -382,6 +391,19 @@
                 value_order.style.width = "30px";
                 value_order.value = 0;
                 review_order.style.visibility = "collapse";
+                document.getElementById("first_name").value = "";
+                document.getElementById("first_name").style.border = "2px solid black";
+                document.getElementById("first_name").style.color = "black";
+                document.getElementById("first_name").style.translate = "0px";
+                document.getElementById("email").value = "";
+                document.getElementById("email").style.border = "2px solid black";
+                document.getElementById("email").style.color = "black";
+                document.getElementById("email").style.translate = "0px";
+                document.getElementById("cell_number").value = "";
+                document.getElementById("cell_number").style.border = "2px solid black";
+                document.getElementById("cell_number").style.color = "black";
+                document.getElementById("cell_number").style.translate = "0px"
+
             } else {
                 total_price = 14000 * q_orders;
                 value_order.value = `$ ${moneyFormatter.format(total_price)} COP`; 
@@ -460,6 +482,19 @@
                 value_order.style.width = "30px";
                 value_order.value = 0;
                 review_order.style.visibility = "collapse";
+                document.getElementById("first_name").value = "";
+                document.getElementById("first_name").style.border = "2px solid black";
+                document.getElementById("first_name").style.color = "black";
+                document.getElementById("first_name").style.translate = "0px";
+                document.getElementById("email").value = "";
+                document.getElementById("email").style.border = "2px solid black";
+                document.getElementById("email").style.color = "black";
+                document.getElementById("email").style.translate = "0px";
+                document.getElementById("cell_number").value = "";
+                document.getElementById("cell_number").style.border = "2px solid black";
+                document.getElementById("cell_number").style.color = "black";
+                document.getElementById("cell_number").style.translate = "0px"
+
             } else {
                 total_price = 14000 * q_orders;
                 value_order.value = `$ ${moneyFormatter.format(total_price)} COP`; 
@@ -472,6 +507,7 @@
                 div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}', ${pos_arr_pedido})">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`;
                 div_proteina.appendChild(div_i_want);
+                console.log(div_id)
 
         }
 
@@ -501,7 +537,7 @@
     
             for ( let i= 0; i <children_confirm.length; i++) {
                 
-                if (children_confirm[i].nodeName == "DIV" && children_confirm[i].childNodes[3].id != "last_name") {
+                if (children_confirm[i].nodeName == "DIV") {
  
                     arr_divs_verification.push([children_confirm[i].childNodes[3].id, children_confirm[i].childNodes[3].value]);
  
@@ -511,9 +547,17 @@
                                      [arr_divs_verification[1][0], regex_email.test(arr_divs_verification[1][1])],
                                      [arr_divs_verification[2][0], regex_cel.test(arr_divs_verification[2][1])]]
 
-            console.log(arr_true_false)
-
-            //vibrate (arr_divs_id);
+            arr_true_false.forEach((elem) => {
+                if (elem[1] == false) {
+                    arr_divs_id.push(elem[0])
+                }
+            })
+            if (arr_divs_id.length >0) {
+                vibrate (arr_divs_id);
+            } else {
+                alert("Pedido registrado con éxito!");
+            }
+            
             
             
         }
