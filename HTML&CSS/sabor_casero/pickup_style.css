@@ -1163,11 +1163,12 @@ box-sizing: border-box;
 }
 
 .nav {
-grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Nav; 
 background-image: url("../img_proyecto/madera.PNG");
 background-repeat: repeat;
 display: flex;
 justify-content: space-around;
+align-items: center;
 /*display: grid;
 grid-template-columns: 20px 20% auto    400px 20px;
 grid-template-areas: "A Buscar  Logo    Barra C";
@@ -1176,8 +1177,66 @@ height: 100%;
 
 
 }
+
+
+#buy_car {
+    
+    grid-area: Car;
+    display: flex;
+    justify-content: center;
+
+}
+
+#mi_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#mi_pedido button {
+    visibility: hidden;
+    width: 0px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color:rgb(2, 90, 2); /**/
+    border: 1px rgb(2, 90, 2);
+    color: white;
+    cursor: pointer;
+    
+}
+
+#mi_pedido button:hover {
+    background-color:rgb(119, 241, 119);
+    border: 1px solid;
+    color: black;
+}
+
+#img_car {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+#value_order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+
+}
+
 .logo {
-grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Logo; 
 }
 
 .logo  a {
@@ -1194,11 +1253,11 @@ margin-left: 0px;
 
 
 .barr_nav {
-grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Barra; 
 }
 
 .buscar {
-grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Buscar;
 display: flex;
 align-items:center
 }
@@ -1235,6 +1294,7 @@ height: 25px;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-top: 17%;
 }
 
 
@@ -1245,7 +1305,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 margin-left: 0px;
-height: 80px;
+height: 120px;
 padding: 5px;
 visibility: hidden;
 transition: heigth 0.1s;
@@ -1278,17 +1338,17 @@ transition: background-color 0.5s;
 }
 
 .barr_nav .menu {
-display: flex;
-justify-content:center;
-width: 100px;
-margin-top: 15px;
-/*border: 1px solid black;*/
+    display: flex;
+    justify-content:center;
+    width: 100px;
+    margin-top: 15px;
+    /*border: 1px solid black;*/
 
 }
 
 .barr_nav .menu button{
-background-image: url("../img_proyecto/madera.PNG");
-background-repeat: repeat;
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
     height: 50px;
     width: 50px;
     border-radius: 50px;
@@ -1305,9 +1365,9 @@ background-repeat: repeat;
 
 .barr_nav:hover ul{
 
-visibility: visible;
-height: 120px;
-transition: height 0.1s;
+    visibility: visible;
+    height: 120px;
+    transition: height 0.1s;
 }
 
 
@@ -1653,7 +1713,7 @@ color: white;
 
 .wpp {
 position: fixed;
-bottom: 10%;
+bottom: 0%;
 right: 2%;
 display: flex;
 flex-direction: column;
@@ -1684,6 +1744,29 @@ font-weight: bold;
 
 }
 
+/*LISTA PEDIDO*/
+
+.lista_pedido {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+/*FORMULARIO DE COMPRA*/
+.head {
+    font-size: 1.2rem;
+}
+
+.check_buy {
+    width: 55%;
+    left: 22.5%;
+}
+
+/*RESUMEN DEL PEDIDO*/
+
+#review_order {
+    height: 90%;
+    top: 5%;
+    box-shadow: 0px 0px;
+}
 
 }
 
@@ -2294,6 +2377,13 @@ select {
 }
 .head {
     font-size: 1.2rem;
+}
+
+/*RESUMEN DEL PEDIDO*/
+
+#review_order {
+    
+    box-shadow: 0px 0px;
 }
 
 
