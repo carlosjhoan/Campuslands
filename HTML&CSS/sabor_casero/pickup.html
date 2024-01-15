@@ -322,7 +322,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón cancelar
                 }
             }
-            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`; 
+            table += `<tr><td>----</td><td>----</td><td>--------</td><td>--------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL: </b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`; 
             table_order.innerHTML = table;
 
         }
@@ -351,7 +351,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`; //agregué botón
                 }
             }
-            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
+            table += `<tr><td>----</td><td>----</td><td>--------</td><td>--------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL: </b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
             table_order.innerHTML = table;
 
         }
@@ -419,7 +419,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
                 }
             }
-            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
+            table += `<tr><td>----</td><td>----</td><td>--------</td><td>--------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL: </b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`
             table_order.innerHTML = table;
              
         }
@@ -434,7 +434,7 @@
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
                 }
             }
-            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`;
+            table += `<tr><td>----</td><td>----</td><td>--------</td><td>--------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL: </b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`;
             table_order.innerHTML = table;
             review_order.style.visibility = "visible";
         }
@@ -476,7 +476,7 @@
                 }
             }
             total_price = q_orders * 14000
-            table += `<tr><td>----</td><td>----</td><td>----------</td><td>----------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL</b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`; 
+            table += `<tr><td>----</td><td>----</td><td>--------</td><td>--------</td></tr><tr><td></td><td></td><td><b>VALOR TOTAL: </b></td><td>$${moneyFormatter.format(total_price)}</td></tr>`; 
             table_order.innerHTML = table;
 
             if (q_orders == 0) {
