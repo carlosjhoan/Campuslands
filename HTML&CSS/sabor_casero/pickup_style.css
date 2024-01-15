@@ -199,12 +199,12 @@ body {
 
 #check {
     width: 0px;
-    transition: width 0.5s;
+    transition: width 0.1s;
 }
 
 #order_list {
     width: 30px;
-    transition: width 0.5s;
+    transition: width 0.1s;
 }
 
 #confirmo_button:hover {
@@ -213,12 +213,12 @@ body {
 
 #confirmo_button:hover #check {
     width: 30px;
-    transition: width 0.5s;
+    transition: width 0.1s;
 }
 
 #confirmo_button:hover #order_list {
     width: 0px;
-    transition: width 0.5s;
+    transition: width 0.1s;
 }
 
 
@@ -340,12 +340,12 @@ body {
 
 #previous img {
     width: 30px;
-    transition: width 0.5s;
+    transition: width 0.1s;
 }
 
 #previous:hover img {
     width: 35px;
-    transition: width 0.5s;
+    transition: width 0.1s;
 }
 
 
