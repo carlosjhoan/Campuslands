@@ -433,6 +433,74 @@ body {
     width: 30px;
 }
 
+/* BOTON PICKUP*/
+.buttons_deliv_pickup {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 115px;
+    left: 10px;
+
+}
+
+.botton_delivery button {
+    width: 120px;
+    background-color: rgb(133, 234, 87);
+    border: 3px solid black;
+    border-radius: 30px;
+    /*left: 530px;*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.botton_delivery button a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+
+.botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
+
+    width: 35px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover {
+    background-color: black;
+
+}
+
+.botton_delivery button:hover a {
+    color: white;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
+
+    width: 30px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
 
 
 @media screen and (max-width:460px) {
@@ -1692,13 +1760,69 @@ nav {
     background-image: url("../img_proyecto/madera.PNG");
     background-repeat: repeat;
     display: grid;
-    grid-template-columns: 20px 20% auto    400px 20px;
-    grid-template-areas: "A Buscar  Logo    Barra C";
+    grid-template-columns: 20px 20% auto  auto  400px 20px;
+    grid-template-areas: "A Buscar  Logo  Car  Barra C";
     align-items:center;
     height: 100%;
     
 
 }
+
+#buy_car {
+    
+    grid-area: Car;
+    display: flex;
+    justify-content: center;
+
+}
+
+#mi_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#mi_pedido button {
+    visibility: hidden;
+    width: 0px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color:rgb(2, 90, 2); /**/
+    border: 1px rgb(2, 90, 2);
+    color: white;
+    cursor: pointer;
+    
+}
+
+#mi_pedido button:hover {
+    background-color:rgb(119, 241, 119);
+    border: 1px solid;
+    color: black;
+}
+
+#img_car {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+#value_order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+
 .logo {
     grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
 }
@@ -2124,8 +2248,8 @@ select {
 
 .wpp {
     position: fixed;
-    bottom: 200px;
-    right: 20px;
+    bottom: 0%;
+    right: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2155,6 +2279,24 @@ select {
 
 }
 
+/*FORMULARIO PARA CONFIRMAR COMPRA*/
+
+.check_buy {
+    
+    height: 95%;
+    width: 50%;
+    position: fixed;
+    top: 2.5%;
+    left: 30%;
+}
+.titulo {
+    width: 100%;
+}
+.head {
+    font-size: 1.2rem;
+}
+
+
 
 }
 
@@ -2176,38 +2318,38 @@ margin-top: 85px;
 
 
 .legal {
-grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Legal; 
 }
 
 .footer {
-grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Footer; 
 }
 
 
 .gallina {
-grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Gallina; 
 }
 
 .costilla {
-grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Costilla; 
 }
 
 .cola {
-grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Cola; 
 }
 
 
 
 .sobrebarriga {
-grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Sobrebarriga; 
 }
 
 .oreada {
-grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Oreada; 
 }
 
 .chatas {
-grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Chatas; 
 }
 
 
@@ -2228,7 +2370,7 @@ box-sizing: border-box;
 }
 
 .nav {
-grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Nav; 
 background-image: url("../img_proyecto/madera.PNG");
 background-repeat: repeat;
 display: grid;
@@ -2298,7 +2440,7 @@ height: 100%;
 
 
 .logo {
-grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Logo; 
 }
 
 .logo  a {
@@ -2315,11 +2457,11 @@ margin-left: 0px;
 
 
 .barr_nav {
-grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Barra; 
 }
 
 .buscar {
-grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+grid-area: Buscar; 
 }
 
 .buscar form {
@@ -2548,74 +2690,6 @@ font-weight: bold;
 
 }
 
-/* BOTON PICKUP*/
-.buttons_deliv_pickup {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 115px;
-    left: 10px;
-
-}
-
-.botton_delivery button {
-    width: 120px;
-    background-color: rgb(133, 234, 87);
-    border: 3px solid black;
-    border-radius: 30px;
-    /*left: 530px;*/
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-}
-
-.botton_delivery button a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1rem;
-    color: black;
-    text-decoration: none;
-}
-
-
-.botton_delivery button img[src= "../img_proyecto/food-delivery.png"] {
-
-    width: 35px;
-    height: 30px;
-    transition: height 0.1s, width 0.1s;
-}
-
-.botton_delivery button img[src= "../img_proyecto/food-delivery_2.png"] {
-
-    width: 0px;
-    height: 0px;
-    transition: height 0.1s, width 0.1s;
-}
-
-.botton_delivery button:hover {
-    background-color: black;
-
-}
-
-.botton_delivery button:hover a {
-    color: white;
-}
-
-.botton_delivery button:hover img[src= "../img_proyecto/food-delivery.png"] {
-
-    width: 0px;
-    height: 0px;
-    transition: height 0.1s, width 0.1s;
-}
-
-.botton_delivery button:hover img[src= "../img_proyecto/food-delivery_2.png"] {
-
-    width: 30px;
-    height: 30px;
-    transition: height 0.1s, width 0.1s;
-}
 
 }
 
