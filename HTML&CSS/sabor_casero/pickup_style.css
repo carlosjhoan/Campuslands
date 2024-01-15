@@ -389,6 +389,50 @@ body {
     transition: width 0.3s;
 }
 
+/*RESUMEN DEL PEDIDO*/
+
+#review_order {
+    visibility: hidden;
+    position: fixed;
+    width: 50%;
+    height: 75%;
+    left: 25%;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 3px 3px rgb(204, 204, 204);
+    border-radius: 20px;
+    
+}
+
+#review_paragraph {
+    padding: 5px;
+    border: 1px dotted;
+    border-radius: 20px;
+}
+
+#review_order button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:rgb(255, 247, 247);
+    border: 1px solid rgb(255, 247, 247);
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+#review_order button:hover {
+    background-color:rgb(242, 237, 237);
+    border: 1px solid rgb(242, 237, 237);
+    transition: background-color 0.5s;
+}
+
+#review_order button img {
+    width: 30px;
+}
+
 
 
 @media screen and (max-width:460px) {

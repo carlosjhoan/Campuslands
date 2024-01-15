@@ -216,6 +216,11 @@
         
     </div>
 
+    <div id="review_order">
+        <div id = "review_paragraph"></div>
+        <button onclick="finish()"><img src="../img_proyecto/check_green.png" alt=""></button>
+    </div>
+
     <script>
         
         let arr_pedido = [["S. de gallina", 0,"i_want_gallina" , "img_check_gallina"],
@@ -370,7 +375,7 @@
                     div_proteina.children[i].remove ();
                 }
                 const div_i_want = document.createElement("div");
-                div_i_want.innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${div_id}', '${img_id}', ${pos_arr_pedido})">Yo quiero!</button>
+                div_i_want.innerHTML = `<button class = "i_want" onclick="order_buy('${div_id}', '${img_id}', ${pos_arr_pedido})">Yo quiero!</button>
                 <img src="../img_proyecto/check_order.png" alt="" id = "${img_id}">`;
                 div_proteina.appendChild(div_i_want);
 
@@ -520,11 +525,14 @@
             for (let div of i_want) {
                 div.style.visibility = "visible";
             }
-            console.log(i_want);
+            
         }
 
 
         function ok_my_order () {
+            
+            let review_table = "";
+            let arr_final_order = [];
             const regex_name = /^[a-zA-Z\s]+$/; //Para comprobar nombres
             const regex_whitespace = /\S/; //Regex para comprobar que no esté vacío
             const regex_cel = /^[0-9]+$/; //regex para comprobar el número de teléfono
@@ -533,6 +541,7 @@
             let arr_divs_id = []; //Array para llenar con los Id's de divs que van a moverse
             let arr_true_false = []; //Array para ubicar las verificaciones, False o True
             const confirm_div = document.querySelector(".check_buy");
+            const review_order_div = document.getElementById("review_order");
             const children_confirm = confirm_div.childNodes[3].childNodes;
     
             for ( let i= 0; i <children_confirm.length; i++) {
@@ -555,14 +564,64 @@
             if (arr_divs_id.length >0) {
                 vibrate (arr_divs_id);
             } else {
+                review_table = `<b>Nombre:</b> ${arr_divs_verification[0][1]}<br>
+                         <b>Email:</b> ${arr_divs_verification[1][1]}<br>
+                         <b>Celular:</b> ${arr_divs_verification[2][1]}<br>
+                         <b>Recoge:</b> ${document.getElementById("range_time").value}<br>
+                         <b>Observaciones:</b> <em>${document.getElementById("commit").value}</em><br>
+                         <b>Pedido:</b><br>` 
+                for (let k = 0; k<arr_pedido.length; k++) {
+                    if (arr_pedido[k][1] > 0) {
+                        arr_final_order.push(arr_pedido[k]);
+                        review_table += `-- ${arr_pedido[k][1]}  ${arr_pedido[k][0]}<br>`;
+                        //arr_pedido[k][1] = 0;
+                    }
+                }
                 alert("Pedido registrado con éxito!");
+                review_table += `<b>Precio:</b> $${total_price} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em>`
+                document.getElementById("review_paragraph").innerHTML = review_table;
+                review_order_div.style.visibility = "visible";
+                confirm_div.style.visibility = "hidden";
+                document.getElementById("button_mi_pedido").style.visibility = "hidden";   
             }
-            
-            
-            
         }
 
+        function finish () {
+            document.getElementById("review_paragraph").innerHTML = "";
+            document.getElementById("review_order").style.visibility = "hidden";
+            document.getElementById("first_name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("cell_number").value = "";
+            document.getElementById("range_time").value = "11:30 am - 12:00 m";
+            document.getElementById("commit").value = "";
 
+            const divs_i_want = document.querySelectorAll(".button_i_want");
+            const buy_car = document.getElementById("img_car");
+            const but_mi_pedido = document.getElementById("button_mi_pedido");
+            const value_order = document.getElementById("value_order");
+
+            arr_pedido.forEach((elem) => {
+                if (elem[1] > 0) {
+                    document.getElementById(elem[2]).innerHTML = `<button class = "i_want" id = "but_oreada" onclick="order_buy('${elem[2]}', '${elem[3]}', ${arr_pedido.indexOf(elem)})">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "${elem[3]}">`;
+                    elem[1] = 0;
+                }
+                
+            })
+            
+            for (let div of divs_i_want) {
+                div.style.visibility = "visible";
+            }
+
+            buy_car.style["background-color"] = "white";
+            but_mi_pedido.style.visibility = "hidden";
+            but_mi_pedido.style.width = "30px";
+            value_order.style["background-color"] = "black";
+            value_order.style.width = "30px";
+            value_order.value = 0;
+
+
+        }
  
  
      </script>
