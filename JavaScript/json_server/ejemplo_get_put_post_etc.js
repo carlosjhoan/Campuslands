@@ -1,11 +1,11 @@
-/*fetch ('http://localhost:3000/orders', {
+fetch ('http://localhost:3000/orders', {
     method: 'GET',
     headers: {
         'Content-type' : 'application/json; charset=UTF-8'
     },
 })
 .then(response => response.json())
-.then(json => console.log(json))*/
+.then(json => console.log(json))
 let data = {
     "id": "2",
     "nombre": " Juan Carlos Aguilar",

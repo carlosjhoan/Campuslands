@@ -237,13 +237,25 @@
         ]
 
         let data = [];
-        let id_order = 0;
+        let id_order;
 
         let total_price;
 
         window.onpageshow = function () {
             const inpu_car = document.getElementById("value_order");
             inpu_car.value = 0;
+
+            fetch ('http://localhost:3000/orders', {
+                method: 'GET',
+                headers: {
+                    'Content-type' : 'application/json; charset=UTF-8'
+                },
+            })
+
+            .then(response => response.json())
+            .then(json => {
+                id_order = json.length
+                console.log(id_order)})
             
         }
 
@@ -567,6 +579,7 @@
             if (arr_divs_id.length >0) {
                 vibrate (arr_divs_id);
             } else {
+                
                 id_order++;
                 review_table = `<b>Nombre:</b> ${arr_divs_verification[0][1]}<br>
                          <b>Email:</b> ${arr_divs_verification[1][1]}<br>
