@@ -16,27 +16,36 @@
     },
     {
       "id": "2",
-      "name": "Hader",
-      "email": "hader_xxx@gmail.com",
-      "observaciones": "",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "hora": "12:00 m - 12:15 pm",
+      "observaciones": "Sin ensalada",
       "pedido": [
         [
-          "S. de gallina",
+          "Sobrebarriga",
           1
         ],
         [
-          "S. de costilla",
+          "Chatas",
+          1
+        ],
+        [
+          "Oreada",
           1
         ]
       ],
-      "precio": 28000,
-      "modo": "pickup"
+      "precio": 42000,
+      "modo": "pickup",
+      "Fecha": "16/1/2024, 12:16:27 a. m."
     },
     {
       "id": "3",
-      "name": "Carlos Jhoan",
-      "email": "carlosjhoanaguilar@gmail.com",
-      "observaciones": "",
+      "name": "Luz Stella",
+      "email": "luz_stella66@gmail.com",
+      "celular": "3106728007",
+      "hora": "12:15 pm - 12:30 pm",
+      "observaciones": "Sin limonada",
       "pedido": [
         [
           "S. de gallina",
@@ -45,30 +54,35 @@
         [
           "S. de costilla",
           1
+        ],
+        [
+          "S. de cola",
+          1
+        ],
+        [
+          "Sobrebarriga",
+          1
+        ],
+        [
+          "Chatas",
+          1
+        ],
+        [
+          "Oreada",
+          1
         ]
       ],
-      "precio": 28000,
-      "modo": "pickup"
+      "precio": 84000,
+      "modo": "pickup",
+      "Fecha": "16/1/2024, 12:17:30 a. m."
     },
     {
       "id": "4",
       "name": "Carlos Jhoan",
       "email": "carlosjhoanaguilar@gmail.com",
-      "observaciones": "",
-      "pedido": [
-        [
-          "S. de gallina",
-          1
-        ]
-      ],
-      "precio": 14000,
-      "modo": "pickup"
-    },
-    {
-      "id": "5",
-      "name": "Daniel Tobon",
-      "email": "toboncombadanielandres@gmail.com",
-      "observaciones": "",
+      "celular": "3178315988",
+      "hora": "12:30 pm - 1:00pm",
+      "observaciones": "Agregar cubiertos",
       "pedido": [
         [
           "S. de gallina",
@@ -77,24 +91,27 @@
         [
           "S. de costilla",
           1
-        ]
-      ],
-      "precio": 28000,
-      "modo": "pickup"
-    },
-    {
-      "id": "6",
-      "name": "Hader",
-      "email": "hader_xxx@gmail.com",
-      "observaciones": "",
-      "pedido": [
+        ],
         [
-          "S. de gallina",
+          "S. de cola",
+          1
+        ],
+        [
+          "Sobrebarriga",
+          1
+        ],
+        [
+          "Chatas",
+          1
+        ],
+        [
+          "Oreada",
           1
         ]
       ],
-      "precio": 14000,
-      "modo": "pickup"
+      "precio": 84000,
+      "modo": "pickup",
+      "Fecha": "16/1/2024, 12:20:01 a. m."
     }
   ],
   "user_active": [],

@@ -221,6 +221,14 @@
         <button onclick="finish()"><img src="../img_proyecto/check_green.png" alt=""></button>
     </div>
 
+    <!--Buscar registros en la base de datos-->
+    <div id ="search_database">
+        <div id ="div_stack">
+            <div id = "head">Buscar Registro</div>
+            <div id="stack_icon"><img src="../img_proyecto/database_search.png" alt=""></div>
+        </div>
+    </div>
+
     <script>
         
         let arr_pedido = [["S. de gallina", 0,"i_want_gallina" , "img_check_gallina"],
@@ -579,12 +587,13 @@
             if (arr_divs_id.length >0) {
                 vibrate (arr_divs_id);
             } else {
-                
+                let now = new Date();
                 id_order++;
-                review_table = `<b>Nombre:</b> ${arr_divs_verification[0][1]}<br>
+                review_table = `<b>N° Factura:</b> ${id_order}<br>
+                         <b>Nombre:</b> ${arr_divs_verification[0][1]}<br>
                          <b>Email:</b> ${arr_divs_verification[1][1]}<br>
                          <b>Celular:</b> ${arr_divs_verification[2][1]}<br>
-                         <b>Recoge:</b> ${document.getElementById("range_time").value}<br>
+                         <b>Hora recoger:</b> ${document.getElementById("range_time").value}<br>
                          <b>Observaciones:</b> <em>${document.getElementById("commit").value}</em><br>
                          <b>Pedido:</b><br>` 
                 for (let k = 0; k<arr_pedido.length; k++) {
@@ -596,7 +605,7 @@
                 }
 
                 alert("Pedido registrado con éxito!");
-                review_table += `<b>Precio:</b> $${total_price} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em>`
+                review_table += `<b>Precio:</b> $${total_price} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em><br><b>Fecha:</b> ${now.toLocaleString()}<br>`
                 document.getElementById("review_paragraph").innerHTML = review_table;
                 review_order_div.style.visibility = "visible";
                 confirm_div.style.visibility = "hidden";
@@ -608,10 +617,13 @@
                     "id" : `${id_order}`,
                     "name" : `${arr_divs_verification[0][1]}`,
                     "email" : `${arr_divs_verification[1][1]}`,
+                    "celular" : `${arr_divs_verification[2][1]}`,
+                    "hora" : `${document.getElementById("range_time").value}`,
                     "observaciones" : `${document.getElementById("commit").value}`,
                     "pedido" : arr_final_order,
                     "precio" : total_price,
-                    "modo" : "pickup"
+                    "modo" : "pickup",
+                    "Fecha" : `${now.toLocaleString()}`
                 }
 
                 
