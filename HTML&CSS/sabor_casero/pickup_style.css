@@ -605,8 +605,13 @@ body {
     visibility: visible;
 }
 
-#search_database:hover #slide_barr div, #search_database:hover #slide_barr input {
+#search_database:hover #slide_barr div {
     visibility: visible;
+}
+
+#search_database:hover #slide_barr input {
+    visibility: visible;
+
 }
 
 
