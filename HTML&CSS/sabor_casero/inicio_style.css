@@ -82,6 +82,7 @@ body {
     width: 35px;
     height: 35px;
     background-color: rgb(243, 92, 89);
+    border: 1px solid rgb(243, 92, 89);
     color: white;
     transition: width 0.5s, height 0.5s;
 }
