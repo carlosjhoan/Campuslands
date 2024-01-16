@@ -6,15 +6,16 @@
 })
 .then(response => response.json())
 .then(json => console.log(json))*/
+let data = {
+    "id": "2",
+    "nombre": " Juan Carlos Aguilar",
+    "email": "juanchopolo@gmail.com",
+    "cel_num": "3124649852"
+}
 
 fetch ('http://localhost:3000/orders', {
     method: 'POST',
-    body: JSON.stringify({
-        "id": "0001",
-        "name": "Juan Carlos",
-        "email" : "juanchopolo@gmail.com"
-
-    }),
+    body: JSON.stringify(data),
     headers: {
         'Content-type' : 'application/json; charset=UTF-8'
     },

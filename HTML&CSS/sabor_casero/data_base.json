@@ -1,0 +1,39 @@
+{
+  "orders": [
+    {
+      "id": "1",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "observaciones": "",
+      "pedido": [
+        [
+          "S. de costilla",
+          1
+        ]
+      ],
+      "precio": 14000,
+      "modo": "pickup"
+    },
+    {
+      "id": "2",
+      "name": "Hader",
+      "email": "hader_xxx@gmail.com",
+      "observaciones": "",
+      "pedido": [
+        [
+          "S. de gallina",
+          1
+        ],
+        [
+          "S. de costilla",
+          1
+        ]
+      ],
+      "precio": 28000,
+      "modo": "pickup"
+    }
+  ],
+  "user_active": [],
+  "users": [],
+  "products": []
+}

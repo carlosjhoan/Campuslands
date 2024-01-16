@@ -236,6 +236,9 @@
                             ["Oreada",  0, "i_want_ore" , "img_check_ore"],
         ]
 
+        let data = [];
+        let id_order = 0;
+
         let total_price;
 
         window.onpageshow = function () {
@@ -564,6 +567,7 @@
             if (arr_divs_id.length >0) {
                 vibrate (arr_divs_id);
             } else {
+                id_order++;
                 review_table = `<b>Nombre:</b> ${arr_divs_verification[0][1]}<br>
                          <b>Email:</b> ${arr_divs_verification[1][1]}<br>
                          <b>Celular:</b> ${arr_divs_verification[2][1]}<br>
@@ -572,17 +576,36 @@
                          <b>Pedido:</b><br>` 
                 for (let k = 0; k<arr_pedido.length; k++) {
                     if (arr_pedido[k][1] > 0) {
-                        arr_final_order.push(arr_pedido[k]);
+                        arr_final_order.push(arr_pedido[k].slice(0,2));
                         review_table += `-- ${arr_pedido[k][1]}  ${arr_pedido[k][0]}<br>`;
                         //arr_pedido[k][1] = 0;
                     }
                 }
+
                 alert("Pedido registrado con éxito!");
                 review_table += `<b>Precio:</b> $${total_price} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em>`
                 document.getElementById("review_paragraph").innerHTML = review_table;
                 review_order_div.style.visibility = "visible";
                 confirm_div.style.visibility = "hidden";
-                document.getElementById("button_mi_pedido").style.visibility = "hidden";   
+                document.getElementById("button_mi_pedido").style.visibility = "hidden";
+                
+
+                //Montar el pedido en la base de datos
+                data = {
+                    "id" : `${id_order}`,
+                    "name" : `${arr_divs_verification[0][1]}`,
+                    "email" : `${arr_divs_verification[1][1]}`,
+                    "observaciones" : `${document.getElementById("commit").value}`,
+                    "pedido" : arr_final_order,
+                    "precio" : total_price,
+                    "modo" : "pickup"
+                }
+
+                
+
+                //---------------------------------
+
+                   
             }
         }
 
@@ -621,6 +644,18 @@
             value_order.value = 0;
 
 
+
+            //Montar en la base de datos
+            fetch ('http://localhost:3000/orders', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-type' : 'application/json; charset=UTF-8'
+                    },
+                })
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch(error => console.error("ERROR!!!:" + error))
         }
  
  
