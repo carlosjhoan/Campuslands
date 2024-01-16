@@ -230,7 +230,7 @@ body {
 
 .check_buy {
     
-    height: 95%;
+    height: 85%;
     width: 40%;
     position: fixed;
     top: 2.5%;
@@ -523,38 +523,38 @@ body {
 
     
     .legal {
-        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Legal; 
     }
     
     .footer {
-        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Footer; 
     }
     
     
     .gallina {
-        grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Gallina; 
     }
     
     .costilla {
-        grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Costilla; 
     }
     
     .cola {
-        grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Cola; 
     }
     
     
     
     .sobrebarriga {
-        grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Sobrebarriga; 
     }
     
     .oreada {
-        grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Oreada; 
     }
     
     .chatas {
-        grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+        grid-area: Chatas; 
     }
 
     .info_pickup {
@@ -572,19 +572,12 @@ nav {
 }
 
 .nav {
-    grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Nav; 
     background-image: url("../img_proyecto/madera.PNG");
     background-repeat: repeat;
     display: flex;
     justify-content:space-between;
     height: 100%;
-/*display: grid;
-grid-template-columns: 20px 20% auto    400px 20px;
-grid-template-areas: "A Buscar  Logo    Barra C";
-align-items:center;*/
-    
-    
-
 }
 
 #buy_car {
@@ -601,7 +594,7 @@ align-items:center;*/
     flex-direction: column;
     justify-content:space-around;
     align-items: center;
-    height: 50px;
+    height: 60px;
 }
 
 #mi_pedido button {
@@ -613,7 +606,7 @@ align-items:center;*/
     border: 1px rgb(2, 90, 2);
     color: white;
     cursor: pointer;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     
 }
 
@@ -639,8 +632,8 @@ align-items:center;*/
     background-color: black;
     color: white;
     font-weight: bold;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 25px;
     border-radius: 30px;
     text-align: center;
     font-size: 0.7rem;
@@ -648,7 +641,7 @@ align-items:center;*/
 }
 
 .logo {
-    grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Logo; 
     display: flex;
     align-items: center;
 }
@@ -663,53 +656,51 @@ align-items:center;*/
     width: 80px;
     height: 65px;
     margin-left: 10px;
-    /*float: left;*/
 }
 
 
 .barr_nav {
-    grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Barra; 
 }
 
 .buscar {
-grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-display: flex;
-align-items:center
+    grid-area: Buscar; 
+    display: flex;
+    align-items:center
 }
 
 .buscar form {
-display: flex;
-align-items: center;
-justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 .buscar form input {
-/*float: right;*/
-width: 40%;
-height: 30px;
-margin-left: 5px;
-border: 3px solid black;
-border-radius: 20px;
-background-color: rgb(240, 202, 157, 0.5);
-visibility: collapse;
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+    visibility: collapse;
 
 }
 
 .buscar form input:focus {
-color: white;
-background-color: black;
+    color: white;
+    background-color: black;
 }
 
 
 .buscar form label img {
-width: 25px;
-height: 25px;
+    width: 25px;
+    height: 25px;
 }
 
 .barr_nav {
-display: flex;
-flex-direction: column;
-align-items:baseline;
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
 }
 
 
@@ -750,21 +741,20 @@ align-items:baseline;
 }
 
 .barr_nav .menu {
-display: flex;
-justify-content:center;
-width: 100px;
-margin-top: 15px;
-/*border: 1px solid black;*/
+    display: flex;
+    justify-content:center;
+    width: 100px;
+    margin-top: 25px;
 
 }
 
 .barr_nav .menu button{
-background-image: url("../img_proyecto/madera.PNG");
-background-repeat: repeat;
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
     height: 30px;
     width: 30px;
     border-radius: 30px;
-    border: 1px solid;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -777,10 +767,9 @@ background-repeat: repeat;
 }
 
 .barr_nav:hover ul{
-
-visibility: visible;
-height: 120px;
-transition: height 0.1s;
+    visibility: visible;
+    height: 120px;
+    transition: height 0.1s;
 }
 
 
@@ -810,7 +799,6 @@ transition: height 0.1s;
 }
 
 .precio {
-    /*border: 1px solid black;*/
     padding: 2px;
     border-radius: 10px;
     background-color: rgb(204, 137, 43);
@@ -820,7 +808,6 @@ transition: height 0.1s;
 }
 
 .foto {
-    /*border: 1px solid black;*/
     width: 170px;
     border-radius: 120px;
 }
@@ -829,7 +816,6 @@ transition: height 0.1s;
     padding: 5px;
     border-radius: 10px;
     text-align:center;
-    /*background-color: white;*/
 }
 
 .dish_name {
@@ -861,7 +847,6 @@ transition: height 0.1s;
 .terms {
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
 }
 
 
@@ -882,13 +867,11 @@ transition: height 0.1s;
 .terms ul {
     display: flex;
     justify-content:space-between;
-    /*align-items: center;*/
     width: 300px;
     
 }
 
 .terms ul li{
-    /*height: 50px;*/
     list-style-type: none;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 0.8rem;
@@ -964,6 +947,35 @@ transition: height 0.1s;
 
 }
 
+/*RESUMEN DEL PEDIDO*/
+
+.lista_pedido {
+    
+    height: 70%;
+    width: 90%;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);
+    visibility: collapse;
+    font-size: 0.7rem;
+    
+
+}
+
+.check_buy {
+    
+    height: 95%;
+    width: 90%;
+    left: 5%;
+}
+
     
 }
 
@@ -971,677 +983,478 @@ transition: height 0.1s;
 
 @media  (min-width:460px) and (max-width:900px) {
 
-/*Esto es lo que quería*/
-/*CUADRÍCULA PRINCIPAL*/
+    /*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
 
-main {
-    background-color: white;
-    display: grid;
-    grid-template-rows:  auto auto auto auto auto auto;
-    grid-template-columns: 50% 50% ;
-    grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
-    height: 90%;
-    margin-top: 85px;
-    
-    
-    }
-    
+    main {
+        background-color: white;
+        display: grid;
+        grid-template-rows:  auto auto auto auto auto auto;
+        grid-template-columns: 50% 50% ;
+        grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+        
+        }
+        
 
-    
-    .legal {
-    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .footer {
-    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    
-    .gallina {
-    grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .costilla {
-    grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .cola {
-    grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    
-    
-    .sobrebarriga {
-    grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .oreada {
-    grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .chatas {
-    grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-    
-    .info_pickup {
-        grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
-    }
-
-
-/*CUADRÍCULAS NAV*/
-nav {
-height: 85px;
-width: 100%;
-position: fixed;
-top: 0px;
-box-sizing: border-box;
-}
-
-.nav {
-grid-area: Nav; 
-background-image: url("../img_proyecto/madera.PNG");
-background-repeat: repeat;
-display: flex;
-justify-content: space-around;
-align-items: center;
-/*display: grid;
-grid-template-columns: 20px 20% auto    400px 20px;
-grid-template-areas: "A Buscar  Logo    Barra C";
-align-items:center;*/
-height: 100%;
+        
+        .legal {
+        grid-area: Legal; 
+        }
+        
+        .footer {
+        grid-area: Footer; 
+        }
+        
+        
+        .gallina {
+        grid-area: Gallina; 
+        }
+        
+        .costilla {
+        grid-area: Costilla; 
+        }
+        
+        .cola {
+        grid-area: Cola; 
+        }
+        
+        
+        
+        .sobrebarriga {
+        grid-area: Sobrebarriga; 
+        }
+        
+        .oreada {
+        grid-area: Oreada; 
+        }
+        
+        .chatas {
+        grid-area: Chatas; 
+        }
+        
+        .info_pickup {
+            grid-area: Info_pickup; 
+        }
 
 
-}
+    /*CUADRÍCULAS NAV*/
+    nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+    }
+
+    .nav {
+        grid-area: Nav; 
+        background-image: url("../img_proyecto/madera.PNG");
+        background-repeat: repeat;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+
+    }
 
 
-#buy_car {
-    
-    grid-area: Car;
+    #buy_car {
+        grid-area: Car;
+        display: flex;
+        justify-content: center;
+    }
+
+    #mi_pedido {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    #mi_pedido button {
+        visibility: hidden;
+        width: 0px;
+        padding: 4px;
+        border-radius: 5px;
+        background-color:rgb(2, 90, 2); 
+        border: 1px rgb(2, 90, 2);
+        color: white;
+        cursor: pointer;
+        
+    }
+
+    #mi_pedido button:hover {
+        background-color:rgb(119, 241, 119);
+        border: 1px solid;
+        color: black;
+    }
+
+    #img_car {
+        padding: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: white;
+        
+    }
+
+    #value_order {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        text-align: center;
+
+    }
+
+    .logo {
+    grid-area: Logo; 
+    }
+
+    .logo  a {
     display: flex;
-    justify-content: center;
+    justify-content:start;
+    }
 
-}
+    .logo  a img{
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
 
-#mi_pedido {
+    }
+
+
+    .barr_nav {
+    grid-area: Barra; 
+    }
+
+    .buscar {
+    grid-area: Buscar;
+    display: flex;
+    align-items:center
+    }
+
+    .buscar form {
+    display: flex;
+
+    justify-content:center;
+    }
+
+    .buscar form input {
+
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+
+    }
+
+    .buscar form input:focus {
+    color: white;
+    background-color: black;
+    }
+
+
+    .buscar form label img {
+    width: 25px;
+    height: 25px;
+    }
+
+    .barr_nav {
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
     align-items: center;
-}
+    margin-top: 130px;
+    }
 
-#mi_pedido button {
+
+    .barr_nav ul {
+    background-image: url("../img_proyecto/madera.PNG");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    height: 120px;
+    padding: 5px;
     visibility: hidden;
-    width: 0px;
-    padding: 4px;
-    border-radius: 5px;
-    background-color:rgb(2, 90, 2); /**/
-    border: 1px rgb(2, 90, 2);
-    color: white;
-    cursor: pointer;
-    
-}
+    transition: heigth 0.1s;
+    border-radius: 0px 0px 20px 20px;
 
-#mi_pedido button:hover {
-    background-color:rgb(119, 241, 119);
-    border: 1px solid;
+
+    }
+
+    .barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items:center;
+    justify-content:end;
+    }
+
+    .barr_nav ul li a{
+
+    text-decoration: none;
     color: black;
-}
+    }
 
-#img_car {
-    padding: 10px;
-    width: 60px;
-    height: 60px;
-    border-radius: 60px;
+    .barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    }
+
+    .barr_nav .menu {
+        display: flex;
+        justify-content:center;
+        width: 100px;
+        margin-top: 15px;
+        
+
+    }
+
+    .barr_nav .menu button{
+        background-image: url("../img_proyecto/madera.PNG");
+        background-repeat: repeat;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .barr_nav .menu button img{
+        height: 30px;
+        width: 30px;
+        
+    }
+
+    .barr_nav:hover ul{
+
+        visibility: visible;
+        height: 120px;
+        transition: height 0.1s;
+    }
+
+
+    /*menú*/
+
+
+    .each {
+        background-color: rgb(219, 219, 215, 0.5);
+        padding: 2%;
+        margin: 5% 12.5%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 0 0 5px 5px rgb(193, 192, 192);
+    }
+
+    .hr {
+        height: 3px;
+        width: 70%;
+        background-color: black;
+    }
+
+    .precio {
+        /*border: 1px solid black;*/
+        padding: 2px;
+        border-radius: 10px;
+        background-color: rgb(204, 137, 43);
+        color: black;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .foto {
+        /*border: 1px solid black;*/
+        width: 200px;
+        border-radius: 200px;
+    }
+
+    .q_trae{
+        padding: 5px;
+        border-radius: 10px;
+        text-align:center;
+        /*background-color: white;*/
+    }
+
+    .dish_name {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .sancochos {
+        width: 100%;
+        display: flex;
+    }
+
+    .ejecutivos {
+        width: 100%;
+        display: flex;
+    }
+
+
+
+    /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+    .legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    background-color: rgb(23, 23, 23);
+    }
+
+    .terms {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    }
+
+
+    .social_media {
+
+    display: flex;
+    width: 150px;
+
+    justify-content:space-around;
+    }
+
+    .social_media a img{
+    height: 30px;
+
+    }
+
+
+    .terms ul {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 80px;
+    width: 300px;
+
+    }
+
+    .terms ul li{
+    /*height: 50px;*/
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
-    align-content: center;
-    background-color: white;
-    
-}
+    align-items: center;
+    }
 
-#value_order {
-    background-color: black;
+
+    .terms ul li a{
+    text-decoration: none ;
     color: white;
     font-weight: bold;
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    text-align: center;
+    }
 
-}
-
-.logo {
-grid-area: Logo; 
-}
-
-.logo  a {
-display: flex;
-justify-content:start;
-}
-
-.logo  a img{
-width: 120px;
-height: 90px;
-margin-left: 0px;
-/*float: left;*/
-}
-
-
-.barr_nav {
-grid-area: Barra; 
-}
-
-.buscar {
-grid-area: Buscar;
-display: flex;
-align-items:center
-}
-
-.buscar form {
-display: flex;
-
-justify-content:center;
-}
-
-.buscar form input {
-/*float: right;*/
-width: 40%;
-height: 30px;
-margin-left: 5px;
-border: 3px solid black;
-border-radius: 20px;
-background-color: rgb(240, 202, 157, 0.5);
-
-}
-
-.buscar form input:focus {
-color: white;
-background-color: black;
-}
-
-
-.buscar form label img {
-width: 25px;
-height: 25px;
-}
-
-.barr_nav {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 130px;
-}
-
-
-.barr_nav ul {
-background-image: url("../img_proyecto/madera.PNG");
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin-left: 0px;
-height: 120px;
-padding: 5px;
-visibility: hidden;
-transition: heigth 0.1s;
-border-radius: 0px 0px 20px 20px;
-
-/*border: 1px solid black;*/
-
-}
-
-.barr_nav ul li{
-height: 50px;
-list-style-type: none;
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 1.3rem;
-display: flex;
-align-items:center;
-justify-content:end;
-}
-
-.barr_nav ul li a{
-
-text-decoration: none;
-color: black;
-}
-
-.barr_nav ul li:hover{
-background-color: rgb(218, 190, 147,0.7);
-border-radius: 10px;
-transition: background-color 0.5s;
-}
-
-.barr_nav .menu {
+    .logo_legal {
     display: flex;
-    justify-content:center;
-    width: 100px;
-    margin-top: 15px;
-    /*border: 1px solid black;*/
+    justify-content: center;
+    align-items: center;
+    }
 
-}
+    .logo_legal img{
+    height: 100px;
+    width: 140px;
+    }
 
-.barr_nav .menu button{
-    background-image: url("../img_proyecto/madera.PNG");
-    background-repeat: repeat;
+    .footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+    }
+
+    .footer hr {
+    width: 60%;
+    color: white;
+    }
+
+    .footer p {
+    color: white;
+    }
+
+
+    /*BOTÓN DE WPP*/
+
+    .wpp {
+    position: fixed;
+    bottom: 0%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .wpp a img {
+    height: 40px;
+    width: 40px;
+    transition: height 0.1s, width 0.1s;
+
+    }
+
+    .wpp a img:hover {
     height: 50px;
     width: 50px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    transition: height 0.1s, width 0.1s;
 
-.barr_nav .menu button img{
-    height: 30px;
-    width: 30px;
-    
-}
-
-.barr_nav:hover ul{
-
-    visibility: visible;
-    height: 120px;
-    transition: height 0.1s;
-}
-
-
-/*menú*/
-
-
-.each {
-    background-color: rgb(219, 219, 215, 0.5);
-    padding: 2%;
-    margin: 5% 12.5%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    box-shadow: 0 0 5px 5px rgb(193, 192, 192);
-}
-
-.hr {
-    height: 3px;
-    width: 70%;
-    background-color: black;
-}
-
-.precio {
-    /*border: 1px solid black;*/
+    }
+    .wpp p {
     padding: 2px;
-    border-radius: 10px;
-    background-color: rgb(204, 137, 43);
-    color: black;
-    text-align: center;
-    font-weight: bold;
-}
-
-.foto {
-    /*border: 1px solid black;*/
-    width: 200px;
-    border-radius: 200px;
-}
-
-.q_trae{
-    padding: 5px;
-    border-radius: 10px;
-    text-align:center;
-    /*background-color: white;*/
-}
-
-.dish_name {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.sancochos {
-    width: 100%;
-    display: flex;
-}
-
-.ejecutivos {
-    width: 100%;
-    display: flex;
-}
-
-/*FORMULARIO*/
-
-
-
-.info_pickup {
-    width: 100%;
-    background-color:rgb(204, 137, 43) ;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: center;
-
-}
-
-.formulario {
-    display: flex;
-    /*justify-content: center;*/
-    align-items: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
-    width: 70%;
-    background-color: rgb(204, 137, 43);
-    /*border: 1px solid black;*/
-}
-
-
-.formulario form {
-    /*border: 1px solid black;*/
-    flex-grow: 1;
-    padding-bottom: 2%;
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color:rgb(216, 178, 124);
-    border-radius: 30px;
-    
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
-}
-
-.titulo {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    /*border: 1px solid black;*/
-}
-
-.linea {
-    height: 5px;
-    width:15%;
-    background-color: black;
-}
-
-.head {
-    font-size: 1.5rem;
-    display: flex;
-    
-}
-
-
-.name-email {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-between;
-    
-
-
-}
-
-.nombre {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    
-}
-
-.nombre label {
-    margin: 5px;
-}
-
-
-.email {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-
-.email label {
-    margin: 5px;
-}
-
-.cel-porque {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
-}
-
-.celular {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-
-}
-
-.celular label {
-    margin: 5px;
-}
-
-.porque {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-
-.porque label {
-    margin: 5px;
-}
-
-
-
-.escrito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.escrito label {
-    margin: 5px;
-    
-}
-
-textarea {
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 60%;
-}
-
-input {
-    border: 2px solid black;
-    height: 40px;
-    width: 200px;
-    border-radius: 10px ;
-    
-}
-input:focus {
     background-color: black;
     color: white;
-}
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
 
+    }
 
-select {
-    height: 40px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
+    /*LISTA PEDIDO*/
 
-.submit input {
-    background-color: green;
-    color: white;
-    font-weight: 300;
-    transition: height 2;
-    font-size: 1rem;
-}
+    .lista_pedido {
+        box-shadow: 0px 0px 0px 0px;
+    }
 
-.submit img {
-    height: 0;
-    width: 0;
-    transition: height 0.1s, width 0.1s;
+    /*FORMULARIO DE COMPRA*/
+    .head {
+        font-size: 1.2rem;
+    }
 
-}
+    .check_buy {
+        width: 55%;
+        left: 22.5%;
+    }
 
-.submit:hover img {
-    height: 20px;
-    width: 20px ;
-    transition: height 0.1s, width 0.1s;
+    /*RESUMEN DEL PEDIDO*/
 
-}
-
-.submit:hover {
-    background-color: green;
-    border-radius: 10px;
-}
-
-
-
-/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
-
-.legal {
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items:center;
-background-color: rgb(23, 23, 23);
-}
-
-.terms {
-display: flex;
-flex-direction: column;
-
-align-items: center;
-}
-
-
-.social_media {
-
-display: flex;
-width: 150px;
-
-justify-content:space-around;
-}
-
-.social_media a img{
-height: 30px;
-
-}
-
-
-.terms ul {
-display: flex;
-justify-content:space-between;
-align-items: center;
-height: 80px;
-width: 300px;
-
-}
-
-.terms ul li{
-/*height: 50px;*/
-list-style-type: none;
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 0.9rem;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-
-.terms ul li a{
-text-decoration: none ;
-color: white;
-font-weight: bold;
-}
-
-.logo_legal {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.logo_legal img{
-height: 100px;
-width: 140px;
-}
-
-.footer {
-display: flex;
-align-items:center ;
-flex-direction: column;
-background-color: rgb(23, 23, 23);
-}
-
-.footer hr {
-width: 60%;
-color: white;
-}
-
-.footer p {
-color: white;
-}
-
-
-/*BOTÓN DE WPP*/
-
-.wpp {
-position: fixed;
-bottom: 0%;
-right: 2%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
-
-.wpp a img {
-height: 40px;
-width: 40px;
-transition: height 0.1s, width 0.1s;
-
-}
-
-.wpp a img:hover {
-height: 50px;
-width: 50px;
-transition: height 0.1s, width 0.1s;
-
-}
-.wpp p {
-padding: 2px;
-background-color: black;
-color: white;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 0.9rem;
-font-weight: bold;
-
-}
-
-/*LISTA PEDIDO*/
-
-.lista_pedido {
-    box-shadow: 0px 0px 0px 0px;
-}
-
-/*FORMULARIO DE COMPRA*/
-.head {
-    font-size: 1.2rem;
-}
-
-.check_buy {
-    width: 55%;
-    left: 22.5%;
-}
-
-/*RESUMEN DEL PEDIDO*/
-
-#review_order {
-    height: 90%;
-    top: 5%;
-    box-shadow: 0px 0px;
-}
+    #review_order {
+        height: 90%;
+        top: 5%;
+        box-shadow: 0px 0px;
+    }
 
 }
 
@@ -1652,56 +1465,55 @@ font-weight: bold;
     /*Esto es lo que quería*/
     /*CUADRÍCULA PRINCIPAL*/
 
-    main {
-        background-color: white;
-        display: grid;
-        grid-template-rows:  auto auto auto auto auto;
-        grid-template-columns: auto auto auto;
-        grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
-        height: 90%;
-        margin-top: 85px;
+        main {
+            background-color: white;
+            display: grid;
+            grid-template-rows:  auto auto auto auto auto;
+            grid-template-columns: auto auto auto;
+            grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
+            height: 90%;
+            margin-top: 85px;
         
         
         }
         
         
         .legal {
-        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Legal; 
         }
         
         .footer {
-        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Footer; 
         }
         
         
         .gallina {
-        grid-area: Gallina; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Gallina; 
         }
         
         .costilla {
-        grid-area: Costilla; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Costilla; 
         }
         
         .cola {
-        grid-area: Cola; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Cola; 
         }
         
         
         
         .sobrebarriga {
-        grid-area: Sobrebarriga; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Sobrebarriga; 
         }
         
         .oreada {
-        grid-area: Oreada; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
         }
         
         .chatas {
-        grid-area: Chatas; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Chatas; 
         }
         
         .info_pickup {
-            grid-area: Info_pickup; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+            grid-area: Info_pickup; 
         }
 
 /*CUADRÍCULAS NAV*/
@@ -1714,7 +1526,7 @@ nav {
 }
 
 .nav {
-    grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Nav; 
     background-image: url("../img_proyecto/madera.PNG");
     background-repeat: repeat;
     display: grid;
@@ -1782,7 +1594,7 @@ nav {
 }
 
 .logo {
-    grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Logo; 
 }
 
 .logo  a {
@@ -1794,16 +1606,15 @@ nav {
     width: 120px;
     height: 90px;
     margin-left: 0px;
-    /*float: left;*/
 }
 
 
 .barr_nav {
-    grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Barra; 
 }
 
 .buscar {
-    grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    grid-area: Buscar; 
 }
 
 .buscar form {
@@ -1812,7 +1623,6 @@ nav {
 }
 
 .buscar form input {
-    /*float: right;*/
     width: 40%;
     height: 30px;
     margin-left: 5px;
@@ -1838,7 +1648,7 @@ nav {
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-    /*border: 1px solid black;*/
+    
     
 }
 
@@ -1890,7 +1700,7 @@ nav {
 }
 
 .precio {
-    /*border: 1px solid black;*/
+    
     padding: 2px;
     border-radius: 10px;
     background-color: rgb(204, 137, 43);
@@ -1900,7 +1710,7 @@ nav {
 }
 
 .foto {
-    /*border: 1px solid black;*/
+    
     width: 250px;
     border-radius: 250px;
 }
@@ -1909,7 +1719,7 @@ nav {
     padding: 5px;
     border-radius: 10px;
     text-align:center;
-    /*background-color: white;*/
+    
 }
 
 .dish_name {
@@ -1928,198 +1738,6 @@ nav {
 }
 
 
-/*FORMULARIO*/
-
-
-
-.info_pickup {
-    width: 100%;
-    background-color:rgb(204, 137, 43) ;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: center;
-
-}
-
-.formulario {
-    display: flex;
-    /*justify-content: center;*/
-    align-items: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
-    width: 70%;
-    background-color: rgb(204, 137, 43);
-    /*border: 1px solid black;*/
-}
-
-
-.formulario form {
-    /*border: 1px solid black;*/
-    flex-grow: 1;
-    padding-bottom: 2%;
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color:rgb(216, 178, 124);
-    border-radius: 30px;
-    
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
-}
-
-.titulo {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    /*border: 1px solid black;*/
-}
-
-.linea {
-    height: 5px;
-    width:15%;
-    background-color: black;
-}
-
-.head {
-    font-size: 1.5rem;
-    display: flex;
-    
-}
-
-
-.name-email {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-between;
-    
-
-
-}
-
-.nombre {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    
-}
-
-.nombre label {
-    margin: 5px;
-}
-
-
-.email {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-
-.email label {
-    margin: 5px;
-}
-
-.cel-porque {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-}
-
-.celular {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-
-}
-
-.celular label {
-    margin: 5px;
-}
-
-.porque {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-
-.porque label {
-    margin: 5px;
-}
-
-
-
-.escrito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.escrito label {
-    margin: 5px;
-    
-}
-
-textarea {
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 60%;
-}
-
-input {
-    border: 2px solid black;
-    height: 40px;
-    width: 200px;
-    border-radius: 10px ;
-    
-}
-input:focus {
-    background-color: black;
-    color: white;
-}
-
-
-select {
-    height: 40px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.submit input {
-    background-color: green;
-    color: white;
-    font-weight: 300;
-    transition: height 2;
-    font-size: 1rem;
-}
-
-.submit img {
-    height: 0;
-    width: 0;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover img {
-    height: 20px;
-    width: 20px ;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover {
-    background-color: green;
-    border-radius: 10px;
-}
-
-
 
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
 
@@ -2133,7 +1751,7 @@ select {
 
 .terms {
     display: flex;
-    /*align-items: center;*/
+    
 }
 
 
@@ -2141,7 +1759,6 @@ select {
     
     display: flex;
     width: 150px;
-    
     justify-content:space-around;
 }
 
@@ -2154,13 +1771,12 @@ select {
 .terms ul {
     display: flex;
     justify-content:space-between;
-    /*align-items: center;*/
     width: 300px;
     
 }
 
 .terms ul li{
-    /*height: 50px;*/
+    
     list-style-type: none;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.0rem;
@@ -2241,11 +1857,11 @@ select {
 
 .check_buy {
     
-    height: 95%;
-    width: 50%;
+    height: 70%;
+    width: 70%;
     position: fixed;
-    top: 2.5%;
-    left: 30%;
+    top: 3%;
+    left: 15%;
 }
 .titulo {
     width: 100%;
@@ -2271,80 +1887,71 @@ select {
 /*CUADRÍCULA PRINCIPAL*/
 
 main {
-background-color: white;
-display: grid;
-grid-template-rows:  auto auto auto auto;
-grid-template-columns: auto auto auto;
-grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Legal Legal Legal""Footer Footer Footer";
-height: 90%;
-margin-top: 85px;
+    background-color: white;
+    display: grid;
+    grid-template-rows:  auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Legal Legal Legal""Footer Footer Footer";
+    height: 90%;
+    margin-top: 85px;
 }
 
 
 
 .legal {
-grid-area: Legal; 
+    grid-area: Legal; 
 }
 
 .footer {
-grid-area: Footer; 
+    grid-area: Footer; 
 }
 
 
 .gallina {
-grid-area: Gallina; 
+    grid-area: Gallina; 
 }
 
 .costilla {
-grid-area: Costilla; 
+    grid-area: Costilla; 
 }
 
 .cola {
-grid-area: Cola; 
+    grid-area: Cola; 
 }
 
 
 
 .sobrebarriga {
-grid-area: Sobrebarriga; 
+    grid-area: Sobrebarriga; 
 }
 
 .oreada {
-grid-area: Oreada; 
+    grid-area: Oreada; 
 }
 
 .chatas {
-grid-area: Chatas; 
+    grid-area: Chatas; 
 }
-
-
-/*FORMULARIO*/
-
-
-
-
 
 
 /*CUADRÍCULAS NAV*/
 nav {
-height: 85px;
-width: 100%;
-position: fixed;
-top: 0px;
-box-sizing: border-box;
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
 }
 
 .nav {
-grid-area: Nav; 
-background-image: url("../img_proyecto/madera.PNG");
-background-repeat: repeat;
-display: grid;
-grid-template-columns: 20px 20% auto  auto  400px 20px;
-grid-template-areas: "A Buscar  Logo  Car  Barra C";
-align-items:center;
-height: 100%;
-
-
+    grid-area: Nav; 
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 20px 20% auto  auto  400px 20px;
+    grid-template-areas: "A Buscar  Logo  Car  Barra C";
+    align-items:center;
+    height: 100%;
 }
 
 #buy_car {
@@ -2405,91 +2012,91 @@ height: 100%;
 
 
 .logo {
-grid-area: Logo; 
+    grid-area: Logo; 
 }
 
 .logo  a {
-display: flex;
-justify-content:start;
+    display: flex;
+    justify-content:start;
 }
 
 .logo  a img{
-width: 120px;
-height: 90px;
-margin-left: 0px;
-/*float: left;*/
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
+
 }
 
 
 .barr_nav {
-grid-area: Barra; 
+    grid-area: Barra; 
 }
 
 .buscar {
-grid-area: Buscar; 
+    grid-area: Buscar; 
 }
 
 .buscar form {
-display: flex;
-justify-content:center;
+    display: flex;
+    justify-content:center;
 }
 
 .buscar form input {
-/*float: right;*/
-width: 40%;
-height: 30px;
-margin-left: 5px;
-border: 3px solid black;
-border-radius: 20px;
-background-color: rgb(240, 202, 157, 0.5);
+
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
 
 }
 
 .buscar form input:focus {
-color: white;
-background-color: black;
+    color: white;
+    background-color: black;
 }
 
 
 .buscar form label img {
-width: 25px;
-height: 25px;
+    width: 25px;
+    height: 25px;
 }
 
 
 .barr_nav ul {
-display: flex;
-justify-content:space-evenly;
-align-items: center;
-/*border: 1px solid black;*/
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
 
 }
 
 .barr_nav ul li{
-height: 50px;
-list-style-type: none;
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 1.3rem;
-display: flex;
-align-items: center;
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
 }
 
 
 
 .barr_nav ul li a{
 
-text-decoration: none;
-color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .barr_nav ul li:hover{
-background-color: rgb(218, 190, 147,0.7);
-border-radius: 10px;
-transition: background-color 0.5s;
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
 }
 
 .barr_nav .menu {
-display: none;
+    display: none;
 }
 
 
@@ -2502,17 +2109,16 @@ background-color: black;
 }
 
 .precio {
-/*border: 1px solid black;*/
-padding: 2px;
-border-radius: 10px;
-background-color: rgb(204, 137, 43);
-color: black;
-text-align: center;
-font-weight: bold;
+        
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgb(204, 137, 43);
+    color: black;
+    text-align: center;
+    font-weight: bold;
 }
 
 .foto {
-/*border: 1px solid black;*/
 width: 250px;
 border-radius: 250px;
 }
