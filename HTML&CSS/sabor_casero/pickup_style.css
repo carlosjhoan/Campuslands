@@ -507,30 +507,15 @@ body {
 #search_database {
     position: fixed;
     display: flex;
+    flex-direction: column;
     align-items:end;
-    justify-content: center;
+    justify-content:space-between;
     right: 1%;
     top: 20%;
+    height: 140px;
 }
 
-#search_database:hover #arrow_left img{
-    visibility: collapse;
-}
-
-#arrow_left img {
-    width: 40px;
-}
-
-#div_stack {
-    height: 115px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-#div_stack #head {
+#head {
     width: 80px;
     height: 50px;
     text-align: center;
@@ -543,6 +528,18 @@ body {
     align-items: center;
 }
 
+
+
+#div_stack {
+    height: 80px;
+    display: flex;
+    align-items:start;
+    justify-content:baseline;
+
+}
+
+
+
 #stack_icon {
     background-color: rgb(203, 153, 83);
     width: 60px;
@@ -551,12 +548,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.5s;
+    transition: background-color 0.5s, width 0.3s;
+    cursor: pointer;
 }
+
 
 #stack_icon:hover {
     background-color: rgb(203, 163, 107);
     transition: background-color 0.5s;
+    
+}
+
+#search_database:hover #stack_icon{
+    width: 70px;
+    height: 80px;
+    border-radius: 0px 60px 60px 0px;
+    transition: width 0.3s;
 }
 
 
@@ -565,10 +572,41 @@ body {
     
 }
 
-#stack_icon:hover img {
+#search_database:hover #stack_icon img {
     content: url("../img_proyecto/database_search_2.png");
     width: 35px;
     
+}
+
+#slide_barr {
+    width: 0px;
+    height: 0px;
+    background-color:rgb(203, 153, 83) ;
+    border-radius: 60px 0px 0px 60px;
+    transition: width 0.3s, heigth 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    
+}
+
+#slide_barr div, #slide_barr input {
+    visibility: collapse;
+
+}
+
+
+
+#search_database:hover #slide_barr {
+    width: 200px;
+    height: 80px;
+    transition: width 0.3s, heigth 0.3s;
+    visibility: visible;
+}
+
+#search_database:hover #slide_barr div, #search_database:hover #slide_barr input {
+    visibility: visible;
 }
 
 

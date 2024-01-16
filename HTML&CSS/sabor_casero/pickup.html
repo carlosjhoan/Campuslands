@@ -223,14 +223,19 @@
 
     <!--Buscar registros en la base de datos-->
     <div id ="search_database">
-        <div id = "arrow_left"><img src="../img_proyecto/left-icon.png" alt=""></div>
+        <div id = "head">Buscar Registro</div>
         <div id ="div_stack">
-            <div id = "head">Buscar Registro</div>
-            <div id="stack_icon"><img src="../img_proyecto/database_search.png" alt=""></div>
-            
-        </div>
-        <div id = "barr_slide">
-
+            <div id = "slide_barr">
+                <div>
+                    <label for="option_search">Buscar por:</label>
+                    <select name="option_search" id="option_search">
+                        <option value="cod_fact">Factura</option>
+                        <option value="cell_num">Celular</option>
+                    </select>
+                </div>
+                <input type="text">
+            </div>
+            <div id="stack_icon"><img src="../img_proyecto/database_search.png" alt=""></div>    
         </div>
     </div>
 
