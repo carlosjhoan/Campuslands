@@ -1730,22 +1730,22 @@ nav {
     justify-content: space-around;
     background-color:rgb(216, 178, 124);
     border-radius: 30px;
-    
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+
 }
 
 .titulo {
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items:center;
-    width: 100%;
+    width: 50%;
     /*border: 1px solid black;*/
 }
 
 .linea {
     height: 5px;
-    width:15%;
+    width:30%;
     background-color: black;
+    border-radius: 5px;
 }
 
 .head {
@@ -1890,6 +1890,7 @@ select {
 /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
 
 .legal {
+    height: 220px;
     display: flex;
     justify-content: space-around;
     align-items: center;
