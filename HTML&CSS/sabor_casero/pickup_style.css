@@ -506,8 +506,19 @@ body {
 
 #search_database {
     position: fixed;
+    display: flex;
+    align-items:end;
+    justify-content: center;
     right: 1%;
     top: 20%;
+}
+
+#search_database:hover #arrow_left img{
+    visibility: collapse;
+}
+
+#arrow_left img {
+    width: 40px;
 }
 
 #div_stack {
@@ -559,6 +570,7 @@ body {
     width: 35px;
     
 }
+
 
 @media screen and (max-width:460px) {
 
