@@ -527,7 +527,7 @@ body {
     font-weight: bold;
     color: rgb(208, 151, 71);
     background-color: rgb(24, 24, 24);
-    border-radius: 25px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
 }
@@ -540,12 +540,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.5s;
 }
 
+#stack_icon:hover {
+    background-color: rgb(203, 163, 107);
+    transition: background-color 0.5s;
+}
 
 
 #stack_icon img {
     width: 35px;
+    
+}
+
+#stack_icon:hover img {
+    content: url("../img_proyecto/database_search_2.png");
+    width: 35px;
+    
 }
 
 @media screen and (max-width:460px) {
