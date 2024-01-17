@@ -541,11 +541,6 @@ body {
 
 }
 
-#search_database:hover #div_stack {
-    box-shadow: 0 0 3px 3px rgb(187, 184, 184);
-}
-
-
 
 #stack_icon {
     background-color: rgb(203, 153, 83);
@@ -622,38 +617,36 @@ body {
     display: flex;
     justify-content:space-between;
     align-items:center;
-    width: 115px;
-    background-color: rgb(254, 236, 236);
-    border: 2px solid black;
-    border-radius: 20px;
+    width: 120px;
+
+    
 }
 
 #input_database{
     width: 90px;
     height: 25px;
     border-radius: 20px;
-    border: none;
+    border: 2px solid black;
     background-color: rgb(254, 236, 236);
+    text-align: center;
    
 
 }
 
 #input_database:focus, #input_database:active  {
-    border-color: transparent;
-    width: 115px;
-    border-radius: 20px;
     text-align: center;
 }
 
 #input_search img {
-    width: 20px;
-    background-color: rgb(250, 220, 220);
+    padding: 3px;
+    width: 25px;
     border-radius: 20px;
     cursor: pointer;
+    background-color:rgb(197, 162, 113);
 }
 #input_search img:hover {
     
-    background-color: rgb(211, 208, 208);
+    background-color: rgb(194, 169, 135);
 }
 
 #option_search {
@@ -667,6 +660,30 @@ body {
 #slide_barr div label {
     font-weight: bold;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/*Información de las facturas*/
+
+.info_database {
+    position: fixed;
+    width: 70%;
+    height: 50%;
+    left: 15%;
+    top: 20%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    visibility: collapse;
+
+}
+
+#each_order {
+    padding: 5px;
+    border: 1px dotted black;
+    border-radius: 20px;
 }
 
 

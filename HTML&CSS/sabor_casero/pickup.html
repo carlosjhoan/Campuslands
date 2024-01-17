@@ -229,18 +229,27 @@
                 <div>
                     <label for="option_search">Buscar por:</label>
                     <select name="option_search" id="option_search">
-                        <option value="cod_fact">Factura</option>
-                        <option value="cell_num">Celular</option>
+                        <option value="id">Factura</option>
+                        <option value="celular">Celular</option>
                     </select>
                 </div>
 
                 <div id = "input_search">
                     <input type="text" id = "input_database">
-                    <img src="../img_proyecto/search_logo.png" alt="">
+                    <img src="../img_proyecto/search_logo.png" id = "search_orders" alt="">
                 </div>
                
             </div>
             <div id="stack_icon"><img src="../img_proyecto/database_search.png" alt=""></div>    
+        </div>
+    </div>
+
+    <div class="info_database">
+        <div id = "each_order"></div>
+        <div id = "buttons_orders">
+            <button id = "before_order">before</button>
+            <button id = "close_order">cerrar</button>
+            <button id = "after_order">after</button>
         </div>
     </div>
 
@@ -262,6 +271,7 @@
 
         let data = [];
         let id_order;
+        let data_facturas
 
         let total_price;
 
@@ -698,6 +708,198 @@
                 .then(json => console.log(json))
                 .catch(error => console.error("ERROR!!!:" + error))
         }
+
+        /*BUSCAR EN LA BASE DE DATOS*/
+
+        document.getElementById("search_orders").addEventListener("click", () => {
+            let query;
+            const option = document.getElementById("option_search").value;
+            const input_info = document.getElementById("input_database").value;
+            if (option == "id") {
+                query = `http://localhost:3000/orders?id=${input_info}`
+            } else {
+                query = `http://localhost:3000/orders?celular=${input_info}`
+            }
+            fetch (query, {
+                method: 'GET',
+                headers: {
+                    'Content-type' : 'application/json; charset=UTF-8'
+                },
+            })
+            .then(response => response.json())
+            .then(json => {
+                let num_pos = 0;
+                let factura = "";
+                const div_list = document.getElementById("each_order");
+                const table_orders = document.querySelector(".info_database");
+                const close_order = document.getElementById("close_order");
+                const before_order = document.getElementById("before_order");
+                const after_order = document.getElementById("after_order");
+                table_orders.style.visibility = "visible";
+
+                /*Permitir que el botón close cierre*/
+                close_order.addEventListener("click", () => {
+                    table_orders.style.visibility = "hidden"
+                    close_order.style.visibility = "hidden";
+                    before_order.style.visibility = "hidden";
+                    after_order.style.visibility = "hidden";
+                })
+
+                /*Permitir que el botón hacia ADELANTE funcione*/
+                after_order.addEventListener("click", () => {
+                    num_pos++;
+                    if (num_pos >= json.length - 1) {
+                        after_order.style.visibility = "hidden";
+                        before_order.style.visibility = "visible";
+
+                        factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>
+                            <b>Hora recoger:</b> ${json[num_pos].hora}<br>
+                            <b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
+
+                        for (let k = 0 ; k < json[num_pos].pedido.length; k++) {
+                            factura += `-- ${json[num_pos].pedido[k][1]} ${json[num_pos].pedido[k][0]}<br>`;
+                        }
+
+                        factura += `<b>Precio:</b> $${json[num_pos].precio} COP<br>
+                                    <b>modo:</b> ${json[num_pos].modo}<br>
+                                    <b>Fecha:</b> ${json[num_pos].Fecha}<br>`;
+                        
+                        div_list.innerHTML =factura;
+
+                        num_pos = json.length - 1;
+
+
+                    } else {
+                        
+                        factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>
+                            <b>Hora recoger:</b> ${json[num_pos].hora}<br>
+                            <b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
+
+                        for (let k = 0 ; k < json[num_pos].pedido.length; k++) {
+                            factura += `-- ${json[num_pos].pedido[k][1]} ${json[num_pos].pedido[k][0]}<br>`;
+                        }
+
+                        factura += `<b>Precio:</b> $${json[num_pos].precio} COP<br>
+                                    <b>modo:</b> ${json[num_pos].modo}<br>
+                                    <b>Fecha:</b> ${json[num_pos].Fecha}<br>`;
+                        
+                        div_list.innerHTML =factura;
+
+                    }
+                    
+                })
+
+                /*Permitir que el botón hacia ATRÁS funcione*/
+                before_order.addEventListener("click", () => {
+                        num_pos--;
+                    if (num_pos <= 0) {
+                        before_order.style.visibility = "hidden";
+                        after_order.style.visibility = "visible";
+
+                        factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>
+                            <b>Hora recoger:</b> ${json[num_pos].hora}<br>
+                            <b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
+
+                        for (let j = 0 ; j < json[num_pos].pedido.length; j++) {
+                            factura += `-- ${json[num_pos].pedido[j][1]} ${json[num_pos].pedido[j][0]}<br>`;
+                        }
+
+                        factura += `<b>Precio:</b> $${json[num_pos].precio} COP<br>
+                                    <b>modo:</b> ${json[num_pos].modo}<br>
+                                    <b>Fecha:</b> ${json[num_pos].Fecha}<br>`;
+                        
+                        div_list.innerHTML =factura;
+
+                        num_pos = 0;
+                    } else {
+                        
+                        factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>
+                            <b>Hora recoger:</b> ${json[num_pos].hora}<br>
+                            <b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
+
+                        for (let j = 0 ; j < json[num_pos].pedido.length; j++) {
+                            factura += `-- ${json[num_pos].pedido[j][1]} ${json[num_pos].pedido[j][0]}<br>`;
+                        }
+
+                        factura += `<b>Precio:</b> $${json[num_pos].precio} COP<br>
+                                    <b>modo:</b> ${json[num_pos].modo}<br>
+                                    <b>Fecha:</b> ${json[num_pos].Fecha}<br>`;
+                        
+                        div_list.innerHTML =factura;
+
+                    }
+                    
+                })
+
+                
+                if (json.length == 0) {
+                    div_list.innerHTML = "<em>NO HAY INFORMACIÓN PARA MOSTRAR</em>"
+                } else if (json.length === 1) {
+                    console.log("solo 1")
+                    document.getElementById("before_order").style.visibility = "hidden";
+                    document.getElementById("after_order").style.visibility = "hidden";
+                    factura = `<b>N° Factura:</b> ${json[0].id}<br>
+                        <b>Nombre:</b> ${json[0].name}<br>
+                        <b>Email:</b> ${json[0].email}<br>
+                         <b>Celular:</b> ${json[0].celular}<br>
+                         <b>Hora recoger:</b> ${json[0].hora}<br>
+                         <b>Observaciones:</b> <em>${json[0].observaciones}</em><br>
+                         <b>Pedido:</b><br>`;
+
+                    for (let i = 0 ; i < json[0].pedido.length; i++) {
+                        factura += `-- ${json[0].pedido[i][1]} ${json[0].pedido[i][0]}<br>`;
+                    }
+
+                    factura += `<b>Precio:</b> $${json[0].precio} COP<br>
+                                <b>modo:</b> ${json[0].modo}<br>
+                                <b>Fecha:</b> ${json[0].Fecha}<br>`;
+                    
+                    div_list.innerHTML =factura;
+ 
+                } else {
+                    console.log(json.length)
+                    before_order.style.visibility = "hidden";
+                    after_order.style.visibility = "visible";
+                    factura = `<b>N° Factura:</b> ${json[0].id}<br>
+                        <b>Nombre:</b> ${json[0].name}<br>
+                        <b>Email:</b> ${json[0].email}<br>
+                         <b>Celular:</b> ${json[0].celular}<br>
+                         <b>Hora recoger:</b> ${json[0].hora}<br>
+                         <b>Observaciones:</b> <em>${json[0].observaciones}</em><br>
+                         <b>Pedido:</b><br>`;
+
+                    for (let m = 0 ; m < json[0].pedido.length; m++) {
+                        factura += `-- ${json[0].pedido[m][1]} ${json[0].pedido[m][0]}<br>`;
+                    }
+
+                    factura += `<b>Precio:</b> $${json[0].precio} COP<br>
+                                <b>modo:</b> ${json[0].modo}<br>
+                                <b>Fecha:</b> ${json[0].Fecha}<br>`;
+                    
+                    div_list.innerHTML =factura;
+                }
+                
+
+            })
+
+            
+        })
  
  
      </script>

@@ -1,4 +1,6 @@
-fetch ('http://localhost:3000/orders', {
+
+
+fetch ('http://localhost:3000/orders?celular=3178315988', {
     method: 'GET',
     headers: {
         'Content-type' : 'application/json; charset=UTF-8'
@@ -13,7 +15,7 @@ let data = {
     "cel_num": "3124649852"
 }
 
-fetch ('http://localhost:3000/orders', {
+/*fetch ('http://localhost:3000/orders', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -22,7 +24,7 @@ fetch ('http://localhost:3000/orders', {
 })
 .then(response => response.json())
 .then(json => console.log(json))
-.catch(error => console.error("ERROR!!!:" + error))
+.catch(error => console.error("ERROR!!!:" + error))*/
 
 /*fetch ('http://localhost:3000/trainers/3', {
     method: 'PUT',
