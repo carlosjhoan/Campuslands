@@ -235,7 +235,7 @@
                 </div>
 
                 <div id = "input_search">
-                    <input type="text" id = "input_database">
+                    <input type="text" id = "input_database" placeholder="digite info">
                     <img src="../img_proyecto/search_logo.png" id = "search_orders" alt="">
                 </div>
                
@@ -245,11 +245,12 @@
     </div>
 
     <div class="info_database">
-        <div id = "each_order"></div>
+        <div id = "container_orders"><div id = "each_order"></div></div>
+        
         <div id = "buttons_orders">
-            <button id = "before_order">before</button>
-            <button id = "close_order">cerrar</button>
-            <button id = "after_order">after</button>
+            <button id = "before_order"><img src="../img_proyecto/previous.png" alt=""></button>
+            <button id = "close_order"><img src="../img_proyecto/close_order.png" alt=""></button>
+            <button id = "after_order"><img src="../img_proyecto/after.png" alt=""></button>
         </div>
     </div>
 
@@ -288,8 +289,13 @@
 
             .then(response => response.json())
             .then(json => {
-                id_order = json.length
-                console.log(id_order)})
+                if (json.length == 0) {
+                    id_order = 0;
+                } else {
+                    id_order = json.length
+                }
+                
+                })
             
         }
 
@@ -478,6 +484,8 @@
             let moneyFormatter  = new Intl.NumberFormat();
             const review_order = document.querySelector(".lista_pedido");
             const table_order = document.getElementById("table_order");
+            const search_database = document.getElementById("search_orders");
+            search_database.style.visibility = "hidden";
             for (let i=0; i<arr_pedido.length; i++) {
                 if (arr_pedido[i][1] > 0) {
                     table += `<tr><td>${arr_pedido[i][1]}</td><td>${arr_pedido[i][0]}</td><td>$14.000</td><td>$${moneyFormatter.format(arr_pedido[i][1]*14000)}</td><td><button onclick ='cancel_order("${arr_pedido[i][2]}", "${arr_pedido[i][3]}",${arr_pedido.indexOf(arr_pedido[i])})'><img class = "cancel_product" src = "../img_proyecto/close_order.png"></button></td></tr>`
@@ -491,6 +499,8 @@
         function collapse_order() {
             const review_order = document.querySelector(".lista_pedido")
             review_order.style.visibility = "collapse";
+            const search_database = document.getElementById("search_orders");
+            search_database.style.visibility = "visible"
         }
 
         function confirm_order() {
@@ -548,6 +558,8 @@
                 document.getElementById("cell_number").style.border = "2px solid black";
                 document.getElementById("cell_number").style.color = "black";
                 document.getElementById("cell_number").style.translate = "0px"
+                const search_database = document.getElementById("search_orders");
+                search_database.style.visibility = "visible";
 
             } else {
                 total_price = 14000 * q_orders;
@@ -582,6 +594,7 @@
             
             let review_table = "";
             let arr_final_order = [];
+            let moneyFormatter  = new Intl.NumberFormat();
             const regex_name = /^[a-zA-Z\s]+$/; //Para comprobar nombres
             const regex_whitespace = /\S/; //Regex para comprobar que no esté vacío
             const regex_cel = /^[0-9]+$/; //regex para comprobar el número de teléfono
@@ -631,7 +644,7 @@
                 }
 
                 alert("Pedido registrado con éxito!");
-                review_table += `<b>Precio:</b> $${total_price} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em><br><b>Fecha:</b> ${now.toLocaleString()}<br>`
+                review_table += `<b>Precio:</b> $${moneyFormatter.format(total_price)} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em><br><b>Fecha:</b> ${now.toLocaleString()}<br>`
                 document.getElementById("review_paragraph").innerHTML = review_table;
                 review_order_div.style.visibility = "visible";
                 confirm_div.style.visibility = "hidden";
@@ -647,7 +660,7 @@
                     "hora" : `${document.getElementById("range_time").value}`,
                     "observaciones" : `${document.getElementById("commit").value}`,
                     "pedido" : arr_final_order,
-                    "precio" : total_price,
+                    "precio" : moneyFormatter.format(total_price),
                     "modo" : "pickup",
                     "Fecha" : `${now.toLocaleString()}`
                 }
@@ -713,6 +726,9 @@
 
         document.getElementById("search_orders").addEventListener("click", () => {
             let query;
+            const regex_info = /^[0-9]+$/; //solo numeros
+            const button_mi_pedido = document.getElementById("button_mi_pedido");
+            button_mi_pedido.style.visibility = "hidden";
             const option = document.getElementById("option_search").value;
             const input_info = document.getElementById("input_database").value;
             if (option == "id") {
@@ -737,13 +753,18 @@
                 const after_order = document.getElementById("after_order");
                 table_orders.style.visibility = "visible";
                 close_order.style.visibility = "visible";
+
                 /*Permitir que el botón close cierre*/
                 close_order.addEventListener("click", () => {
+                    
                     table_orders.style.visibility = "hidden"
                     close_order.style.visibility = "hidden";
                     before_order.style.visibility = "hidden";
                     after_order.style.visibility = "hidden";
                     document.getElementById("input_database").value = "";
+                    if (total_price > 0) {
+                        button_mi_pedido.style.visibility = "visible";
+                    }
                 })
 
                 /*Permitir que el botón hacia ADELANTE funcione*/
@@ -849,7 +870,7 @@
                 })
 
                 
-                if (json.length == 0) {
+                if (json.length == 0 || regex_info.test(input_info) == false ) {
                     div_list.innerHTML = "<em>NO HAY INFORMACIÓN PARA MOSTRAR</em>";
                     before_order.style.visibility = "hidden";
                     after_order.style.visibility = "hidden";

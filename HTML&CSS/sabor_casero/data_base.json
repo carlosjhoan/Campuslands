@@ -2,17 +2,40 @@
   "orders": [
     {
       "id": "1",
-      "name": "Carlos Jhoan",
+      "name": "Carlos Jhoan Aguilar",
       "email": "carlosjhoanaguilar@gmail.com",
-      "observaciones": "",
+      "celular": "3178315988",
+      "hora": "12:15 pm - 12:30 pm",
+      "observaciones": "Sin ensalada, agregar cubiertos",
       "pedido": [
+        [
+          "S. de gallina",
+          1
+        ],
         [
           "S. de costilla",
           1
+        ],
+        [
+          "S. de cola",
+          1
+        ],
+        [
+          "Sobrebarriga",
+          1
+        ],
+        [
+          "Chatas",
+          1
+        ],
+        [
+          "Oreada",
+          1
         ]
       ],
-      "precio": 14000,
-      "modo": "pickup"
+      "precio": 84000,
+      "modo": "pickup",
+      "Fecha": "17/1/2024, 12:17:16 a. m."
     },
     {
       "id": "2",
@@ -20,80 +43,52 @@
       "email": "carlosjhoanaguilar@gmail.com",
       "celular": "3178315988",
       "hora": "12:00 m - 12:15 pm",
-      "observaciones": "Sin ensalada",
-      "pedido": [
-        [
-          "Sobrebarriga",
-          1
-        ],
-        [
-          "Chatas",
-          1
-        ],
-        [
-          "Oreada",
-          1
-        ]
-      ],
-      "precio": 42000,
-      "modo": "pickup",
-      "Fecha": "16/1/2024, 12:16:27 a. m."
-    },
-    {
-      "id": "3",
-      "name": "Luz Stella",
-      "email": "luz_stella66@gmail.com",
-      "celular": "3106728007",
-      "hora": "12:15 pm - 12:30 pm",
       "observaciones": "Sin limonada",
       "pedido": [
         [
           "S. de gallina",
           1
-        ],
+        ]
+      ],
+      "precio": "14.000",
+      "modo": "pickup",
+      "Fecha": "17/1/2024, 12:39:10 a. m."
+    },
+    {
+      "id": "3",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "hora": "12:15 pm - 12:30 pm",
+      "observaciones": "bien asada",
+      "pedido": [
         [
           "S. de costilla",
           1
         ],
         [
           "S. de cola",
-          1
-        ],
-        [
-          "Sobrebarriga",
-          1
+          3
         ],
         [
           "Chatas",
-          1
-        ],
-        [
-          "Oreada",
-          1
+          4
         ]
       ],
-      "precio": 84000,
+      "precio": "112.000",
       "modo": "pickup",
-      "Fecha": "16/1/2024, 12:17:30 a. m."
+      "Fecha": "17/1/2024, 12:39:56 a. m."
     },
     {
       "id": "4",
       "name": "Carlos Jhoan",
       "email": "carlosjhoanaguilar@gmail.com",
       "celular": "3178315988",
-      "hora": "12:30 pm - 1:00pm",
-      "observaciones": "Agregar cubiertos",
+      "hora": "11:30 am - 12:00 m",
+      "observaciones": "",
       "pedido": [
         [
-          "S. de gallina",
-          1
-        ],
-        [
           "S. de costilla",
-          1
-        ],
-        [
-          "S. de cola",
           1
         ],
         [
@@ -101,17 +96,13 @@
           1
         ],
         [
-          "Chatas",
-          1
-        ],
-        [
           "Oreada",
           1
         ]
       ],
-      "precio": 84000,
+      "precio": "42.000",
       "modo": "pickup",
-      "Fecha": "16/1/2024, 12:20:01 a. m."
+      "Fecha": "17/1/2024, 12:40:27 a. m."
     }
   ],
   "user_active": [],

@@ -667,9 +667,9 @@ body {
 .info_database {
     position: fixed;
     width: 70%;
-    height: 50%;
+    height: 80%;
     left: 15%;
-    top: 20%;
+    top: 10%;
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -680,10 +680,62 @@ body {
 
 }
 
+#container_orders {
+    height: 500px;
+    
+}
+
 #each_order {
     padding: 5px;
     border: 1px dotted black;
     border-radius: 20px;
+}
+
+#buttons_orders {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+#before_order, #close_order, #after_order  {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 247, 247);
+    border: none;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+#before_order:hover, #after_order:hover {
+    background-color: rgb(154, 235, 116);
+    transition: background-color 0.5s;
+} 
+
+#before_order:active, #after_order:active {
+    background-color: rgb(128, 223, 84);
+}
+
+#close_order:hover {
+    background-color: rgb(231, 124, 124);
+}
+
+
+#before_order img {
+    width: 25px;
+}
+
+
+#close_order img {
+    width: 25px;
+}
+
+
+#after_order img {
+    width: 25px;
 }
 
 
@@ -1161,9 +1213,22 @@ nav {
 }
 
 /*Factura para registrar en base de datos*/
+
+#search_database {
+    right: 3%;
+    top: 12%;
+}
+
 #review_order {
     width: 80%;
     left: 10%;
+}
+
+.info_database {
+    width: 90%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
 }
 
 
@@ -1696,9 +1761,6 @@ nav {
             grid-area: Sobrebarriga; 
         }
         
-        .oreada {
-        }
-        
         .chatas {
             grid-area: Chatas; 
         }
@@ -2067,6 +2129,9 @@ nav {
     
     box-shadow: 0px 0px;
 }
+
+/*FACTURAS EN LA BASE DE DATOS*/
+
 
 
 
