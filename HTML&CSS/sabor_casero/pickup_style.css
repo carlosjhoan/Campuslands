@@ -541,6 +541,10 @@ body {
 
 }
 
+#search_database:hover #div_stack {
+    box-shadow:0 0 3px 3px rgba(173, 173, 173, 0.7);   
+}
+
 
 #stack_icon {
     background-color: rgb(203, 153, 83);
@@ -671,6 +675,7 @@ body {
     left: 15%;
     top: 10%;
     background-color: white;
+    box-shadow:0 0 3px 3px rgb(154, 154, 154, 0.5);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
