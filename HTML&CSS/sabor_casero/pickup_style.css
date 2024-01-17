@@ -542,7 +542,7 @@ body {
 }
 
 #search_database:hover #div_stack {
-    box-shadow: 0 0 3px 3px rgb(209, 204, 198);
+    box-shadow: 0 0 3px 3px rgb(187, 184, 184);
 }
 
 
@@ -666,6 +666,7 @@ body {
 
 #slide_barr div label {
     font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 
