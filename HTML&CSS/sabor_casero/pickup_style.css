@@ -515,7 +515,9 @@ body {
     height: 140px;
 }
 
+
 #head {
+    padding: 5px;
     width: 80px;
     height: 50px;
     text-align: center;
@@ -535,7 +537,12 @@ body {
     display: flex;
     align-items:start;
     justify-content:baseline;
+    border-radius: 60px;
 
+}
+
+#search_database:hover #div_stack {
+    box-shadow: 0 0 3px 3px rgb(209, 204, 198);
 }
 
 
@@ -556,6 +563,7 @@ body {
 #stack_icon:hover {
     background-color: rgb(203, 163, 107);
     transition: background-color 0.5s;
+    
     
 }
 
@@ -591,7 +599,7 @@ body {
     
 }
 
-#slide_barr div, #slide_barr input {
+#slide_barr div {
     visibility: collapse;
 
 }
@@ -603,15 +611,61 @@ body {
     height: 80px;
     transition: width 0.3s, heigth 0.3s;
     visibility: visible;
+    
 }
 
 #search_database:hover #slide_barr div {
     visibility: visible;
 }
 
-#search_database:hover #slide_barr input {
-    visibility: visible;
+#input_search {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 115px;
+    background-color: rgb(254, 236, 236);
+    border: 2px solid black;
+    border-radius: 20px;
+}
 
+#input_database{
+    width: 90px;
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(254, 236, 236);
+   
+
+}
+
+#input_database:focus, #input_database:active  {
+    border-color: transparent;
+    width: 115px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#input_search img {
+    width: 20px;
+    background-color: rgb(250, 220, 220);
+    border-radius: 20px;
+    cursor: pointer;
+}
+#input_search img:hover {
+    
+    background-color: rgb(211, 208, 208);
+}
+
+#option_search {
+    background-color: rgb(254, 236, 236);
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#slide_barr div label {
+    font-weight: bold;
 }
 
 
