@@ -736,13 +736,14 @@
                 const before_order = document.getElementById("before_order");
                 const after_order = document.getElementById("after_order");
                 table_orders.style.visibility = "visible";
-
+                close_order.style.visibility = "visible";
                 /*Permitir que el botón close cierre*/
                 close_order.addEventListener("click", () => {
                     table_orders.style.visibility = "hidden"
                     close_order.style.visibility = "hidden";
                     before_order.style.visibility = "hidden";
                     after_order.style.visibility = "hidden";
+                    document.getElementById("input_database").value = "";
                 })
 
                 /*Permitir que el botón hacia ADELANTE funcione*/
@@ -849,7 +850,9 @@
 
                 
                 if (json.length == 0) {
-                    div_list.innerHTML = "<em>NO HAY INFORMACIÓN PARA MOSTRAR</em>"
+                    div_list.innerHTML = "<em>NO HAY INFORMACIÓN PARA MOSTRAR</em>";
+                    before_order.style.visibility = "hidden";
+                    after_order.style.visibility = "hidden";
                 } else if (json.length === 1) {
                     console.log("solo 1")
                     document.getElementById("before_order").style.visibility = "hidden";
