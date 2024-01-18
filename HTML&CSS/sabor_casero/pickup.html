@@ -811,7 +811,7 @@
 
 
                     } else {
-                        
+                        before_order.style.visibility = "visible";
                         factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
                             <b>Nombre:</b> ${json[num_pos].name}<br>
                             <b>Email:</b> ${json[num_pos].email}<br>
@@ -861,6 +861,8 @@
 
                         num_pos = 0;
                     } else {
+
+                        after_order.style.visibility = "visible";
                         
                         factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
                             <b>Nombre:</b> ${json[num_pos].name}<br>
