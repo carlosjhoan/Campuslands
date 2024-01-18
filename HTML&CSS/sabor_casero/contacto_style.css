@@ -1550,13 +1550,6 @@ main {
 
 }
 
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
-
-
 
 
 .legal {
@@ -1857,33 +1850,49 @@ select {
     border-radius: 10px;
 }
 
-.submit input {
+button {
     background-color: green;
+    height: 35px;
+    width: 120px;
+    border: 1px solid green;
+    border-radius: 35px;
     color: white;
     font-weight: 300;
-    transition: height 2;
     font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.submit img {
-    height: 0;
-    width: 0;
-    transition: height 0.1s, width 0.1s;
+button:hover {
+    background-color: black;
+    border: 1px solid black;
+}
+
+button img[src= "../img_proyecto/send_1.png"] {
+    width: 20px;
+    transition: width 0.1s;
 
 }
 
-.submit:hover img {
-    height: 20px;
-    width: 20px ;
-    transition: height 0.1s, width 0.1s;
+button:hover img[src= "../img_proyecto/send_1.png"] {
+    width: 0px;
+    transition: width 0.1s;
 
 }
 
-.submit:hover {
-    background-color: green;
-    border-radius: 10px;
+button img[src= "../img_proyecto/send_2.png"] {
+    width: 0px;
+    transition: width 0.1s;
+
 }
 
+button:hover img[src= "../img_proyecto/send_2.png"] {
+    width: 25px;
+    transition: width 0.1s;
+
+}
 
 
 
