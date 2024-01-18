@@ -165,6 +165,23 @@
       "precio": "84.000",
       "modo": "delivery",
       "Fecha": "17/1/2024, 9:35:32 p. m."
+    },
+    {
+      "id": "7",
+      "name": "Luz Stella",
+      "email": "luzstella_66@gmail.com",
+      "celular": "3106728007",
+      "direccion": "cra. 1EB # 29-48 La Cumbre",
+      "observaciones": "Bien caliente",
+      "pedido": [
+        [
+          "S. de costilla",
+          1
+        ]
+      ],
+      "precio": "14.000",
+      "modo": "delivery",
+      "Fecha": "18/1/2024, 2:10:59 a. m."
     }
   ],
   "user_active": [],
