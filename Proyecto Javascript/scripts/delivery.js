@@ -541,7 +541,7 @@ if (json[num_pos].modo == "pickup") {
 }
     
 factura += `<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
-<b>Pedido:</b><br>`;
+                            <b>Pedido:</b><br>`;
 
 for (let k = 0 ; k < json[num_pos].pedido.length; k++) {
 factura += `-- ${json[num_pos].pedido[k][1]} ${json[num_pos].pedido[k][0]}<br>`;
@@ -559,13 +559,19 @@ num_pos = json.length - 1;
 } else {
 before_order.style.visibility = "visible";
 factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
-<b>Nombre:</b> ${json[num_pos].name}<br>
-<b>Email:</b> ${json[num_pos].email}<br>
-<b>Celular:</b> ${json[num_pos].celular}<br>
-<b>Hora recoger:</b> ${json[num_pos].hora}<br>
-<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
-<b>Pedido:</b><br>`;
-
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>`;
+                            
+                            
+if (json[num_pos].modo == "pickup") {
+        factura += `<b>Hora recoger:</b> ${json[num_pos].hora}<br>`;
+} else {
+        factura += `<b>Direccion:</b> ${json[num_pos].direccion}<br>`;
+}
+    
+factura += `<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
 for (let k = 0 ; k < json[num_pos].pedido.length; k++) {
 factura += `-- ${json[num_pos].pedido[k][1]} ${json[num_pos].pedido[k][0]}<br>`;
 }
@@ -588,12 +594,19 @@ before_order.style.visibility = "hidden";
 after_order.style.visibility = "visible";
 
 factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
-<b>Nombre:</b> ${json[num_pos].name}<br>
-<b>Email:</b> ${json[num_pos].email}<br>
-<b>Celular:</b> ${json[num_pos].celular}<br>
-<b>Hora recoger:</b> ${json[num_pos].hora}<br>
-<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
-<b>Pedido:</b><br>`;
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>`;
+                            
+                            
+if (json[num_pos].modo == "pickup") {
+        factura += `<b>Hora recoger:</b> ${json[num_pos].hora}<br>`;
+} else {
+        factura += `<b>Direccion:</b> ${json[num_pos].direccion}<br>`;
+}
+    
+factura += `<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
 
 for (let j = 0 ; j < json[num_pos].pedido.length; j++) {
 factura += `-- ${json[num_pos].pedido[j][1]} ${json[num_pos].pedido[j][0]}<br>`;
@@ -609,12 +622,19 @@ num_pos = 0;
 } else {
 after_order.style.visibility = "visible";
 factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
-<b>Nombre:</b> ${json[num_pos].name}<br>
-<b>Email:</b> ${json[num_pos].email}<br>
-<b>Celular:</b> ${json[num_pos].celular}<br>
-<b>Hora recoger:</b> ${json[num_pos].hora}<br>
-<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
-<b>Pedido:</b><br>`;
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>`;
+                            
+                            
+if (json[num_pos].modo == "pickup") {
+        factura += `<b>Hora recoger:</b> ${json[num_pos].hora}<br>`;
+} else {
+        factura += `<b>Direccion:</b> ${json[num_pos].direccion}<br>`;
+}
+    
+factura += `<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Pedido:</b><br>`;
 
 for (let j = 0 ; j < json[num_pos].pedido.length; j++) {
 factura += `-- ${json[num_pos].pedido[j][1]} ${json[num_pos].pedido[j][0]}<br>`;
