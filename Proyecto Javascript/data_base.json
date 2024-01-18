@@ -299,6 +299,31 @@
       "precio": "84.000",
       "modo": "pickup",
       "Fecha": "18/1/2024, 1:25:11 p. m."
+    },
+    {
+      "id": "13",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "hora": "12:30 pm - 1:00pm",
+      "observaciones": "Sin limonada ni ensalada",
+      "pedido": [
+        [
+          "S. de gallina",
+          1
+        ],
+        [
+          "S. de costilla",
+          1
+        ],
+        [
+          "S. de cola",
+          1
+        ]
+      ],
+      "precio": "42.000",
+      "modo": "pickup",
+      "Fecha": "18/1/2024, 3:03:44 p. m."
     }
   ],
   "user_active": [],
