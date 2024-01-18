@@ -182,6 +182,27 @@
       "precio": "14.000",
       "modo": "delivery",
       "Fecha": "18/1/2024, 2:10:59 a. m."
+    },
+    {
+      "id": "8",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "direccion": "cra 1BE #29-48 La Cumbre",
+      "observaciones": "",
+      "pedido": [
+        [
+          "S. de gallina",
+          1
+        ],
+        [
+          "S. de costilla",
+          1
+        ]
+      ],
+      "precio": "28.000",
+      "modo": "delivery",
+      "Fecha": "18/1/2024, 7:50:16 a. m."
     }
   ],
   "user_active": [],
