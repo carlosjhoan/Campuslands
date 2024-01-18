@@ -687,6 +687,8 @@ body {
 
 #container_orders {
     height: 500px;
+    display: flex;
+    align-items: center;
     
 }
 
@@ -694,6 +696,7 @@ body {
     padding: 5px;
     border: 1px dotted black;
     border-radius: 20px;
+    
 }
 
 #buttons_orders {
