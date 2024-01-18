@@ -1,1 +1,0 @@
-const perc_EPS = 0.04;

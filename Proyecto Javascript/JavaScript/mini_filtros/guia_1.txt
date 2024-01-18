@@ -1,5 +1,0 @@
-1). ingresar el valor --> validado
-2). Interés --> validado
-3). Número de pagos (mensuales) 
-
-Funciones a crear: 
