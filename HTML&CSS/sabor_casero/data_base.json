@@ -188,6 +188,15 @@
       "motivo": "consultar vacante",
       "contenido": "Estoy interesado en saber qué vacantes tienes disponibles en este momento.",
       "hora": "18/1/2024, 1:52:37 a. m."
+    },
+    {
+      "id": "3",
+      "nombre": "Carlos",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "motivo": "propuesta",
+      "contenido": "Qué tal si contratan mis servicios",
+      "hora": "18/1/2024, 1:54:19 a. m."
     }
   ]
 }
