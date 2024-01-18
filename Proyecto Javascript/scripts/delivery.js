@@ -529,11 +529,18 @@ after_order.style.visibility = "hidden";
 before_order.style.visibility = "visible";
 
 factura = `<b>N° Factura:</b> ${json[num_pos].id}<br>
-<b>Nombre:</b> ${json[num_pos].name}<br>
-<b>Email:</b> ${json[num_pos].email}<br>
-<b>Celular:</b> ${json[num_pos].celular}<br>
-<b>Dirección:</b> ${json[num_pos].direccion}<br>
-<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
+                            <b>Nombre:</b> ${json[num_pos].name}<br>
+                            <b>Email:</b> ${json[num_pos].email}<br>
+                            <b>Celular:</b> ${json[num_pos].celular}<br>`;
+                            
+                            
+if (json[num_pos].modo == "pickup") {
+        factura += `<b>Hora recoger:</b> ${json[num_pos].hora}<br>`;
+} else {
+        factura += `<b>Direccion:</b> ${json[num_pos].direccion}<br>`;
+}
+    
+factura += `<b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
 <b>Pedido:</b><br>`;
 
 for (let k = 0 ; k < json[num_pos].pedido.length; k++) {
