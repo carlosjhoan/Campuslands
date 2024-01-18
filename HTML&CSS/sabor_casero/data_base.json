@@ -103,6 +103,31 @@
       "precio": "42.000",
       "modo": "pickup",
       "Fecha": "17/1/2024, 12:40:27 a. m."
+    },
+    {
+      "id": "5",
+      "name": "Juan Carlos Aguilar",
+      "email": "juanchopolo_66@gmail.com",
+      "celular": "3138486456",
+      "direccion": "3138486456",
+      "observaciones": "Que el muchacho timbre",
+      "pedido": [
+        [
+          "S. de gallina",
+          1
+        ],
+        [
+          "S. de costilla",
+          1
+        ],
+        [
+          "S. de cola",
+          1
+        ]
+      ],
+      "precio": "42.000",
+      "modo": "delivery",
+      "Fecha": "17/1/2024, 8:22:47 p. m."
     }
   ],
   "user_active": [],

@@ -601,6 +601,7 @@
             const regex_whitespace = /\S/; //Regex para comprobar que no esté vacío
             const regex_cel = /^[0-9]+$/; //regex para comprobar el número de teléfono
             const regex_email = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //reex para comprobar el email
+            const regex_address = /^[#.0-9a-zA-Z\s,-]+$/; //reex para comprobar la dirección
             let arr_divs_verification = []; //Divs para verificar
             let arr_divs_id = []; //Array para llenar con los Id's de divs que van a moverse
             let arr_true_false = []; //Array para ubicar las verificaciones, False o True
@@ -618,7 +619,8 @@
             }
             arr_true_false = [[arr_divs_verification[0][0], Boolean(regex_whitespace.test(arr_divs_verification[0][1])*regex_name.test(arr_divs_verification[0][1]))],
                                      [arr_divs_verification[1][0], regex_email.test(arr_divs_verification[1][1])],
-                                     [arr_divs_verification[2][0], regex_cel.test(arr_divs_verification[2][1])]]
+                                     [arr_divs_verification[2][0], regex_cel.test(arr_divs_verification[2][1])],
+                                     [arr_divs_verification[3][0], Boolean(regex_whitespace.test(arr_divs_verification[3][1])*regex_address.test(arr_divs_verification[3][1]))]]
 
             arr_true_false.forEach((elem) => {
                 if (elem[1] == false) {
@@ -634,7 +636,7 @@
                          <b>Nombre:</b> ${arr_divs_verification[0][1]}<br>
                          <b>Email:</b> ${arr_divs_verification[1][1]}<br>
                          <b>Celular:</b> ${arr_divs_verification[2][1]}<br>
-                         <b>Hora recoger:</b> ${document.getElementById("range_time").value}<br>
+                         <b>Dirección:</b> ${arr_divs_verification[3][1]}<br>
                          <b>Observaciones:</b> <em>${document.getElementById("commit").value}</em><br>
                          <b>Pedido:</b><br>` 
                 for (let k = 0; k<arr_pedido.length; k++) {
@@ -646,7 +648,7 @@
                 }
 
                 alert("Pedido registrado con éxito!");
-                review_table += `<b>Precio:</b> $${moneyFormatter.format(total_price)} COP<br><b>Direcc recoger:</b> <em>Cra 1BE #29-48 La Cumbre</em><br><b>Fecha:</b> ${now.toLocaleString()}<br>`
+                review_table += `<b>Precio:</b> $${moneyFormatter.format(total_price)} COP<br><b>Fecha:</b> ${now.toLocaleString()}<br>`
                 document.getElementById("review_paragraph").innerHTML = review_table;
                 review_order_div.style.visibility = "visible";
                 confirm_div.style.visibility = "hidden";
@@ -659,11 +661,11 @@
                     "name" : `${arr_divs_verification[0][1]}`,
                     "email" : `${arr_divs_verification[1][1]}`,
                     "celular" : `${arr_divs_verification[2][1]}`,
-                    "hora" : `${document.getElementById("range_time").value}`,
+                    "direccion" : `${arr_divs_verification[2][1]}`,
                     "observaciones" : `${document.getElementById("commit").value}`,
                     "pedido" : arr_final_order,
                     "precio" : moneyFormatter.format(total_price),
-                    "modo" : "pickup",
+                    "modo" : "delivery",
                     "Fecha" : `${now.toLocaleString()}`
                 }
 
@@ -681,7 +683,7 @@
             document.getElementById("first_name").value = "";
             document.getElementById("email").value = "";
             document.getElementById("cell_number").value = "";
-            document.getElementById("range_time").value = "11:30 am - 12:00 m";
+            document.getElementById("dir").value = "";
             document.getElementById("commit").value = "";
 
             const divs_i_want = document.querySelectorAll(".button_i_want");
@@ -783,7 +785,7 @@
                             <b>Nombre:</b> ${json[num_pos].name}<br>
                             <b>Email:</b> ${json[num_pos].email}<br>
                             <b>Celular:</b> ${json[num_pos].celular}<br>
-                            <b>Hora recoger:</b> ${json[num_pos].hora}<br>
+                            <b>HDirección:</b> ${json[num_pos].direccion}<br>
                             <b>Observaciones:</b> <em>${json[num_pos].observaciones}</em><br>
                             <b>Pedido:</b><br>`;
 
