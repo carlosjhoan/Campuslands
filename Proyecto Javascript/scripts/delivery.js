@@ -662,12 +662,19 @@ after_order.style.visibility = "hidden";
 document.getElementById("before_order").style.visibility = "hidden";
 document.getElementById("after_order").style.visibility = "hidden";
 factura = `<b>N° Factura:</b> ${json[0].id}<br>
-<b>Nombre:</b> ${json[0].name}<br>
-<b>Email:</b> ${json[0].email}<br>
-<b>Celular:</b> ${json[0].celular}<br>
-<b>Hora recoger:</b> ${json[0].hora}<br>
-<b>Observaciones:</b> <em>${json[0].observaciones}</em><br>
-<b>Pedido:</b><br>`;
+                            <b>Nombre:</b> ${json[0].name}<br>
+                            <b>Email:</b> ${json[0].email}<br>
+                            <b>Celular:</b> ${json[0].celular}<br>`;
+                            
+                            
+                    if (json[0].modo == "pickup") {
+                            factura += `<b>Hora recoger:</b> ${json[0].hora}<br>`;
+                    } else {
+                            factura += `<b>Direccion:</b> ${json[0].direccion}<br>`;
+                    }
+                        
+                    factura += `<b>Observaciones:</b> <em>${json[0].observaciones}</em><br>
+                                                <b>Pedido:</b><br>`;
 
 for (let i = 0 ; i < json[0].pedido.length; i++) {
 factura += `-- ${json[0].pedido[i][1]} ${json[0].pedido[i][0]}<br>`;
@@ -684,12 +691,19 @@ console.log(json);
 before_order.style.visibility = "hidden";
 after_order.style.visibility = "visible";
 factura = `<b>N° Factura:</b> ${json[0].id}<br>
-<b>Nombre:</b> ${json[0].name}<br>
-<b>Email:</b> ${json[0].email}<br>
-<b>Celular:</b> ${json[0].celular}<br>
-<b>Hora recoger:</b> ${json[0].hora}<br>
-<b>Observaciones:</b> <em>${json[0].observaciones}</em><br>
-<b>Pedido:</b><br>`;
+                            <b>Nombre:</b> ${json[0].name}<br>
+                            <b>Email:</b> ${json[0].email}<br>
+                            <b>Celular:</b> ${json[0].celular}<br>`;
+                            
+                            
+                    if (json[0].modo == "pickup") {
+                            factura += `<b>Hora recoger:</b> ${json[0].hora}<br>`;
+                    } else {
+                            factura += `<b>Direccion:</b> ${json[0].direccion}<br>`;
+                    }
+                        
+                    factura += `<b>Observaciones:</b> <em>${json[0].observaciones}</em><br>
+                                                <b>Pedido:</b><br>`;
 
 for (let m = 0 ; m < json[0].pedido.length; m++) {
 factura += `-- ${json[0].pedido[m][1]} ${json[0].pedido[m][0]}<br>`;
