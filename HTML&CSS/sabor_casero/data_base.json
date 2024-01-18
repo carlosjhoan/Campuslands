@@ -169,5 +169,16 @@
   ],
   "user_active": [],
   "users": [],
-  "products": []
+  "products": [],
+  "info_users": [
+    {
+      "id": "1",
+      "nombre": "Carlos",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "motivo": "invitacion",
+      "contenido": "Deseo invitarlos a que vean este proyecto",
+      "hora": "18/1/2024, 1:51:23 a. m."
+    }
+  ]
 }
