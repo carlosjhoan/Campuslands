@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-decoration: none;
+            list-style: none;
+            margin: 0 auto;
+        }
+
+        body {
+            background-color: red;
+        }
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            
+        }
+
+        #mi_pokemon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cpu_pokemon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*Aquí empieza el logo de entrada a Sabor Casero*/
+
+        #entry_image {
+            width: 100%;
+            height: 110vh;
+            position: absolute;
+            text-align: center;
+            background-color: rgba(236, 201, 103, 0.8);
+            border: 1px solid; 
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto ;
+            grid-template-rows: auto auto auto auto;
+  
+        }
+
+        
+
+        #entry_image .div_entry {
+            width: 300px;
+            height: 370px;
+            grid-column-start: 4;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;  
+            border-radius: 35px;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            -webkit-box-shadow: 0 0 10px #a39c9c;
+            box-shadow: 0 0 10px #a39c9c;
+        }
+
+        #entry_image .div_entry img {
+            width: 240px;
+            height: 200px;
+        }
+
+
+
+
+
+        #entry_image button {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: #d4d3d2;
+            transition: width 0.5s, height 0.5s;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #entry_image button img {
+            width: 17px;
+            height: 17px;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        #entry_image button:hover {
+            width: 35px;
+            height: 35px;
+            background-color: rgb(243, 92, 89);
+            color: white;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        #entry_image button:hover img {
+            width: 22px;
+            height: 22px;
+            transition: width 0.5s, height 0.5s;
+        }
+        
+        
+
+
+    </style>
+</head>
+<body>
+    <div id = "entry_image">
+        <div class = "div_entry">
+            <h2>Bienvenidos a </h2>
+            <img src="../img_proyecto/logo_tranparent_white.png" alt="" id = "logo_white">
+            <h3>Horarios de servicio:</h3>
+            <p>Lunes a Sábado: <b>11:00 am - 2:30pm</b></p>
+
+        </div>
+        
+        
+        <button onclick="close_entry()"><img src="../img_proyecto/close.png" alt=""></button>
+    </div>
+    <h1>El club de la pelea pokemon</h1>
+    <main>
+    <div id = "mi_pokemon">
+        <button onclick="mi_pokemon()">Mi Pokemón</button>
+        <ul id = "ul_mi"></ul>
+        <div id = "winner_mi"></div>
+    </div>
+    <div id = "fight" onclick="fight()"><button>Fight!</button></div>
+
+    <div id = "cpu_pokemon">
+        <button>CPU Pokemon</button>
+        <ul id = "ul_cpu"></ul>
+        <div id = "winner_cpu"></div>
+
+    </div>
+
+    <div>
+        <button>-</button>
+        <input type="number">
+        <button>+</button>
+    </div>
+
+    </main>
+    <script>
+        let mi_pok = [];
+        let cpu_pok = [];
+        let hp_mine;
+
+        let arr_pokemons = [];
+
+        let d_C = 20;
+        window.onpageshow = function () {
+            const logo_white = document.getElementById("logo_white");
+            rotate_animation = setInterval(frame, 20)
+            function frame () {
+                if (d_C == -20) {
+                    logo_white.style.translate = 0 + "px"
+                    clearInterval(rotate_animation)
+                } else {
+                    d_C -= 5
+                    logo_white.style.translate = d_C + "px"
+                }
+            }  
+        }
+        function close_entry() {
+            const entry_div = document.getElementById("entry_image")
+            entry_div.style.display = "none"
+        }
+        (async function() {
+            for (let i=1; i<= 205;i++) {
+                let pokemon_i = new Map()
+                
+            
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${i}/`;
+                    
+                const answer_1 = await fetch(url_1);
+                    
+                const json_1 = await answer_1.json();
+                    
+                const name_i = json_1.forms[0].name;
+                const hp = json_1.stats[0].base_stat;
+                const attack = json_1.stats[1].base_stat;
+                const defense = json_1.stats[2].base_stat;
+                const speed = json_1.stats[5].base_stat;
+
+                const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
+                pokemon_i.set("picture",front_default_1 );
+                pokemon_i.set("name",name_i );
+                pokemon_i.set("hp", hp);
+                pokemon_i.set("attack",attack );
+                pokemon_i.set("defense",defense );
+                pokemon_i.set("speed",speed );
+                
+                arr_pokemons.push(pokemon_i);
+ 
+            }
+    
+            
+
+        })()
+
+        function hp_var (var_hp, def, sp, att) {
+            let v_hp = var_hp- (def*(1+(sp/100)))-att
+            return v_hp
+        }
+
+        function battle (mi_arr, cpu_arr) {
+            let check = false
+            do {
+                    console.log(mi_arr)
+                    console.log(cpu_arr);
+                    let hp_mine = mi_arr[0];
+                    let hp_cpu = cpu_arr[0]
+
+                    if (mi_arr[3] >= cpu_arr[3]) {
+                        let turno = Math.abs((cpu_arr[3] - mi_arr[3])/3)
+                        for (let i=1; i<= turno;i++) {
+                            hp_cpu = hp_var (hp_cpu, cpu_arr[2], cpu_arr[3], cpu_arr[1])
+                            console.log("cpu= ",hp_cpu);
+                            console.log("mine= ",hp_mine);
+                            if (hp_cpu <= 0) {
+                                document.getElementById("winner_mi").innerHTML = "WINNER!"
+                                document.getElementById("winner_cpu").innerHTML = ""
+                                check = true
+                                break;
+                            }
+                        //mi_pok = [hp, attack, defense, speed]
+                        }
+                        if (check != true) {
+                            hp_mine = hp_var (hp_mine, mi_arr[2], mi_arr[3], mi_arr[1]);
+                            
+                            if (hp_mine <= 0) {
+                                document.getElementById("winner_cpu").innerHTML = "WINNER!"
+                                document.getElementById("winner_mi").innerHTML = ""
+                                break;
+                            }
+                        }
+                        console.log("mine= ",hp_mine);
+                        console.log("cpu= ",hp_cpu);
+                        
+                    
+                    
+                    } else {
+                        let turno = Math.abs((cpu_arr[3] - mi_arr[3])/3)
+                        for (let i=1; i<= turno;i++) {
+                        
+                            hp_mine = hp_var (hp_mine, mi_arr[2], mi_arr[3], mi_arr[1])
+                            console.log("mine= ",hp_mine);
+                            console.log("cpu= ",hp_cpu);
+                            if (hp_mine <= 0) {
+                                document.getElementById("winner_cpu").innerHTML = "WINNER!"
+                                document.getElementById("winner_mi").innerHTML = ""
+                                check = true
+                                break;
+
+                            }
+                        //mi_pok = [hp, attack, defense, speed]
+                        }
+                        
+                        if (check != true) {
+                            hp_cpu = hp_var (hp_cpu, cpu_arr[2], cpu_arr[3], cpu_arr[1])
+                            console.log("cpu= ",hp_cpu);
+                            console.log("mine= ",hp_mine);
+                            if (hp_cpu <= 0) {
+                                document.getElementById("winner_mi").innerHTML = "WINNER!"
+                                document.getElementById("winner_cpu").innerHTML = ""
+                                break;
+                            }
+                        }
+                        
+                        }
+
+                   
+                    
+                    
+                    
+                    } while (hp_cpu >= 0 || hp_mine >= 0)
+
+        }
+
+        const mi_pokemon = async function  () {
+
+            const map_mine = new Map()
+
+            let tabla = ""
+            const n_mine = 1 + Math.floor(Math.random()* 805.5)
+            
+            const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
+                
+            const answer_1 = await fetch(url_1)
+                
+            const json_1 = await answer_1.json()
+                
+            const name_mine = json_1.forms[0].name
+            const hp = json_1.stats[0].base_stat
+            const attack = json_1.stats[1].base_stat
+            const defense = json_1.stats[2].base_stat
+            const speed = json_1.stats[5].base_stat
+
+            map_mine.set("name", name_mine)
+            map_mine.set("hp", hp)
+            map_mine.set("attack", attack)
+            map_mine.set("defense", defense)
+            map_mine.set("speed", speed)
+
+                 
+            const url_img_1 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${n_mine}.svg`
+
+            const front_default_1 = json_1.sprites.other["official-artwork"].front_default
+         
+            tabla = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`
+ 
+            document.getElementById("ul_mi").innerHTML = tabla
+            document.getElementById("winner_mi").innerHTML = ""
+            mi_pok = [hp, attack, defense, speed]
+
+           
+                
+            }
+
+
+            //Empezar combate
+            const fight = async function  () {
+
+                const map_mine = new Map()
+                
+
+
+                let tabla = ""
+                let tabla_aleatoria = ""
+                let tabla_principal = ""
+
+                const n_mine = 1 + Math.floor(Math.random()* 805.5)
+
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${n_mine}/`
+                            
+                const answer_1 = await fetch(url_1)
+                            
+                const json_1 = await answer_1.json()
+                            
+                let name_mine = json_1.forms[0].name;
+                let hp = json_1.stats[0].base_stat;
+                let attack = json_1.stats[1].base_stat;
+                let defense = json_1.stats[2].base_stat;
+                let speed = json_1.stats[5].base_stat;
+
+                map_mine.set("name", name_mine);
+                map_mine.set("hp", hp);
+                map_mine.set("attack", attack);
+                map_mine.set("defense", defense);
+                map_mine.set("speed", speed);
+                const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
+                
+               
+                for (let i = 0; i<7; i++) {
+                    let time_for_now = new Date()
+                    let n = 1 + Math.floor(Math.random()* 200)
+                    tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
+                    
+                    
+                    document.getElementById("ul_cpu").innerHTML = tabla_aleatoria;
+                    console.log(arr_pokemons[n-1].get("picture"))
+                    
+                    
+                    
+                    
+                    console.log("pintada!!")
+                    do {
+                        let time_i_for = new Date ()
+                        diff_for = time_i_for - time_for_now
+                        
+                        
+                        
+                    } while (diff_for <1000)
+                    
+                }             
+
+                tabla_principal = `<li><img src = ${front_default_1} ></li><li>Name: ${name_mine}</li><li>Hp: ${hp}</li><li>Attack: ${attack}</li><li>Defense: ${defense}</li><li>Speed: ${speed}</li>`                       
+
+                console.log("listo!!!")      
+                
+                document.getElementById("ul_cpu").innerHTML = tabla_principal
+                
+                cpu_pok = [hp, attack, defense, speed]
+                battle(mi_pok, cpu_pok)
+     
+
+                }
+
+                
+    </script>
+    
+</body>
+</html>

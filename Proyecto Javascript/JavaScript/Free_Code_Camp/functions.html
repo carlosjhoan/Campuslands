@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        //The more general way to declare a function in JS: Function regular
+        function add_numbers(a, b) {
+            return a + b
+        }
+
+        //The I can use the function by input it two parameters (a, b)
+        let a = 3;
+        let b = 5;
+        alert (`El resultado de sumar ${a} y ${b} es: ${add_numbers(a, b)}`)
+
+        //The arrow functions
+        const resta_values = (a, b) => a - b;
+        alert (`El resultado de restar ${a} y ${b} es ${resta_values(a, b)}`)
+
+        // And finally, we have the function expressions 
+        let multiply_numbers = function(a, b) {
+            return a * b
+        }    
+
+        alert (`El resultado de multiplicar ${a} y ${b} es: ${multiply_numbers(a, b)}`)    
+        
+        //Callback functions: Function can also be passed as arguments to other functions.
+
+        function mult_by_two (n, Callback) {
+            
+            let result = n * 2
+            Callback (n, result)
+        }
+
+        function log_result (n, result) {
+            console.log(`${n} multiplicado por 2 es igual a ${result}`)
+        }
+
+        mult_by_two(b, log_result)
+
+        //Default parameters
+        function greet (name = "Jhon Doe") {
+            console.log(`Hello, ${name}`)
+        }
+
+        greet()
+
+        //However, I can assign other value to parameter, this makes the default parameter changes.
+
+        greet("Carlos Jhoan")
+
+        //Constructor Function
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        let someone = new Person("Charly", 29)
+        console.log(someone.name)
+        console.log(someone.age)
+
+        //How to Use Closures
+        function create_counter() {
+            let count = 0;
+            return function() {
+                return count++;
+            }
+        }
+
+        const my_counter = create_counter();
+        console.log(my_counter())
+        console.log(my_counter())
+        console.log(my_counter())
+        console.log(my_counter())
+    </script>
+</body>
+</html>

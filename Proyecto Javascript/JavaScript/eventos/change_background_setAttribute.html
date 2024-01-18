@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetAttribute</title>
+</head>
+<body>
+    <button>Cambiar Color Background</button>
+    <script>
+        
+        document.body.style.transition = 'background-color 0.5s';
+        
+        const button = document.querySelector("button");
+        const letters = "0123456789ABCDEF";
+        const change_backround_color = () => 
+            document.body.style.backgroundColor = get_Random_Color();
+
+        const get_Random_Color = () => Array(6).fill("").reduce (
+            p => p+= letters[Math.floor(Math.random() * 16)], '#');
+
+        button.setAttribute('onclick', 'change_backround_color()');
+    </script>
+</body>
+</html>

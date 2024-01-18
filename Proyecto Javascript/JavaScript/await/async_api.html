@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Pokemon</title>
+</head>
+<body>
+    <script>
+        /*async function get_name (user_name) {
+            const url = `https://api.github.com/users/${user_name}`
+            const answer = await fetch(url)
+            const json = await answer.json()
+
+            console.log(json.name)
+        }
+
+        get_name("carloshrueda")*/
+
+        async function get_name (poke_name) {
+            const url = `https://pokeapi.co/api/v2/pokemon/${poke_name}`
+            const answer = await fetch(url)
+            if (answer.status != 200) //!answer.ok:Otra forma del diferente
+                throw new Error("Este Pokemon no existe")
+            const json = await answer.json()
+
+            console.log(json)
+            //console.log(json.sprites.front_default)
+            //return json//.sprites.front_default
+        }
+
+        get_name("squirtle")
+        .then (name => console.log(name))
+        .catch (error => console.error(error.message))
+
+        /*(async function() {
+            try {
+                let url_img = await get_name("pikachu")
+                console.log(url_img)
+
+                url_img = await get_name("limber");
+                console.log(url_img)
+            } catch (error) {
+                console.error(error.message)
+            }
+        })()*/
+    </script>
+</body>
+</html>

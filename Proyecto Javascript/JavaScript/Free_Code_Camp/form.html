@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form in JavaScript</title>
+</head>
+<body>
+    
+    <form action="" id = "login-form">
+        <label for="user_name">Username</label>
+        <input type="text" name="usn" id = "user_name" class = "form-control" placeholder="Enter your username...">
+        <label for="key">Password</label>
+        <input type="password" name= "pwd" id = "key" placeholder="Enter your password...">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        /*To get this form's data via JS, you'll need to attach specific attributes to the form input field and the form itself
+        These attributes can be an 'id' or a 'class, or even the 'name' tag. 
+        - If you use an 'id' : You can access the input field data and other values using the document method 'getElementById(id_name)'
+        */
+
+        
+        let login_form = document.getElementById('login-form');
+        //alert(my_user_name)
+
+        login_form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let my_user_name = document.getElementById('user_name').value;
+            let my_password = document.getElementById('key').value;
+            if (my_user_name.value == "" || my_password.value == "") {
+
+                alert ("Ensure you input a value in both fields!")
+            } else {
+                alert ("This form has been succesfully submitted");
+                console.log(`This form has a username: ${my_user_name} and a password: ${my_password}`);
+                my_user_name = ""
+                my_password = ""
+            }
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

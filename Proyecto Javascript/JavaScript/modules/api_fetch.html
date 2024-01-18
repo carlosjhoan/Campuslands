@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch - Peticiones locales</title>
+</head>
+<style>
+    .imgsexo {
+        width: 32px;
+        align-items: center;
+    }
+
+    .valedad, .tdimg {
+        text-align: center;
+    }
+
+    table {
+        width: 50%;
+    }
+</style>
+<body>
+    <h1>API Fetch - Peticiones locales</h1>
+    <hr> 
+    <br>
+
+    <button id="mostrartxt">Muestra el archivo texto</button>
+    <div id="contenidotexto"></div>
+    <hr>
+    <br>
+
+    <button id="mostrarjson">Mostrar el archivo JSON en forma tabla</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Team</th>
+                <th>Edad</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+
+        <tbody id="dattabla">
+
+        </tbody>
+    </table>
+
+    <script src="create_tables_api.js" type="module"></script>
+</body>
+</html>

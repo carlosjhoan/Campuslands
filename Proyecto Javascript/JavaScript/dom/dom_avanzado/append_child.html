@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Content</title>
+
+    
+</head>
+<body>
+    <div class = "container">
+        <div class = "parent">
+            <p>Hola a todos.</p>
+            <p class = "message">Hola, soy todo un Camper</p>
+        </div>
+    </div>
+
+    <input type="text" id = "change_message">
+    <button id = "change_message" onclick="agregar_elemento()"> Agregar Div</button>
+    <button id = "change_message" onclick="eliminar_elemento()"> Eliminar elemento</button>
+    <script>
+        function agregar_elemento() { //elimina elemento y se puede utilizar
+            const element = document.querySelector(".container");
+            const div = document.createElement("div");
+            div.innerHTML = "<p onclick = 'alert(\"Código malicioso :( att Cacas\")'><span style = 'color:red'>DIV con Nuevo elemento</span><br><br></p>"
+            element.appendChild(div);
+        }
+
+        function eliminar_elemento() { //elimina div
+            const element = document.querySelector(".parent");
+            const parrafo = document.querySelector(".message")
+            alert(parrafo.outerHTML);
+            element.removeChild(parrafo);
+        }
+
+        
+    </script>
+</body>
+</html>

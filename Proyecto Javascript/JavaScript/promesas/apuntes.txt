@@ -1,0 +1,6 @@
+Estados de la promesa: 
+1. Pensiente (pending)
+2. resulkta (fullfilled).
+3. rechazada (rejected)
+
+el rechazado puede ser opcional

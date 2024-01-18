@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fs = require('fs').promises;
+
+        async function fetch_data () {
+            try {
+                const data = await fs.readFile('robots.txt', 'utf-8')
+                console.log(data)
+            } catch (error) {
+                console.error("Error al leer el archivo:",error.message)
+            }
+
+            
+        }
+
+        console.log("Código síncrono")
+        fetch_data()
+    </script>
+</body>
+</html>

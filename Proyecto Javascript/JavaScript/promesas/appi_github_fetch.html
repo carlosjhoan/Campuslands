@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function get_nombre (user_name) {
+            const url = `https://api.github.com/users/${user_name}`
+
+
+            fetch(url)
+            .then(answer => answer.json())
+            .then(json => {
+                console.log(json.name);
+            })
+
+            //.catch((error) => console.)
+        }
+
+        get_nombre("carlosjhoan")
+    </script>
+</body>
+</html>

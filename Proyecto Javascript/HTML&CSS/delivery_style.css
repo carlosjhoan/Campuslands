@@ -1,0 +1,2546 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: cal(100vh-80px);
+    box-sizing: border-box;
+    /**/
+}
+
+.each {
+    background-color: rgb(219, 219, 215, 0.5);
+    padding: 2%;
+    margin: 5% 25%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgb(193, 192, 192);
+    }
+
+/*BOTÓN PEDIR*/
+.button_i_want {
+    display: flex;
+}
+
+
+.button_i_want img {
+    width: 0px;
+    height: 0px;
+    transition: width 0.5s, height 0.5s;
+}
+
+.button_i_want:hover img {
+    width: 30px;
+    height: 30px;
+    transition: width 0.5s, height 0.5s;
+}
+
+/*--- cuando llegue a cero el valor de la cantidad ---*/
+.button_i_want div{
+    display: flex;
+}
+
+
+.button_i_want div img {
+    width: 0px;
+    height: 0px;
+    transition: width 0.5s, height 0.5s;
+}
+
+.button_i_want div:hover img {
+    width: 30px;
+    height: 30px;
+    transition: width 0.5s, height 0.5s;
+}
+
+/*------*/
+
+
+.i_want {
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: padding 0.5s;
+    background-color: rgb(5, 132, 5);
+    border: 1px rgb(5, 132, 5);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.i_want:hover {
+    padding: 5px;
+    transition: padding 0.5s;
+    border: 1px rgb(5, 132, 5);
+}
+
+.plus_minus {
+    width: 80px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    
+    
+    
+}
+.plus_minus input {
+    text-align: center;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.plus_minus button {
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px gray;
+    cursor: pointer;
+}
+
+.plus_minus button:hover {
+    background-color: rgb(251, 218, 71);
+}
+
+.plus_minus button:active {
+    background-color: rgb(138, 114, 5);
+}
+
+/*RESUMEN DEL PEDIDO*/
+
+.lista_pedido {
+    
+    height: 90%;
+    width: 60%;
+    position: fixed;
+    top: 5%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);
+    visibility: collapse;
+    
+
+}
+
+.lista_pedido table {
+    width: 80%;
+    text-align: center;
+    border: 1px solid;
+    
+}
+.lista_pedido table tr th {
+    border-bottom: 1px dotted;
+}
+
+
+.lista_pedido button {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px white;
+    background-color: rgb(255, 247, 247);
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+}
+
+.lista_pedido button:hover {
+    background-color: rgb(231, 226, 226) ;
+    box-shadow: 0 0 2px 2px rgb(235, 235, 235);
+    transition: background-color 0.5s;
+}
+
+.lista_pedido button:active {
+    background-color: rgb(233, 233, 233) ;
+}
+
+.lista_pedido button img {
+    width: 30px;
+    
+}
+
+.lista_pedido table button {
+    width: 30px;
+    height: 30px;
+}
+
+.lista_pedido table button img {
+    width: 20px;
+}
+
+
+
+
+/*-------------------*/
+
+/*CONFIRMO BOTÓN*/
+
+#confirmo_button {
+    width: 130px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgb(204, 137, 43,0.7);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+#check {
+    width: 0px;
+    transition: width 0.1s;
+}
+
+#order_list {
+    width: 30px;
+    transition: width 0.1s;
+}
+
+#confirmo_button:hover {
+    background-color: rgb(204, 137, 43);
+}
+
+#confirmo_button:hover #check {
+    width: 30px;
+    transition: width 0.1s;
+}
+
+#confirmo_button:hover #order_list {
+    width: 0px;
+    transition: width 0.1s;
+}
+
+
+
+
+/*-------------------*/
+
+/*CONFIRMAR COMPRA*/
+
+.check_buy {
+    
+    height: 85%;
+    width: 40%;
+    position: fixed;
+    top: 2.5%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: rgb(203, 153, 83);
+    border-radius: 20px;
+    visibility: collapse;
+    
+
+}
+.check_buy form {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight:600;
+}
+
+.check_buy form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.check_buy form fieldset {
+    border: 1px dotted;
+    text-align: center;
+    border-radius: 20px;
+    /*box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+
+}
+
+.check_buy form fieldset select {
+    height: 35px;
+    border-radius: 20px;
+    border: 2px solid;
+    background-color: rgb(254, 236, 236);
+}
+
+.check_buy form fieldset textarea {
+    border-radius: 5px;
+    border: 2px solid;
+    background-color: rgb(254, 236, 236);
+}
+
+.input_buy {
+    height: 35px;
+    width: 200px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color:rgb(254, 236, 236);
+}
+
+.input_buy:focus {
+    border: 2px solid red;
+}
+
+.titulo {
+    width: 70%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:600;
+    text-align: center;
+}
+
+.linea {
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.before_ready {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+}
+#previous {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(176, 114, 26);
+    box-shadow: 0 0 7px 7px rgb(202, 144, 63);
+    border: 1px rgb(208, 141, 47);
+    transition: background-color 0.5s;
+}
+
+#previous:hover {
+    background-color: rgb(208, 151, 71);
+    box-shadow: 0 0 8px 8px rgb(183, 129, 53);
+    border: 1px rgb(208, 151, 71);
+    transition: background-color 0.5s;
+}
+
+#previous img {
+    width: 30px;
+    transition: width 0.1s;
+}
+
+#previous:hover img {
+    width: 35px;
+    transition: width 0.1s;
+}
+
+
+
+#listo_button {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(5, 132, 5);
+    color: white;
+    border: 1px solid green;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+#listo_button #listo_2 {
+    
+    width: 0px;
+    transition: width 0.3s;
+}
+
+#listo_button #listo_1 {
+    
+    width: 25px;
+    transition: width 0.3s;
+}
+
+#listo_button:hover {
+    background-color: rgb(58, 131, 58)
+}
+
+#listo_button:hover #listo_2 {
+    width: 30px;
+    transition: width 0.3s;
+}
+
+#listo_button:hover #listo_1 {
+    width: 0px;
+    transition: width 0.3s;
+}
+
+/*RESUMEN DEL PEDIDO*/
+
+#review_order {
+    visibility: hidden;
+    position: fixed;
+    width: 50%;
+    height: 85%;
+    left: 25%;
+    top: 7.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 3px 3px rgb(204, 204, 204);
+    border-radius: 20px;
+    
+}
+
+#review_paragraph {
+    padding: 10px;
+    border: 1px dotted;
+    border-radius: 20px;
+}
+
+#review_order button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:rgb(255, 247, 247);
+    border: 1px solid rgb(255, 247, 247);
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+#review_order button:hover {
+    background-color:rgb(242, 237, 237);
+    border: 1px solid rgb(242, 237, 237);
+    transition: background-color 0.5s;
+}
+
+#review_order button img {
+    width: 30px;
+}
+
+/* BOTON PICKUP*/
+.buttons_deliv_pickup {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 115px;
+    left: 10px;
+
+}
+
+.botton_delivery button {
+    width: 120px;
+    background-color: rgb(133, 234, 87);
+    border: 3px solid black;
+    border-radius: 30px;
+    /*left: 530px;*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.botton_delivery button a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+
+.botton_delivery button img[src= "../img_proyecto/food-pickup_1.png"] {
+
+    width: 35px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button img[src= "../img_proyecto/food-pickup_2.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover {
+    background-color: black;
+
+}
+
+.botton_delivery button:hover a {
+    color: white;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-pickup_1.png"] {
+
+    width: 0px;
+    height: 0px;
+    transition: height 0.1s, width 0.1s;
+}
+
+.botton_delivery button:hover img[src= "../img_proyecto/food-pickup_2.png"] {
+
+    width: 30px;
+    height: 30px;
+    transition: height 0.1s, width 0.1s;
+}
+
+/*BUSCAR REGISTROS EN LA BASE DE DATOS*/
+
+#search_database {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    justify-content:space-between;
+    right: 2%;
+    top: 20%;
+    height: 140px;
+}
+
+
+#head {
+    padding: 5px;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+    color: rgb(208, 151, 71);
+    background-color: rgb(24, 24, 24);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#div_stack {
+    height: 80px;
+    display: flex;
+    align-items:start;
+    justify-content:baseline;
+    border-radius: 60px;
+
+}
+
+#search_database:hover #div_stack {
+    box-shadow:0 0 3px 3px rgba(173, 173, 173, 0.7);   
+}
+
+
+#stack_icon {
+    background-color: rgb(203, 153, 83);
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s, width 0.3s;
+    cursor: pointer;
+}
+
+
+#stack_icon:hover {
+    background-color: rgb(203, 163, 107);
+    transition: background-color 0.5s;
+    
+    
+}
+
+#search_database:hover #stack_icon{
+    width: 70px;
+    height: 80px;
+    border-radius: 0px 60px 60px 0px;
+    transition: width 0.3s;
+}
+
+
+#stack_icon img {
+    width: 35px;
+    
+}
+
+#search_database:hover #stack_icon img {
+    content: url("../img_proyecto/database_search_2.png");
+    width: 35px;
+    
+}
+
+#slide_barr {
+    width: 0px;
+    height: 0px;
+    background-color:rgb(203, 153, 83) ;
+    border-radius: 60px 0px 0px 60px;
+    transition: width 0.3s, heigth 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    
+}
+
+#slide_barr div {
+    visibility: collapse;
+
+}
+
+
+
+#search_database:hover #slide_barr {
+    width: 200px;
+    height: 80px;
+    transition: width 0.3s, heigth 0.3s;
+    visibility: visible;
+    
+}
+
+#search_database:hover #slide_barr div {
+    visibility: visible;
+}
+
+#input_search {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 120px;
+
+    
+}
+
+#input_database{
+    width: 90px;
+    height: 25px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: rgb(254, 236, 236);
+    text-align: center;
+   
+
+}
+
+#input_database:focus, #input_database:active  {
+    text-align: center;
+}
+
+#input_search img {
+    padding: 3px;
+    width: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:rgb(197, 162, 113);
+}
+#input_search img:hover {
+    
+    background-color: rgb(194, 169, 135);
+}
+
+#option_search {
+    background-color: rgb(254, 236, 236);
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#slide_barr div label {
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/*Información de las facturas*/
+
+.info_database {
+    position: fixed;
+    width: 70%;
+    height: 80%;
+    left: 15%;
+    top: 10%;
+    background-color: white;
+    box-shadow:0 0 3px 3px rgb(154, 154, 154, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    visibility: collapse;
+
+}
+
+#container_orders {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    
+}
+
+#each_order {
+    padding: 5px;
+    border: 1px dotted black;
+    border-radius: 20px;
+    
+}
+
+#buttons_orders {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+#before_order, #close_order, #after_order  {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 247, 247);
+    border: none;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+#before_order:hover, #after_order:hover {
+    background-color: rgb(154, 235, 116);
+    transition: background-color 0.5s;
+} 
+
+#before_order:active, #after_order:active {
+    background-color: rgb(128, 223, 84);
+}
+
+#close_order:hover {
+    background-color: rgb(231, 124, 124);
+}
+
+
+#before_order img {
+    width: 25px;
+}
+
+
+#close_order img {
+    width: 25px;
+}
+
+
+#after_order img {
+    width: 25px;
+}
+
+
+@media screen and (max-width:460px) {
+
+    /*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
+   
+
+    main {
+        background-color: white;
+        display: grid;
+        grid-template-rows:  auto auto auto auto auto auto auto auto auto;
+
+        grid-template-areas:  "Gallina" "Costilla" "Cola"  "Sobrebarriga" "Chatas" "Oreada" "Info_pickup" "Legal" "Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+    
+    }
+
+    
+    .legal {
+        grid-area: Legal; 
+    }
+    
+    .footer {
+        grid-area: Footer; 
+    }
+    
+    
+    .gallina {
+        grid-area: Gallina; 
+    }
+    
+    .costilla {
+        grid-area: Costilla; 
+    }
+    
+    .cola {
+        grid-area: Cola; 
+    }
+    
+    
+    
+    .sobrebarriga {
+        grid-area: Sobrebarriga; 
+    }
+    
+    .oreada {
+        grid-area: Oreada; 
+    }
+    
+    .chatas {
+        grid-area: Chatas; 
+    }
+
+    .info_pickup {
+        grid-area: Info_pickup;
+    }
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    grid-area: Nav; 
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: flex;
+    justify-content:space-between;
+    height: 100%;
+}
+
+#buy_car {
+    
+    grid-area: Car;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#mi_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 60px;
+}
+
+#mi_pedido button {
+    visibility: hidden;
+    width: 0px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color:rgb(2, 90, 2); /**/
+    border: 1px rgb(2, 90, 2);
+    color: white;
+    cursor: pointer;
+    font-size: 0.7rem;
+    
+}
+
+#mi_pedido button:hover {
+    background-color:rgb(119, 241, 119);
+    border: 1px solid;
+    color: black;
+}
+
+#img_car {
+    padding: 7px;
+    width: 40px;
+    height: 40px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+#value_order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 20px;
+    height: 25px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 0.7rem;
+
+}
+
+.logo {
+    grid-area: Logo; 
+    display: flex;
+    align-items: center;
+}
+
+.logo  a {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+}
+
+.logo  a img{
+    width: 80px;
+    height: 65px;
+    margin-left: 10px;
+}
+
+
+.barr_nav {
+    grid-area: Barra; 
+}
+
+.buscar {
+    grid-area: Buscar; 
+    display: flex;
+    align-items:center
+}
+
+.buscar form {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.buscar form input {
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+    visibility: collapse;
+
+}
+
+.buscar form input:focus {
+    color: white;
+    background-color: black;
+}
+
+
+.buscar form label img {
+    width: 25px;
+    height: 25px;
+}
+
+.barr_nav {
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+}
+
+
+.barr_nav ul {
+    background-image: url("../img_proyecto/madera.PNG");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:baseline;
+    margin-left: 0px;
+    height: 80px;
+    padding: 5px;
+    visibility: hidden;
+    transition: heigth 0.1s;
+    border-radius: 0px 0px 20px 20px;
+    
+}
+
+.barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.barr_nav ul li a{
+    
+    text-decoration: none;
+    color: black;
+}
+
+.barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+    display: flex;
+    justify-content:center;
+    width: 100px;
+    margin-top: 25px;
+
+}
+
+.barr_nav .menu button{
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barr_nav .menu button img{
+    height: 20px;
+    width: 20px;
+    
+}
+
+.barr_nav:hover ul{
+    visibility: visible;
+    height: 120px;
+    transition: height 0.1s;
+}
+
+
+
+/*menú*/
+
+.gallina {
+    width: 100%;
+}
+.each {
+    background-color: rgb(219, 219, 215, 0.5);
+    padding: 2%;
+    margin: 5% 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgb(193, 192, 192);
+}
+
+.hr {
+    height: 3px;
+    width: 70%;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.precio {
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgb(204, 137, 43);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.foto {
+    width: 170px;
+    border-radius: 120px;
+}
+
+.q_trae{
+    padding: 5px;
+    border-radius: 10px;
+    text-align:center;
+}
+
+.dish_name {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.sancochos {
+    width: 100%;
+    display: flex;
+}
+
+.ejecutivos {
+    width: 100%;
+    display: flex;
+}
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(23, 23, 23);
+}
+
+.terms {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.social_media {
+    
+    display: flex;
+    width: 150px;
+    
+    justify-content:space-around;
+}
+
+.social_media a img{
+    height: 25px;
+
+}
+
+
+.terms ul {
+    display: flex;
+    justify-content:space-between;
+    width: 300px;
+    
+}
+
+.terms ul li{
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.terms ul li a{
+    text-decoration: none ;
+    color: white;
+    font-weight: bold;
+}
+
+.logo_legal {
+    display: flex;
+}
+
+.logo_legal img{
+    height: 80px;
+    width: 110px;
+}
+
+.footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+    width: 60%;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+
+/*BOTÓN DE WPP***/
+
+.wpp {
+    position: fixed;
+    bottom: 0%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wpp a img {
+    height: 40px;
+    width: 40px;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
+    
+}
+.wpp p {
+    padding: 2px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+
+}
+
+/*RESUMEN DEL PEDIDO*/
+
+.lista_pedido {
+    
+    height: 70%;
+    width: 90%;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px rgb(210, 208, 208, 0.5);
+    visibility: collapse;
+    font-size: 0.7rem;
+    
+
+}
+
+.check_buy {
+    
+    height: 95%;
+    width: 90%;
+    left: 5%;
+}
+
+/*Factura para registrar en base de datos*/
+
+#search_database {
+    right: 3%;
+    top: 40%;
+}
+
+#review_order {
+    width: 80%;
+    left: 10%;
+}
+
+.info_database {
+    width: 90%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
+}
+#head {
+    font-size: 0.9rem;
+}
+
+    
+}
+
+
+
+@media  (min-width:460px) and (max-width:900px) {
+
+    /*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
+
+    main {
+        background-color: white;
+        display: grid;
+        grid-template-rows:  auto auto auto auto auto auto;
+        grid-template-columns: 50% 50% ;
+        grid-template-areas:  "Gallina Costilla" "Cola Sobrebarriga"  "Oreada Chatas" "Info_pickup Info_pickup" "Legal Legal"" Footer Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+        
+        }
+        
+
+        
+        .legal {
+        grid-area: Legal; 
+        }
+        
+        .footer {
+        grid-area: Footer; 
+        }
+        
+        
+        .gallina {
+        grid-area: Gallina; 
+        }
+        
+        .costilla {
+        grid-area: Costilla; 
+        }
+        
+        .cola {
+        grid-area: Cola; 
+        }
+        
+        
+        
+        .sobrebarriga {
+        grid-area: Sobrebarriga; 
+        }
+        
+        .oreada {
+        grid-area: Oreada; 
+        }
+        
+        .chatas {
+        grid-area: Chatas; 
+        }
+        
+        .info_pickup {
+            grid-area: Info_pickup; 
+        }
+
+
+    /*CUADRÍCULAS NAV*/
+    nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+    }
+
+    .nav {
+        grid-area: Nav; 
+        background-image: url("../img_proyecto/madera.PNG");
+        background-repeat: repeat;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+
+    }
+
+
+    #buy_car {
+        grid-area: Car;
+        display: flex;
+        justify-content: center;
+    }
+
+    #mi_pedido {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    #mi_pedido button {
+        visibility: hidden;
+        width: 0px;
+        padding: 4px;
+        border-radius: 5px;
+        background-color:rgb(2, 90, 2); 
+        border: 1px rgb(2, 90, 2);
+        color: white;
+        cursor: pointer;
+        
+    }
+
+    #mi_pedido button:hover {
+        background-color:rgb(119, 241, 119);
+        border: 1px solid;
+        color: black;
+    }
+
+    #img_car {
+        padding: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: white;
+        
+    }
+
+    #value_order {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        text-align: center;
+
+    }
+
+    .logo {
+    grid-area: Logo; 
+    }
+
+    .logo  a {
+    display: flex;
+    justify-content:start;
+    }
+
+    .logo  a img{
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
+
+    }
+
+
+    .barr_nav {
+    grid-area: Barra; 
+    }
+
+    .buscar {
+    grid-area: Buscar;
+    display: flex;
+    align-items:center
+    }
+
+    .buscar form {
+    display: flex;
+
+    justify-content:center;
+    }
+
+    .buscar form input {
+
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+
+    }
+
+    .buscar form input:focus {
+    color: white;
+    background-color: black;
+    }
+
+
+    .buscar form label img {
+    width: 25px;
+    height: 25px;
+    }
+
+    .barr_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+    }
+
+
+    .barr_nav ul {
+    background-image: url("../img_proyecto/madera.PNG");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    height: 120px;
+    padding: 5px;
+    visibility: hidden;
+    transition: heigth 0.1s;
+    border-radius: 0px 0px 20px 20px;
+
+
+    }
+
+    .barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items:center;
+    justify-content:end;
+    }
+
+    .barr_nav ul li a{
+
+    text-decoration: none;
+    color: black;
+    }
+
+    .barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    }
+
+    .barr_nav .menu {
+        display: flex;
+        justify-content:center;
+        width: 100px;
+        margin-top: 15px;
+        
+
+    }
+
+    .barr_nav .menu button{
+        background-image: url("../img_proyecto/madera.PNG");
+        background-repeat: repeat;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .barr_nav .menu button img{
+        height: 30px;
+        width: 30px;
+        
+    }
+
+    .barr_nav:hover ul{
+
+        visibility: visible;
+        height: 120px;
+        transition: height 0.1s;
+    }
+
+
+    /*menú*/
+
+
+    .each {
+        background-color: rgb(219, 219, 215, 0.5);
+        padding: 2%;
+        margin: 5% 12.5%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 0 0 5px 5px rgb(193, 192, 192);
+    }
+
+    .hr {
+        height: 3px;
+        width: 70%;
+        background-color: black;
+    }
+
+    .precio {
+        /*border: 1px solid black;*/
+        padding: 2px;
+        border-radius: 10px;
+        background-color: rgb(204, 137, 43);
+        color: black;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .foto {
+        /*border: 1px solid black;*/
+        width: 200px;
+        border-radius: 200px;
+    }
+
+    .q_trae{
+        padding: 5px;
+        border-radius: 10px;
+        text-align:center;
+        /*background-color: white;*/
+    }
+
+    .dish_name {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .sancochos {
+        width: 100%;
+        display: flex;
+    }
+
+    .ejecutivos {
+        width: 100%;
+        display: flex;
+    }
+
+
+
+    /*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+    .legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    background-color: rgb(23, 23, 23);
+    }
+
+    .terms {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    }
+
+
+    .social_media {
+
+    display: flex;
+    width: 150px;
+
+    justify-content:space-around;
+    }
+
+    .social_media a img{
+    height: 30px;
+
+    }
+
+
+    .terms ul {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 80px;
+    width: 300px;
+
+    }
+
+    .terms ul li{
+    /*height: 50px;*/
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+    .terms ul li a{
+    text-decoration: none ;
+    color: white;
+    font-weight: bold;
+    }
+
+    .logo_legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .logo_legal img{
+    height: 100px;
+    width: 140px;
+    }
+
+    .footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+    }
+
+    .footer hr {
+    width: 60%;
+    color: white;
+    }
+
+    .footer p {
+    color: white;
+    }
+
+
+    /*BOTÓN DE WPP*/
+
+    .wpp {
+    position: fixed;
+    bottom: 0%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .wpp a img {
+    height: 40px;
+    width: 40px;
+    transition: height 0.1s, width 0.1s;
+
+    }
+
+    .wpp a img:hover {
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
+
+    }
+    .wpp p {
+    padding: 2px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    }
+
+    /*LISTA PEDIDO*/
+
+    .lista_pedido {
+        box-shadow: 0px 0px 0px 0px;
+    }
+
+    /*FORMULARIO DE COMPRA*/
+    .head {
+        font-size: 1.2rem;
+    }
+
+    .check_buy {
+        width: 55%;
+        left: 22.5%;
+    }
+
+    /*RESUMEN DEL PEDIDO*/
+
+    #review_order {
+        height: 90%;
+        top: 5%;
+        box-shadow: 0px 0px;
+    }
+
+    /*Para ver facturas de la base de datos*/
+
+    #search_database {
+        right: 3%;
+        top: 40%;
+    }
+
+
+
+
+}
+
+
+
+@media  (min-width:900px) and (max-width:1200px) {
+
+    /*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
+
+        main {
+            background-color: white;
+            display: grid;
+            grid-template-rows:  auto auto auto auto auto;
+            grid-template-columns: auto auto auto;
+            grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Info_pickup Info_pickup Info_pickup" "Legal Legal Legal""Footer Footer Footer";
+            height: 90%;
+            margin-top: 85px;
+        
+        
+        }
+        
+        
+        .legal {
+            grid-area: Legal; 
+        }
+        
+        .footer {
+            grid-area: Footer; 
+        }
+        
+        
+        .gallina {
+            grid-area: Gallina; 
+        }
+        
+        .costilla {
+            grid-area: Costilla; 
+        }
+        
+        .cola {
+            grid-area: Cola; 
+        }
+        
+        
+        
+        .sobrebarriga {
+            grid-area: Sobrebarriga; 
+        }
+        
+        .chatas {
+            grid-area: Chatas; 
+        }
+        
+        .info_pickup {
+            grid-area: Info_pickup; 
+        }
+
+/*CUADRÍCULAS NAV*/
+nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    grid-area: Nav; 
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 20px 20% auto  auto  400px 20px;
+    grid-template-areas: "A Buscar  Logo  Car  Barra C";
+    align-items:center;
+    height: 100%;
+    
+
+}
+
+#buy_car {
+    
+    grid-area: Car;
+    display: flex;
+    justify-content: center;
+
+}
+
+#mi_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#mi_pedido button {
+    visibility: hidden;
+    width: 0px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color:rgb(2, 90, 2); /**/
+    border: 1px rgb(2, 90, 2);
+    color: white;
+    cursor: pointer;
+    
+}
+
+#mi_pedido button:hover {
+    background-color:rgb(119, 241, 119);
+    border: 1px solid;
+    color: black;
+}
+
+#img_car {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+#value_order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.logo {
+    grid-area: Logo; 
+}
+
+.logo  a {
+    display: flex;
+    justify-content:start;
+}
+
+.logo  a img{
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
+}
+
+
+.barr_nav {
+    grid-area: Barra; 
+}
+
+.buscar {
+    grid-area: Buscar; 
+}
+
+.buscar form {
+    display: flex;
+    justify-content:center;
+}
+
+.buscar form input {
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+    color: white;
+    background-color: black;
+}
+
+
+.buscar form label img {
+    width: 25px;
+    height: 25px;
+}
+
+
+.barr_nav ul {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    
+    
+}
+
+.barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.barr_nav ul li a{
+    
+    text-decoration: none;
+    color: black;
+}
+
+.barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+    display: none;
+}
+
+
+/*menú*/
+
+
+.each {
+    background-color: rgb(219, 219, 215, 0.5);
+    padding: 2%;
+    margin: 5% 15%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgb(193, 192, 192);
+}
+
+.hr {
+    height: 3px;
+    width: 70%;
+    background-color: black;
+}
+
+.precio {
+    
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgb(204, 137, 43);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.foto {
+    
+    width: 250px;
+    border-radius: 250px;
+}
+
+.q_trae{
+    padding: 5px;
+    border-radius: 10px;
+    text-align:center;
+    
+}
+
+.dish_name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sancochos {
+    width: 100%;
+    display: flex;
+}
+
+.ejecutivos {
+    width: 100%;
+    display: flex;
+}
+
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(23, 23, 23);
+}
+
+.terms {
+    display: flex;
+    
+}
+
+
+.social_media {
+    
+    display: flex;
+    width: 150px;
+    justify-content:space-around;
+}
+
+.social_media a img{
+    height: 30px;
+
+}
+
+
+.terms ul {
+    display: flex;
+    justify-content:space-between;
+    width: 300px;
+    
+}
+
+.terms ul li{
+    
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.0rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.terms ul li a{
+    text-decoration: none ;
+    color: white;
+    font-weight: bold;
+}
+
+.logo_legal {
+    display: flex;
+}
+
+.logo_legal img{
+    height: 100px;
+    width: 140px;
+}
+
+.footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+    width: 60%;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+    position: fixed;
+    bottom: 0%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wpp a img {
+    height: 40px;
+    width: 40px;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
+    
+}
+.wpp p {
+    padding: 2px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+}
+
+/*FORMULARIO PARA CONFIRMAR COMPRA*/
+
+.check_buy {
+    
+    height: 70%;
+    width: 70%;
+    position: fixed;
+    top: 3%;
+    left: 15%;
+}
+.titulo {
+    width: 100%;
+}
+.head {
+    font-size: 1.2rem;
+}
+
+/*RESUMEN DEL PEDIDO*/
+
+#review_order {
+    
+    box-shadow: 0px 0px;
+}
+
+/*FACTURAS EN LA BASE DE DATOS*/
+
+
+
+
+}
+
+
+@media (min-width:1200px) {
+/*Esto es lo que quería*/
+/*CUADRÍCULA PRINCIPAL*/
+
+main {
+    background-color: white;
+    display: grid;
+    grid-template-rows:  auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:  "Gallina Costilla Cola"  "Sobrebarriga Chatas Oreada" "Legal Legal Legal""Footer Footer Footer";
+    height: 90%;
+    margin-top: 85px;
+}
+
+
+
+.legal {
+    grid-area: Legal; 
+}
+
+.footer {
+    grid-area: Footer; 
+}
+
+
+.gallina {
+    grid-area: Gallina; 
+}
+
+.costilla {
+    grid-area: Costilla; 
+}
+
+.cola {
+    grid-area: Cola; 
+}
+
+
+
+.sobrebarriga {
+    grid-area: Sobrebarriga; 
+}
+
+.oreada {
+    grid-area: Oreada; 
+}
+
+.chatas {
+    grid-area: Chatas; 
+}
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    grid-area: Nav; 
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 20px 20% auto  auto  400px 20px;
+    grid-template-areas: "A Buscar  Logo  Car  Barra C";
+    align-items:center;
+    height: 100%;
+}
+
+#buy_car {
+    
+    grid-area: Car;
+    display: flex;
+    justify-content: center;
+
+}
+
+#mi_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#mi_pedido button {
+    visibility: hidden;
+    width: 0px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color:rgb(2, 90, 2); /**/
+    border: 1px rgb(2, 90, 2);
+    color: white;
+    cursor: pointer;
+    
+}
+
+#mi_pedido button:hover {
+    background-color:rgb(119, 241, 119);
+    border: 1px solid;
+    color: black;
+}
+
+#img_car {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+#value_order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+
+
+.logo {
+    grid-area: Logo; 
+}
+
+.logo  a {
+    display: flex;
+    justify-content:start;
+}
+
+.logo  a img{
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
+
+}
+
+
+.barr_nav {
+    grid-area: Barra; 
+}
+
+.buscar {
+    grid-area: Buscar; 
+}
+
+.buscar form {
+    display: flex;
+    justify-content:center;
+}
+
+.buscar form input {
+
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+    color: white;
+    background-color: black;
+}
+
+
+.buscar form label img {
+    width: 25px;
+    height: 25px;
+}
+
+
+.barr_nav ul {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+
+}
+
+.barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.barr_nav ul li a{
+
+    text-decoration: none;
+    color: black;
+}
+
+.barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+    display: none;
+}
+
+
+/*menú*/
+
+.hr {
+height: 3px;
+width: 70%;
+background-color: black;
+}
+
+.precio {
+        
+    padding: 2px;
+    border-radius: 10px;
+    background-color: rgb(204, 137, 43);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.foto {
+width: 250px;
+border-radius: 250px;
+}
+
+.q_trae{
+padding: 5px;
+border-radius: 10px;
+text-align:center;
+/*background-color: white;*/
+}
+
+.dish_name {
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+.sancochos {
+width: 100%;
+display: flex;
+}
+
+.ejecutivos {
+width: 100%;
+display: flex;
+}
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: rgb(23, 23, 23);
+}
+
+.terms {
+display: flex;
+/*align-items: center;*/
+}
+
+
+.social_media {
+
+display: flex;
+width: 150px;
+
+justify-content:space-around;
+}
+
+.social_media a img{
+height: 50px;
+
+}
+
+
+.terms ul {
+display: flex;
+justify-content:space-between;
+/*align-items: center;*/
+width: 500px;
+
+}
+
+.terms ul li{
+/*height: 50px;*/
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 1.2rem;
+display: flex;
+align-items: center;
+}
+
+
+.terms ul li a{
+text-decoration: none ;
+color: white;
+font-weight: bold;
+}
+
+.logo_legal {
+display: flex;
+}
+
+.logo_legal img{
+height: 100px;
+width: 140px;
+}
+
+.footer {
+display: flex;
+align-items:center ;
+flex-direction: column;
+background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+width: 60%;
+color: white;
+}
+
+.footer p {
+color: white;
+}
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+position: fixed;
+bottom: 20px;
+right: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.wpp a img {
+height: 50px;
+width: 50px;
+transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+height: 60px;
+width: 60px;
+transition: height 0.1s, width 0.1s;
+
+}
+.wpp p {
+padding: 3px;
+background-color: black;
+color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 0.9rem;
+font-weight: bold;
+
+}
+
+
+}
+
+
+
+

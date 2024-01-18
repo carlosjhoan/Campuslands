@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Content</title>
+
+    
+</head>
+<body>
+    <div class = "container">
+        <div class = "parent">
+            <p>Hola a todos.</p>
+            <p class = "message">Hola, soy todo un Camper</p>
+        </div>
+    </div>
+
+    <input type="text" id = "new_message">
+    <button id = "change_message" onclick="cambiar_mensaje()">Outer mensaje</button>
+    <button onclick="outer_div()">Outer div</button>
+    <script>
+        function cambiar_mensaje() { //cambiar el contenido de texto de un elemento
+            const element = document.querySelector(".message");
+            alert(element.outerHTML)
+        }
+
+        function outer_div () {
+            const element = document.querySelector(".container");
+            alert (element.outerHTML) //Una diferencia con respecto al inner es que incluye el mismo contenedor, a diferencia del inner que incluye los hijos
+        }
+    </script>
+</body>
+</html>

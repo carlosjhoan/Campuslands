@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Casero</title>
+    <link rel="stylesheet" href="pickup_style.css">
+    <link rel="shortcut icon" href="../img_proyecto/logo.ico">
+    
+
+</head>
+<body>
+
+
+    <nav>
+        <div class="grid nav">
+            <div class="logo">
+                <a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/inicio.html"><img src="../img_proyecto/logo_tranparent.png" alt=""></a>
+            </div>
+
+            <div class="buscar">
+                <form action = "https://www.google.com/search" method = "get">
+                    <label for="search"><img src="../img_proyecto/search_logo.png" alt="search"></label>
+                    <input type="search" name = "q" id = "search" placeholder="Buscar">
+                </form>
+            </div>
+
+            <div id = "buy_car">
+                <div id = "img_car">
+                    <img src="../img_proyecto/buy_car.png" alt="Buy_car">
+                </div>
+                <div id = "mi_pedido">
+                    <input type="text"  readonly id = "value_order">
+                    <button id = "button_mi_pedido" onclick="dropdown_order ()">Ver pedido</button>
+                </div>
+                
+            </div>
+            
+            <div class="barr_nav">
+                <div class="menu"><button><img src="../img_proyecto/menu_logo.png" alt=""></button></div>
+                <ul>
+                    <li class = "menu_dia"><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/menu.html">Menú</a></li>
+                    <li><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/nosotros.html">Nosotros</a></li>
+                    <li><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/contacto.html">Contáctanos</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div class= "each gallina">
+            <p class = "precio">$14.000</p>
+            <img src="../img_proyecto/gallina.PNG" alt="" class = "foto">
+            <p class = "dish_name">Sancocho de gallina</p>
+            <div class= "hr"></div>
+            <p class = "q_trae"><em>Sopa de sancocho, cuarto de gallina, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
+            <div class="button_i_want" id = "i_want_gallina">
+                <button class = "i_want" id = "but_gallina" onclick = "order_buy('i_want_gallina', 'img_check_gallina', 0)">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_gallina">
+            </div>
+            
+        </div>
+        <div class="each costilla">
+            <p class = "precio">$14.000</p>
+            <img src="../img_proyecto/costilla.PNG" alt="" class = "foto">
+            <p class = "dish_name">Sancocho de costilla</p>
+            <div class= "hr"></div>
+            <p class = "q_trae"><em>Sopa de sancocho, costilla guisada, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
+            <div class="button_i_want" id = "i_want_costilla">
+                <button class = "i_want" id = "but_costilla" onclick="order_buy('i_want_costilla', 'img_check_costilla', 1)">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_costilla">
+            </div>
+            
+        </div>
+        <div class="each cola">
+            <p class = "precio">$14.000</p>
+            <img src="../img_proyecto/cola.PNG" alt="" class = "foto">
+            <p class = "dish_name">Sancocho de cola</p>
+            <div class= "hr"></div>
+            <p class = "q_trae"><em>Sopa de sancocho, cola de res guisada, yuca al vapor, arroz, ensalada con aguacate, limonada</em></p>
+            <div class="button_i_want" id = "i_want_cola">
+                <button class = "i_want" id = "but_cola" onclick="order_buy('i_want_cola', 'img_check_cola', 2)">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_cola">
+            </div> 
+        </div>
+        
+        <div class="each sobrebarriga">
+            <p class = "precio">$14.000</p>
+            <img src="../img_proyecto/sobrebarriga.PNG" alt="" class = "foto">
+            <p class = "dish_name">Sobrebarriga (160gr)</p>
+            <div class= "hr"></div>
+            <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
+            <div class="button_i_want" id = "i_want_sobre">
+                <button class = "i_want" id = "but_sobre" onclick="order_buy('i_want_sobre', 'img_check_sobre', 3)">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_sobre">
+            </div>  
+        </div>
+
+        <div class="each chatas">
+            <p class = "precio">$14.000</p>
+            <img src="../img_proyecto/chatas.PNG" alt="" class = "foto">
+            <p class = "dish_name">Chatas (160gr)</p>
+            <div class= "hr"></div>
+            <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
+            <div class = "button_i_want" id = "i_want_chatas">
+                <button class = "i_want" id = "but_chatas" onclick="order_buy('i_want_chatas', 'img_check_chatas', 4)">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_chatas">
+            </div>
+        </div>
+
+        <div class="each oreada">
+            <p class = "precio">$14.000</p>
+            <img src="../img_proyecto/oreada.PNG" alt="" class = "foto">
+            <p class = "dish_name">Oreada (160gr)</p>
+            <div class= "hr"></div>
+            <p class = "q_trae"><em>Sopa de fideos, yuca al vapor, papa a la francesa, arroz, ensalada con aguacate, limonada</em></p>
+            <div class="button_i_want" id = "i_want_ore">
+                <button class = "i_want" id = "but_oreada" onclick="order_buy('i_want_ore', 'img_check_ore', 5)">Yo quiero!</button>
+                <img src="../img_proyecto/check_order.png" alt="" id = "img_check_ore">
+            </div>
+        </div>
+
+        
+        
+        <div class="grid legal">
+            <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
+            <div class="terms">
+                <ul>
+                    <li><a href="https://www.restaurantemuy.com/terminosycondiciones" target="_blank">Términos y condiciones</a></li>
+                    <li><a href="https://www.restaurantemuy.com/politicadeprivacidad" target="_blank">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="social_media">
+                <a href = "https://www.facebook.com/lalitoy/" target = "_blank"><img src = "../img_proyecto/facebook_logo.png" alt = "facebook">
+                    <a href = "https://www.instagram.com/carlos.aguilar0512/?hl=es-la" target = "_blank"><img src = "../img_proyecto/instagram_logo.png" alt = "instagram"></a>
+
+            </div>
+
+        </div>
+        <div class="grid footer">
+            <hr>
+            <p>@LaliToy. All right reserved.</p>
+        </div>
+    </main>
+
+    <div class="wpp">
+        <p>Escríbenos</p>
+        <a href = "https://walink.co/4729de" target = "_blank"><img src = "https://github.com/carlosjhoan/Campuslands/blob/main/HTML&CSS/img/wpp_logo.png?raw=true" alt = "whatsapp"></a>
+  
+    </div>
+
+    <!--Aquí viene el botón para cambiar a DELIVERY-->
+    <div class="buttons_deliv_pickup">
+        <div class="botton_delivery"><button id = "b_delivery"><img src="../img_proyecto/food-delivery.png" alt=""><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/delivery.html">Porfa me lo traen</a><img src="../img_proyecto/food-delivery_2.png" alt=""></button></div>
+
+    </div>
+
+    
+
+
+
+
+
+
+    <!--Aquí viene el formulario que se llena cuando confirmamos el pedido-->
+    <div class="check_buy">
+        <div class="titulo">
+            <div class="linea"></div>
+            <div class="head">Información para recogerlo</div>
+            <div class="linea"></div>
+        </div>
+        <form action="">
+            <div>
+                <label for="first_name">Nombre *</label>
+                <input type="text" id = "first_name" class = "input_buy" placeholder=" Digite su nombre">
+            </div>           
+            
+           <!-- <div>
+                <label for="last_name">Apellido <em>(opcional)</em></label>
+                <input type="text" id = "last_name" class = "input_buy" placeholder=" Digite su apellido">
+            </div>-->
+
+            <div>
+                <label for="email">Email *</label>
+                <input type="email"  id = "email" class = "input_buy" placeholder=" example@this.com" >
+            </div>
+                
+            <div>
+                <label for="cell_number">Celular *</label>
+                <input type="text"  id = "cell_number" class = "input_buy" placeholder=" Número de cel...">
+            </div>
+
+            <fieldset>
+                <legend>Deseo recogerlo entre</legend>
+                <select name="range_time" id="range_time">
+                    <option value="11:30 am - 12:00 m">11:30 am - 12:00 m</option>
+                    <option value="12:00 m - 12:15 pm">12:00 m - 12:15 pm</option>
+                    <option value="12:15 pm - 12:30 pm">12:15 pm - 12:30 pm</option>
+                    <option value="12:30 pm - 1:00pm">12:30 pm - 1:00pm</option>               
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>¿Qué deseas que tengamos en cuenta?</legend>
+                <textarea name="commit" id="commit" cols="30" rows="4"></textarea>
+            </fieldset>
+        </form>
+
+        <div class="before_ready">
+            <button id = "previous" onclick="previous()"><img src="../img_proyecto/previous.png" alt=""></button>
+            <button type="submit" id = "listo_button" onclick="ok_my_order()"><img src="../img_proyecto/check_listo.png" alt="" id = "listo_1">Listo!<img src="../img_proyecto/confirm_order.png" alt="" id = "listo_2"></button>
+        </div>
+        
+    </div>
+
+    <div id="review_order">
+        <div id = "review_paragraph"></div>
+        <button onclick="finish()"><img src="../img_proyecto/check_green.png" alt=""></button>
+    </div>
+
+    <!--Buscar registros en la base de datos-->
+    <div id ="search_database">
+        <div id = "head">Tu(s) factura(s)</div>
+        <div id ="div_stack">
+            <div id = "slide_barr">
+                <div>
+                    <label for="option_search">Buscar por:</label>
+                    <select name="option_search" id="option_search">
+                        <option value="id">Factura</option>
+                        <option value="celular">Celular</option>
+                    </select>
+                </div>
+
+                <div id = "input_search">
+                    <input type="text" id = "input_database" placeholder="digite info">
+                    <img src="../img_proyecto/search_logo.png" id = "search_orders" alt="">
+                </div>
+               
+            </div>
+            <div id="stack_icon"><img src="../img_proyecto/database_search.png" alt=""></div>    
+        </div>
+    </div>
+
+    <div class="info_database">
+        <div id = "container_orders"><div id = "each_order"></div></div>
+        
+        <div id = "buttons_orders">
+            <button id = "before_order"><img src="../img_proyecto/previous.png" alt=""></button>
+            <button id = "close_order"><img src="../img_proyecto/close_order.png" alt=""></button>
+            <button id = "after_order"><img src="../img_proyecto/after.png" alt=""></button>
+        </div>
+    </div>
+
+    <!--Aquí viene la lista del pedido-->
+    <div class = "lista_pedido">
+        <table id = "table_order">
+            
+        </table>
+        <button id = "confirmo_button" onclick="confirm_order()"><img src="../img_proyecto/order_list.png" alt="" id = "order_list">Confirmo!<img src="../img_proyecto/check_icon.png" alt="" id = "check"></button>
+        <button id = "ok_button" onclick="collapse_order()"><img src="../img_proyecto/up_icon.png" alt=""></button>
+    </div>
+
+    <script src="../scripts/pickup.js"></script>
+    
+</body>
+</html>

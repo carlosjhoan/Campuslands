@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>clickeame!</button>
+    <span class = "text">Pasa el mouse por encima</span>
+    <script>
+        const button = document.querySelector("button");
+        const text = document.querySelector(".text");
+        button.addEventListener("click", () => alert("Has pulsado el botón"));
+        text.addEventListener("mouseover", () => {
+            const event = new Event("click");
+            button.dispatchEvent(event);
+        })
+    </script>
+</body>
+</html>

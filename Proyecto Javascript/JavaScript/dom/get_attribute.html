@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get Attribute</title>
+</head>
+<body>
+    <a  id = "mi_enlace" href = "https://www.youtube.com/" target="_blank">ENlace de ejemplo</a>
+    <a href="https://www.mercadolibre.com.co/" target="_blank"></a>
+    <button onclick="cambiar()">Cambiar</button>
+
+    <script>
+        function cambiar () {
+            const enlace = document.getElementById("mi_enlace");
+        const url = enlace.getAttribute("href")
+        console.log("URL: ", url) //Obtener
+        enlace.setAttribute("href", "https://www.amazon.com/?&tag=googleuscol05-20&ref=pd_sl_2a2wniraoy_e&adgrpid=160767134104&hvpone=&hvptwo=&hvadid=675201755723&hvpos=&hvnetw=g&hvrand=4838197954084541793&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1029315&hvtargid=kwd-360364908397&hydadcr=8636_13668848&language=es_US")
+        }
+        
+
+        //SetAttribute: Lo modifica
+    </script>
+</body>
+</html>

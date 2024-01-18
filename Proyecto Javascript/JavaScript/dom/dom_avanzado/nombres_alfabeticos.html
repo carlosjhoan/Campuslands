@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres Alfabéticos</title>
+</head>
+<body>
+    <div class="name_button">
+        <fieldset>
+            <legend>Nombre</legend>
+            <input type="text" name="name" id = "name" class = "form-control" placeholder="Enter a name..." >
+        </fieldset>
+        <button onclick="add_name()">Add name</button>
+    </div>
+    <h2>Ordered Names</h2>
+    <div class="text_area">
+        <textarea name="commit" id="commit" cols="30" rows="10"></textarea>
+        <button onclick= "clean()">Clear</button>
+    </div>
+    <script>
+        let names_array = []
+        function add_name () {
+            let pizarra = ""
+            const name_input = document.getElementById("name").value;
+            names_array.push(name_input);
+            let ordered_array_names = names_array.sort()
+            
+            const area_text_names = document.getElementById("commit")
+            if (ordered_array_names.length==0) {
+                area_text_names.innerHTML = "NO HAY NOMBRES QUE MOSTRAR"
+            } else {
+            for (let i=0; i<ordered_array_names.length; i++) {
+                pizarra += `${ordered_array_names[i]}\n` 
+            }
+            area_text_names.innerHTML = pizarra
+            }
+        }
+
+        function clean() {
+            const area = document.getElementById("commit");
+            area.innerHTML = "";
+            names_array = []
+            
+        }
+    </script>
+</body>
+</html>

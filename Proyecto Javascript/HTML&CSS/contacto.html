@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Casero</title>
+    <link rel="stylesheet" href="contacto_style.css">
+    <link rel="shortcut icon" href="../img_proyecto/logo.ico">
+    
+
+</head>
+<body>
+
+
+    <nav>
+        <div class="grid nav">
+            <div class="logo">
+                <a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/inicio.html"><img src="../img_proyecto/logo_tranparent.png" alt=""></a>
+            </div>
+
+            <div class="buscar">
+                <form action = "https://www.google.com/search" method = "get">
+                    <label for="search"><img src="../img_proyecto/search_logo.png" alt="search"></label>
+                    <input type="search" name = "q" id = "search" placeholder="Buscar">
+            </form>
+            </div>
+            
+            <div class="barr_nav">
+                <div class="menu"><button><img src="../img_proyecto/menu_logo.png" alt=""></button></div>
+                <ul>
+                    <li><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/menu.html">Menú</a></li>
+                    <li ><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/nosotros.html">Nosotros</a></li>
+                    <li class = "contact"><a href="https://carlosjhoan.github.io/Campuslands/HTML&CSS/sabor_casero/contacto.html">Contáctanos</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="contenido">
+            <div class="titulo">
+                <div class="linea"></div>
+                <div class="head">Contáctanos</div>
+                <div class="linea"></div>
+            </div>
+            <div class="grid formulario">
+                <div class = "form">
+                    <div class="name-email">
+                        <div class="nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name = "nombre" id = "nombre" placeholder=" Ingrese su nombre">
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name = "email" id = "email" placeholder=" example@this.com">
+                        </div>
+                        
+                    </div>
+
+                    <div class="cel-porque">
+                        <div class="celular">
+                            <label for="nombre">Celular</label>
+                            <input type="text" name = "celular" id = "celular" placeholder=" Número de cel...">
+                        </div>
+                        <div class="porque">
+                            <label for="options">¿Por qué nos contactas?</label>
+                        <select name="motivo" id="options">
+                            <option value="consultar vacante">Consultar vacantes</option>
+                            <option value="invitacion">Deseo invitarlos a un evento</option>
+                            <option value="propuesta">Les tengo una propuesta</option>
+                            <option value="queja o sugerencia">Queja o sugerencia</option>               
+                        </select>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="escrito">
+                        <label for="commit">Cuéntanos...</label>
+                        <textarea name="commit" id="commit" cols="30" rows="7"></textarea>
+                    </div>
+                    <button id = "but_submit"><img src="../img_proyecto/send_1.png" alt="">Enviar<img src="../img_proyecto/send_2.png" alt=""></button>
+                    
+
+                </div>
+                
+            </div>
+      
+
+        </div>
+        
+        <div class="grid legal">
+            <div class="logo_legal"><img src="../img_proyecto/logo_tranparent_white.png" alt=""></div>
+            <div class="terms">
+                <ul>
+                    <li><a href="https://www.restaurantemuy.com/terminosycondiciones" target="_blank">Términos y condiciones</a></li>
+                    <li><a href="https://www.restaurantemuy.com/politicadeprivacidad" target="_blank">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="social_media">
+                <a href = "https://www.facebook.com/lalitoy/" target = "_blank"><img src = "../img_proyecto/facebook_logo.png" alt = "facebook">
+                    <a href = "https://www.instagram.com/carlos.aguilar0512/?hl=es-la" target = "_blank"><img src = "../img_proyecto/instagram_logo.png" alt = "instagram"></a>
+
+            </div>
+
+        </div>
+        <div class="grid footer">
+            <hr>
+            <p>@LaliToy. All right reserved.</p>
+        </div>
+    </main>
+
+    <div class="wpp">
+        <p>Escríbenos</p>
+        <a href = "https://walink.co/4729de" target = "_blank"><img src = "https://github.com/carlosjhoan/Campuslands/blob/main/HTML&CSS/img/wpp_logo.png?raw=true" alt = "whatsapp"></a>
+        
+    </div>
+
+
+
+    <script src="../scripts/contacto.js"></script>
+    
+</body>
+</html>

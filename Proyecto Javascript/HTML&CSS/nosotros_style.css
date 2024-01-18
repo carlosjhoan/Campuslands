@@ -1,0 +1,1724 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: cal(100vh-80px);
+    box-sizing: border-box;
+    /**/
+}
+
+
+
+@media screen and (max-width:460px) {
+
+    /*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
+
+    main {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        
+        grid-template-areas: "Content" "Legal""Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+    
+    }
+    
+    .grid {
+        /*border: 1px solid black;*/
+    }
+    
+    
+    .content {
+        grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+/*display: grid;
+grid-template-columns: 20px 20% auto    400px 20px;
+grid-template-areas: "A Buscar  Logo    Barra C";
+align-items:center;*/
+    
+    
+
+}
+.logo {
+    grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.logo  a {
+    display: flex;
+    justify-content:start;
+}
+
+.logo  a img{
+    width: 110px;
+    height: 85px;
+    margin-left: 0px;
+    /*float: left;*/
+}
+
+
+.barr_nav {
+    grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar {
+grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+display: flex;
+align-items:center
+}
+
+.buscar form {
+display: flex;
+
+justify-content:center;
+}
+
+.buscar form input {
+/*float: right;*/
+width: 40%;
+height: 30px;
+margin-left: 5px;
+border: 3px solid black;
+border-radius: 20px;
+background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+color: white;
+background-color: black;
+}
+
+
+.buscar form label img {
+width: 25px;
+height: 25px;
+}
+
+.barr_nav {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+.barr_nav ul {
+    background-image: url("../img_proyecto/madera.PNG");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    height: 80px;
+    padding: 5px;
+    visibility: hidden;
+    transition: heigth 0.1s;
+    border-radius: 0px 0px 20px 20px;
+    
+}
+
+.barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.barr_nav ul li a{
+    
+    text-decoration: none;
+    color: black;
+}
+
+.barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+display: flex;
+justify-content:center;
+width: 100px;
+margin-top: 15px;
+/*border: 1px solid black;*/
+
+}
+
+.barr_nav .menu button{
+background-image: url("../img_proyecto/madera.PNG");
+background-repeat: repeat;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barr_nav .menu button img{
+    height: 30px;
+    width: 30px;
+    
+}
+
+.barr_nav:hover ul{
+
+visibility: visible;
+height: 120px;
+transition: height 0.1s;
+}
+
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.historia{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    /*float: left;*/
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    /*border: 1px solid black;*/
+    content: url("../img_proyecto/empleados_2.jpg");
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.7rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 100%;
+    height: 300px;
+    padding: 2% 2%;
+    margin-left: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:end;
+    /*border: 1px solid black;*/
+    text-align: center;
+
+}
+
+.luz, .eugenia {
+
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 5px;
+    width: 100%;
+    height: 90%;
+    padding: 0% 2%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 100%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 100%;
+    
+}
+.eugenia h2 {
+    font-size: 1rem;
+}
+
+.luz h2 {
+    font-size: 1rem;
+}
+    
+
+
+.oficio {
+    font-size: 0.6rem;
+}
+
+.testimonio {
+    text-align:left;
+    font-size: 0.65rem;
+}
+
+
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(23, 23, 23);
+}
+
+.terms {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+
+.social_media {
+    
+    display: flex;
+    width: 150px;
+    
+    justify-content:space-around;
+}
+
+.social_media a img{
+    height: 25px;
+
+}
+
+
+.terms ul {
+    display: flex;
+    justify-content:space-between;
+    /*align-items: center;*/
+    width: 300px;
+    
+}
+
+.terms ul li{
+    /*height: 50px;*/
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.terms ul li a{
+    text-decoration: none ;
+    color: white;
+    font-weight: bold;
+}
+
+.logo_legal {
+    display: flex;
+}
+
+.logo_legal img{
+    height: 80px;
+    width: 110px;
+}
+
+.footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+    width: 60%;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+
+
+
+
+
+/*BOTÓN DE WPP***/
+
+.wpp {
+    position: fixed;
+    bottom: 15%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wpp a img {
+    height: 30px;
+    width: 30px;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
+    
+}
+.wpp p {
+    padding: 2px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 2px;
+
+}
+
+    
+}
+
+
+
+@media  (min-width:460px) and (max-width:900px) {
+
+/*Esto es lo que quería*/
+/*CUADRÍCULA PRINCIPAL*/
+
+main {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    
+    grid-template-areas: "Content" "Legal""Footer";
+    height: 90%;
+    margin-top: 85px;
+    
+
+}
+
+.grid {
+    /*border: 1px solid black;*/
+}
+
+
+.content {
+    grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.legal {
+    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.footer {
+    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+height: 85px;
+width: 100%;
+position: fixed;
+top: 0px;
+box-sizing: border-box;
+}
+
+.nav {
+grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+background-image: url("../img_proyecto/madera.PNG");
+background-repeat: repeat;
+display: flex;
+justify-content: space-around;
+/*display: grid;
+grid-template-columns: 20px 20% auto    400px 20px;
+grid-template-areas: "A Buscar  Logo    Barra C";
+align-items:center;*/
+height: 100%;
+
+
+}
+.logo {
+grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.logo  a {
+display: flex;
+justify-content:start;
+}
+
+.logo  a img{
+width: 120px;
+height: 90px;
+margin-left: 0px;
+/*float: left;*/
+}
+
+
+.barr_nav {
+grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar {
+grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+display: flex;
+align-items:center
+}
+
+.buscar form {
+display: flex;
+
+justify-content:center;
+}
+
+.buscar form input {
+/*float: right;*/
+width: 40%;
+height: 30px;
+margin-left: 5px;
+border: 3px solid black;
+border-radius: 20px;
+background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+color: white;
+background-color: black;
+}
+
+
+.buscar form label img {
+width: 25px;
+height: 25px;
+}
+
+.barr_nav {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+.barr_nav ul {
+background-image: url("../img_proyecto/madera.PNG");
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-left: 0px;
+height: 80px;
+padding: 5px;
+visibility: hidden;
+transition: heigth 0.1s;
+border-radius: 0px 0px 20px 20px;
+
+/*border: 1px solid black;*/
+
+}
+
+.barr_nav ul li{
+height: 50px;
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 1.3rem;
+display: flex;
+align-items:center;
+justify-content:end;
+}
+
+.barr_nav ul li a{
+
+text-decoration: none;
+color: black;
+}
+
+.barr_nav ul li:hover{
+background-color: rgb(218, 190, 147,0.7);
+border-radius: 10px;
+transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+display: flex;
+justify-content:center;
+width: 100px;
+margin-top: 15px;
+/*border: 1px solid black;*/
+
+}
+
+.barr_nav .menu button{
+background-image: url("../img_proyecto/madera.PNG");
+background-repeat: repeat;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barr_nav .menu button img{
+    height: 30px;
+    width: 30px;
+    
+}
+
+.barr_nav:hover ul{
+
+visibility: visible;
+height: 120px;
+transition: height 0.1s;
+box-shadow: 2px 2px rgb(69, 69, 69, 0.7);
+}
+
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.historia{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.7rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    /*float: left;*/
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    /*border: 1px solid black;*/
+    /*content: url("../img_proyecto/empleados_1.jpg");*/
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 100%;
+    height: 300px;
+    padding: 2% 2%;
+    margin-left: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:end;
+    /*border: 1px solid black;*/
+    text-align: center;
+
+}
+
+.luz, .eugenia {
+
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 5px;
+    width: 100%;
+    height: 90%;
+    padding: 0% 2%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 100%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 100%;
+    
+}
+.eugenia h2 {
+    font-size: 1.2rem;
+}
+
+.luz h2 {
+    font-size: 1.2rem;
+}
+    
+
+
+.oficio {
+    font-size: 0.7rem;
+}
+
+.testimonio {
+    text-align:left;
+    font-size: 0.9rem;
+}
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items:center;
+background-color: rgb(23, 23, 23);
+}
+
+.terms {
+display: flex;
+flex-direction: column;
+
+align-items: center;
+}
+
+
+.social_media {
+
+display: flex;
+width: 150px;
+
+justify-content:space-around;
+}
+
+.social_media a img{
+height: 30px;
+
+}
+
+
+.terms ul {
+display: flex;
+justify-content:space-between;
+align-items: center;
+height: 80px;
+width: 300px;
+
+}
+
+.terms ul li{
+/*height: 50px;*/
+list-style-type: none;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 0.9rem;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.terms ul li a{
+text-decoration: none ;
+color: white;
+font-weight: bold;
+}
+
+.logo_legal {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.logo_legal img{
+height: 100px;
+width: 140px;
+}
+
+.footer {
+display: flex;
+align-items:center ;
+flex-direction: column;
+background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+width: 60%;
+color: white;
+}
+
+.footer p {
+color: white;
+}
+
+
+
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+position: fixed;
+bottom: 200px;
+right: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.wpp a img {
+height: 40px;
+width: 40px;
+transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+height: 50px;
+width: 50px;
+transition: height 0.1s, width 0.1s;
+
+}
+.wpp p {
+padding: 2px;
+background-color: black;
+color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 0.9rem;
+font-weight: bold;
+
+}
+
+
+}
+
+
+
+@media  (min-width:900px) and (max-width:1200px) {
+
+    /*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
+
+    main {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        
+        grid-template-areas: "Content" "Legal""Footer";
+        height: 90%;
+        margin-top: 85px;
+        
+    
+    }
+    
+    .grid {
+        /*border: 1px solid black;*/
+    }
+    
+    
+    .content {
+        grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .legal {
+        grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+    
+    .footer {
+        grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    }
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 20px 20% auto    400px 20px;
+    grid-template-areas: "A Buscar  Logo    Barra C";
+    align-items:center;
+    height: 100%;
+    
+
+}
+.logo {
+    grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.logo  a {
+    display: flex;
+    justify-content:start;
+}
+
+.logo  a img{
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
+    /*float: left;*/
+}
+
+
+.barr_nav {
+    grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar {
+    grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar form {
+    display: flex;
+    justify-content:center;
+}
+
+.buscar form input {
+    /*float: right;*/
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+    color: white;
+    background-color: black;
+}
+
+
+.buscar form label img {
+    width: 25px;
+    height: 25px;
+}
+
+
+.barr_nav ul {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    /*border: 1px solid black;*/
+    
+}
+
+.barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.barr_nav ul li a{
+    
+    text-decoration: none;
+    color: black;
+}
+
+.barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+    display: none;
+}
+
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.historia{
+    width: 60%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.2rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    float: left;
+    margin-right: 5px;
+    padding: 5px;
+    content: url("../img_proyecto/empleados_2.jpg");
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.luz, .eugenia {
+
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 10px;
+    width: 80%;
+    height: 80%;
+    padding: 5%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 60%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 60%;
+    
+}
+    
+
+
+.oficio {
+    font-size: 0.8rem;
+}
+
+.testimonio {
+    text-align:left;
+    font-size: 0.8rem;
+}
+
+
+
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(23, 23, 23);
+}
+
+.terms {
+    display: flex;
+    /*align-items: center;*/
+}
+
+
+.social_media {
+    
+    display: flex;
+    width: 150px;
+    
+    justify-content:space-around;
+}
+
+.social_media a img{
+    height: 30px;
+
+}
+
+
+.terms ul {
+    display: flex;
+    justify-content:space-between;
+    /*align-items: center;*/
+    width: 300px;
+    
+}
+
+.terms ul li{
+    /*height: 50px;*/
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.0rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.terms ul li a{
+    text-decoration: none ;
+    color: white;
+    font-weight: bold;
+}
+
+.logo_legal {
+    display: flex;
+}
+
+.logo_legal img{
+    height: 100px;
+    width: 140px;
+}
+
+.footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+    width: 60%;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+
+
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+    position: fixed;
+    bottom: 200px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wpp a img {
+    height: 40px;
+    width: 40px;
+    transition: height 0.1s, width 0.1s;
+
+}
+
+.wpp a img:hover {
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
+    
+}
+.wpp p {
+    padding: 2px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+}
+
+
+}
+
+@media (min-width:1200px) {
+/*Esto es lo que quería*/
+    /*CUADRÍCULA PRINCIPAL*/
+
+main {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    
+    grid-template-areas: "Content" "Legal""Footer";
+    height: 90%;
+    margin-top: 85px;
+    
+
+}
+
+.grid {
+    /*border: 1px solid black;*/
+}
+
+
+.content {
+    grid-area: Content; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.legal {
+    grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.footer {
+    grid-area: Footer; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+
+/*CUADRÍCULAS NAV*/
+nav {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    grid-area: Nav; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+    background-image: url("../img_proyecto/madera.PNG");
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 20px 20% auto    400px 20px;
+    grid-template-areas: "A Buscar  Logo    Barra C";
+    align-items:center;
+    height: 100%;
+    
+
+}
+.logo {
+    grid-area: Logo; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.logo  a {
+    display: flex;
+    justify-content:start;
+}
+
+.logo  a img{
+    width: 120px;
+    height: 90px;
+    margin-left: 0px;
+    /*float: left;*/
+}
+
+
+.barr_nav {
+    grid-area: Barra; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar {
+    grid-area: Buscar; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
+}
+
+.buscar form {
+    display: flex;
+    justify-content:center;
+}
+
+.buscar form input {
+    /*float: right;*/
+    width: 40%;
+    height: 30px;
+    margin-left: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgb(240, 202, 157, 0.5);
+
+}
+
+.buscar form input:focus {
+    color: white;
+    background-color: black;
+}
+
+
+.buscar form label img {
+    width: 25px;
+    height: 25px;
+}
+
+
+.barr_nav ul {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    /*border: 1px solid black;*/
+    
+}
+
+.barr_nav ul li{
+    height: 50px;
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.barr_nav ul li a{
+    
+    text-decoration: none;
+    color: black;
+}
+
+.barr_nav ul li:hover{
+    background-color: rgb(218, 190, 147,0.7);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.barr_nav .menu {
+    display: none;
+}
+
+.barr_nav ul .nosotros{
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.barr_nav ul .nosotros a{
+    padding: 2px;
+    color: rgb(204, 137, 43);
+    font-weight: bold;
+}
+
+
+/*NOSOTROS*/
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.historia{
+    width: 60%;
+}
+
+.titulo {
+    text-align: center;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo img {
+    /*border: 3px solid black;*/
+    text-align: center;
+    width: 170px;
+    height: 130px;
+    
+}
+
+.cuerpo_texto {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+
+.linea {
+    height: 7px;
+    border-radius: 4px;
+    width: 20%;
+    
+    background-color: black;
+}
+
+.titulo p {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+    /*border: 1px solid black;*/
+}
+
+.historia .texto img[src="../img_proyecto/empleados_1.jpg"] {
+    float: left;
+    margin-right: 5px;
+    padding: 5px;
+}
+.historia .texto p {
+    margin: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+
+.franja {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.luz, .eugenia {
+
+    flex-grow: 1;
+    background-color:  rgb(204, 137, 43, 0.3);
+    margin: 10px;
+    width: 80%;
+    height: 80%;
+    padding: 5%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+}
+
+.luz, .eugenia {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.luz hr {
+
+    color: black;
+    width: 60%;
+    
+}
+
+.eugenia hr {
+
+    color: black;
+    width: 60%;
+    
+}
+    
+
+
+.oficio {
+    font-size: 0.8rem;
+}
+
+.testimonio {
+    text-align:left;
+}
+
+/*SOCIAL MEDIA, LOGO_LEGAL, TERMS*/
+
+.legal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(23, 23, 23);
+}
+
+.terms {
+    display: flex;
+    /*align-items: center;*/
+}
+
+
+.social_media {
+    
+    display: flex;
+    width: 150px;
+    
+    justify-content:space-around;
+}
+
+.social_media a img{
+    height: 50px;
+
+}
+
+
+.terms ul {
+    display: flex;
+    justify-content:space-between;
+    /*align-items: center;*/
+    width: 500px;
+    
+}
+
+.terms ul li{
+    /*height: 50px;*/
+    list-style-type: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.terms ul li a{
+    text-decoration: none ;
+    color: white;
+    font-weight: bold;
+}
+
+.logo_legal {
+    display: flex;
+}
+
+.logo_legal img{
+    height: 100px;
+    width: 140px;
+}
+
+.footer {
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    background-color: rgb(23, 23, 23);
+}
+
+.footer hr {
+    width: 60%;
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+
+
+
+
+
+/*BOTÓN DE WPP*/
+
+.wpp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wpp a img {
+    height: 50px;
+    width: 50px;
+    transition: height 0.1s, width 0.1s;
+    box-shadow: 2px gray;
+
+}
+
+.wpp a img:hover {
+    height: 60px;
+    width: 60px;
+    transition: height 0.1s, width 0.1s;
+    
+}
+.wpp p {
+    padding: 3px;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+}
+
+}

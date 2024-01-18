@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruidosa</title>
+</head>
+<body>
+    <script>
+        function ruidosa (funcion) {
+            return (...argumentos) => {
+                console.log("Llamando con", argumentos);
+                let resultado = funcion(...argumentos);
+                console.log("Lamada con", argumentos, ", retorno", resultado);
+                return resultado;
+            };
+        }
+        const numeritos = ruidosa(Math.min)
+        //ruidosa(Math.min)(3, 2, 1)
+        numeritos(3, 2, 1)
+    </script>
+</body>
+</html>

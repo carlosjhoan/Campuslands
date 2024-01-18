@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Digit</title>
+</head>
+<body>
+    <script>
+    
+    const user_number = function () {
+        do {   
+            check_number = false
+            let user_number = Number(prompt("Ingrese un número: "))
+            if (Number.isNaN(user_number) || user_number < 1) {
+                alert ("Valor Incorrecto! Por favor ingrese un número positivo mayor que 1. Es recomendable que sea de más de 2 dígitos ")
+            } else {
+                alert ("Correcto!")
+                check_number = true
+                return user_number
+            }
+
+        } while (check_number == false)
+    }
+
+    //user_number ()
+
+    function super_digit () {
+        let number = String(user_number())
+        do {
+            check_digit = false
+            let sum = 0
+            //console.log(number.length)
+            if (number.length > 1) {
+                for (let i = 0; i < number.length; i++ ){
+                    sum += Number(number[i])
+                    console.log(sum)
+                }
+                number = String(sum)
+            } else {
+                check_digit = true
+                //console.log("listo")
+                return number
+                
+            }
+
+        } while (check_digit == false)
+        //console.log(number)
+    } 
+
+   
+    console.log (`El super digit es: ${super_digit()}`)
+    </script>
+</body>
+</html>

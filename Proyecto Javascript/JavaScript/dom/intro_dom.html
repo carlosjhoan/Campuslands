@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mi_clase">Elemento 1</div>
+    <div class="mi_clase">Elemento 2</div>
+    <div class="mi_clase">Elemento 3</div>
+
+    <p>1er párrafo</p>
+    <p>2do párrafo</p>
+    <p>3er párrafo</p>
+
+    <script>
+        let elementos = document.getElementsByClassName("mi_clase")
+        const parrafos = document.getElementsByTagName("p")
+        console.table(elementos)
+        for (let i = 0; i < elementos.length; i++) {
+            elementos[i].innerHTML = "Nuevo contenido para " + (i + 1)
+        }
+
+        //Así como existe ByClass, existe TagName
+
+        for (let j = 0; j < parrafos.length; j++) {
+            parrafos[j].innerHTML = "Nuevo párrafo para " + (j + 1)
+        }
+
+
+
+    </script>
+</body>
+</html>

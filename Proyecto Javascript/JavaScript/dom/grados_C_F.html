@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grados °C to °F</title>
+    <style>
+        fieldset {
+            width: 20%;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <form action="">
+            <div class = "grades">
+                <fieldset>
+                    <legend>°C</legend>
+                <!--<label for="num1">Número 1:</label>-->
+                    <input type="text" name="C" id = "C" class = "form-control" placeholder="Ingrese los °C">
+            </fieldset>
+            </div>
+
+            <div class = "grades">
+                <fieldset>
+                    <legend>°F</legend>
+                    <!--<label for="num2">Número 2:</label>-->
+                    <input type="text" name="F" id = "F" class = "form-control" >
+                </fieldset>
+            </div>
+        
+        </form>
+        <div id = "buttons">
+            <button onclick= "convert_to_F()">Convertir a °F</button>
+            <button onclick= "convert_to_C()">Convertir a °C</button>
+        </div>
+    </main>
+
+    <script>
+
+        
+        
+        const grade_F_conv = (g_C) => {
+            return ((g_C*9/5)+32)
+        }
+
+        const grade_C_conv = (g_F) => {
+            return ((g_F-32)*(5/9))
+        }
+
+        function convert_to_F () {
+            const grade_C = Number(document.getElementById('C').value);
+            
+            if (Number.isNaN(grade_C)) {
+                document.getElementById('F').value = "PAILAS!"
+            } 
+            else {
+                document.getElementById('F').value = `${grade_F_conv(grade_C).toFixed(2)}`
+            }
+        }
+
+        function convert_to_C () {
+            const grade_F = Number(document.getElementById('F').value);
+            
+            if (Number.isNaN(grade_F)) {
+                document.getElementById('C').value = "PAILAS!"
+            } 
+            else {
+                document.getElementById('C').value = `${grade_C_conv(grade_F).toFixed(2)}`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function array_fecha (fecha) {
+            return fecha.split("/") //Devuelve [dd, mm, yyyy]
+        }
+
+        function calculate_day(dif) {
+            let multa;
+            let msj;
+            let days = ((((dif / 1000) / 60)/60)/24)
+            days = Math.floor(days)
+            if (days < 0 ) {
+                multa = 0
+                msj = `Entregó antes de tiempo. Anticipado ${-1*days} días`
+                days = `${-1*days} anticipados`
+                
+            }
+            else if (days >0 && days <= 3){
+                multa = days * 7000
+                msj = `Su multa es de $${multa}`
+            } 
+            else if (days > 3 ) {
+                multa = 10000
+                msj = `Su multa es de $${multa} y sancionado por 6 meses de no préstamo.`
+            }
+
+            return [days, multa, msj]
+        }
+
+        /*function valid_fecha() {
+            do {
+                check_mes = false
+
+            }
+        }*/
+
+        const map_months = new Map([["01", "Jan"], ["02", "Feb"], ["03", "Mar"], ["04", "Apr"], ["05", "May"], ["06", "Jun"], ["07", "Jul"], ["08", "Aug"], ["09", "Sep"], ["10", "Oct"], ["11", "Nov"], ["12", "Dec"]])
+
+        let fecha_pactada = prompt("Ingrese la fecha pactada de entrega [dd/mm/yyyy]: ")
+        let fecha_entrega = prompt("Ingrese la fecha en que se entregó el libro[dd/mm/yyyy]: ")
+
+        let array_pactada = array_fecha(fecha_pactada)
+        let array_entrega = array_fecha(fecha_entrega)
+        let format_pactada = `${map_months.get(array_pactada[1])} ${array_pactada[0]} ${array_pactada[2]}`
+        let format_entrega = `${map_months.get(array_entrega[1])} ${array_entrega[0]} ${array_entrega[2]}`
+        
+        const pactada_date = new Date(format_pactada)
+        const entrega_date = new Date(format_entrega)
+        const diff = entrega_date.getTime() - pactada_date.getTime()
+
+        console.log(`Días: ${calculate_day(diff)[0]}`)
+        console.log(calculate_day(diff)[2])
+        
+        /*console.log(format_entrega, format_pactada)
+        console.log(pactada_date.getTime() - entrega_date.getTime())*/
+        
+        console.log(`Fecha pactada: ${format_pactada}`)
+        console.log(`Fecha de entrega: ${format_entrega}`)
+        /*console.log(array_entrega)
+        console.log(array_pactada)*/
+
+        //Convertir milisegundos a días: mil/1000 --> min, mil/1000/60 --> minutos/60 ---> Horas/24 Días
+
+        
+    </script>
+</body>
+</html>

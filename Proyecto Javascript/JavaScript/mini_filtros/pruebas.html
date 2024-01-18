@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+    <ul id="prueba"></ul>
+    <script>
+    let arr_pokemons = [];
+    (async function() {
+            for (let i=1; i<= 205;i++) {
+                let pokemon_i = new Map()
+                
+            
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${i}/`;
+                    
+                const answer_1 = await fetch(url_1);
+                    
+                const json_1 = await answer_1.json();
+                    
+                const name_i = json_1.forms[0].name;
+                const hp = json_1.stats[0].base_stat;
+                const attack = json_1.stats[1].base_stat;
+                const defense = json_1.stats[2].base_stat;
+                const speed = json_1.stats[5].base_stat;
+
+                const front_default_1 = json_1.sprites.other["official-artwork"].front_default;
+                pokemon_i.set("picture",front_default_1 );
+                pokemon_i.set("name",name_i );
+                pokemon_i.set("hp", hp);
+                pokemon_i.set("attack",attack );
+                pokemon_i.set("defense",defense );
+                pokemon_i.set("speed",speed );
+                
+                arr_pokemons.push(pokemon_i);
+                
+ 
+            }
+    })()
+    /*for (let i=0; i< 8000000000; i++) {
+
+    }
+
+    console.log(arr_pokemons.length)*/
+    
+    
+    let time_now = new Date();
+ 
+    let i=0;
+    //let diff = 0;
+    
+    do {
+        let time_i = new Date();
+        diff = time_i-time_now
+        setTimeout(() => {
+            let n = 1 + Math.floor(Math.random()* 200)
+            tabla_aleatoria = `<li><img src = "${arr_pokemons[n-1].get("picture")}" ></li>`
+            document.getElementById("prueba").innerHTML = tabla_aleatoria;
+            i++;
+            console.log(i);
+        }, 200)
+
+        
+        
+    console.log(diff)
+        
+    } while (diff <7000)
+    console.log("Breves")
+
+    //tabla_aleatoria = `<li>${i}</li><li>2</li>`;
+    
+    
+    console.log("Listo!!")
+    console.log(arr_pokemons.length)
+    
+                   
+
+    </script>
+</body>
+</html>

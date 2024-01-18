@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mi_promesa = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Operación completada con éxito!")
+            }, 2000);
+        })
+
+        console.log ("Inicio de la operación")
+
+        mi_promesa .then(resultado => {
+            console.log(resultado);
+        })
+        .catch(error => {
+            console.error("Error: ", error)
+        })
+
+        console.log("Tareas adicionales")
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Cómo se crea un mapa
+        const frutas = new Map([["Manzanas", 2500], ["Peras", 1200], ["Banano", 500]])
+        console.log(frutas)
+        console.log("Cantidad de llaves: " + frutas.size)
+        frutas.set("Pitahaya", 5000)
+        frutas.set("Mango", 3000) //Para añadir un elemento al map
+        console.log("La fruta de Camilo: " + frutas.get("Mango")) //Obtiene el valor
+        console.log(frutas.delete("Pepino"))
+        console.log(frutas.delete("Pitahaya"))
+        console.log("El mango existe en la canasta de frutas: " + frutas.has("Mango")) //Verifica si existe
+        
+        //Método forEach
+        frutas.forEach((v, k) => {
+            console.log(`El precio de ${k} es: $${v}`)
+        })
+
+        //El método entries me devuelve la pareja
+        for (const e of frutas.entries()) {
+            console.log(e)
+        }
+
+        for (const [k, v] of frutas.entries()) {
+            console.log(`El precio de ${k} es: $${v}`)
+        }
+
+        
+
+        /*método keys: map.keys() me devuele un array con las llaves
+        método values: map.values() me devuelve un array con los valores*/
+
+        //Ejemplo
+        const texto = "Ejemplo EJEMplo UN un uN Este este este un un un es un ejemplo de un ejemplo de de texto que es ideal para procesar"
+        texto_low = texto.toLowerCase()
+        texto_split= texto_low.split(" ")
+        console.log(texto_split)
+        map_texto = new Map()
+        const j = 0
+        for (let i=0; i < texto_split.length; i++) {
+            
+            
+            if (map_texto.get(`${texto_split[i]}`) == undefined) {
+                map_texto.set(`${texto_split[i] }`, 1)
+                
+            } else if (map_texto.get(`${texto_split[i]}`) >= 1) {
+                
+                a = map_texto.get(`${texto_split[i]}`) + 1
+                console.log(a)
+                map_texto.set(`${texto_split[i] }`, a)
+                
+            }
+
+        
+        }
+        console.log(map_texto)
+
+        /*for (const [k, v] of map_texto.entries()) {
+                
+                if (texto_split[i] === k) {
+                    v++
+                    console.log(v)
+                } else {
+                    map_texto.set(`${texto_split[i] }`, 1)
+                    
+                }
+        }*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToggleAttribute</title>
+</head>
+<body>
+    <div id = "mi_elemento">Contenido del elemento</div>
+
+    <script>
+        const mi_elemento = document.getElementById("mi_elemento")
+
+        mi_elemento.toggleAttribute("data-info")
+
+        console.log("¿data-info presente?", mi_elemento.hasAttribute("data-info"))
+
+        //Este Toggle lo que hace es agregar un atributo y puedo consultar si existe o no
+
+        //removeAttribute:remover un elemento
+        mi_elemento.removeAttribute("data-info")
+        console.log("¿data-info presente?", mi_elemento.hasAttribute("data-info"))
+
+        //
+    </script>
+</body>
+</html>

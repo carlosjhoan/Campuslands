@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-decoration: none;
+            list-style: none;
+            margin: 0 auto;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody id = "par"></tbody>
+        <button onclick="get_name()">Siguiente</button>
+        <button onclick="get_back()">Atrás</button>
+    </table>
+    <script>
+        let n = 1
+        async function get_name () {
+            let tabla = ""
+            //for (let i=1; i<=100;i+=2) {
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${n}/`
+                const url_2 = `https://pokeapi.co/api/v2/pokemon/${n+1}/`
+                const answer_1 = await fetch(url_1)
+                const answer_2 = await fetch(url_2)
+                const json_1 = await answer_1.json()
+                const json_2 = await answer_2.json()
+                 let name_p_1 = json_1.forms[0].name
+                 let name_p_2 = json_2.forms[0].name
+                 const url_img_1 = `https://pokeapi.co/api/v2/pokemon/${name_p_1}/`
+                 const url_img_2 = `https://pokeapi.co/api/v2/pokemon/${name_p_2}/`
+
+                const front_default_1 = json_1.sprites.front_default
+                const front_default_2 = json_2.sprites.front_default
+                /*const front_shiny = json.sprites.front_shiny
+                const back_shiny = json.sprites.back_shiny*/
+                tabla = `<tr><td><ul><li><img src = ${front_default_1} ></li><li>#${n}</li><li>${name_p_1}</li></ul></td><td><ul><li><img src = ${front_default_2} ></li><li>#${n+1}</li><li>${name_p_2}</li></ul></td></tr>`
+                //tabla = `<tr><td>${i}</td><td>${name_p}</td><td><img src = ${front_default} ></td><td><img src = ${front_shiny} ></td><td><img src = ${back_shiny} ></td></tr>`
+                /*console.log(name_p)
+                console.log(json.sprites.front_default)*/
+                n+=2
+                document.getElementById("par").innerHTML = tabla
+                
+
+            }
+
+            async function get_back () {
+                console.log(n)
+            let tabla = ""
+            
+            if (n >= 3) {
+                n-=2
+            //for (let i=1; i<=100;i+=2) {
+                const url_1 = `https://pokeapi.co/api/v2/pokemon/${n}/`
+                const url_2 = `https://pokeapi.co/api/v2/pokemon/${n+1}/`
+                const answer_1 = await fetch(url_1)
+                const answer_2 = await fetch(url_2)
+                const json_1 = await answer_1.json()
+                const json_2 = await answer_2.json()
+                 let name_p_1 = json_1.forms[0].name
+                 let name_p_2 = json_2.forms[0].name
+                 const url_img_1 = `https://pokeapi.co/api/v2/pokemon/${name_p_1}/`
+                 const url_img_2 = `https://pokeapi.co/api/v2/pokemon/${name_p_2}/`
+
+                const front_default_1 = json_1.sprites.front_default
+                const front_default_2 = json_2.sprites.front_default
+                /*const front_shiny = json.sprites.front_shiny
+                const back_shiny = json.sprites.back_shiny*/
+                tabla = `<tr><td><ul><li><img src = ${front_default_1} ></li><li>#${n}</li><li>${name_p_1}</li></ul></td><td><ul><li><img src = ${front_default_2} ></li><li>#${n+1}</li><li>${name_p_2}</li></ul></td></tr>`
+                //tabla = `<tr><td>${i}</td><td>${name_p}</td><td><img src = ${front_default} ></td><td><img src = ${front_shiny} ></td><td><img src = ${back_shiny} ></td></tr>`
+                /*console.log(name_p)
+                console.log(json.sprites.front_default)*/
+               
+                document.getElementById("par").innerHTML = tabla
+            }  
+
+            }
+
+            /*function next () {
+                
+
+                n+=2
+            }*/
+
+            //document.getElementById("par").innerHTML = tabla
+            
+            
+            //console.log(json.sprites.front_default)
+            //return json//.sprites.front_default
+        
+    </script>
+</body>
+</html>

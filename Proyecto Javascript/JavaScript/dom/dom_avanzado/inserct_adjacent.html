@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="border: 1px solid black;">
+        <p>Hola a todo.</p>
+        <p class = "message">Hola, soy todo un camper</p>
+    </div>
+    <button onclick="insert_adjacent_element()">Before_Begin</button>
+    <!--<button onclick="insert_adjacent_element()">Before_After</button>
+    <button onclick="insert_adjacent_element()">After_Begin</button>
+    <button onclick="insert_adjacent_element()">After_End</button>-->
+    <button onclick="insert_adjacent_HTML()">Insert Adjacent HTML</button>
+    <button onclick="insert_adjacent_text()">Insert Adjacent Text</button>
+
+    <script>
+        function insert_adjacent_element() {
+            const div = document.querySelector("div");
+            const p = document.createElement("p");
+            p.innerHTML = "<span style = 'color:red;'> Este es el contenido insertado</span>"
+
+            div.insertAdjacentElement("beforebegin", p) //Antes de que inicie
+            /*div.insertAdjacentElement("afterbegin", p) //Después de que inicie
+            div.insertAdjacentElement("beforeend", p) //Antes de que finalice
+            div.insertAdjacentElement("afterend", p) //Después de que finalice*/
+        }
+
+        function insert_adjacent_HTML() {
+            const div = document.querySelector("div");
+            const str =  "<span style = 'color:red;'> Este es el contenido insertado</span>";
+            
+            div.insertAdjacentHTML("beforebegin", str) //Antes de que inicie
+            /*div.insertAdjacentElement("afterbegin", p) //Después de que inicie
+            div.insertAdjacentElement("beforeend", p) //Antes de que finalice
+            div.insertAdjacentElement("afterend", p) //Después de que finalice*/
+        }
+
+        function insert_adjacent_text() {
+            const div = document.querySelector("div");
+            const str =  "<span style = 'color:red;'> Este es el contenido insertado</span>";
+            
+            div.insertAdjacentText("beforebegin", str) //Inserta solo texto
+            //Antes de que inicie
+            /*div.insertAdjacentElement("afterbegin", p) //Después de que inicie
+            div.insertAdjacentElement("beforeend", p) //Antes de que finalice
+            div.insertAdjacentElement("afterend", p) //Después de que finalice*/
+        }
+    </script>
+</body>
+</html>
