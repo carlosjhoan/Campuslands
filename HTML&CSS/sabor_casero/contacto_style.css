@@ -41,6 +41,11 @@ button:hover {
     border: 1px solid black;
 }
 
+button:active {
+    background-color: rgba(53, 52, 52);
+    border: 1px solid rgba(53, 52, 52);
+}
+
 button img[src= "../img_proyecto/send_1.png"] {
     width: 20px;
     transition: width 0.1s;
