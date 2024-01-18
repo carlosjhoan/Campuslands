@@ -157,14 +157,7 @@
 
     </div>
 
-    <!--Aquí viene la lista del pedido-->
-    <div class = "lista_pedido">
-        <table id = "table_order">
-            
-        </table>
-        <button id = "confirmo_button" onclick="confirm_order()"><img src="../img_proyecto/order_list.png" alt="" id = "order_list">Confirmo!<img src="../img_proyecto/check_icon.png" alt="" id = "check"></button>
-        <button id = "ok_button" onclick="collapse_order()"><img src="../img_proyecto/up_icon.png" alt=""></button>
-    </div>
+    
 
     <!--Aquí viene el formulario que se llena cuando confirmamos el pedido-->
     <div class="check_buy">
@@ -241,6 +234,8 @@
         </div>
     </div>
 
+    <!--Aquí vienen la facturas en la pantalla-->
+
     <div class="info_database">
         <div id = "container_orders"><div id = "each_order"></div></div>
         
@@ -249,6 +244,15 @@
             <button id = "close_order"><img src="../img_proyecto/close_order.png" alt=""></button>
             <button id = "after_order"><img src="../img_proyecto/after.png" alt=""></button>
         </div>
+    </div>
+
+    <!--Aquí viene la lista del pedido-->
+    <div class = "lista_pedido">
+        <table id = "table_order">
+            
+        </table>
+        <button id = "confirmo_button" onclick="confirm_order()"><img src="../img_proyecto/order_list.png" alt="" id = "order_list">Confirmo!<img src="../img_proyecto/check_icon.png" alt="" id = "check"></button>
+        <button id = "ok_button" onclick="collapse_order()"><img src="../img_proyecto/up_icon.png" alt=""></button>
     </div>
 
     <script>
@@ -866,6 +870,8 @@
                     
                 })
 
+
+
                 
                 if (json.length == 0 || regex_info.test(input_info) == false ) {
                     div_list.innerHTML = "<em>NO HAY INFORMACIÓN PARA MOSTRAR</em>";
@@ -920,6 +926,12 @@
             })
 
             
+        })
+
+        document.getElementById("stack_icon").addEventListener("mouseover", () => {
+            if (total_price == 0) {
+                document.getElementById("search_orders").style.visibility = "visible";
+            } 
         })
  
  
