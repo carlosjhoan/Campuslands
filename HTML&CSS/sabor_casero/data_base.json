@@ -128,6 +128,43 @@
       "precio": "42.000",
       "modo": "delivery",
       "Fecha": "17/1/2024, 8:22:47 p. m."
+    },
+    {
+      "id": "6",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "direccion": "cra 1EB #29-48 La Cumbre",
+      "observaciones": "khgkhgkjgjhgk",
+      "pedido": [
+        [
+          "S. de gallina",
+          1
+        ],
+        [
+          "S. de costilla",
+          1
+        ],
+        [
+          "S. de cola",
+          1
+        ],
+        [
+          "Sobrebarriga",
+          1
+        ],
+        [
+          "Chatas",
+          1
+        ],
+        [
+          "Oreada",
+          1
+        ]
+      ],
+      "precio": "84.000",
+      "modo": "delivery",
+      "Fecha": "17/1/2024, 9:35:32 p. m."
     }
   ],
   "user_active": [],
