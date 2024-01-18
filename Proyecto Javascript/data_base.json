@@ -270,6 +270,35 @@
       "precio": "56.000",
       "modo": "pickup",
       "Fecha": "18/1/2024, 11:25:18 a. m."
+    },
+    {
+      "id": "12",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "hora": "12:15 pm - 12:30 pm",
+      "observaciones": "Deseo ají.",
+      "pedido": [
+        [
+          "S. de costilla",
+          2
+        ],
+        [
+          "S. de cola",
+          1
+        ],
+        [
+          "Sobrebarriga",
+          1
+        ],
+        [
+          "Chatas",
+          2
+        ]
+      ],
+      "precio": "84.000",
+      "modo": "pickup",
+      "Fecha": "18/1/2024, 1:25:11 p. m."
     }
   ],
   "user_active": [],
@@ -302,6 +331,15 @@
       "motivo": "propuesta",
       "contenido": "Qué tal si contratan mis servicios",
       "hora": "18/1/2024, 1:54:19 a. m."
+    },
+    {
+      "id": "4",
+      "nombre": "Carlos Jhoan Aguilar",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "motivo": "consultar vacante",
+      "contenido": "Soy Data Analyst y quiero consultarles si tienen vacantes disponibles al respecto.",
+      "hora": "18/1/2024, 1:27:23 p. m."
     }
   ]
 }
