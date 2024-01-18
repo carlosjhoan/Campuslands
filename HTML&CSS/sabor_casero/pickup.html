@@ -331,6 +331,11 @@
                     document.getElementById(arr_div_id[i]).style.translate = d_C + "px";
                     document.getElementById(arr_div_id[i]).style.color = "red";
                     document.getElementById(arr_div_id[i]).value = "Información incorrecta";
+                    document.getElementById(arr_div_id[i]).addEventListener("click", () => {
+                        if (document.getElementById(arr_div_id[i]).value === "Información incorrecta") {
+                            document.getElementById(arr_div_id[i]).value = ""
+                        }
+                    })
                     
                 }
                 }

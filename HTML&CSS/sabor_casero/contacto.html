@@ -176,12 +176,12 @@
             if (arr_divs_id.length >0) {
                 vibrate (arr_divs_id);
                 if (document.getElementById("commit").value == "" || Boolean(regex_whitespace.test(document.getElementById("commit").value))) {
-                    document.getElementById("commit").value = "Agredecemos nos escriba algo";
+                    document.getElementById("commit").value = "Agradecemos nos escriba algo";
                     document.getElementById("commit").style.color = "red";
                 }
             } else {
                 if (document.getElementById("commit").value == "" || Boolean(regex_whitespace.test(document.getElementById("commit").value)) == false) {
-                    document.getElementById("commit").value = "Agredecemos nos escriba algo";
+                    document.getElementById("commit").value = "Agradecemos nos escriba algo";
                     document.getElementById("commit").style.color = "red";
                 } else {
                     alert("Perfecto! Hemos recibido tu información");
@@ -193,6 +193,14 @@
                
             }
             
+        })
+
+
+        document.getElementById("commit").addEventListener ("click", () => {
+            document.getElementById("commit").style.color = "black";
+            if  (document.getElementById("commit").value === "Agradecemos nos escriba algo") {
+                document.getElementById("commit").value = "";
+            }
         })
     </script>
     

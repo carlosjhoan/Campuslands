@@ -21,6 +21,52 @@ label {
 }
 
 
+button {
+    background-color: green;
+    height: 35px;
+    width: 120px;
+    border: 1px solid green;
+    border-radius: 35px;
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button:hover {
+    background-color: black;
+    border: 1px solid black;
+}
+
+button img[src= "../img_proyecto/send_1.png"] {
+    width: 20px;
+    transition: width 0.1s;
+
+}
+
+button:hover img[src= "../img_proyecto/send_1.png"] {
+    width: 0px;
+    transition: width 0.1s;
+
+}
+
+button img[src= "../img_proyecto/send_2.png"] {
+    width: 0px;
+    transition: width 0.1s;
+
+}
+
+button:hover img[src= "../img_proyecto/send_2.png"] {
+    width: 25px;
+    transition: width 0.1s;
+
+}
+
+
+
 
 @media screen and (max-width:460px) {
 
@@ -36,14 +82,7 @@ label {
         
     
     }
-    
-    .grid {
-        /*border: 1px solid black;*/
-    }
-    
-    
-    
-    
+
     
     
     .legal {
@@ -253,7 +292,7 @@ transition: height 0.1s;
 }
 
 
-.formulario form {
+.formulario .form {
     /*border: 1px solid black;*/
     flex-grow: 1;
     padding-bottom: 2%;
@@ -265,8 +304,6 @@ transition: height 0.1s;
     justify-content: space-around;
     background-color:rgb(216, 178, 124);
     border-radius: 30px;
-    
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
 }
 
 .titulo {
@@ -392,33 +429,6 @@ input:focus {
 select {
     height: 40px;
     border: 2px solid black;
-    border-radius: 10px;
-}
-
-.submit input {
-    background-color: green;
-    color: white;
-    font-weight: 300;
-    transition: height 2;
-    font-size: 1rem;
-}
-
-.submit img {
-    height: 0;
-    width: 0;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover img {
-    height: 20px;
-    width: 20px ;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover {
-    background-color: green;
     border-radius: 10px;
 }
 
@@ -564,12 +574,6 @@ main {
     
 
 }
-
-.grid {
-    /*border: 1px solid black;*/
-}
-
-
 
 .legal {
     grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
@@ -777,7 +781,7 @@ transition: height 0.1s;
 }
 
 
-.formulario form {
+.formulario .form {
     /*border: 1px solid black;*/
     flex-grow: 1;
     padding-bottom: 2%;
@@ -789,8 +793,7 @@ transition: height 0.1s;
     justify-content: space-around;
     background-color:rgb(216, 178, 124);
     border-radius: 30px;
-    
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
+
 }
 
 .titulo {
@@ -906,8 +909,7 @@ input {
     
 }
 input:focus {
-    background-color: black;
-    color: white;
+    color: black;
 }
 
 
@@ -917,34 +919,6 @@ select {
     border: 2px solid black;
     border-radius: 10px;
 }
-
-.submit input {
-    background-color: green;
-    color: white;
-    font-weight: 300;
-    transition: height 2s;
-    font-size: 1rem;
-}
-
-.submit img {
-    height: 0;
-    width: 0;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover img {
-    height: 20px;
-    width: 20px ;
-    transition: height 0.1s, width 0.1s;
-
-}
-
-.submit:hover {
-    background-color: green;
-    border-radius: 10px;
-}
-
 
 
 
@@ -1035,9 +1009,6 @@ color: white;
 
 
 
-
-
-
 /*BOTÓN DE WPP*/
 
 .wpp {
@@ -1094,14 +1065,7 @@ font-weight: bold;
     
     }
     
-    .grid {
-        /*border: 1px solid black;*/
-    }
-    
-    
-    
-    
-    
+
     
     .legal {
         grid-area: Legal; /*y luego en el contaimner no se usa grid-template-columns ni rows*/
@@ -1259,7 +1223,7 @@ nav {
 }
 
 
-.formulario form {
+.formulario .form {
     /*border: 1px solid black;*/
     flex-grow: 1;
     padding-bottom: 2%;
@@ -1272,7 +1236,6 @@ nav {
     background-color:rgb(216, 178, 124);
     border-radius: 30px;
     
-    box-shadow: 0px 0px 3px 3px rgb(114, 114, 114);
 }
 
 .titulo {
@@ -1387,8 +1350,7 @@ input {
     
 }
 input:focus {
-    background-color: black;
-    color: white;
+    color: black;
 }
 
 
@@ -1505,9 +1467,6 @@ select {
 .footer p {
     color: white;
 }
-
-
-
 
 
 
@@ -1845,6 +1804,10 @@ textarea {
     width: 60%;
 }
 
+textarea:focus {
+    color: black;
+}
+
 input {
     border: 2px solid black;
     height: 40px;
@@ -1853,8 +1816,7 @@ input {
     
 }
 input:focus {
-    background-color: black;
-    color: white;
+    color: black;
 }
 
 
@@ -1865,49 +1827,6 @@ select {
     border-radius: 10px;
 }
 
-button {
-    background-color: green;
-    height: 35px;
-    width: 120px;
-    border: 1px solid green;
-    border-radius: 35px;
-    color: white;
-    font-weight: 300;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-button:hover {
-    background-color: black;
-    border: 1px solid black;
-}
-
-button img[src= "../img_proyecto/send_1.png"] {
-    width: 20px;
-    transition: width 0.1s;
-
-}
-
-button:hover img[src= "../img_proyecto/send_1.png"] {
-    width: 0px;
-    transition: width 0.1s;
-
-}
-
-button img[src= "../img_proyecto/send_2.png"] {
-    width: 0px;
-    transition: width 0.1s;
-
-}
-
-button:hover img[src= "../img_proyecto/send_2.png"] {
-    width: 25px;
-    transition: width 0.1s;
-
-}
 
 
 
