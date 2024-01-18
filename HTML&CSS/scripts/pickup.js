@@ -428,6 +428,8 @@ let arr_pedido = [["S. de gallina", 0,"i_want_gallina" , "img_check_gallina"],
             document.getElementById("cell_number").value = "";
             document.getElementById("range_time").value = "11:30 am - 12:00 m";
             document.getElementById("commit").value = "";
+            const search_database = document.getElementById("search_orders");
+            search_database.style.visibility = "visible";
 
             const divs_i_want = document.querySelectorAll(".button_i_want");
             const buy_car = document.getElementById("img_car");

@@ -203,6 +203,73 @@
       "precio": "28.000",
       "modo": "delivery",
       "Fecha": "18/1/2024, 7:50:16 a. m."
+    },
+    {
+      "id": "9",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "direccion": "cra 5e #27-11",
+      "observaciones": "timbrar cuando llegue.\nSin limonadas",
+      "pedido": [
+        [
+          "S. de costilla",
+          1
+        ],
+        [
+          "S. de cola",
+          1
+        ]
+      ],
+      "precio": "28.000",
+      "modo": "delivery",
+      "Fecha": "18/1/2024, 11:10:33 a. m."
+    },
+    {
+      "id": "10",
+      "name": "Carlos Jhoan",
+      "email": "carlosjhoanaguilar@gmail.com",
+      "celular": "3178315988",
+      "hora": "12:30 pm - 1:00pm",
+      "observaciones": "Pago en efectivo",
+      "pedido": [
+        [
+          "S. de costilla",
+          1
+        ]
+      ],
+      "precio": "14.000",
+      "modo": "pickup",
+      "Fecha": "18/1/2024, 11:12:43 a. m."
+    },
+    {
+      "id": "11",
+      "name": "Juan Carlos",
+      "email": "juanchopolo_66@gmail.com",
+      "celular": "3132458745",
+      "hora": "11:30 am - 12:00 m",
+      "observaciones": "",
+      "pedido": [
+        [
+          "S. de costilla",
+          1
+        ],
+        [
+          "S. de cola",
+          1
+        ],
+        [
+          "Chatas",
+          1
+        ],
+        [
+          "Oreada",
+          1
+        ]
+      ],
+      "precio": "56.000",
+      "modo": "pickup",
+      "Fecha": "18/1/2024, 11:25:18 a. m."
     }
   ],
   "user_active": [],

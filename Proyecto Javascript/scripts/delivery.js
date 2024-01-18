@@ -432,6 +432,8 @@ document.getElementById("email").value = "";
 document.getElementById("cell_number").value = "";
 document.getElementById("dir").value = "";
 document.getElementById("commit").value = "";
+const search_database = document.getElementById("search_orders");
+            search_database.style.visibility = "visible";
 
 const divs_i_want = document.querySelectorAll(".button_i_want");
 const buy_car = document.getElementById("img_car");
