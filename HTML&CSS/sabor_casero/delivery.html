@@ -445,6 +445,7 @@
                 q_orders += arr_pedido[i][1];
             }
             if (q_orders == 0) {
+                total_price = 0;
                 buy_car.style["background-color"] = "white";
                 but_mi_pedido.style.visibility = "hidden";
                 but_mi_pedido.style.width = "30px";
@@ -745,6 +746,7 @@
             })
             .then(response => response.json())
             .then(json => {
+                
                 let num_pos = 0;
                 let factura = "";
                 const div_list = document.getElementById("each_order");
@@ -757,7 +759,7 @@
 
                 /*Permitir que el botón close cierre*/
                 close_order.addEventListener("click", () => {
-                    
+                    console.log(total_price)
                     table_orders.style.visibility = "hidden"
                     close_order.style.visibility = "hidden";
                     before_order.style.visibility = "hidden";
@@ -765,6 +767,8 @@
                     document.getElementById("input_database").value = "";
                     if (total_price > 0) {
                         button_mi_pedido.style.visibility = "visible";
+                    } else if (total_price === 0) {
+                        button_mi_pedido.style.visibility = "hidden";
                     }
                 })
 
@@ -878,7 +882,7 @@
                     before_order.style.visibility = "hidden";
                     after_order.style.visibility = "hidden";
                 } else if (json.length === 1) {
-                    console.log("solo 1")
+                    
                     document.getElementById("before_order").style.visibility = "hidden";
                     document.getElementById("after_order").style.visibility = "hidden";
                     factura = `<b>N° Factura:</b> ${json[0].id}<br>
@@ -900,7 +904,7 @@
                     div_list.innerHTML =factura;
  
                 } else {
-                    console.log(json.length)
+                    console.log(json);
                     before_order.style.visibility = "hidden";
                     after_order.style.visibility = "visible";
                     factura = `<b>N° Factura:</b> ${json[0].id}<br>
