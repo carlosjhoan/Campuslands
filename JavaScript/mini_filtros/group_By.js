@@ -18,9 +18,9 @@ function group_By (arr, fnct) {
 }
 
 const fn = function (elem) {
-    return (elem[0])
+    return (elem.id)
 }
 
-const array_prove = [[1, 2, 3], [1, 3, 5], [2, 1], [3, 1, 2]]
+const array_prove = [{"id" : 1}, {"id" : 1, "nombre" : "juan"}, {"id" : 2, "nombre" : "Carlos Juan"}, {"id" : 2, "nombre" : "Jhon F."}]
 
 console.log(group_By(array_prove, fn));
