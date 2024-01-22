@@ -9,9 +9,7 @@ function group_By (arr, fnct) {
         } else {
             obj[`${fnct(element)}`] = [element];
             
-        }
-
-        
+        }   
     })
 
     return obj
