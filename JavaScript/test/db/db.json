@@ -1,108 +1,100 @@
 {
-    "tipousuarios": [
-        {
-            "id": 1,
-            "tipo": "administrador"
-        },
-        {
-            "id": 2,
-            "tipo": "funcionario"
-        },
-        {
-            "id": 3,
-            "tipo": "cliente"
-        }
-    ],
-    "usuarios": [
-        {
-            "id": "1095822445",
-            "pass": "carlosj",
-            "nombre": "Carlos Jhoan Aguilar",
-            "tipoId": "2"
-        },
-
-        {
-            "id": "1098822446",
-            "pass": "lualgoman",
-            "nombre": "Luis Alfonso Gómez",
-            "tipoId": "2"
-        },
-        {
-            "id": "1095822333",
-            "pass": "jhonvH",
-            "nombre": "Luis Alfonso Gómez",
-            "tipoId": "2"
-        },
-        {
-            "id": "1095822445",
-            "pass": "carlosj",
-            "nombre": "Carlos Jhoan Aguilar",
-            "tipoId": "3"
-        }
-
-    ],
-    "registros": [],
-    "bonos": [
-        {
-            "id": "integer; id > 0",
-            "usuarioId": "integer; 0 < d <= 2.000.0000; (cedula cliente)",
-            "historial": [
-                "date; yyyy-mm-dd",
-                "date; yyyy-mm-dd"
-            ],
-            "comentarios": "el historial es la fecha de cada vez que el usuario se ha ganado un bono"
-        }
-    ],
-    "perfumes": [
-        {
-            "id": "1",
-            "name": "Perfume A",
-            "marca": "Brand X"
-        },
-        {
-            "id": "2",
-            "name": "Perfume B",
-            "marca": "Brand Y"
-        },
-        {
-            "id": "3",
-            "name": "Perfume C",
-            "marca": "Brand Z"
-        },
-        {
-            "id": "4",
-            "name": "Perfume D",
-            "marca": "Brand X"
-        },
-        {
-            "id": "5",
-            "name": "Perfume E",
-            "marca": "Brand Y"
-        },
-        {
-            "id": "6",
-            "name": "Perfume F",
-            "marca": "Brand Z"
-        },
-        {
-            "id": "7",
-            "name": "Perfume G",
-            "marca": "Brand X"
-        },
-        {
-            "id": "8",
-            "name": "Perfume H",
-            "marca": "Brand Y"
-        },
-        {
-            "id": "9",
-            "name": "Perfume I",
-            "marca": "Brand Z"
-        },
-        {
-            "id": "10",
-            "name": "Perfume J",
-            "marca": "Brand X"
-        }
-    ]
+  "tipousuarios": [
+    {
+      "id": 1,
+      "tipo": "administrador"
+    },
+    {
+      "id": 2,
+      "tipo": "funcionario"
+    },
+    {
+      "id": 3,
+      "tipo": "cliente"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1095822445",
+      "pass": "carlosj",
+      "nombre": "Carlos Jhoan Aguilar",
+      "tipoId": "2"
+    },
+    {
+      "id": "1098822446",
+      "pass": "lualgoman",
+      "nombre": "Luis Alfonso Gómez",
+      "tipoId": "2"
+    },
+    {
+      "id": "1095822333",
+      "pass": "jhonvH",
+      "nombre": "Jhon Valencia",
+      "tipoId": "2"
+    }
+  ],
+  "registros": [],
+  "bonos": [
+    {
+      "id": "integer; id > 0",
+      "usuarioId": "integer; 0 < d <= 2.000.0000; (cedula cliente)",
+      "historial": [
+        "date; yyyy-mm-dd",
+        "date; yyyy-mm-dd"
+      ],
+      "comentarios": "el historial es la fecha de cada vez que el usuario se ha ganado un bono"
+    }
+  ],
+  "perfumes": [
+    {
+      "id": "1",
+      "name": "Perfume A",
+      "marca": "Brand X"
+    },
+    {
+      "id": "2",
+      "name": "Perfume B",
+      "marca": "Brand Y"
+    },
+    {
+      "id": "3",
+      "name": "Perfume C",
+      "marca": "Brand Z"
+    },
+    {
+      "id": "4",
+      "name": "Perfume D",
+      "marca": "Brand X"
+    },
+    {
+      "id": "5",
+      "name": "Perfume E",
+      "marca": "Brand Y"
+    },
+    {
+      "id": "6",
+      "name": "Perfume F",
+      "marca": "Brand Z"
+    },
+    {
+      "id": "7",
+      "name": "Perfume G",
+      "marca": "Brand X"
+    },
+    {
+      "id": "8",
+      "name": "Perfume H",
+      "marca": "Brand Y"
+    },
+    {
+      "id": "9",
+      "name": "Perfume I",
+      "marca": "Brand Z"
+    },
+    {
+      "id": "10",
+      "name": "Perfume J",
+      "marca": "Brand X"
+    }
+  ]
 }

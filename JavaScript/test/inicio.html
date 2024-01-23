@@ -130,11 +130,44 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
+            border-radius: 0 0 20px 20px;
         }
         .info {
             height: 400px;
         }
 
+        /*NUEVO CLIENTE Y COMPRA*/
+        #registrar_compra {
+            padding: 10px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(121, 162, 163);
+            border-radius: 20px;
+            position: fixed;
+            top: 0%;
+            visibility: hidden;
+        }
+
+        /*COMPRA*/
+        #new_cliente {
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 1px solid black;
+            visibility: hidden;
+        }
+
+        #select_compra {
+            visibility: hidden;
+        }
+        #comprar {
+            visibility: hidden;
+        }
         
         
 
@@ -185,7 +218,7 @@
     <div id = "funct_table">
         <div class="login">
             <label for="cod_cliente">Cod Cliente</label>
-            <input type="text" id ="cod_cliente">
+            <input type="number" id ="cod_cliente">
         </div>
         <button id = "but_consultar">Consultar</button>
     </div>
@@ -208,6 +241,50 @@
             <button id = "close">cerrar</button>
         </div>
     </div>
+
+    <!--REGISTRAR NUEVO CLIENTE Y COMPRAR-->
+        <div id = "registrar_compra">
+            <div id = "new_cliente">
+
+                <div class="login">
+                    <label for="new_id">Doc. Identidad</label>
+                    <input type="number" id ="new_id" readonly>
+                </div>
+    
+                <div class="login">
+                    <label for="new_name">Nombre</label>
+                    <input type="text" id ="new_name">
+                </div>
+        
+                <div class="login">
+                    <label for="new_pass">Contraseña</label>
+                    <input type="password" id ="user_pass">
+                </div>
+                <button id = "but_new_cliente">LISTO!</button>
+    
+            </div>
+
+            <div id = "select_compra">
+                <label for="perfumes">Selec. Perfume</label>
+                <select name="perf" id="perfumes">
+                    <option value="1">Perfume A</option>
+                    <option value="2">Perfume B</option>
+                    <option value="3">Perfume C</option>
+                    <option value="4">Perfume D</option>
+                    <option value="5">Perfume E</option>
+                    <option value="6">Perfume F</option>
+                    <option value="7">Perfume G</option>
+                    <option value="8">Perfume H</option>
+                    <option value="9">Perfume I</option>
+                    <option value="10">Perfume J</option>
+                </select>
+                <button id = "comprar">Comprar!</button>
+            </div>
+
+            
+        </div>
+        
+
 
 
     <script>
@@ -261,20 +338,73 @@
                 }
             })
 
-                    })
+        })
 
         
         // Funcionalidad del botón consultar
         document.getElementById("but_consultar").addEventListener("click",() => {
-            fetch ('http://localhost:4001/usuarios?tipoId=3', {
+            const cod_cliente = document.getElementById("cod_cliente").value;
+            fetch (`http://localhost:4001/usuarios?id=${cod_cliente}`, {
                 method: 'GET',
                 headers: {
                     'Content-type' : 'application/json; charset=UTF-8'
                 },
             })
             .then(response => response.json())
-            .then(json => console.log(json.length))
-                    })
+            .then(json => {
+                if(json.length == 0) {
+                    document.getElementById("info_cliente").style.visibility = "visible";
+                    document.getElementById("cliente_info_text").innerHTML = "CLIENTE NO REGISTRADO";
+                    document.getElementById("but_bono").style.visibility = "collapse";
+
+                } else {
+                    //MUCHO POR HACER ACÁ
+                }
+
+
+            })
+        })
+
+        // Funcionalidad del botón CERRAR
+        document.getElementById("close").addEventListener("click", () => {
+            document.getElementById("info_cliente").style.visibility = "collapse";
+        })
+
+        //REGISTRAR COMPRA
+        document.getElementById("but_compra").addEventListener("click", () => {
+            const cod_cliente = document.getElementById("cod_cliente").value;
+            fetch (`http://localhost:4001/usuarios?id=${cod_cliente}`, {
+                method: 'GET',
+                headers: {
+                    'Content-type' : 'application/json; charset=UTF-8'
+                },
+            })
+            .then(response => response.json())
+            .then(json => {
+                if(json.length == 0) {
+                    document.getElementById("registrar_compra").style.visibility = "visible";
+                    document.getElementById("new_cliente").style.visibility = "visible";
+                    document.getElementById("new_id").value = document.getElementById("cod_cliente").value
+                    
+                    
+                    
+
+                } else {
+                    document.getElementById("new_cliente").style.visibility = "collapse";
+                    document.getElementById("select_compra").style.visibility = "visible";
+                    
+                }
+
+            })
+
+        })
+
+        //Botón listo
+
+        document.getElementById("but_new_cliente").addEventListener("click", () => {
+            const new_id = document.getElementById("cod_cliente").value
+
+        })
 
     </script>
 
