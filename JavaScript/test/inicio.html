@@ -255,7 +255,7 @@
                 </div>
         
                 <div class="login">
-                    <label for="new_pass">Contraseña</label>
+                    <label for="new_pass" id = "label_new_pass">Contraseña</label>
                     <input type="password" id ="new_pass">
                 </div>
                 <button id = "but_new_cliente">LISTO!</button>
@@ -305,7 +305,7 @@
                 if (json.length >0 ) {
                     if (json[0].pass == user_pass &&  json[0].tipoId == user_type) {
                         alert("Información correcta!");
-                        if (json[0].tipoId == 1) {
+                        if (json[0].tipoId == "3") {
                             document.getElementById("label_user_name").innerHTML = "Cliente";
                             document.getElementById("funct_table").style.visibility = "collapse";
                             document.getElementById("user_name").value = user_id;
@@ -342,6 +342,7 @@
         // Funcionalidad del botón consultar
         document.getElementById("but_consultar").addEventListener("click",() => {
             const cod_cliente = document.getElementById("cod_cliente").value;
+            
             fetch (`http://localhost:4001/usuarios?id=${cod_cliente}`, {
                 method: 'GET',
                 headers: {
@@ -355,8 +356,31 @@
                     document.getElementById("cliente_info_text").innerHTML = "CLIENTE NO REGISTRADO";
                     document.getElementById("but_bono").style.visibility = "collapse";
 
-                } else {
+                } else if (json.length > 0 && json[0].tipoId == "2"){
+                    alert("Este registro corresponde a un Funcionario");
+                    document.getElementById("cod_cliente").value = "";
+                } else if (json.length > 0 && json[0].tipoId == "1"){
+                    alert("Este registro corresponde a un Administrativo");
+                    document.getElementById("cod_cliente").value = "";
+                }
+                
+                else {
                     //MUCHO POR HACER ACÁ
+                    fetch (`http://localhost:4001/registros?usuarioId=${cod_cliente}`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-type' : 'application/json; charset=UTF-8'
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(json => {
+                        console.log(json)
+                        if (json.length == 0) {
+                            document.getElementById("info_cliente").style.visibility = "visible";
+                            document.getElementById("cliente_info_text").innerHTML = "CIENTE NO REGISTRA COMPRAS";
+                            document.getElementById("but_bono").style.visibility = "collapse";
+                        }
+                    })
                 }
 
 
@@ -382,7 +406,10 @@
                 if(json.length == 0) {
                     document.getElementById("registrar_compra").style.visibility = "visible";
                     document.getElementById("new_cliente").style.visibility = "visible";
-                    document.getElementById("new_id").value = document.getElementById("cod_cliente").value
+                    document.getElementById("new_id").value = document.getElementById("cod_cliente").value;
+                    document.getElementById("but_new_cliente").style.visibility = "visible";
+                    document.getElementById("new_pass").style.visibility = "visible";
+                    document.getElementById("label_new_pass").style.visibility = "visible";
                     
                     
                     
@@ -403,9 +430,31 @@
             const new_id = document.getElementById("new_id").value;
             const new_name = document.getElementById("new_name").value;
             const new_pass = document.getElementById("new_pass").value;
+            let data = {};
             if (new_name !="" && new_pass != "") {
+                alert("Nuevo cliente registrado!")
                 document.getElementById("select_compra").style.visibility = "visible";
-                console.log(new_name, new_pass)
+                document.getElementById("but_new_cliente").style.visibility = "hidden";
+                document.getElementById("new_pass").style.visibility = "hidden";
+                document.getElementById("label_new_pass").style.visibility = "hidden";
+                data = {
+                    "id" : `${new_id}`,
+                    "pass" : `${new_pass}`,
+                    "nombre" : `${new_name}`,
+                    "tipoId" : "3"
+                }
+
+                fetch ('http://localhost:4001/usuarios', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-type' : 'application/json; charset=UTF-8'
+                    },
+                })
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch(error => console.error("ERROR!!!:" + error))
+                
             }
 
 
