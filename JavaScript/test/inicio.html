@@ -306,13 +306,13 @@
                     if (json[0].pass == user_pass &&  json[0].tipoId == user_type) {
                         alert("Información correcta!");
                         if (json[0].tipoId == "3") {
-                            document.getElementById("label_user_name").innerHTML = "Cliente";
+                            document.getElementById("label_user_name").innerHTML = "Cliente   ";
                             document.getElementById("funct_table").style.visibility = "collapse";
                             document.getElementById("user_name").value = user_id;
                             document.getElementById("user_id").value = "";
                             document.getElementById("user_pass").value = ""
                         } else {
-                            document.getElementById("label_user_name").innerHTML = "Funcionario";
+                            document.getElementById("label_user_name").innerHTML = "Funcionario   ";
                             document.getElementById("funct_table").style.visibility = "visible";
                             document.getElementById("user_name").value = user_id;
                             document.getElementById("user_id").value = "";
