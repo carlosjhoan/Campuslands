@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFUMERÍA ACME</title>
+    
+    <style>
+        #funct_table {
+            visibility: collapse;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-between;
+        }
+
+        #registro {
+            padding: 10px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color: antiquewhite;
+            border-radius: 20px;
+            box-shadow: 0 0 5px 5px rgb(161, 161, 161, 0.7);
+        }
+
+        #registro input {
+            height: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #registro button {
+            height: 25px;
+            border-radius: 25px;
+            border: 1px solid green;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #registro button:hover {
+            border: 1px solid rgb(4, 126, 4, 0.5);
+            background-color: rgb(4, 126, 4, 0.5);
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <label for="user_name" id = "label_user_name"></label>
+        <input type="text" id = "user_name">
+    </nav>
+
+    <!--REGISTRO-->
+    <div id = "registro">
+        <div class="login">
+            <label for="type_user">Tipo de usuario</label>
+        <select name="user_type" id="type_user">
+            <option value="funcionario">Funcionario</option>
+            <option value="cliente">Cliente</option>
+            <option value="admin">Administrador</option>
+        </select>
+        </div>
+
+        <div class="login">
+            <label for="user_id">Usuario</label>
+            <input type="text" id ="user_id">
+        </div>
+
+        <div class="login">
+            <label for="user_pass">Contraseña</label>
+            <input type="password" id ="user_pass">
+        </div>
+
+
+        <button id = "but_login"> Ingresar</button>
+        
+    </div>
+
+    <!------------->
+
+
+
+    <div id = "funct_table">
+        <div class="login">
+            <label for="cod_cliente">Cod Cliente</label>
+            <input type="text" id ="cod_cliente">
+        </div>
+        <button id = "but_consultar">Consultar</button>
+    </div>
+
+    <div id = "info_cliente"></div>
+
+    <script>
+
+        // Funcionalidad del login
+
+        document.getElementById("but_login").addEventListener("click", () => {
+            const user_type = document.getElementById("type_user").value;
+            const user_id = document.getElementById("user_id").value;
+            const user_pass = document.getElementById("user_pass").value;
+
+        })
+
+    </script>
+
+
+</body>
+</html>
