@@ -1,6 +1,6 @@
 
 
-fetch ('http://localhost:4001/usuarios', {
+fetch ('http://localhost:4001/usuarios?tipoId=3', {
     method: 'GET',
     headers: {
         'Content-type' : 'application/json; charset=UTF-8'

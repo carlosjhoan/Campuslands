@@ -31,7 +31,7 @@
         #funct_table {
             padding: 10px;
             height: 60px;
-            visibility: visible;
+            visibility: collapse;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -113,8 +113,26 @@
         }
 
         #registro button:hover {
-            border: 1px solid rgb(4, 126, 4, 0.5);
-            background-color: rgb(4, 126, 4, 0.5);
+            border: 1px solid rgb(4, 126, 4, 0.7);
+            background-color: rgb(4, 126, 4, 0.7);
+        }
+
+        /*INFO CLIENTE*/
+
+        #info_cliente {
+            visibility: collapse;
+            position: fixed;
+            height: 500px;
+            width: 375px;
+            top: 0%;
+            background-color: rgb(236, 207, 207);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .info {
+            height: 400px;
         }
 
         
@@ -174,7 +192,23 @@
 
     <!------------->
 
-    <div id = "info_cliente"></div>
+    <!--FUNCIONARIO PUEDE BUSCAR CLIENTE-->
+
+    <div id = "info_cliente">
+        <div class="info">
+            <div id = "cliente_info_text">
+
+            </div>
+        </div>
+        
+        
+        <div class = "buttons_info_cliente">
+            <button id = "but_compra">Registrar compra</button>
+            <button id = "but_bono">BONO</button>
+            <button id = "close">cerrar</button>
+        </div>
+    </div>
+
 
     <script>
 
@@ -227,6 +261,19 @@
                 }
             })
 
+                    })
+
+        
+        // Funcionalidad del botón consultar
+        document.getElementById("but_consultar").addEventListener("click",() => {
+            fetch ('http://localhost:4001/usuarios?tipoId=3', {
+                method: 'GET',
+                headers: {
+                    'Content-type' : 'application/json; charset=UTF-8'
+                },
+            })
+            .then(response => response.json())
+            .then(json => console.log(json.length))
                     })
 
     </script>
