@@ -6,16 +6,75 @@
     <title>PERFUMERÍA ACME</title>
     
     <style>
-        #funct_table {
-            visibility: collapse;
+        nav {
+            padding: 10px;
+            height: 50px;
+            background-color: aliceblue;
+            box-shadow: 0 0 2px 2px rgb(161, 161, 161, 0.7);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
         }
+
+        nav label {
+            font-weight: bold;
+        }
+
+        nav input {
+            text-align: center;
+            height: 25px;
+            border-radius: 25px;
+            border: 1px solid black;
+        }
+        #funct_table {
+            padding: 10px;
+            height: 60px;
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(240, 187, 187, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 0 2px 2px rgb(161, 161, 161, 0.7);
+        }
+        #funct_table label {
+            font-weight: bold;
+        }
+
+        #funct_table input {
+            height: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #funct_table button {
+            height: 25px;
+            border-radius: 25px;
+            border: 1px solid rgb(5, 5, 5);
+            background-color: rgb(5, 5, 5);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #funct_table button:hover {
+            border: 1px solid rgb(5, 5, 5, 0.7);
+            background-color: rgb(5, 5, 5, 0.7);
+        }
+
+
 
         body {
             height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content:space-between;
+            justify-content:first baseline;
+            gap: 20px;
         }
 
         #registro {
@@ -47,30 +106,41 @@
             cursor: pointer;
         }
 
+        #registro select {
+            height: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+
         #registro button:hover {
             border: 1px solid rgb(4, 126, 4, 0.5);
             background-color: rgb(4, 126, 4, 0.5);
         }
 
         
+        
 
 
     </style>
 </head>
 <body>
+
+    <!--INFORMACiÓN DE USUARIO-->
     <nav>
         <label for="user_name" id = "label_user_name"></label>
-        <input type="text" id = "user_name">
+        <input type="text" id = "user_name" readonly>
     </nav>
+
+
 
     <!--REGISTRO-->
     <div id = "registro">
         <div class="login">
             <label for="type_user">Tipo de usuario</label>
         <select name="user_type" id="type_user">
-            <option value="funcionario">Funcionario</option>
-            <option value="cliente">Cliente</option>
-            <option value="admin">Administrador</option>
+            <option value="2">Funcionario</option>
+            <option value="3">Cliente</option>
+            <option value="1">Administrador</option>
         </select>
         </div>
 
@@ -92,6 +162,7 @@
     <!------------->
 
 
+    <!--FUNCIONARIO PUEDE BUSCAR CLIENTE-->
 
     <div id = "funct_table">
         <div class="login">
@@ -100,6 +171,8 @@
         </div>
         <button id = "but_consultar">Consultar</button>
     </div>
+
+    <!------------->
 
     <div id = "info_cliente"></div>
 
@@ -112,7 +185,49 @@
             const user_id = document.getElementById("user_id").value;
             const user_pass = document.getElementById("user_pass").value;
 
-        })
+            fetch (`http://localhost:4001/usuarios?id=${user_id}`, {
+                method: 'GET',
+                headers: {
+                    'Content-type' : 'application/json; charset=UTF-8'
+                },
+            })
+            .then(response => response.json())
+            .then(json => {
+                if (json.length >0 ) {
+                    if (json[0].pass == user_pass &&  json[0].tipoId == user_type) {
+                        alert("Información correcta!");
+                        if (json[0].tipoId == 1) {
+                            document.getElementById("label_user_name").innerHTML = "Cliente";
+                            document.getElementById("funct_table").style.visibility = "collapse";
+                            document.getElementById("user_name").value = user_id;
+                            document.getElementById("user_id").value = "";
+                            document.getElementById("user_pass").value = ""
+                        } else {
+                            document.getElementById("label_user_name").innerHTML = "Funcionario";
+                            document.getElementById("funct_table").style.visibility = "visible";
+                            document.getElementById("user_name").value = user_id;
+                            document.getElementById("user_id").value = "";
+                            document.getElementById("user_pass").value = ""
+
+                        }
+                        
+
+
+
+                    } else {
+                        alert("Información errónea. Intente de nuevo");
+                        document.getElementById("user_id").value = "";
+                        document.getElementById("user_pass").value = ""
+                    }
+
+                } else {
+                    alert("Usuario no registrado");
+                    document.getElementById("user_id").value = "";
+                    document.getElementById("user_pass").value = ""
+                }
+            })
+
+                    })
 
     </script>
 

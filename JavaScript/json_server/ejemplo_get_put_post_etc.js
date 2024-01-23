@@ -1,6 +1,6 @@
 
 
-fetch ('http://localhost:3000/orders?celular=3178315988', {
+fetch ('http://localhost:4001/usuarios', {
     method: 'GET',
     headers: {
         'Content-type' : 'application/json; charset=UTF-8'
