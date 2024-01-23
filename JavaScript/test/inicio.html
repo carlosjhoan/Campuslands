@@ -165,9 +165,7 @@
         #select_compra {
             visibility: hidden;
         }
-        #comprar {
-            visibility: hidden;
-        }
+        
         
         
 
@@ -258,7 +256,7 @@
         
                 <div class="login">
                     <label for="new_pass">Contraseña</label>
-                    <input type="password" id ="user_pass">
+                    <input type="password" id ="new_pass">
                 </div>
                 <button id = "but_new_cliente">LISTO!</button>
     
@@ -402,7 +400,15 @@
         //Botón listo
 
         document.getElementById("but_new_cliente").addEventListener("click", () => {
-            const new_id = document.getElementById("cod_cliente").value
+            const new_id = document.getElementById("new_id").value;
+            const new_name = document.getElementById("new_name").value;
+            const new_pass = document.getElementById("new_pass").value;
+            if (new_name !="" && new_pass != "") {
+                document.getElementById("select_compra").style.visibility = "visible";
+                console.log(new_name, new_pass)
+            }
+
+
 
         })
 
