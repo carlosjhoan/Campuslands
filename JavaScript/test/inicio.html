@@ -404,6 +404,7 @@
             document.getElementById("info_cliente").style.visibility = "collapse";
             document.getElementById("select_compra").style.visibility = "collapse";
             document.getElementById("registrar_compra").style.visibility = "collapse";
+            document.getElementById("new_cliente").style.visibility = "collapse"
         })
 
         //REGISTRAR COMPRA
@@ -447,34 +448,70 @@
             const new_pass = document.getElementById("new_pass").value;
             let data = {};
             if (new_name !="" && new_pass != "") {
-                alert("Nuevo cliente registrado!")
+                
                 document.getElementById("select_compra").style.visibility = "visible";
                 document.getElementById("but_new_cliente").style.visibility = "hidden";
                 document.getElementById("new_pass").style.visibility = "hidden";
                 document.getElementById("label_new_pass").style.visibility = "hidden";
-                data = {
+                
+
+                
+                alert("Nuevo cliente registrado!");
+                
+
+                
+                
+            }
+        });
+
+            //BOTÓN COMPRAR
+            document.getElementById("comprar").addEventListener("click", () => {
+                let data;
+                let compra;
+                console.log(document.getElementById("new_cliente").style.visibility)
+                if (document.getElementById("new_cliente").style.visibility == "visible") {
+                    const new_id = document.getElementById("new_id").value;
+                    const new_name = document.getElementById("new_name").value;
+                    const new_pass = document.getElementById("new_pass").value;
+                    data = {
                     "id" : `${new_id}`,
                     "pass" : `${new_pass}`,
                     "nombre" : `${new_name}`,
                     "tipoId" : "3"
-                }
+                    };
 
-                fetch ('http://localhost:4001/usuarios', {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-type' : 'application/json; charset=UTF-8'
-                    },
+                    fetch ('http://localhost:4001/usuarios', {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-type' : 'application/json; charset=UTF-8'
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(json => console.log(json))
+                    .catch(error => console.error("ERROR!!!:" + error))
+                        
+                } else {
+                        alert("Estoy en otro cliente"); 
+                    }
+
+                    
+
+                    
+
                 })
-                .then(response => response.json())
-                .then(json => console.log(json))
-                .catch(error => console.error("ERROR!!!:" + error))
-                
-            }
+
+            
+
+            
 
 
 
-        })
+            
+
+
+
+        
 
     </script>
 

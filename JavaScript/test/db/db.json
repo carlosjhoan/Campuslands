@@ -37,6 +37,30 @@
       "pass": "javirAG",
       "nombre": "Javier Augusto Galvis",
       "tipoId": "3"
+    },
+    {
+      "id": "1095822447",
+      "pass": "juanchopolo",
+      "nombre": "Juan Carlos Aguilar",
+      "tipoId": "3"
+    },
+    {
+      "id": "1095822448",
+      "pass": "alexander",
+      "nombre": "Alexander Aguilar",
+      "tipoId": "3"
+    },
+    {
+      "id": "1095822449",
+      "pass": "stella",
+      "nombre": "Stella Galvis",
+      "tipoId": "3"
+    },
+    {
+      "id": "1095822450",
+      "pass": "julioc",
+      "nombre": "Julio Cesar Galvis",
+      "tipoId": "3"
     }
   ],
   "registros": [],
