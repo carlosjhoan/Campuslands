@@ -112,6 +112,7 @@
             height: 25px;
             border: 2px solid black;
             border-radius: 25px;
+            text-align: center;
         }
 
         #registro button:hover {
@@ -388,6 +389,8 @@
                             document.getElementById("info_cliente").style.visibility = "visible";
                             document.getElementById("cliente_info_text").innerHTML = "CIENTE NO REGISTRA COMPRAS";
                             document.getElementById("but_bono").style.visibility = "collapse";
+                            document.getElementById("select_compra").style.visibility = "collapse";
+                            document.getElementById("registrar_compra").style.visibility = "collapse";
                         }
                     })
                 }
@@ -399,6 +402,8 @@
         // Funcionalidad del botón CERRAR
         document.getElementById("close").addEventListener("click", () => {
             document.getElementById("info_cliente").style.visibility = "collapse";
+            document.getElementById("select_compra").style.visibility = "collapse";
+            document.getElementById("registrar_compra").style.visibility = "collapse";
         })
 
         //REGISTRAR COMPRA
@@ -426,6 +431,7 @@
                 } else {
                     document.getElementById("new_cliente").style.visibility = "collapse";
                     document.getElementById("select_compra").style.visibility = "visible";
+                    document.getElementById("registrar_compra").style.visibility = "visible";
                     
                 }
 
