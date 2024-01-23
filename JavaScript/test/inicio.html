@@ -80,6 +80,7 @@
         #registro {
             padding: 10px;
             height: 120px;
+            width: 300px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -107,9 +108,10 @@
         }
 
         #registro select {
-            height: 20px;
+            width: 170px;
+            height: 25px;
             border: 2px solid black;
-            border-radius: 20px;
+            border-radius: 25px;
         }
 
         #registro button:hover {
@@ -167,7 +169,14 @@
         }
         
         
+     
         
+    /*CLASS LOGIN*/
+    .login {
+        width: 100%;
+        display: flex;
+        justify-content:space-between;
+    }
 
 
     </style>
@@ -185,7 +194,7 @@
     <!--REGISTRO-->
     <div id = "registro">
         <div class="login">
-            <label for="type_user">Tipo de usuario</label>
+            <label for="type_user">Tipo de usuario:</label>
         <select name="user_type" id="type_user">
             <option value="2">Funcionario</option>
             <option value="3">Cliente</option>
@@ -194,12 +203,12 @@
         </div>
 
         <div class="login">
-            <label for="user_id">Usuario</label>
+            <label for="user_id">Usuario:</label>
             <input type="text" id ="user_id">
         </div>
 
         <div class="login">
-            <label for="user_pass">Contraseña</label>
+            <label for="user_pass">Contraseña:</label>
             <input type="password" id ="user_pass">
         </div>
 
