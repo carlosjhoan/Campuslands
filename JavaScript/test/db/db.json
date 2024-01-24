@@ -1,15 +1,15 @@
 {
   "tipousuarios": [
     {
-      "id": 1,
+      "id": "1",
       "tipo": "administrador"
     },
     {
-      "id": 2,
+      "id": "2",
       "tipo": "funcionario"
     },
     {
-      "id": 3,
+      "id": "3",
       "tipo": "cliente"
     }
   ],
@@ -60,6 +60,18 @@
       "id": "1095822450",
       "pass": "julioc",
       "nombre": "Julio Cesar Galvis",
+      "tipoId": "3"
+    },
+    {
+      "id": "1095822451",
+      "pass": "alonso",
+      "nombre": "Alonso Barrios",
+      "tipoId": "3"
+    },
+    {
+      "id": "1095822452",
+      "pass": "andreas",
+      "nombre": "Andrea Serrano",
       "tipoId": "3"
     }
   ],

@@ -453,44 +453,83 @@
                 document.getElementById("but_new_cliente").style.visibility = "hidden";
                 document.getElementById("new_pass").style.visibility = "hidden";
                 document.getElementById("label_new_pass").style.visibility = "hidden";
-                
 
-                
-                alert("Nuevo cliente registrado!");
-                
-
-                
-                
+                alert(`${new_name}, Bienvenido a Perfumería ACME`);  
             }
         });
 
-            //BOTÓN COMPRAR
-            document.getElementById("comprar").addEventListener("click", () => {
-                let data;
+        //BOTÓN COMPRAR
+        document.getElementById("comprar").addEventListener("click", () => {
+                let data_login;
                 let compra;
-                console.log(document.getElementById("new_cliente").style.visibility)
+                let now = new Date();
+                let id_registro;
+                let data_registro
+                
                 if (document.getElementById("new_cliente").style.visibility == "visible") {
                     const new_id = document.getElementById("new_id").value;
                     const new_name = document.getElementById("new_name").value;
                     const new_pass = document.getElementById("new_pass").value;
-                    data = {
+                    data_login = {
                     "id" : `${new_id}`,
                     "pass" : `${new_pass}`,
                     "nombre" : `${new_name}`,
                     "tipoId" : "3"
                     };
+                    
 
-                    fetch ('http://localhost:4001/usuarios', {
-                        method: 'POST',
-                        body: JSON.stringify(data),
+                    fetch ('http://localhost:4001/registros', {
+                        method: 'GET',
                         headers: {
                             'Content-type' : 'application/json; charset=UTF-8'
                         },
                     })
                     .then(response => response.json())
-                    .then(json => console.log(json))
-                    .catch(error => console.error("ERROR!!!:" + error))
-                        
+                    .then(json =>() => {
+                        console.log("json", json);
+                        if (json.length == 0) {
+                            id_registro = 1;
+                        }else {
+                            id_registro = json.length;
+                            id_registro++;
+                        }
+                        alert(`id es ${id_registro}`);
+                        data_registro = {
+                            "id" : `${id_registro}`,
+                            "usuarioId" : `${new_id}`,
+                            "compra" : [{
+                                "fecha" : `${now.toLocaleString()}`,
+                                "perfumeId" : `${document.getElementById("perfumes").value}`
+                            }]
+                        }
+                    })
+
+                        /*fetch ('http://localhost:4001/usuarios', {
+                            method: 'POST',
+                            body: JSON.stringify(data_login),
+                            headers: {
+                                'Content-type' : 'application/json; charset=UTF-8'
+                            },
+                        })
+                        .then(response => response.json())
+                        .then(json => () => {
+                            
+                        })
+                        .catch(error => console.error("ERROR!!!:" + error))
+
+
+                        fetch ('http://localhost:4001/registros', {
+                                method: 'POST',
+                                body: JSON.stringify(data_registro),
+                                headers: {
+                                    'Content-type' : 'application/json; charset=UTF-8'
+                                },
+                            })
+                            .then(response => response.json())
+                            .then(json => console.log(json))
+                            .catch(error => console.error("ERROR!!!:" + error))*/
+                        alert("Registro de compra exitoso");
+      
                 } else {
                         alert("Estoy en otro cliente"); 
                     }
