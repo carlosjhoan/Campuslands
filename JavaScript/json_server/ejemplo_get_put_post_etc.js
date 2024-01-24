@@ -1,13 +1,13 @@
 
 
-fetch ('http://localhost:4001/usuarios?tipoId=3', {
+fetch ('http://localhost:4001/registros', {
     method: 'GET',
     headers: {
         'Content-type' : 'application/json; charset=UTF-8'
     },
 })
 .then(response => response.json())
-.then(json => console.log(json))
+.then(json => console.log(json.length))
 let data = {
     "id": "2",
     "nombre": " Juan Carlos Aguilar",
