@@ -468,11 +468,12 @@
             document.getElementById("comprar").addEventListener("click", () => {
                 let data;
                 let compra;
-                console.log(document.getElementById("new_cliente").style.visibility)
+                const id_perfume = document.getElementById("perfumes").value;
                 if (document.getElementById("new_cliente").style.visibility == "visible") {
                     const new_id = document.getElementById("new_id").value;
                     const new_name = document.getElementById("new_name").value;
                     const new_pass = document.getElementById("new_pass").value;
+                    
                     data = {
                     "id" : `${new_id}`,
                     "pass" : `${new_pass}`,
