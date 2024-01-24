@@ -462,15 +462,12 @@
         document.getElementById("comprar").addEventListener("click", () => {
                 let data_login;
                 let compra;
-                let now = new Date();
-                let id_registro;
-                let data_registro
-                
+                console.log(document.getElementById("new_cliente").style.visibility)
                 if (document.getElementById("new_cliente").style.visibility == "visible") {
                     const new_id = document.getElementById("new_id").value;
                     const new_name = document.getElementById("new_name").value;
                     const new_pass = document.getElementById("new_pass").value;
-                    data_login = {
+                    data = {
                     "id" : `${new_id}`,
                     "pass" : `${new_pass}`,
                     "nombre" : `${new_name}`,
