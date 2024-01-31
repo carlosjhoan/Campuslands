@@ -5,19 +5,11 @@ function group_By (arr, fnct) {
 
         fnct(element) in obj
            ? obj[`${fnct(element)}`].push(element)
-           : obj[`${fnct(element)}`] = [element]
-        /*if (fnct(element) in obj) {
-            
-            obj[`${fnct(element)}`].push(element);
-            
-        } else {
-            obj[`${fnct(element)}`] = [element];
-            
-        }*/   
+           : obj[`${fnct(element)}`] = [element] 
     })
 
     return obj
-}
+    }
 
 const fn = function (elem) {
     return (elem.id)
