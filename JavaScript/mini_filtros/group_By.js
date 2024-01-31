@@ -2,18 +2,14 @@ function group_By (arr, fnct) {
     let obj = {};
     
     arr.forEach( element => {
-        if (fnct(element) in obj) {
-            
-            obj[`${fnct(element)}`].push(element);
-            
-        } else {
-            obj[`${fnct(element)}`] = [element];
-            
-        }   
+
+        fnct(element) in obj
+           ? obj[`${fnct(element)}`].push(element)
+           : obj[`${fnct(element)}`] = [element] 
     })
 
     return obj
-}
+    }
 
 const fn = function (elem) {
     return (elem.id)
