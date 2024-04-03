@@ -11,13 +11,81 @@
     <p class = "family">Jose</p>
     <p class = "work">Anne</p>
     <p class = "work">Joan</p>
+    <p id = "mine">Yo</p>
+    <p class="family">Mamá</p>
+    <p id="papa">Papá</p>
+
+    <div>
+        <button>First Button</button>
+        <button>Second Button</button>
+        <button>Third Button</button>
+        <button>Fourth Button</button>
+        <button>Fifth Button</button>
+    </div>
+
+    <p id="topic">JS array methods</p>
+    <p id="first-method">map</p>
+    <p id="second-method">filter</p>
+
     <script>
         // 1. getElementById
         const titleElement = document.getElementById("page-title");
         console.log("getElementById", titleElement);
 
         // 2. getElementsByClassName
-        const 
+        const famContacts = document.getElementsByClassName("family");
+        console.log("getElementsByClassName", famContacts); // Me da una colección con todo los elementos que pertenecen a esa clase
+        
+        /* ¿Será posible iterar cada elemento de la colección en famContacts?
+
+            No. Se tiene que convertir la colección en un array. Esto de la siguiente forma
+        */
+       let famContactsArray = [...famContacts]
+       console.log("famContactsArray", famContactsArray )
+       famContactsArray.forEach(el => console.log(el));
+
+       // 3. getElementsByTagName
+       const allContacts = document.getElementsByTagName("p");
+       console.log("getElementsByTagName", allContacts);
+
+       // De nuevo, esto nos devuelve una colección de objetos del DOM cuya etiqueta principal es "p" --> Párrafo
+       let allContactsArray = [...allContacts];
+       console.log("allContactsArray", allContactsArray);
+
+       /*   Pordemos aplicar un método de los arrays como lo es el .map, que consiste en aplicar una función
+            a cada elemento del array, por ejemplo...
+       */ 
+
+       allContactsArray.map(el => console.log(el));
+
+       // 4. querySelector: Este me toca solo el primero que encuentre con la etiqueta indicada
+       const firstWorkContact = document.querySelector(".work");
+       console.log("firstWorkContact", firstWorkContact);
+
+       // Si dentro del DIV, quisiera elegir uno en específico, por ejemplo el 4to, se haría de la siguiente forma
+       const fourthButton = document.querySelector("div button:nth-child(4)");
+       console.log("fourthButton", fourthButton);
+
+       // 5. SI yo quisiera elegir todos los elementos con la etiqueta "button"
+       const allBtns = document.querySelectorAll("button");
+       console.log("allBtns", allBtns);
+
+       // HOW TO CHANGE THE CONTENT OF DOM ELEMENTS 
+
+       // innerHTML
+       const topicElement = document.querySelector("#topic");
+       console.log("Topic Content: ", topicElement.innerHTML);
+       topicElement.innerHTML = "JavaScript array methods",
+       console.log("Topic Content New: ", topicElement.innerHTML);
+       
+       // Con inneerHTML se puede modificar no solo el contenido, sino también la estructura
+       topicElement.innerHTML = "<b>JavaScript</b> array methods";
+       
+
     </script>
 </body>
 </html>
+
+
+
+
