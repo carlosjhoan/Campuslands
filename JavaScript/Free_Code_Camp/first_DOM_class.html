@@ -27,6 +27,21 @@
     <p id="first-method">map</p>
     <p id="second-method">filter</p>
 
+    <p id = "par_inner_text">Key =<span style="display: none;">    ABC123</span></p>
+
+    <p>
+        <b>innerText example</b>
+        <span id = "inner-Text"></span>
+    </p>
+
+    <hr>
+
+    <p>
+        <b>textContent example</b>
+        <span id = "textContent"></span>
+    </p>
+    <img src="DOM.PNG" alt="DOM Image">
+
     <script>
         // 1. getElementById
         const titleElement = document.getElementById("page-title");
@@ -80,7 +95,44 @@
        
        // Con inneerHTML se puede modificar no solo el contenido, sino también la estructura
        topicElement.innerHTML = "<b>JavaScript</b> array methods";
+
+       // Hay que tener cuidado con el uso de innerHTML y es que da la posibilidad de permitir un XSS Atack
+       // Para esto, se recomienda usar la librerìa DOMPurify
+
+       // innerText y textContent
+       /*   Ambos ignoran las etiquetas HTML y los tratan como parte de un string. Luego
+            se pueden usar para leer o actualizar el texto de un elemento del DOM
+
+            innerText: Devuelve el texto como aparece en la pantalla
+            textContent: devuelve el texto como aparece en el marcado o HTML.
+       */ 
+
+    const p_inner_text = document.getElementById("par_inner_text");
+    console.log("innerText: ", p_inner_text.innerText);
+    console.log("textContent: ", p_inner_text.textContent);
        
+    const example1 = document.getElementById("inner-Text");
+    const example2 = document.getElementById("textContent");
+    let address = `
+        ABC Street
+        Spintext Road
+        Accra,
+        Ghana.    
+    `
+
+    example1.innerText = address;
+    example2.textContent = address;
+    /* Un apunte interesante de la forma en que se escribe cada uno, es que innerText puede ser màs lento que textContent
+    cuando se trabaja en loopscon operaciones masivas
+    */
+
+    // Working with Attributes of DOM Elements
+    // Para manipular los atributos de cada elemento se usan mètodos como: getAttribute o setAttribiute
+
+    // getAttribute
+    const imgElement = document.querySelector("img");
+    console.log(imgElement.getAttribute("src"));
+
 
     </script>
 </body>
